@@ -1,0 +1,21 @@
+<?php $__env->startSection('content'); ?>
+
+    <?php echo $__env->make('appointment.step-viewer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+    <div class="row">
+        <div class="col-sm12 col-md-10 col-lg-8">
+            <form action="<?php echo e(route('appointment.book', ['step' => 6])); ?>" method="post">
+                <?php echo e(csrf_field()); ?>
+
+                <button type="submit" class="btn btn-block btn-success">
+                    <?php echo e(trans('main.confirm')); ?>
+
+                </button>
+            </form>
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

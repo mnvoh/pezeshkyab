@@ -1,0 +1,24 @@
+<?php $__env->startSection('content'); ?>
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-8">
+            <h1><?php echo e(trans('main.about')); ?></h1>
+            <p>
+                Founded in 2003, MNT has established itself as a market leader for medical news, providing concise and accurate information that stands out in the ocean of content that is health on the internet.
+<br />
+                Content is targeted to an educated audience of both healthcare professionals and patients alike. The editorial team provides news from evidence-based, peer-reviewed studies, along with accurate, unbiased and informative content from governmental organisations (e.g. FDA, CDC, NIH, NHS), medical societies, royal colleges, professional associations, patients' groups, pharmaceutical and biotech companies, among others.
+<br />
+                MNT produces original, timely and authoritative information from respected, credible sources. The editorial team has a strict code of practice and covers all areas of health and medicine, including rare diseases and conditions - we strive to achieve coverage across all areas of human health. Our main content areas include:
+<br />
+                News content produced and curated daily by our in-house editorial team. Over 60 articles per day are published.
+                Reference material covering the issues that are important to you - produced in house and licensed.
+                Features and in-depth investigative reporting on health and lifestyle.
+                Opinions forums - allowing you to connect with other users.
+                The MNT technology and website teams make sure that the platforms we use are up to date and robust, allowing you to access, browse and share our content in a variety of ways:
+
+            </p>
+        </div>
+    </div>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

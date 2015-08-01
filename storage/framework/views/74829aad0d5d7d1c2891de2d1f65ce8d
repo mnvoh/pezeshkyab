@@ -1,0 +1,21 @@
+<!-- main footer
+ ====================================== -->
+<footer class="main-footer">
+    <div class="container">
+        <p class="text-muted">&copy; 2015 <a href="<?php echo url('/'); ?>">Pezeshkyab.com</a> all rights reserved.</p>
+        <ul class="text-muted list-inline">
+            <li>v0.1</li>
+            <li>&middot;</li>
+            <li><a href="<?php echo e(route('main.about')); ?>"> <?php echo e(trans('main.about')); ?> </a></li>
+            <li>&middot;</li>
+            <li class="active"><a href="<?php echo e(route('main.contact')); ?>"> <?php echo e(trans('main.contact')); ?> </a></li>
+            <li>&middot;</li>
+            <li><a href="<?php echo e(route('main.links')); ?>"> <?php echo e(trans('main.links')); ?> </a></li>
+            <li>&middot;</li>
+            <li><a href="<?php echo e(route('user.login')); ?>"> <?php echo e(trans('main.login')); ?> </a></li>
+            <li>&middot;</li>
+            <li><a href="<?php echo e(route('user.register')); ?>"> <?php echo e(trans('main.register')); ?> </a></li>
+
+        </ul>
+    </div>
+</footer>

@@ -1,0 +1,45 @@
+<?php $__env->startSection('content'); ?>
+
+    <?php echo $__env->make('appointment.step-viewer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-8">
+            <h2 class="section-heading">
+                <?php echo e(trans('main.terms_of_service')); ?>
+
+            </h2>
+            <p class="lead">
+                <?php echo e(trans('main.tos_desc')); ?>
+
+            </p>
+            <p class="text-justify">
+                <?php echo e(file_get_contents(base_path('tos.' . $lang . '.md'))); ?>
+
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-11 col-md-9 col-lg-7">
+            <form action="<?php echo e(route('appointment.book', ['step' => 2])); ?>" method="post">
+                <?php echo e(csrf_field()); ?>
+
+                <button class="btn btn-success btn-block" name="tos" value="accept">
+                    <?php echo e(trans('main.accept')); ?>
+
+                </button>
+            </form>
+        </div>
+        <div class="col-sm-1">
+            <a href="<?php echo e(route('main.docfinder_home')); ?>" class="btn btn-link">
+                <?php echo e(trans('main.decline')); ?>
+
+            </a>
+        </div>
+    </div>
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,8 @@
+.navbar-right {
+    float: left !important;
+}
+.feed-thumbnail-lg,
+.feed-thumbnail {
+    margin: 0 0 0 15px;
+    float: right;
+}

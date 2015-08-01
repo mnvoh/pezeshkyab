@@ -1,0 +1,13 @@
+Terms of use
+
+By using and/or downloading and/or placing online any part of our News Articles (Content) including our News Feeds, or the content they contain, you agree to be bound by these terms of use. Medical News Today reserves the right to update the terms of use as necessary. It is your responsibility to review them periodically.
+
+The Medical News Today Content is provided on an "as is" and "as available" basis. Medical News Today gives no warranty of any kind in relation to our Feed or our Content and we disclaim all implied warranties, including, but not limited to, satisfactory quality, fitness for purpose, non-infringement, compatibility and accuracy.
+
+Medical News Today contains medical and pharmaceutical news, and data, supplied for general information purposes only. Medical News Today is a website that is developed for healthcare professionals and the general public. The materials contained within this website do not constitute medical or pharmaceutical advice, which should be sought from qualified medical and pharmaceutical advisers. We do not answer any medical questions of any kind, in any format, nor any questions relating to medications. Any views expressed by third parties in the Opinions Forum of Medical News Today do not reflect the opinions, in any way, of Medical News Today or MediLexicon International Limited or its staff. Descriptions of, or references to, products or publications does not imply endorsement of that product or publication.
+
+We are not responsible for any mistakes or deficiencies on Medical News Today. We cannot be held liable for any breakdowns or faults on our site.
+
+We use Google and other third-party advertising companies to serve ads when you visit our web site. Please note that we do not endorse any of the products featured in these adverts. In no event shall MediLexicon International Limited or Medical News Today be responsible for the content, accuracy or opinions expressed in these advertisements or in the websites that these advertisements click through to.
+
+Medical News Today contains links and forms that link to external web sites. In no event shall MediLexicon International Limited or Medical News Today be responsible for the content, accuracy or opinions expressed in these web sites.	These web sites are not monitored or checked for accuracy or completeness by us. Inclusion of web sites linked to via forms and links in our site does not imply approval or endorsement of the linked web site by us. If you decide to leave our web site and access these third-party sites, you do so at your own risk.
