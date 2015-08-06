@@ -6,7 +6,7 @@
     	</title>
     	<meta charset="UTF-8" />
     	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+		<link href="{{ url('fonts/IranNastaliq/styles.css') }}" rel="stylesheet" />
     	<style>
 			html {
 				background: url(../img/front-page-bg.jpg) center center no-repeat;
@@ -32,7 +32,12 @@
 				text-align: center;
 			}
 			h1 {
+				color: #58d;
+				text-shadow: 0 0 3px #1B3052, 0 0 3px #1B3052, 0 0 3px #1B3052;
 				text-align: center;
+				font-family: IranNastaliq, Tahoma, sans-serif;
+				font-size: 58px;
+				line-height: 98px;
 			}
 			.btn {
 				background: #58d;
