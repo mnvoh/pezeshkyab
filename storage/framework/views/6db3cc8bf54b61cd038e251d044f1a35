@@ -1,4 +1,4 @@
-<div class="medical-question">
+<div id="medical-question" class="medical-question">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

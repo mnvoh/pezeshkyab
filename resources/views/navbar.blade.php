@@ -10,6 +10,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <a href="{{ url('/') }}" class="navbar-brand"> {{ trans('main2.home') }} </a>
             <a href="{{ route('main.docfinder_home') }}" class="navbar-brand"> {{ trans('main.site_name') }} </a>
         </div>
         <nav id="bs-navbar" class="collapse navbar-collapse">
@@ -35,50 +36,58 @@
             </ul>
         </nav>
     </div>
-    <div class="navbar-title-search">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-8">
-                    <h1>
-                        <img src="" width="96" height="96" />
-                        {{ trans('main.site_name') }}
-                    </h1>
+    <div id="main-carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#main-carousel" data-slide-to="1"></li>
+            <li data-target="#main-carousel" data-slide-to="2"></li>
+        </ol>
 
-                    <h3>
-                        {{ trans('main.site_slogan') }}
-                    </h3>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="{{ url('/img/carousel/1.jpg') }}" alt="{{ trans('main2.carousel_title_1') }}" />
+                <div class="carousel-caption">
+                    <h1>{{ trans('main2.carousel_title_1') }}</h1>
+                    <p>{{ trans('main2.carousel_desc_1') }}</p>
+                    <a href="{{ route('search.find') }}" title="{{ trans('main2.carousel_title_1') }}"
+                            class="btn btn-default btn-lg">
+                        {{ trans('main2.carousel_title_1') }}
+                    </a>
                 </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h4>{{ trans('main.find_a_doctor_now') }}</h4>
-
-                            <form action="#" method="get">
-                                <div class="form-group">
-                                    <input type="text" name="query" id="query"
-                                           placeholder="{{ trans('main.doctor_name') }}"
-                                           class="form-control"/>
-                                </div>
-                                <button type="submit" class="btn btn-success btn-block">
-                                    {{ trans('main.find') }}
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 text-center vertical-spacing-bi">{{ trans('main.or') }}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <a href="{{ route('appointment.book', ['step' => 1]) }}" class="btn btn-block btn-success">
-                                {{ trans('main.book_appointment') }}
-                            </a>
-                        </div>
-                    </div>
+            </div>
+            <div class="item">
+                <img src="{{ url('/img/carousel/2.jpg') }}" alt="{{ trans('main2.carousel_title_2') }}" />
+                <div class="carousel-caption">
+                    <h1>{{ trans('main2.carousel_title_2') }}</h1>
+                    <p>{{ trans('main2.carousel_desc_2') }}</p>
+                    <a href="{{ route('appointment.book', ['step' => 1]) }}" title="{{ trans('main2.carousel_title_2') }}"
+                       class="btn btn-default btn-lg">
+                        {{ trans('main2.carousel_title_2') }}
+                    </a>
                 </div>
-
+            </div>
+            <div class="item">
+                <img src="{{ url('/img/carousel/3.jpg') }}" alt="{{ trans('main2.carousel_title_3') }}" />
+                <div class="carousel-caption">
+                    <h1>{{ trans('main2.carousel_title_3') }}</h1>
+                    <p>{{ trans('main2.carousel_desc_3') }}</p>
+                    <a href="{{ route('main.docfinder_home') }}#medical-question" title="{{ trans('main2.carousel_title_3') }}"
+                       class="btn btn-default btn-lg">
+                        {{ trans('main2.carousel_title_3') }}
+                    </a>
+                </div>
             </div>
         </div>
 
+        <!-- Controls -->
+        <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 </header>
