@@ -109,7 +109,7 @@
             </a>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-            <a href="{{ route('search.find') }}" title="{{ trans('main2.insurance') }}">
+            <a href="{{ route('main.insurances') }}" title="{{ trans('main2.insurance') }}">
                 <img src="{{ url('img/quicklinks/insurances.svg') }}" alt="{{ trans('main2.insurance') }}"
                      width="64" height="64"/>
                 <h3>{{ trans('main2.insurance') }}</h3>
@@ -117,7 +117,7 @@
             </a>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-            <a href="{{ route('search.find') }}" title="{{ trans('main2.fees') }}">
+            <a href="{{ route('main.fees') }}" title="{{ trans('main2.fees') }}">
                 <img src="{{ url('img/quicklinks/fees.svg') }}" alt="{{ trans('main2.fees') }}"
                      width="64" height="64"/>
                 <h3>{{ trans('main2.fees') }}</h3>

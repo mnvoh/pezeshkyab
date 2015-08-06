@@ -112,7 +112,7 @@
             </a>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-            <a href="<?php echo e(route('search.find')); ?>" title="<?php echo e(trans('main2.insurance')); ?>">
+            <a href="<?php echo e(route('main.insurances')); ?>" title="<?php echo e(trans('main2.insurance')); ?>">
                 <img src="<?php echo e(url('img/quicklinks/insurances.svg')); ?>" alt="<?php echo e(trans('main2.insurance')); ?>"
                      width="64" height="64"/>
                 <h3><?php echo e(trans('main2.insurance')); ?></h3>
@@ -120,7 +120,7 @@
             </a>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-            <a href="<?php echo e(route('search.find')); ?>" title="<?php echo e(trans('main2.fees')); ?>">
+            <a href="<?php echo e(route('main.fees')); ?>" title="<?php echo e(trans('main2.fees')); ?>">
                 <img src="<?php echo e(url('img/quicklinks/fees.svg')); ?>" alt="<?php echo e(trans('main2.fees')); ?>"
                      width="64" height="64"/>
                 <h3><?php echo e(trans('main2.fees')); ?></h3>

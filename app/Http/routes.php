@@ -34,6 +34,14 @@ Route::any('docfinder/links', [
     'as' => 'main.links',
     'uses' => 'MainController@links'
 ]);
+Route::any('docfinder/insurances', [
+    'as' => 'main.insurances',
+    'uses' => 'MainController@insurances'
+]);
+Route::any('docfinder/fees', [
+    'as' => 'main.fees',
+    'uses' => 'MainController@fees'
+]);
 
 
 /*          UserController
