@@ -16,7 +16,7 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <input type="text" class="form-control" id="q_name"
-                               placeholder="{{ trans('main.name') }} *"/>
+                               placeholder="{{ trans('main2.your_name') }} *"/>
                     </div>
 
 
@@ -31,11 +31,19 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="q_title"
-                               placeholder="{{ trans('main.title') }} *"/>
+                        @include('cities_select')
+                    </div>
+
+                    <div class="form-group">
+                        @include('specialties_select')
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="q_title"
+                               placeholder="{{ trans('main.title') }} *"/>
+                    </div>
+
                     <textarea class="form-control" rows="8"
                               placeholder="{{ trans('main.your_question') }} *"></textarea>
                 </div>

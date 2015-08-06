@@ -35,12 +35,7 @@
                         <span class="text-danger">*</span>
                     </label>
 
-                    <select name="specialty" id="specialty" class="form-control" required>
-                        <option value="-1" disabled selected>---------</option>
-                        <option value="1">some specialty 1</option>
-                        <option value="2">some specialty 2</option>
-                        <option value="2">some specialty 3</option>
-                    </select>
+                    @include('specialties_select')
                 </div>
 
 

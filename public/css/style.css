@@ -24,10 +24,10 @@ header, footer, a {
 .navbar {
     background: #152952;
 }
-.nav li a {
+.nav.navbar-nav li a {
     color: #eee;
 }
-.nav li a:hover {
+.nav.navbar-nav li a:hover {
     background-color: #234487;
 }
 .navbar-brand {
@@ -110,6 +110,8 @@ a {
     border: 1px solid #bbb;
     border-bottom: 4px solid #bbb;
     border-radius: 3px 3px 9px 9px;
+    margin: 10px 0;
+    padding: 15px;
 }
 .medical-question {
     background: #234487;
@@ -256,7 +258,7 @@ a {
 }
 .quick-link > a:hover {
     text-decoration: none;
-    opacity: 0.75;
+    opacity: 0.9;
 }
 .quick-link:nth-child(2n) {
     background: #fff;
