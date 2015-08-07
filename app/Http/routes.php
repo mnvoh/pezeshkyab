@@ -42,7 +42,14 @@ Route::any('docfinder/fees', [
     'as' => 'main.fees',
     'uses' => 'MainController@fees'
 ]);
-
+Route::any('docfinder/tos', [
+	'as' => 'main.tos',
+	'uses' => 'MainController@tos'
+]);
+Route::any('docfinder/privacy-policy', [
+	'as' => 'main.privacy_policy',
+	'uses' => 'MainController@privacyPolicy'
+]);
 
 /*          UserController
   ======================================*/

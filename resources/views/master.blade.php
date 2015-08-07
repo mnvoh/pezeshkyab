@@ -60,5 +60,10 @@
     	<script src="{{ url('js/jquery.js') }}"></script>
     	<script src="{{ url('js/bootstrap.js') }}"></script>
         <script src="{{ url('js/script.js') }}"></script>
+
+        @if($includeMaps)
+            <script src="https://maps.googleapis.com/maps/api/js"></script>
+            <script src="{{ url('js/maps.js') }}"></script>
+        @endif
     </body>
 </html>

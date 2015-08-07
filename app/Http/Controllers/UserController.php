@@ -8,6 +8,8 @@ class UserController extends Controller {
     }
 
     public function register() {
-        return view('user.register');
+        return view('user.register', [
+			'includeMaps' => true,
+        ]);
     }
 }

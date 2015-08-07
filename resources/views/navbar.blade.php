@@ -48,8 +48,8 @@
             <div class="item active">
                 <img src="{{ url('/img/carousel/1.jpg') }}" alt="{{ trans('main2.carousel_title_1') }}" />
                 <div class="carousel-caption">
-                    <h1>{{ trans('main2.carousel_title_1') }}</h1>
-                    <p>{{ trans('main2.carousel_desc_1') }}</p>
+                    <h1 class="hidden-xs">{{ trans('main2.carousel_title_1') }}</h1>
+                    <p class="hidden-xs">{{ trans('main2.carousel_desc_1') }}</p>
                     <a href="{{ route('search.find') }}" title="{{ trans('main2.carousel_title_1') }}"
                             class="btn btn-default btn-lg">
                         {{ trans('main2.carousel_title_1') }}
@@ -59,8 +59,8 @@
             <div class="item">
                 <img src="{{ url('/img/carousel/2.jpg') }}" alt="{{ trans('main2.carousel_title_2') }}" />
                 <div class="carousel-caption">
-                    <h1>{{ trans('main2.carousel_title_2') }}</h1>
-                    <p>{{ trans('main2.carousel_desc_2') }}</p>
+                    <h1 class="hidden-xs">{{ trans('main2.carousel_title_2') }}</h1>
+                    <p class="hidden-xs">{{ trans('main2.carousel_desc_2') }}</p>
                     <a href="{{ route('appointment.book', ['step' => 1]) }}" title="{{ trans('main2.carousel_title_2') }}"
                        class="btn btn-default btn-lg">
                         {{ trans('main2.carousel_title_2') }}
@@ -70,11 +70,11 @@
             <div class="item">
                 <img src="{{ url('/img/carousel/3.jpg') }}" alt="{{ trans('main2.carousel_title_3') }}" />
                 <div class="carousel-caption">
-                    <h1>{{ trans('main2.carousel_title_3') }}</h1>
-                    <p>{{ trans('main2.carousel_desc_3') }}</p>
+                    <h1 class="hidden-xs">{{ trans('main2.carousel_title_3') }}</h1>
+                    <p class="hidden-xs">{{ trans('main2.carousel_desc_3') }}</p>
                     <a href="{{ route('main.docfinder_home') }}#medical-question" title="{{ trans('main2.carousel_title_3') }}"
                        class="btn btn-default btn-lg">
-                        {{ trans('main2.carousel_title_3') }}
+                        {{ trans('main2.carousel_title_3.1') }}
                     </a>
                 </div>
             </div>

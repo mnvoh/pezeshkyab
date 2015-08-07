@@ -58,43 +58,77 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="nationality" class="control-label">
-                        {{ trans('main.nationality') }}
+                    <label for="gp_sp" class="control-label">
+                        {{ trans('main2.general_practitioner') }} / {{ trans('main2.specialist') }}
                         <span class="text-danger">*</span>
                     </label>
 
-                    <select name="nationality" id="nationality" class="form-control" required>
-                        <option disabled selected>{{ trans('main.nationality') }}</option>
-                        <option value="ir">{{ trans('main.iranian') }}</option>
-                        <option value="fo">{{ trans('main.non_iranian') }}</option>
+                    <select name="gp_sp" id="gp_sp" class="form-control" required>
+                        <option disabled selected>
+                            {{ trans('main2.general_practitioner') }} / {{ trans('main2.specialist') }}
+                        </option>
+                        <option value="gp">{{ trans('main2.general_practitioner') }}</option>
+                        <option value="sp">{{ trans('main2.specialist') }}</option>
                     </select>
                 </div>
 
-                <div class="form-group" id="signup-national-code">
-                    <label for="national_code" class="control-label">
-                        {{ trans('main.national_code') }}
+                <div class="form-group" id="specialty_detail">
+                    <label for="specialty" class="control-label">
+                        {{ trans('main.specialty') }}
+                        <span class="text-danger">*</span>
+                    </label>
+                    @include('specialties_select')
+                </div>
+
+                <div class="form-group">
+                    <label for="license" class="control-label">
+                        {{ trans('main2.physician_license_number') }}
                         <span class="text-danger">*</span>
                     </label>
 
-                    <input type="text" name="national_code" id="national_code" class="form-control"
-                           placeholder="{{ trans('main.national_code') }}" />
+                    <input type="text" name="license" id="license" class="form-control"
+                           placeholder="{{ trans('main2.physician_license_number') }}" required />
                 </div>
 
-                <div class="form-group" id="signup-passport-number" style="display: none;">
-                    <label for="passport_number" class="control-label">
-                        {{ trans('main.passport_number') }}
-                        <span class="text-danger">*</span>
-                    </label>
-
-                    <input type="text" name="passport_number" id="passport_number" class="form-control"
-                           placeholder="{{ trans('main.passport_number') }}" />
-                </div>
+				<div class="form-group">
+					<label class="control-label">
+						{{ trans('main2.clinic_address') }}
+						<span class="text-danger">*</span>
+						<p class="help-block">{{ trans('main2.clinic_address_help') }}</p>
+					</label>
+					<input type="hidden" name="clinicLat" id="clinicLat" value="NaN" />
+					<input type="hidden" name="clinicLng" id="clinicLng" value="NaN" />
+					<div id="map-canvas"></div>
+				</div>
 
                 {{ csrf_field() }}
 
-                <button type="submit" class="btn btn-block btn-success">
-                    {{ trans('main.signup') }}
-                </button>
+				<div class="row">
+					<div class="col-xs-12 col-sm-9">
+						<div class="form-group">
+							<label for="acceptTerms" class="control-label">
+								<input type="checkbox" name="acceptTerms" id="acceptTerms" />
+								<?php
+									$tosUrl = route('main.tos');
+									$privacyUrl = route('main.privacy_policy');
+									$tosLink = "<a href='{$tosUrl}'>" . trans('main2.tos') . "</a>";
+									$privacyLink = "<a href='{$privacyUrl}'>" . trans('main2.privacy_policy') . "</a>";
+
+									$acceptText = trans('main2.accept_terms');
+									$acceptText = str_replace('--tos--', $tosLink, $acceptText);
+									$acceptText = str_replace('--privacy--', $privacyLink, $acceptText);
+									echo $acceptText;
+								?>
+								<span class="text-danger">*</span>
+							</label>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-3">
+						<button type="submit" class="btn btn-block btn-success">
+							{{ trans('main.signup') }}
+						</button>
+					</div>
+				</div>
 
                 <div class="row vertical-spacing"></div>
             </form>

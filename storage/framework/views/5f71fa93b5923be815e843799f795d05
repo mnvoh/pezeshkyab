@@ -61,48 +61,84 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="nationality" class="control-label">
-                        <?php echo e(trans('main.nationality')); ?>
+                    <label for="gp_sp" class="control-label">
+                        <?php echo e(trans('main2.general_practitioner')); ?> / <?php echo e(trans('main2.specialist')); ?>
 
                         <span class="text-danger">*</span>
                     </label>
 
-                    <select name="nationality" id="nationality" class="form-control" required>
-                        <option disabled selected><?php echo e(trans('main.nationality')); ?></option>
-                        <option value="ir"><?php echo e(trans('main.iranian')); ?></option>
-                        <option value="fo"><?php echo e(trans('main.non_iranian')); ?></option>
+                    <select name="gp_sp" id="gp_sp" class="form-control" required>
+                        <option disabled selected>
+                            <?php echo e(trans('main2.general_practitioner')); ?> / <?php echo e(trans('main2.specialist')); ?>
+
+                        </option>
+                        <option value="gp"><?php echo e(trans('main2.general_practitioner')); ?></option>
+                        <option value="sp"><?php echo e(trans('main2.specialist')); ?></option>
                     </select>
                 </div>
 
-                <div class="form-group" id="signup-national-code">
-                    <label for="national_code" class="control-label">
-                        <?php echo e(trans('main.national_code')); ?>
+                <div class="form-group" id="specialty_detail">
+                    <label for="specialty" class="control-label">
+                        <?php echo e(trans('main.specialty')); ?>
+
+                        <span class="text-danger">*</span>
+                    </label>
+                    <?php echo $__env->make('specialties_select', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </div>
+
+                <div class="form-group">
+                    <label for="license" class="control-label">
+                        <?php echo e(trans('main2.physician_license_number')); ?>
 
                         <span class="text-danger">*</span>
                     </label>
 
-                    <input type="text" name="national_code" id="national_code" class="form-control"
-                           placeholder="<?php echo e(trans('main.national_code')); ?>" />
+                    <input type="text" name="license" id="license" class="form-control"
+                           placeholder="<?php echo e(trans('main2.physician_license_number')); ?>" required />
                 </div>
 
-                <div class="form-group" id="signup-passport-number" style="display: none;">
-                    <label for="passport_number" class="control-label">
-                        <?php echo e(trans('main.passport_number')); ?>
+				<div class="form-group">
+					<label class="control-label">
+						<?php echo e(trans('main2.clinic_address')); ?>
 
-                        <span class="text-danger">*</span>
-                    </label>
-
-                    <input type="text" name="passport_number" id="passport_number" class="form-control"
-                           placeholder="<?php echo e(trans('main.passport_number')); ?>" />
-                </div>
+						<span class="text-danger">*</span>
+						<p class="help-block"><?php echo e(trans('main2.clinic_address_help')); ?></p>
+					</label>
+					<input type="hidden" name="clinicLat" id="clinicLat" value="NaN" />
+					<input type="hidden" name="clinicLng" id="clinicLng" value="NaN" />
+					<div id="map-canvas"></div>
+				</div>
 
                 <?php echo e(csrf_field()); ?>
 
 
-                <button type="submit" class="btn btn-block btn-success">
-                    <?php echo e(trans('main.signup')); ?>
+				<div class="row">
+					<div class="col-xs-12 col-sm-9">
+						<div class="form-group">
+							<label for="acceptTerms" class="control-label">
+								<input type="checkbox" name="acceptTerms" id="acceptTerms" />
+								<?php
+									$tosUrl = route('main.tos');
+									$privacyUrl = route('main.privacy_policy');
+									$tosLink = "<a href='{$tosUrl}'>" . trans('main2.tos') . "</a>";
+									$privacyLink = "<a href='{$privacyUrl}'>" . trans('main2.privacy_policy') . "</a>";
 
-                </button>
+									$acceptText = trans('main2.accept_terms');
+									$acceptText = str_replace('--tos--', $tosLink, $acceptText);
+									$acceptText = str_replace('--privacy--', $privacyLink, $acceptText);
+									echo $acceptText;
+								?>
+								<span class="text-danger">*</span>
+							</label>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-3">
+						<button type="submit" class="btn btn-block btn-success">
+							<?php echo e(trans('main.signup')); ?>
+
+						</button>
+					</div>
+				</div>
 
                 <div class="row vertical-spacing"></div>
             </form>

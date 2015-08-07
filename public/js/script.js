@@ -1,13 +1,11 @@
 (function($) {
     $(document).ready(function() {
-        $('select#nationality').change(function() {
-            if($(this).val() == 'ir') {
-                $('#signup-national-code').slideDown(500);
-                $('#signup-passport-number').slideUp(500);
+        $('select#gp_sp').change(function() {
+            if($(this).val() == 'sp') {
+                $('#specialty_detail').slideDown(500);
             }
             else {
-                $('#signup-national-code').slideUp(500);
-                $('#signup-passport-number').slideDown(500);
+                $('#specialty_detail').slideUp(500);
             }
         });
 

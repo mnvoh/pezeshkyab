@@ -48,8 +48,8 @@
             <div class="item active">
                 <img src="<?php echo e(url('/img/carousel/1.jpg')); ?>" alt="<?php echo e(trans('main2.carousel_title_1')); ?>" />
                 <div class="carousel-caption">
-                    <h1><?php echo e(trans('main2.carousel_title_1')); ?></h1>
-                    <p><?php echo e(trans('main2.carousel_desc_1')); ?></p>
+                    <h1 class="hidden-xs"><?php echo e(trans('main2.carousel_title_1')); ?></h1>
+                    <p class="hidden-xs"><?php echo e(trans('main2.carousel_desc_1')); ?></p>
                     <a href="<?php echo e(route('search.find')); ?>" title="<?php echo e(trans('main2.carousel_title_1')); ?>"
                             class="btn btn-default btn-lg">
                         <?php echo e(trans('main2.carousel_title_1')); ?>
@@ -60,8 +60,8 @@
             <div class="item">
                 <img src="<?php echo e(url('/img/carousel/2.jpg')); ?>" alt="<?php echo e(trans('main2.carousel_title_2')); ?>" />
                 <div class="carousel-caption">
-                    <h1><?php echo e(trans('main2.carousel_title_2')); ?></h1>
-                    <p><?php echo e(trans('main2.carousel_desc_2')); ?></p>
+                    <h1 class="hidden-xs"><?php echo e(trans('main2.carousel_title_2')); ?></h1>
+                    <p class="hidden-xs"><?php echo e(trans('main2.carousel_desc_2')); ?></p>
                     <a href="<?php echo e(route('appointment.book', ['step' => 1])); ?>" title="<?php echo e(trans('main2.carousel_title_2')); ?>"
                        class="btn btn-default btn-lg">
                         <?php echo e(trans('main2.carousel_title_2')); ?>
@@ -72,11 +72,11 @@
             <div class="item">
                 <img src="<?php echo e(url('/img/carousel/3.jpg')); ?>" alt="<?php echo e(trans('main2.carousel_title_3')); ?>" />
                 <div class="carousel-caption">
-                    <h1><?php echo e(trans('main2.carousel_title_3')); ?></h1>
-                    <p><?php echo e(trans('main2.carousel_desc_3')); ?></p>
+                    <h1 class="hidden-xs"><?php echo e(trans('main2.carousel_title_3')); ?></h1>
+                    <p class="hidden-xs"><?php echo e(trans('main2.carousel_desc_3')); ?></p>
                     <a href="<?php echo e(route('main.docfinder_home')); ?>#medical-question" title="<?php echo e(trans('main2.carousel_title_3')); ?>"
                        class="btn btn-default btn-lg">
-                        <?php echo e(trans('main2.carousel_title_3')); ?>
+                        <?php echo e(trans('main2.carousel_title_3.1')); ?>
 
                     </a>
                 </div>
