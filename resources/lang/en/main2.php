@@ -11,7 +11,7 @@
 		'systems_doctors' => 'Doctors',
 		'systems_doctors_desc' => 'Find a doctor from the available doctors in the system.',
 		'online_appointment_booking' => 'Booking',
-		'online_appointment_booking_desc' => 'Without the need to wait in long lines, book an appointment now.',
+		'online_appointment_booking_desc' => 'Book an appointment now, without having to wait in long lines.',
 		'fees' => 'Fees',
 		'fees_desc' => 'View the fees for available doctors.',
 		'insurance' => 'Insurance',
@@ -27,4 +27,8 @@
 		'accept_terms' => 'I have read and accept the --tos-- and --privacy--.',
 		'tos' => 'Terms of Service',
 		'privacy_policy' => 'Privacy Policy',
+		'city' => 'City',
+		'find_a_doctor' => 'Find a Doctor',
+		'find_help' => 'Fill out at least one field to find doctors matching your criteria.',
+		'find' => 'Find',
 	];

@@ -57,21 +57,6 @@
                            placeholder="{{ trans('main.repeat_password') }}" required />
                 </div>
 
-                <div class="form-group">
-                    <label for="gp_sp" class="control-label">
-                        {{ trans('main2.general_practitioner') }} / {{ trans('main2.specialist') }}
-                        <span class="text-danger">*</span>
-                    </label>
-
-                    <select name="gp_sp" id="gp_sp" class="form-control" required>
-                        <option disabled selected>
-                            {{ trans('main2.general_practitioner') }} / {{ trans('main2.specialist') }}
-                        </option>
-                        <option value="gp">{{ trans('main2.general_practitioner') }}</option>
-                        <option value="sp">{{ trans('main2.specialist') }}</option>
-                    </select>
-                </div>
-
                 <div class="form-group" id="specialty_detail">
                     <label for="specialty" class="control-label">
                         {{ trans('main.specialty') }}
@@ -89,6 +74,14 @@
                     <input type="text" name="license" id="license" class="form-control"
                            placeholder="{{ trans('main2.physician_license_number') }}" required />
                 </div>
+
+				<div class="form-group">
+					<label for="city" class="control-label">
+						{{ trans('main2.city') }}
+						<span class="text-danger">*</span>
+					</label>
+					@include('cities_select')
+				</div>
 
 				<div class="form-group">
 					<label class="control-label">
