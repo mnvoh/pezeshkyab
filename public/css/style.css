@@ -296,3 +296,28 @@ a {
     width: 1%;
     white-space: nowrap;
 }
+
+#dr-hp-h-img {
+    background-size: cover;
+    background-position: center center;
+    min-height: 450px;
+    vertical-align: middle;
+}
+
+#dr-hp-h-img h1,
+#dr-hp-h-img h2,
+#dr-hp-h-img p {
+    color: #666;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 1px 1px #000, 0 0 5px #000;
+}
+
+.table-display {
+    display: table;
+    width: 100%;
+}
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
