@@ -36,8 +36,8 @@
             </ul>
         </nav>
     </div>
-    <div id="dr-hp-h-img" class="table-display" style="background-image: url({{ url('img/specialists/' . $specialty . '.jpg') }});">
-		<div class="container table-cell">
+    <div id="dr-hp-h-img" style="background-image: url({{ url('img/specialists/' . $specialty . '.jpg') }});">
+		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<h1>{{ $name }}</h1>
