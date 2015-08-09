@@ -2,6 +2,7 @@
 
 define('TABLE_PROVINCES', 'province');
 define('TABLE_CITIES', 'city');
+define('TABLE_FEES', 'fees');
 
 class DbOps {
 
@@ -28,4 +29,33 @@ class DbOps {
 
         return $cities;
     }
+
+	public static function getFees() {
+		return array(
+			array(
+				'title' => 'ویزیت',
+				'fee' => '99000',
+				'lang' => 'fa',
+				'currency' => 'irr',
+			),
+			array(
+				'title' => 'عکس',
+				'fee' => '190000',
+				'lang' => 'fa',
+				'currency' => 'irr',
+			),
+			array(
+				'title' => 'ام آر آی',
+				'fee' => '490000',
+				'lang' => 'fa',
+				'currency' => 'irr',
+			),
+			array(
+				'title' => 'بستری',
+				'fee' => '590000',
+				'lang' => 'fa',
+				'currency' => 'irr',
+			),
+		);
+	}
 }

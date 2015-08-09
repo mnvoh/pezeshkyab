@@ -291,3 +291,8 @@ a {
     max-width: 100%;
     height: 400px;
 }
+
+.min-width-cell {
+    width: 1%;
+    white-space: nowrap;
+}

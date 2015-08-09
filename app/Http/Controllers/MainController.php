@@ -33,4 +33,14 @@ class MainController extends Controller {
     public function about() {
         return view('main.about');
     }
+
+	public function fees() {
+		return view('main.fees', [
+			'fees' => \DbOps::getFees(),
+		]);
+	}
+
+	public function insurances() {
+		return view('main.insurances');
+	}
 }
