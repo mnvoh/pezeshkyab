@@ -1,4 +1,5 @@
 <?php
+require_once(dirname(__FILE__) . '/jdf.php');
 
 class Utils {
     /**
@@ -21,4 +22,11 @@ class Utils {
         else
             return substr($str, 0, $min_length) . " ...";
     }
+
+	public static function prefDate($timestamp, $lang) {
+		if($lang == "fa")
+			return jdate('Y/m/d H:i:s', $timestamp);
+		else
+			return date('Y-m-d H:i:s', $timestamp);
+	}
 }

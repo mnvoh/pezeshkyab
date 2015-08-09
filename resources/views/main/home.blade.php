@@ -10,6 +10,14 @@
         <div class="row">
             <div class="col-xs-12">
                 <h2><a href="#"><?php echo $first_feed['title'] ?></a></h2>
+				<p>
+					{{trans('main2.published_by')}}:
+					<a href="{{ route('doctors.homepage', ['doctor_id' => $first_feed['publisher_id']]) }}">
+						<?php echo $first_feed['publisher'] ?>
+					</a>
+					{{ trans('main2.on') }}:
+					<?php echo $first_feed['published_on'] ?>
+				</p>
             </div>
         </div>
         <div class="row">
@@ -32,6 +40,14 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <h4><a href="#"><?php echo $feed[$i]['title']; ?></a></h4>
+						<p>
+							{{trans('main2.published_by')}}:
+							<a href="{{ route('doctors.homepage', ['doctor_id' => $first_feed['publisher_id']]) }}">
+								<?php echo $first_feed['publisher'] ?>
+							</a>
+							{{ trans('main2.on') }}:
+							<?php echo $first_feed['published_on'] ?>
+						</p>
                         <a href="#" class="feed-link">
                                         <span class="feed-thumbnail"
                                               style="background-image: url(<?php echo $feed[$i]['img']; ?>);">
@@ -46,6 +62,14 @@
                     ?>
                         <div class="col-md-6 col-sm-12">
                             <h4><a href="#"><?php echo $feed[$i + 1]['title']; ?></a></h4>
+							<p>
+								{{trans('main2.published_by')}}:
+								<a href="{{ route('doctors.homepage', ['doctor_id' => $first_feed['publisher_id']]) }}">
+									<?php echo $first_feed['publisher'] ?>
+								</a>
+								{{ trans('main2.on') }}:
+								<?php echo $first_feed['published_on'] ?>
+							</p>
                             <a href="#" class="feed-link">
                                             <span class="feed-thumbnail"
                                                   style="background-image: url(<?php echo $feed[$i + 1]['img']; ?>);">

@@ -28,6 +28,8 @@
 		'online_appointment_booking_desc' => 'Book an appointment now, without having to wait in long lines.',
 		'physician_license_number' => 'Physician\'s License Number',
 		'privacy_policy' => 'Privacy Policy',
+		'published_by' => 'Published By',
+		'on' => 'On',
 		'specialist' => 'Specialist',
 		'systems_doctors' => 'Doctors',
 		'systems_doctors_desc' => 'Find a doctor from the available doctors in the system.',

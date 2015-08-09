@@ -1,0 +1,8 @@
+<?php $__env->startSection('content'); ?>
+    <div class="row">
+        <div class="col-sm-12">
+			<img src="http://cdn.asriran.com/files/fa/news/1393/11/9/431159_349.jpg" />
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
