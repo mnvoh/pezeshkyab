@@ -82,6 +82,11 @@ Route::any('docfinder/book-appointment/{step}', [
     'uses' => 'AppointmentController@book'
 ]);
 
+Route::any('docfinder/book-appointment/{doctor_id}/{step}', [
+	'as' => 'appointment.book_for_doctor',
+	'uses' => 'AppointmentController@bookForDoctor'
+]);
+
 /*          DoctorsController
   ======================================*/
 Route::any('doctors/{doctor_id}', [
@@ -89,3 +94,12 @@ Route::any('doctors/{doctor_id}', [
 	'uses' => 'DoctorsController@homePage'
 ]);
 
+Route::any('doctors/{doctor_id}/articles', [
+	'as' => 'doctors.articles',
+	'uses' => 'DoctorsController@articles'
+]);
+
+Route::any('doctors/{doctor_id}/ask', [
+	'as' => 'doctors.ask',
+	'uses' => 'DoctorsController@ask'
+]);

@@ -7,7 +7,7 @@
 
     <div class="row">
         <div class="col-sm12 col-md-10 col-lg-8">
-            <form action="{{ route('appointment.book', ['step' => 7]) }}" method="post">
+            <form action="{{ $next_step_link }}" method="post">
                 {{ csrf_field() }}
                 <button type="submit" class="btn btn-block btn-success">
                     {{ trans('main.confirm') }}

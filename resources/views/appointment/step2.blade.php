@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-sm12 col-md-10 col-lg-8">
             <h2>{{ trans('main.information_desc') }}</h2>
-            <form action="{{ route('appointment.book', ['step' => 3]) }}" method="post">
+            <form action="{{ $next_step_link }}" method="post">
                 <div class="form-group">
                     <label for="firstname" class="control-label">
                         {{ trans('main.firstname') }}

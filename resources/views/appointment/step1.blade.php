@@ -21,7 +21,7 @@
 
     <div class="row">
         <div class="col-sm-11 col-md-9 col-lg-7">
-            <form action="{{ route('appointment.book', ['step' => 2]) }}" method="post">
+            <form action="{{ $next_step_link }}" method="post">
                 {{ csrf_field() }}
                 <button class="btn btn-success btn-block" name="tos" value="accept">
                     {{ trans('main.accept') }}

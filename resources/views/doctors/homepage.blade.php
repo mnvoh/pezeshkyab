@@ -3,10 +3,10 @@
 @section('content')
 	<div class="row">
 		<div class="col-lg-12">
-			<h3>{{ trans('main3.about_doctor') }}</h3>
+			<h2>{{ trans('main3.about_doctor') }}</h2>
 			<hr />
 			<p>
-				<span class="glyphicon glyphicon-check p-starter"></span>
+				<span class="glyphicon glyphicon-user p-starter"></span>
 				{{ $about }}
 
 				<br /><br />
@@ -16,7 +16,7 @@
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h3>{{ trans('main3.latest_articles') }}</h3>
+			<h2>{{ trans('main3.latest_articles') }}</h2>
 			<hr />
 			<?php if(count($feed)): ?>
 				<?php
@@ -26,7 +26,7 @@
 				<div class="news-feed">
 					<div class="row">
 						<div class="col-xs-12">
-							<h2><a href="#"><?php echo $first_feed['title'] ?></a></h2>
+							<h3><a href="#"><?php echo $first_feed['title'] ?></a></h3>
 							<p>
 								{{trans('main2.published_by')}}:
 								<a href="{{ route('doctors.homepage', ['doctor_id' => $first_feed['publisher_id']]) }}">
@@ -97,15 +97,26 @@
 							</a>
 						</div>
 						<?php
+							$i++;
 						endif;
 						?>
 					</div>
 					<?php
 					endif;
-					endfor;
-					?>
-				<?php endif; ?>
+				endfor;
+				?>
+				<div class="vertical-spacing"></div>
+				<div class="row">
+					<div class="col-sm-12 col-md-3">
+						<a href="{{ route('doctors.articles', ['doctor_id' => $doctor_id]) }}"
+						   class="btn btn-info btn-md btn-block">
+							{{ trans('main3.view_all_articles') }}
+						</a>
+					</div>
+				</div>
+				<div class="vertical-spacing"></div>
 			</div>
+			<?php endif; ?>
 		</div>
 	</div>
 @endsection

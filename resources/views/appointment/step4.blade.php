@@ -19,7 +19,7 @@
 
 
 
-            <form action="{{ route('appointment.book', ['step' => 5]) }}" method="post">
+            <form action="{{ $next_step_link }}" method="post">
                 <input type="hidden" name="date" id="date" value="" />
 
                 {{ csrf_field() }}

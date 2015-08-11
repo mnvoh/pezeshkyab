@@ -17,7 +17,7 @@
 
 
 
-            <form action="<?php echo e(route('appointment.book', ['step' => 5])); ?>" method="post">
+            <form action="<?php echo e($next_step_link); ?>" method="post">
                 <input type="hidden" name="date" id="date" value="" />
 
                 <?php echo e(csrf_field()); ?>

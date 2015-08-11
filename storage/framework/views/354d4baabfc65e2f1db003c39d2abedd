@@ -57,7 +57,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="<?php echo e(url('/')); ?>" class="navbar-brand">
+				<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $doctor_id])); ?>" class="navbar-brand">
 					<?php echo e(trans('main3.dr')); ?> <?php echo e($name); ?>
 
 				</a>
@@ -65,16 +65,28 @@
 			<nav id="doc-navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="#"><?php echo e(trans('main2.home')); ?></a>
+						<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $doctor_id])); ?>">
+							<?php echo e(trans('main2.home')); ?>
+
+						</a>
 					</li>
 					<li>
-						<a href="#"><?php echo e(trans('main2.articles')); ?></a>
+						<a href="<?php echo e(route('doctors.articles', ['doctor_id' => $doctor_id])); ?>">
+							<?php echo e(trans('main2.articles')); ?>
+
+						</a>
 					</li>
 					<li>
-						<a href="#"><?php echo e(trans('main.book_appointment')); ?></a>
+						<a href="<?php echo e(route('appointment.book_for_doctor', ['doctor_id' => $doctor_id, 'step' => 1])); ?>">
+							<?php echo e(trans('main.book_appointment')); ?>
+
+						</a>
 					</li>
 					<li>
-						<a href="#"><?php echo e(trans('main2.ask_question')); ?></a>
+						<a href="<?php echo e(route('doctors.ask', ['doctor_id' => $doctor_id])); ?>">
+							<?php echo e(trans('main2.ask_question')); ?>
+
+						</a>
 					</li>
 				</ul>
 			</nav>

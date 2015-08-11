@@ -20,15 +20,57 @@ class AppointmentController extends Controller
             $data = [
                 'step' => $step,
                 'open_appointments' => $times,
+				'next_step_link' => route('appointment.book', [
+					'step' => $step + 1,
+				]),
             ];
         }
         else {
             $data = [
                 'step' => $step,
+				'next_step_link' => route('appointment.book', [
+					'step' => $step + 1,
+				]),
             ];
         }
         return view("appointment.step$step", $data);
     }
+
+	public function bookForDoctor(Request $request, $doctor_id, $step) {
+		if($step == 3) {
+			return redirect()->route('appointment.book_for_doctor', [
+				'doctor_id' => $doctor_id,
+				'step' => 4,
+			]);
+		}
+
+		if($step == 4) {
+			$times = [
+				$this->getCalPage('139404021130'),
+				$this->getCalPage('139404021330'),
+				$this->getCalPage('139404021730'),
+				$this->getCalPage('139404021930')
+			];
+			$data = [
+				'step' => $step,
+				'open_appointments' => $times,
+				'next_step_link' => route('appointment.book_for_doctor', [
+					'doctor_id' => $doctor_id,
+					'step' => $step + 1,
+				]),
+			];
+		}
+		else {
+			$data = [
+				'step' => $step,
+				'next_step_link' => route('appointment.book_for_doctor', [
+					'doctor_id' => $doctor_id,
+					'step' => $step + 1,
+				]),
+			];
+		}
+		return view("appointment.step$step", $data);
+	}
 
     private function getCalPage($stimestamp) {
         $year = substr($stimestamp, 0, 4);

@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-sm12 col-md-10 col-lg-8">
-            <form action="<?php echo e(route('appointment.book', ['step' => 6])); ?>" method="post">
+            <form action="<?php echo e($next_step_link); ?>" method="post">
                 <?php echo e(csrf_field()); ?>
 
                 <button type="submit" class="btn btn-block btn-success">

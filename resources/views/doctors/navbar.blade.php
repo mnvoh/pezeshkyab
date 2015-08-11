@@ -57,23 +57,31 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="{{ url('/') }}" class="navbar-brand">
+				<a href="{{ route('doctors.homepage', ['doctor_id' => $doctor_id]) }}" class="navbar-brand">
 					{{ trans('main3.dr') }} {{ $name }}
 				</a>
 			</div>
 			<nav id="doc-navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="#">{{ trans('main2.home') }}</a>
+						<a href="{{ route('doctors.homepage', ['doctor_id' => $doctor_id]) }}">
+							{{ trans('main2.home') }}
+						</a>
 					</li>
 					<li>
-						<a href="#">{{ trans('main2.articles') }}</a>
+						<a href="{{ route('doctors.articles', ['doctor_id' => $doctor_id]) }}">
+							{{ trans('main2.articles') }}
+						</a>
 					</li>
 					<li>
-						<a href="#">{{ trans('main.book_appointment') }}</a>
+						<a href="{{ route('appointment.book_for_doctor', ['doctor_id' => $doctor_id, 'step' => 1]) }}">
+							{{ trans('main.book_appointment') }}
+						</a>
 					</li>
 					<li>
-						<a href="#">{{ trans('main2.ask_question') }}</a>
+						<a href="{{ route('doctors.ask', ['doctor_id' => $doctor_id]) }}">
+							{{ trans('main2.ask_question') }}
+						</a>
 					</li>
 				</ul>
 			</nav>
