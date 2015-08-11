@@ -2,23 +2,22 @@
 
 @section('content')
 	<div class="row">
-		<div class="visible-md visible-lg col-md-4 col-lg-4">
-			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation" class="active">
-					<a href="#">{{ trans('main2.home') }}</a>
-				</li>
-				<li role="presentation">
-					<a href="#">{{ trans('main2.articles') }}</a>
-				</li>
-				<li role="presentation">
-					<a href="#">{{ trans('main.book_appointment') }}</a>
-				</li>
-				<li role="presentation">
-					<a href="#">{{ trans('main2.ask_question') }}</a>
-				</li>
-			</ul>
+		<div class="col-lg-12">
+			<h3>{{ trans('main3.about_doctor') }}</h3>
+			<hr />
+			<p>
+				<span class="glyphicon glyphicon-check p-starter"></span>
+				{{ $about }}
+
+				<br /><br />
+			</p>
 		</div>
-		<div class="col-sm-12 col-md-8">
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<h3>{{ trans('main3.latest_articles') }}</h3>
+			<hr />
 			<?php if(count($feed)): ?>
 				<?php
 				$first_feed = $feed[0];

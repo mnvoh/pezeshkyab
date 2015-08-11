@@ -284,6 +284,7 @@ a {
 .quick-link > a > p {
     height: 2.5em;
     max-height: 2.5em;
+    padding: 0 15px;
 }
 
 #map-canvas {
@@ -300,7 +301,7 @@ a {
 #dr-hp-h-img {
     background-size: cover;
     background-position: center center;
-    min-height: 450px;
+    min-height: 350px;
     vertical-align: middle;
     padding-top: 3em;
 }
@@ -310,7 +311,7 @@ a {
 #dr-hp-h-img p {
     color: #666;
     color: rgba(255, 255, 255, 1);
-    text-shadow: 0 1px 1px #000, 0 0 5px #000;
+    text-shadow: 0 1px 1px #000, 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .table-display {
@@ -322,3 +323,13 @@ a {
     vertical-align: middle;
     width: 100%;
 }
+
+.doc-navbar {
+    background: #2775c8;
+}
+
+.glyphicon.p-starter {
+    font-size: 64px;
+    float: left;
+    margin: 0 10px 0 0;
+} 

@@ -36,19 +36,49 @@
             </ul>
         </nav>
     </div>
-    <div id="dr-hp-h-img" style="background-image: url({{ url('img/specialists/' . $specialty . '.jpg') }});">
-		<div class="container">
+    <div id="dr-hp-h-img" class="table-display" style="background-image: url({{ url('img/specialists/' . $specialty . '.jpg') }});">
+		<div class="container table-cell">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1>{{ $name }}</h1>
-					<h2>{{ $specialty_title }}</h2>
-					<p>
-						<span class="glyphicon glyphicon-check"></span>
-						{{ $about }}
-					</p>
+					<h1 class="text-center">{{ trans('main3.dr') }} {{ $name }}</h1>
+					<h2 class="text-center">{{ $specialty_title }}</h2>
 				</div>
 			</div>
 		</div>
-
     </div>
+
+	<div class="doc-navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
+						data-target="#doc-navbar" aria-controls="doc-navbar" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="{{ url('/') }}" class="navbar-brand">
+					{{ trans('main3.dr') }} {{ $name }}
+				</a>
+			</div>
+			<nav id="doc-navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#">{{ trans('main2.home') }}</a>
+					</li>
+					<li>
+						<a href="#">{{ trans('main2.articles') }}</a>
+					</li>
+					<li>
+						<a href="#">{{ trans('main.book_appointment') }}</a>
+					</li>
+					<li>
+						<a href="#">{{ trans('main2.ask_question') }}</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
 </header>
+
+
