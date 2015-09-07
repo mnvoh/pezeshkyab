@@ -1,0 +1,36 @@
+<?php $__env->startSection('content'); ?>
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-8">
+			<h1><?php echo e(trans('main2.fees')); ?></h1>
+			<p class="help-block"><?php echo e(trans('main2.fees_title')); ?></p>
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<th class="min-width-cell">#</th>
+						<th><?php echo e(trans('main.title')); ?></th>
+						<th><?php echo e(trans('main2.fee')); ?></th>
+					</tr>
+					</thead>
+					<tbody>
+					<?php $counter = 1; ?>
+					<?php foreach($fees as $fee): ?>
+						<tr>
+							<td><?php echo e($counter); ?></td>
+							<td><?php echo e($fee['title']); ?></td>
+							<td>
+								<?php echo e($fee['fee']); ?>
+
+								<?php echo e(trans('currencies.' . $fee['currency'])); ?>
+
+							</td>
+						</tr>
+						<?php $counter++; ?>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

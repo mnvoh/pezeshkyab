@@ -1,0 +1,10 @@
+<?php $__env->startSection('content'); ?>
+    <div class="row">
+        <div class="col-sm-12">
+			MNT News Desk:<br />
+			editors@medicalnewstoday.com <br />
+			Tel: +44 (0) 845 468 0075 (UK)* <br />
+		</div>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

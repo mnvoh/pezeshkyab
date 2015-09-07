@@ -10,6 +10,10 @@ header, footer, a {
     font-family: Ubuntu, Tahoma, Verdana, sans-serif;
 }
 
+html {
+    background-color: #152952;
+}
+
 .nopadding {
     padding: 0 !important;
     margin: 0 !important;
@@ -23,6 +27,8 @@ header, footer, a {
 
 .navbar {
     background: #152952;
+    margin: 0;
+    height: 64px;
 }
 .nav.navbar-nav li a {
     color: #eee;
@@ -32,12 +38,16 @@ header, footer, a {
 }
 .navbar-brand {
     color: #ffcc00;
+    padding: 9px;
 }
 .navbar-brand:hover {
     color: #fffd00;
 }
 a {
 	color: #265CAB;
+}
+.navbar-header {
+    height: 64px;
 }
 .navbar-header .icon-bar {
 	background-color: #265CAB;
@@ -51,6 +61,20 @@ a {
 .navbar-title-search h3 {
 	color: #92AED5;
     margin-top: 30px;
+}
+.navbar-logo {
+    width: 48px;
+    height: 48px;
+}
+.navbar-nav > li > a {
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+.container.content-container {
+    background-color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .feed-thumbnail-lg,
 .feed-thumbnail {
@@ -334,4 +358,16 @@ a {
 
 .navbar-static-top {
     border: 0 none;
+}
+
+.noborder {
+    border: 0 none;
+}
+
+.transparent {
+    background: transparent;
+}
+
+hr {
+    border-top-color: #dddddd;
 }

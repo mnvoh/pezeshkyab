@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
-use Validator;
 use App\Http\Controllers\Controller;
+use App\Models\Address;
+use App\Models\Doctor;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Validator;
 
 class AuthController extends Controller
 {
@@ -21,17 +21,19 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use AuthenticatesAndRegistersDoctors, ThrottlesLogins;
+
+    public $redirectTo = "/docfinder/register";
 
     /**
      * Create a new authentication controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
     }
+
 
     /**
      * Get a validator for an incoming registration request.
@@ -41,11 +43,60 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+        $attributes = array(
+            'firstname' => trans('main.firstname'),
+            'lastname' => trans('main.lastname'),
+            'email' => trans('main.email_address'),
+            'password' => trans('main.password'),
+            'national_code' => trans('main.national_code'),
+            'license' => trans('main2.physician_license_number'),
+            'specialty' => trans('main.specialty'),
+            'ban' => trans('main3.bank_account_number'),
+            'mobile' => trans('main3.mobile_number'),
+            'bd_year' => trans('main3.bd_year'),
+            'bd_month' => trans('main3.bd_month'),
+            'bd_date' => trans('main3.bd_date'),
+            'city' => trans('main2.city'),
+            'street_address1' => trans('main3.street_addr_1'),
+            'street_address2' => trans('main3.street_addr_2'),
+            'postal_code' => trans('main3.postal_code'),
+        );
+
+        $messages = array(
+            'clinicLat.required' => trans('main3.must_specify_location'),
+            'clinicLat.numeric' => trans('main3.must_specify_location'),
+            'clinicLng.required' => trans('main3.must_specify_location'),
+            'clinicLng.numeric' => trans('main3.must_specify_location'),
+            'acceptTerms.required' => trans('main3.must_accept_terms'),
+        );
+
+        $rules = array(
+            'firstname' => 'required|max:64',
+            'lastname' => 'required|max:64',
+            'email' => 'required|email|max:255|unique:doctors',
             'password' => 'required|confirmed|min:6',
-        ]);
+            'national_code' => 'required|numeric|digits:10|unique:doctors,ncode',
+            'license' => 'required|max:64|unique:doctors,license',
+            'specialty' => 'required|exists:specialties,id',
+            'ban' => 'required|max:64|unique:doctors',
+            'mobile' => 'required|numeric|unique:doctors',
+            'bd_year' => 'required|numeric|min:1300|max:1420',
+            'bd_month' => 'required|numeric|min:1|max:12',
+            'bd_date' => 'required|numeric|min:1|max:31',
+            'city' => 'required|exists:cities,id',
+            'street_address1' => 'required|max:512',
+            'street_address2' => 'max:512',
+            'postal_code' => 'required|numeric|digits:10',
+            'clinicLat' => 'required|numeric',
+            'clinicLng' => 'required|numeric',
+            'acceptTerms' => 'required',
+        );
+
+        $validator = Validator::make($data, $rules, $messages);
+
+        $validator->setAttributeNames($attributes);
+
+        return $validator;
     }
 
     /**
@@ -56,10 +107,32 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $doctor = Doctor::create([
+            'name' => $data['firstname'],
+            'lname' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'ncode' => $data['national_code'],
+            'license' => $data['license'],
+            'specialty' => $data['specialty'],
+            'ban' => $data['ban'],
+            'mobile' => $data['mobile'],
+            'bd_year' => $data['bd_year'],
+            'bd_month' => $data['bd_month'],
+            'bd_date' => $data['bd_date'],
+            'status' => 'pending',
         ]);
+        $address = Address::create([
+            'city_id' => $data['city'],
+            'street_addr_1' => $data['street_address1'],
+            'street_addr_2' => $data['street_address2'],
+            'zip' => $data['postal_code'],
+            'lat' => $data['clinicLat'],
+            'lng' => $data['clinicLng'],
+        ]);
+
+        $doctor->addresses()->attach($address->id);
+
+        return $doctor;
     }
 }

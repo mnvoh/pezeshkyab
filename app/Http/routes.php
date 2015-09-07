@@ -11,9 +11,9 @@
 |
 */
 
-Route::any('/', function () {
+Route::any('/', ['as' => 'root', function () {
     return view('selector_page');
-});
+}]);
 
 /*          MainController
   ======================================*/
@@ -51,19 +51,36 @@ Route::any('docfinder/privacy-policy', [
 	'uses' => 'MainController@privacyPolicy'
 ]);
 
-/*          UserController
+/*          AuthController
   ======================================*/
-Route::any('docfinder/login', [
+Route::get('docfinder/login', [
     'as' => 'user.login',
-    'uses' => 'UserController@login'
+    'uses' => 'Auth\AuthController@getLogin'
 ]);
-Route::any('docfinder/register', [
+Route::post('docfinder/login', [
+    'as' => 'user.login',
+    'uses' => 'Auth\AuthController@postLogin'
+]);
+Route::get('docfinder/logout', [
+    'as' => 'user.logout',
+    'uses' => 'Auth\AuthController@getLogout'
+]);
+Route::get('docfinder/register', [
     'as' => 'user.register',
-    'uses' => 'UserController@register'
+    'uses' => 'Auth\AuthController@getRegister'
 ]);
-Route::any('docfinder/forgot-password', [
-    'as' => 'user.forgot_password',
-    'uses' => 'UserController@forgotPassword'
+Route::post('docfinder/register', [
+    'as' => 'user.register',
+    'uses' => 'Auth\AuthController@postRegister'
+]);
+
+Route::get('docfinder/register-complete', [
+    'as' => 'user.register_complete',
+    'uses' => 'Auth\AuthController@getRegisterComplete'
+]);
+
+Route::controllers([
+    'password' => 'Auth\PasswordController',
 ]);
 
 

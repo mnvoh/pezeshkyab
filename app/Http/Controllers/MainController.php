@@ -7,6 +7,8 @@ class MainController extends Controller {
 
 	public function index(Request $request) {
 		return view('main.home', array(
+			'includeMainCarousel' => true,
+			'includeMedicalQuestionForm' => true,
 			'feed' => array(
                 array(
                     'title' => 'Awareness of fertility preservation options among younger cancer '

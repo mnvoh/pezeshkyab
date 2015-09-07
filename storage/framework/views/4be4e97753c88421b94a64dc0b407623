@@ -1,0 +1,50 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="row">
+		<div class="col-sm-12 col-md-10 col-lg-8">
+			<h1><?php echo e(trans('main2.find_a_doctor')); ?></h1>
+			<p class="help-block"><?php echo e(trans('main2.find_help')); ?></p>
+			<form action="" method="get">
+				<div class="form-group">
+					<label for="firstname" class="control-label">
+						<?php echo e(trans('main.firstname')); ?>
+
+					</label>
+					<input type="text" name="firstname" id="firstname" class="form-control"
+						   placeholder="<?php echo e(trans('main.firstname')); ?>" />
+				</div>
+				<div class="form-group">
+					<label for="lastname" class="control-label">
+						<?php echo e(trans('main.lastname')); ?>
+
+					</label>
+					<input type="text" name="lastname" id="lastname" class="form-control"
+						   placeholder="<?php echo e(trans('main.lastname')); ?>" />
+				</div>
+
+				<div class="form-group">
+					<label for="specialty" class="control-label">
+						<?php echo e(trans('main.specialty')); ?>
+
+					</label>
+					<?php echo $__env->make('specialties_select', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+				</div>
+
+				<div class="form-group">
+					<label for="city" class="control-label">
+						<?php echo e(trans('main2.city')); ?>
+
+					</label>
+					<?php echo $__env->make('cities_select', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+				</div>
+
+				<button type="submit" class="btn btn-block btn-success">
+					<?php echo e(trans('main2.find')); ?>
+
+				</button>
+			</form>
+		</div>
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

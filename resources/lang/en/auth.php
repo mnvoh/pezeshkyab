@@ -15,5 +15,6 @@ return [
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    'input_error' => 'Input Error',
+    'fix_input' => 'Please fix the following errors to continue.',
 ];

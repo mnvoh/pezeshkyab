@@ -1,0 +1,65 @@
+<div id="medical-question" class="medical-question">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-heading text-center"><?php echo e(trans('main.medical_question')); ?></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="section-subheading  text-center text-muted"><?php echo e(trans('main.medical_question_desc')); ?></h3>
+            </div>
+        </div>
+
+        <form action="#" method="post">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="q_name"
+                               placeholder="<?php echo e(trans('main2.your_name')); ?> *"/>
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="q_email"
+                               placeholder="<?php echo e(trans('main.email_address')); ?> *"/>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="q_doctor"
+                               placeholder="<?php echo e(trans('main.doctor_name')); ?> *"/>
+                    </div>
+
+                    <div class="form-group">
+                        <?php echo $__env->make('cities_select', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    </div>
+
+                    <div class="form-group">
+                        <?php echo $__env->make('specialties_select', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="q_title"
+                               placeholder="<?php echo e(trans('main.title')); ?> *"/>
+                    </div>
+
+                    <textarea class="form-control" rows="8"
+                              placeholder="<?php echo e(trans('main.your_question')); ?> *"></textarea>
+                </div>
+            </div>
+
+            <div class="row vertical-spacing"></div>
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <button type="submit" class="btn btn-success btn-xlg">
+                        <?php echo e(trans('main.ask')); ?>
+
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

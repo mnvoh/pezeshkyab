@@ -44,15 +44,13 @@
     <body>
     	@include('navbar')
 
-        <div class="container">
+        <div class="container content-container">
             @section('content')
             @show
         </div>
 
-        <?php if(Route::getCurrentRoute()->getName() == 'main.docfinder_home'): ?>
+        <?php if(isset($includeMedicalQuestionForm) && $includeMedicalQuestionForm): ?>
             @include('medical_question')
-        <?php else: ?>
-            <div class="row vertical-spacing"></div>
         <?php endif; ?>
 
         @include('footer')

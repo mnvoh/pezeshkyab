@@ -5,6 +5,9 @@ var map;
 var markersArray = [];
 
 $(function() {
+    var curLat = parseFloat($('input#clinicLat').val());
+    var curLng = parseFloat($('input#clinicLng').val());
+
     var mapCanvas = document.getElementById('map-canvas');
     var mapOptions = {
         center: new google.maps.LatLng(35.696814, 51.3498186),
@@ -24,6 +27,10 @@ $(function() {
         document.getElementById("clinicLat").value = event.latLng.lat();
         document.getElementById("clinicLng").value = event.latLng.lng();
     });
+
+    if(curLat !== NaN && curLng !== NaN) {
+        placeMarker({lat: curLat, lng: curLng});
+    }
 });
 
 function placeMarker(location) {
@@ -37,8 +44,6 @@ function placeMarker(location) {
 
     // add marker in markers array
     markersArray.push(marker);
-
-    //map.setCenter(location);
 }
 
 // Deletes all markers in the array by removing references to them
