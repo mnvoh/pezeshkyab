@@ -25,15 +25,17 @@ html {
     font-weight: bold;
 }
 
+#bs-navbar {
+    background: #152952;
+}
 .navbar {
     background: #152952;
     margin: 0;
-    height: 64px;
 }
 .nav.navbar-nav li a {
     color: #eee;
 }
-.nav.navbar-nav li a:hover {
+.nav.navbar-nav li a:hover, .nav.navbar-nav li a:focus {
     background-color: #234487;
 }
 .navbar-brand {
@@ -370,4 +372,101 @@ a {
 
 hr {
     border-top-color: #dddddd;
+}
+
+
+
+
+
+
+
+
+
+
+
+div.main-search-container {
+    background: #234487;
+    color: #fff;
+    padding: 12px 0;
+}
+div.hidden-search {
+    display: none;
+}
+#show-find-doctor {
+    color: #fc0;
+}
+
+div.main-search-container label {
+    font-weight: normal;
+}
+
+div.main-search-container form div.main-searchbox-wrapper {
+    border: 1px solid #5cb85c;
+    height: 40px;
+    overflow: hidden;
+    padding: 0;
+}
+
+div.main-search-container form>div.main-searchbox-wrapper>a#btn-adv-search span {
+    font-size: 34px;
+    line-height: 38px;
+}
+div.main-search-container form>div.main-searchbox-wrapper>a#btn-adv-search {
+    cursor: pointer;
+    display: block;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    float: left;
+}
+div.main-search-container form>div.main-searchbox-wrapper>div.input-wrapper {
+    height: 40px;
+    font-size: 20px;
+    margin: 0 100px 0 50px;
+}
+div.main-search-container form>div.main-searchbox-wrapper>div.input-wrapper>input {
+    width: 100%;
+    height: 100%;
+}
+div.main-search-container form>div.main-searchbox-wrapper>button {
+    border: 0 none;
+    height: 40px;
+    width: 80px;
+    float: right;
+}
+
+div.main-search-container form div.main-searchbox-wrapper input:focus {
+    outline: none;
+}
+
+div.main-search-container div.adv-search {
+    display: none;
+}
+
+.form-control-focus {
+    border-color: #5cb85c;
+    outline: 0;
+    box-shadow: 0 0 8px 3px #5cb85c;
+}
+.main-search-container h1 {
+    text-align: center;
+    color: #eee;
+}
+
+.inline-form-control {
+    width: auto;
+    display: inline-block;
+}
+
+.date-wrapper {
+    display: inline;
+}
+.date-wrapper input {
+    width: 50px;
+    text-align: center;
+    color: #234487;
+    font-weight: bold;
+}
+.text-error {
+    color: #900;
 }

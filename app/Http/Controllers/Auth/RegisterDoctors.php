@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Doctor;
 use Illuminate\Foundation\Auth\RedirectsUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 trait RegisterDoctors
 {
@@ -17,7 +17,9 @@ trait RegisterDoctors
      */
     public function getRegister()
     {
-        return view('auth.register', ['includeMaps' => true]);
+
+        Doctor::all()->where("id", 10)->first()->update(["lname" => "mohamafdifi"]);
+        return view('auth.register', ['no_search' => true]);
     }
 
     /**

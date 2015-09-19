@@ -19,6 +19,8 @@
 |
 */
 
+define("ELASTICSEARCH_DATE_FORMAT", "yyyy-MM-ddTHH:mm:ss");
+
 require __DIR__.'/../bootstrap/autoload.php';
 
 /*

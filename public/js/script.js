@@ -16,5 +16,25 @@
                 $('#signup-passport-number').slideUp(300);
             }
         });
+
+        $('.main-search-input').focus(function() {
+            $(this).parents("div.form-control").addClass("form-control-focus");
+        });
+        $('.main-search-input').blur(function() {
+            $(this).parents("div.form-control").removeClass("form-control-focus");
+        });
+
+        $('#show-find-doctor').click(function() {
+             $('div.main-search-container').slideToggle(200);
+        });
+        $('#btn-adv-search').click(function() {
+            $('div.main-search-container div.adv-search').slideToggle(200);
+            var currentState = $('input#s_adv').prop('checked');
+            $('input#s_adv').prop('checked', !currentState);
+
+            if(!currentState) {
+                initMap();
+            }
+        });
     });
 })(jQuery);

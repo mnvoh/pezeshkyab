@@ -86,7 +86,7 @@ Route::controllers([
 
 /*          SearchController
   ======================================*/
-Route::any('docfinder/find-doctor', [
+Route::any('docfinder/find', [
     'as' => 'search.find',
     'uses' => 'SearchController@find'
 ]);

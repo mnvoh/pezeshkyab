@@ -127,11 +127,12 @@ class AuthController extends Controller
             'street_addr_1' => $data['street_address1'],
             'street_addr_2' => $data['street_address2'],
             'zip' => $data['postal_code'],
-            'lat' => $data['clinicLat'],
-            'lng' => $data['clinicLng'],
+            'lat' => $data['locationLat'],
+            'lng' => $data['locationLon'],
         ]);
 
-        $doctor->addresses()->attach($address->id);
+        $doctor->attachTo('App\Models\Address', $address->id);
+        $doctor->attachTo('App\Models\Specialty', $data['specialty']);
 
         return $doctor;
     }

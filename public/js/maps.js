@@ -5,8 +5,13 @@ var map;
 var markersArray = [];
 
 $(function() {
-    var curLat = parseFloat($('input#clinicLat').val());
-    var curLng = parseFloat($('input#clinicLng').val());
+    initMap();
+});
+
+function initMap()
+{
+    var curLat = parseFloat($("input[name='locationLat']").val());
+    var curLng = parseFloat($("input[name='locationLon']").val());
 
     var mapCanvas = document.getElementById('map-canvas');
     var mapOptions = {
@@ -15,7 +20,7 @@ $(function() {
         mapTypeId: google.maps.MapTypeId.ROADMAP
     }
 
-    map = new google.maps.Map(mapCanvas, mapOptions)
+    map = new google.maps.Map(mapCanvas, mapOptions);
 
     // add a click event handler to the map object
     google.maps.event.addListener(map, "click", function(event)
@@ -24,14 +29,14 @@ $(function() {
         placeMarker(event.latLng);
 
         // display the lat/lng in your form's lat/lng fields
-        document.getElementById("clinicLat").value = event.latLng.lat();
-        document.getElementById("clinicLng").value = event.latLng.lng();
+        $("input[name='locationLat']").val(event.latLng.lat());
+        $("input[name='locationLon']").val(event.latLng.lng());
     });
 
     if(curLat !== NaN && curLng !== NaN) {
         placeMarker({lat: curLat, lng: curLng});
     }
-});
+}
 
 function placeMarker(location) {
     // first remove all markers if there are any

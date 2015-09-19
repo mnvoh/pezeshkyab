@@ -4,42 +4,102 @@
 
 	<div class="row">
 		<div class="col-sm-12 col-md-10 col-lg-8">
-			<h1>{{ trans('main2.find_a_doctor') }}</h1>
-			<p class="help-block">{{ trans('main2.find_help') }}</p>
-			<form action="" method="get">
-				<div class="form-group">
-					<label for="firstname" class="control-label">
-						{{ trans('main.firstname') }}
-					</label>
-					<input type="text" name="firstname" id="firstname" class="form-control"
-						   placeholder="{{ trans('main.firstname') }}" />
-				</div>
-				<div class="form-group">
-					<label for="lastname" class="control-label">
-						{{ trans('main.lastname') }}
-					</label>
-					<input type="text" name="lastname" id="lastname" class="form-control"
-						   placeholder="{{ trans('main.lastname') }}" />
-				</div>
+			<?php if($error): ?>
+                <h3 class="text-error">{{ trans('main3.no_search_server') }}</h3>
+            <?php elseif($no_query): ?>
+                <h3 class="text-error">{{ trans('main3.no_query') }}</h3>
+            <?php else: ?>
+                <h3>{{ trans('main3.search_results') }}</h3>
+                <p class="help-block">
+                    {{ trans('main3.sr_stats', ['count' => $count, 'time' => $time_took]) }}
+                </p>
 
-				<div class="form-group">
-					<label for="specialty" class="control-label">
-						{{ trans('main.specialty') }}
-					</label>
-					@include('specialties_select')
-				</div>
+                @if($suggestion != null)
+                    <h3>
+                        {{ trans('main3.suggestion') }}
+                        <form method="get" action="{{ route('search.find') }}" class="inline-form-control">
+                            <?php
+                            foreach($_GET as $name => $value) {
+                                $name = htmlspecialchars($name);
+                                $value = htmlspecialchars($value);
+                                if($name == 'page')
+                                    continue;
+                                if($name == 's_q')
+                                    $value = $suggestion;
+                                echo '<input type="hidden" name="'. $name .'" value="'. $value .'">';
+                            }
+                            ?>
+                            <button type="submit" class="btn btn-link" style="font-size: 20px; font-weight: bold;">
+                                {{ $suggestion }}
+                            </button>
+                        </form>
+                    </h3>
+                @endif
 
-				<div class="form-group">
-					<label for="city" class="control-label">
-						{{ trans('main2.city') }}
-					</label>
-					@include('cities_select')
-				</div>
+                <div class="search-results">
+                    @foreach($results as $result)
+                        <div class="search-result">
+                            <h4 class="inline-form-control">
+                                <a href="{{ route('doctors.homepage', ['doctor_id' => $result['_id']]) }}">
+                                    {{ $result['_source']['fullname'] }}
+                                </a>
+                                <br />
+                            </h4>
+                            &middot;
+                            @foreach($result['_source']['specialty'] as $specialty)
+                                {{ $specialty }}
+                            @endforeach
+                            &middot;
+                            @foreach($result['_source']['city'] as $city)
+                                {{ $city }}
+                            @endforeach
+                        </div>
+                        <br />
+                    @endforeach
 
-				<button type="submit" class="btn btn-block btn-success">
-					{{ trans('main2.find') }}
-				</button>
-			</form>
+                    <nav>
+                        <ul class="pagination">
+                            @if($currentPage > 1)
+                            <li>
+                                <a href="{{ $pagelessUrl . "page=" . ($currentPage - 1) }}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            @else
+                                <li class="disabled">
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                            @endif
+
+                            @for($i = 1; $i <= $pageCount; $i++)
+                                @if($i == $currentPage)
+                                    <li class="active">
+                                        <a href="{{ $pagelessUrl . "page=" . $i }}">{{ $i }}</a>
+                                    </li>
+                                @else
+                                    <li><a href="{{ $pagelessUrl . "page=" . $i }}">{{ $i }}</a></li>
+                                @endif
+                            @endfor
+
+                            @if($currentPage < $pageCount)
+                                <li>
+                                    <a href="{{ $pagelessUrl . "page=" . ($currentPage + 1) }}" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            @else
+                                <li class="disabled">
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            @endif
+                        </ul>
+                    </nav>
+                </div>
+            <?php endif; ?>
 		</div>
 	</div>
 

@@ -18,7 +18,7 @@ class MainController extends Controller {
                     'content' => \Utils::word_safe_substr(file_get_contents(base_path() . '/news1'), 512),
 					'publisher' => 'محمد محمدی',
 					'publisher_id' => 12,
-					'published_on' => \Utils::prefDate(time(), $request->segment(1)),
+					'published_on' => \Utils::shamsiDateFromGreg(time()),
                 ),
                 array(
                     'title' => "Skin cancer risk linked with grapefruit and orange juice",
@@ -27,7 +27,7 @@ class MainController extends Controller {
                     'content' => \Utils::word_safe_substr(file_get_contents(base_path() . '/news2'), 256),
 					'publisher' => 'محمد محمدی',
 					'publisher_id' => 12,
-					'published_on' => \Utils::prefDate(time(), $request->segment(1)),
+					'published_on' => \Utils::shamsiDateFromGreg(time()),
                 ),
                 array(
                     'title' => 'Is milk bad for you?',
@@ -36,7 +36,7 @@ class MainController extends Controller {
                     'content' => \Utils::word_safe_substr(file_get_contents(base_path() . '/news3'), 256),
 					'publisher' => 'محمد محمدی',
 					'publisher_id' => 12,
-					'published_on' => \Utils::prefDate(time(), $request->segment(1)),
+					'published_on' => \Utils::shamsiDateFromGreg(time()),
                 )
 			),
 		));

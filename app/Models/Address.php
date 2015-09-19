@@ -14,7 +14,7 @@ class Address extends Model
 
     public function city()
     {
-        return $this->belongsTo('App\Model\City');
+        return $this->belongsTo('App\Models\City');
     }
 
     public function doctors()

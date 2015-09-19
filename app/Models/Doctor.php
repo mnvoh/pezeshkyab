@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Elasticsearch\ClientBuilder;
+use Elasticsearch\Client as ESClient;
 
 class Doctor extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
@@ -19,7 +21,7 @@ class Doctor extends Model implements AuthenticatableContract, CanResetPasswordC
      *
      * @var string
      */
-    protected $dateFormat = 'U';
+//    protected $dateFormat = 'U';
 
     /**
      * The attributes that are mass assignable.
@@ -77,6 +79,11 @@ class Doctor extends Model implements AuthenticatableContract, CanResetPasswordC
         return $this->hasMany('App\Models\PublicChat');
     }
 
+    public function rating()
+    {
+        return $this->ratings()->avg('rating');
+    }
+
     public function ratings()
     {
         return $this->hasMany('App\Models\Rating');
@@ -95,5 +102,84 @@ class Doctor extends Model implements AuthenticatableContract, CanResetPasswordC
     public function transactions()
     {
         return $this->hasMany('App\Models\Transaction');
+    }
+
+    public function indexInElasticsearch(ESClient $esclient = null)
+    {
+        if($esclient === null) {
+            $esclient = ClientBuilder::create()->build();
+        }
+
+        $specialties = array();
+        foreach($this->specialties as $s) {
+            $specialties[] = $s->title;
+        }
+
+        $hospitals = array();
+        foreach($this->hospitals as $h) {
+            $hospitals[] = $h->name;
+        }
+
+
+        $provinces = array();
+        $cities = array();
+        $coordinates = array();
+        foreach($this->addresses as $a) {
+            $city = $a->city;
+            $province = $city->province;
+
+            if(!in_array($city->name, $cities))
+                $cities[] = $city->name;
+
+            if(!in_array($province->name, $provinces))
+                $provinces[] = $province->name;
+
+            //elastic search will have the longitude in the first element.
+            $coordinates[] = [$a->lng, $a->lat];
+        }
+
+        $schedules = array();
+        $open_schedules = $this->reservations;
+        foreach($open_schedules as $os) {
+            $schedules[] = $os->rtime;
+        }
+
+        $params = [
+        'index' => 'pezeshkyab',
+            'type' => 'doctor',
+            'id' => $this->id,
+            'body' => [
+                'fullname' => $this->name . ' ' . $this->lname,
+                'firstname' => $this->name,
+                'lastname' =>$this->lname,
+                'specialty' => $specialties,
+                'hospital' => $hospitals,
+                'province' => $provinces,
+                'city' => $cities,
+                'location' => $coordinates,
+                'rating' => $this->rating(),
+                'open_schedules' => $schedules,
+            ],
+        ];
+
+        return $esclient->index($params);
+    }
+
+    public function attachTo($to, $id)
+    {
+        switch($to) {
+            case 'App\Models\Address':
+                $this->addresses()->attach($id);
+                break;
+            case 'App\Models\Specialty':
+                $this->specialties()->attach($id);
+                break;
+            case 'App\Models\Hospital':
+                $this->hospitals()->attach($id);
+                break;
+            default:
+                return;
+        }
+        $this->indexInElasticsearch();
     }
 }

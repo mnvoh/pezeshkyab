@@ -2,7 +2,6 @@
 
 @section('content')
     @parent
-    {{ $red }}
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 login-form">
             @if (count($errors) > 0)
@@ -193,8 +192,8 @@
                             <span class="text-danger">*</span>
                         </p>
 					</label>
-					<input type="hidden" name="clinicLat" id="clinicLat" value="{{ old('clinicLat') }}" />
-					<input type="hidden" name="clinicLng" id="clinicLng" value="{{ old('clinicLng') }}" />
+					<input type="hidden" name="locationLat" value="{{ old('locationLat') }}" />
+					<input type="hidden" name="locationLon" value="{{ old('locationLon') }}" />
 					<div id="map-canvas"></div>
 				</div>
 
