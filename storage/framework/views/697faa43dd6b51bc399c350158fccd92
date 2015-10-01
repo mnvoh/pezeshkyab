@@ -1,0 +1,39 @@
+<?php $__env->startSection('content'); ?>
+
+    <?php echo $__env->make('appointment.step-viewer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+    <div class="row">
+        <div class="col-sm12 col-md-10 col-lg-8">
+            <?php if(isset($error)): ?>
+                <p class="text-error"><?php echo e($error); ?></p>
+            <?php endif; ?>
+            <table class="table table-bordered">
+                <tr>
+                    <th colspan="2" class="text-center"><?php echo e(trans('main4.invoice')); ?></th>
+                </tr>
+                <tr>
+                    <th><?php echo e(trans('main.title')); ?></th>
+                    <td><?php echo e($filled_info['b_fee_title']); ?></td>
+                </tr>
+                <tr>
+                    <th><?php echo e(trans('main4.amount')); ?></th>
+                    <td><?php echo e($filled_info['b_fee_amount']); ?> <?php echo e(trans('currencies.irr')); ?></td>
+                </tr>
+            </table>
+            <?php if(is_numeric($filled_info['b_fee_amount']) && $filled_info['b_fee_amount'] > 0): ?>
+                <form action="<?php echo e($next_step_link); ?>" method="post">
+                    <?php echo e(csrf_field()); ?>
+
+                    <button type="submit" class="btn btn-block btn-success"  name="form-submitted" value="true">
+                        <?php echo e(trans('main4.pay')); ?>
+
+                    </button>
+                </form>
+            <?php endif; ?>
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

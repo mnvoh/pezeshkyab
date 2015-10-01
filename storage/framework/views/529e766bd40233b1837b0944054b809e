@@ -1,0 +1,12 @@
+<?php $__env->startSection('content'); ?>
+
+    <?php echo $__env->make('appointment.step-viewer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+    <div class="row">
+
+    </div>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

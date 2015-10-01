@@ -8,7 +8,9 @@
     <div class="row">
         <div class="col-sm12 col-md-10 col-lg-8">
             <h2>{{ trans('main.schedule_information') }}</h2>
-
+            @if(isset($error))
+                <p class="text-error">{{ $error }}</p>
+            @endif
             <div class="row">
                 <?php foreach($open_appointments as $a): ?>
                     <div class="col-sm-6 col-md-4 col-lg-3">
@@ -20,11 +22,11 @@
 
 
             <form action="{{ $next_step_link }}" method="post">
-                <input type="hidden" name="date" id="date" value="" />
+                <input type="hidden" name="reservation_id" id="reservation_id" value="" />
 
                 {{ csrf_field() }}
 
-                <button type="submit" class="btn btn-block btn-success">
+                <button type="submit" class="btn btn-block btn-success" name="form-submitted" value="true">
                     {{ trans('main.next') }}
                 </button>
 

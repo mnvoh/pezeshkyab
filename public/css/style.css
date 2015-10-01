@@ -40,10 +40,13 @@ html {
 }
 .navbar-brand {
     color: #ffcc00;
-    padding: 9px;
+    padding: 20px 0;
 }
 .navbar-brand:hover {
     color: #fffd00;
+}
+.navbar-brand>img {
+    margin-top: -11px;
 }
 a {
 	color: #265CAB;
@@ -469,4 +472,42 @@ div.main-search-container div.adv-search {
 }
 .text-error {
     color: #900;
+}
+
+#doctor-picker>input[type="text"] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#doctor-picker>label {
+    color: #2b669a;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    text-align: center;
+}
+#doctor-picker>div {
+    background: #fff;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 10px 0;
+    margin-top: -40px;
+    position: relative;
+    z-index: 1;
+    display: none;
+}
+#doctor-picker>div>p {
+    background: #fff;
+    color: #222;
+    margin: 1px 0;
+    padding: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#doctor-picker>div>p:hover {
+    background: #2785c6;
+    color: #fff;
+}
+.vert-sep {
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    border-left: 1px solid rgba(0, 0, 0, 0.20);
+    height: 64px;
 }

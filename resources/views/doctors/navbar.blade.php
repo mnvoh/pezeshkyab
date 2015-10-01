@@ -1,7 +1,7 @@
 <!-- master nav
 ====================================-->
 <header class="navbar navbar-static-top" id="top" role="banner">
-    <div class="container">
+    <div class="container navbar-container">
         <div class="navbar-header">
             <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
                     data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
@@ -10,11 +10,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="{{ url('/') }}" class="navbar-brand"> {{ trans('main2.home') }} </a>
-            <a href="{{ route('main.docfinder_home') }}" class="navbar-brand"> {{ trans('main.site_name') }} </a>
+            <a href="{{ url('/') }}" class="navbar-brand">
+                <img src="{{url('/img/logo.png')}}" alt="{{ trans('main.selector_page_title') }}"
+                     class="navbar-logo"/>
+            </a>
         </div>
         <nav id="bs-navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
+                <li>
+                    <a href="{{ route('main.docfinder_home') }}"> {{ trans('main.site_name') }} </a>
+                </li>
                 <li>
                     <a href="{{ route('main.about') }}"> {{ trans('main.about') }} </a>
                 </li>
@@ -24,18 +29,26 @@
                 <li>
                     <a href="{{ route('main.links') }}"> {{ trans('main.links') }} </a>
                 </li>
+                <li>
+                    <a href="javascript:;" id="show-find-doctor"> {{ trans('main3.find_a_doctor') }} </a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
+                <li><a href="{{ route('user.logout') }}"> {{ trans('main3.logout') }} </a></li>
+                <?php else: ?>
                 <li><a href="{{ route('user.login') }}"> {{ trans('main.login') }} </a></li>
                 <li><a href="{{ route('user.register') }}"> {{ trans('main.register') }} </a></li>
+                <?php endif; ?>
                 <?php foreach($langs as $l => $ll): ?>
-                    <?php if($l != $lang): ?>
-                        <li><a href="<?php echo LangChanger::change($l); ?>"> <?php echo $ll; ?> </a></li>
-                    <?php endif; ?>
+                <?php if($l != $lang): ?>
+                <li><a href="<?php echo LangChanger::change($l); ?>"> <?php echo $ll; ?> </a></li>
+                <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
         </nav>
     </div>
+
     <div id="dr-hp-h-img" class="table-display" style="background-image: url({{ url('img/specialists/' . $specialty . '.jpg') }});">
 		<div class="container table-cell">
 			<div class="row">
@@ -83,6 +96,14 @@
 							{{ trans('main2.ask_question') }}
 						</a>
 					</li>
+                    @if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::user()->id == $doctor_id)
+                        <li class="vert-sep"></li>
+                        <li>
+                            <a href="{{ route('doctors.ask', ['doctor_id' => $doctor_id]) }}">
+                                {{ trans('main2.ask_question') }}
+                            </a>
+                        </li>
+                    @endif
 				</ul>
 			</nav>
 		</div>

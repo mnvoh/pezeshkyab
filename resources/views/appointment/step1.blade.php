@@ -23,7 +23,7 @@
         <div class="col-sm-11 col-md-9 col-lg-7">
             <form action="{{ $next_step_link }}" method="post">
                 {{ csrf_field() }}
-                <button class="btn btn-success btn-block" name="tos" value="accept">
+                <button class="btn btn-success btn-block" name="form-submitted" value="true">
                     {{ trans('main.accept') }}
                 </button>
             </form>

@@ -55,9 +55,7 @@
     	<script src="<?php echo e(url('js/bootstrap.js')); ?>"></script>
         <script src="<?php echo e(url('js/script.js')); ?>"></script>
 
-        <?php if($includeMaps): ?>
-            <script src="https://maps.googleapis.com/maps/api/js"></script>
-            <script src="<?php echo e(url('js/maps.js')); ?>"></script>
-        <?php endif; ?>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script src="<?php echo e(url('js/maps.js')); ?>"></script>
     </body>
 </html>

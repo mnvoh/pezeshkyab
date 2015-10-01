@@ -61,7 +61,8 @@
     	<script src="<?php echo e(url('js/jquery.js')); ?>"></script>
     	<script src="<?php echo e(url('js/bootstrap.js')); ?>"></script>
         <script src="<?php echo e(url('js/script.js')); ?>"></script>
-
+        <script src="<?php echo e(url('js/elasticsearch.js')); ?>"></script>
+        <script src="<?php echo e(url('js/elasticsearch-jquery.js')); ?>"></script>
 
         <script src="https://maps.googleapis.com/maps/api/js"></script>
         <script src="<?php echo e(url('js/maps.js')); ?>"></script>

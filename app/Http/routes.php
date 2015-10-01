@@ -116,6 +116,11 @@ Route::any('doctors/{doctor_id}/articles', [
 	'uses' => 'DoctorsController@articles'
 ]);
 
+Route::any('articles/{medical_news_id}', [
+    'as' => 'doctors.article',
+    'uses' => 'DoctorsController@article'
+]);
+
 Route::any('doctors/{doctor_id}/ask', [
 	'as' => 'doctors.ask',
 	'uses' => 'DoctorsController@ask'

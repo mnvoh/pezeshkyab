@@ -11,7 +11,7 @@
             <div class="col-xs-12">
                 <h2><a href="#"><?php echo $first_feed['title'] ?></a></h2>
 				<p>
-					{{trans('main2.published_by')}}:
+					{{ trans('main2.published_by') }}:
 					<a href="{{ route('doctors.homepage', ['doctor_id' => $first_feed['publisher_id']]) }}">
 						<?php echo $first_feed['publisher'] ?>
 					</a>

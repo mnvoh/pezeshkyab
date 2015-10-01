@@ -1,0 +1,30 @@
+<?php $__env->startSection('content'); ?>
+
+    <?php echo $__env->make('appointment.step-viewer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+    <div class="row">
+        <div class="col-sm12 col-md-10 col-lg-8">
+            <h2><?php echo e(trans('main.doctor_desc')); ?></h2>
+            <?php if(isset($error)): ?>
+                <p class="text-error"><?php echo e($error); ?></p>
+            <?php endif; ?>
+            <form action="<?php echo e($next_step_link); ?>" method="post">
+                <?php echo $__env->make('doctor-picker', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+                <?php echo e(csrf_field()); ?>
+
+
+                <button type="submit" class="btn btn-block btn-success" name="form-submitted" value="true">
+                    <?php echo e(trans('main.next')); ?>
+
+                </button>
+
+                <div class="row vertical-spacing"></div>
+            </form>
+        </div>
+    </div> <!-- <div class="row"> -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

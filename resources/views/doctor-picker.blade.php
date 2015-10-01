@@ -1,0 +1,15 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: mnVoh
+ * Date: 9/19/2015
+ * Time: 3:36 PM
+ */
+?>
+<div id="doctor-picker">
+    <input class="form-control" type="text" placeholder="{{ trans('main4.type_to_find_doctor') }}" />
+    <input type="hidden" name="doctor_id" />
+    <label class="form-control">{{ trans('main4.type_to_find_doctor') }}</label>
+    <div id="dp-items">
+    </div>
+</div>

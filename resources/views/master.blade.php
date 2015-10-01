@@ -58,7 +58,8 @@
     	<script src="{{ url('js/jquery.js') }}"></script>
     	<script src="{{ url('js/bootstrap.js') }}"></script>
         <script src="{{ url('js/script.js') }}"></script>
-
+        <script src="{{ url('js/elasticsearch.js') }}"></script>
+        <script src="{{ url('js/elasticsearch-jquery.js') }}"></script>
 
         <script src="https://maps.googleapis.com/maps/api/js"></script>
         <script src="{{ url('js/maps.js') }}"></script>

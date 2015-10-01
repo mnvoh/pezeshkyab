@@ -19,24 +19,12 @@
                                placeholder="{{ trans('main2.your_name') }} *"/>
                     </div>
 
-
                     <div class="form-group">
                         <input type="email" class="form-control" id="q_email"
                                placeholder="{{ trans('main.email_address') }} *"/>
                     </div>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="q_doctor"
-                               placeholder="{{ trans('main.doctor_name') }} *"/>
-                    </div>
-
-                    <div class="form-group">
-                        @include('cities_select')
-                    </div>
-
-                    <div class="form-group">
-                        @include('specialties_select')
-                    </div>
+                    @include('doctor-picker')
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
