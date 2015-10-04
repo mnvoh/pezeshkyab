@@ -55,6 +55,15 @@
             data.query.match._all.fuzziness = "AUTO";
             es.request("POST", "pezeshkyab/doctor/_search", data);
         });
+
+        $('#summernote').summernote({
+            height: 300,
+            minHeight: null,
+            maxHeight: null,
+            focus: true,
+        });
+
+        $('#summernote').code($('#summernote-prev-value').html());
     });
 })(jQuery);
 
@@ -105,4 +114,8 @@ var pickDoctor = function() {
     $('div#doctor-picker>input[type="hidden"]').val(id);
     $('div#doctor-picker>label').html(label);
     $('div#doctor-picker>input[type="text"]').val('');
+};
+
+var prepareSummernoteSubmission = function() {
+    $('textarea#summernote-code').html($('#summernote').code());
 };

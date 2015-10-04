@@ -1,24 +1,22 @@
-@extends('master')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="row">
         <div class="col-sm-12 col-md-10 col-lg-8">
-			<h2>{{ trans('main2.articles') }}</h2>
+			<h2><?php echo e(trans('main2.articles')); ?></h2>
 			<hr />
-			@if($mednews_added)
-				<p class="alert-success">{{ trans('main4.mednews_added') }}</p>
-			@endif
+			<?php if($mednews_added): ?>
+				<p class="alert-success"><?php echo e(trans('main4.mednews_added')); ?></p>
+			<?php endif; ?>
 			<div class="news-feed">
 				<?php foreach($feed as $f): ?>
 					<div class="row">
 						<div class="col-xs-12">
 							<h3><a href="#"><?php echo $f['title'] ?></a></h3>
 							<p>
-								{{trans('main2.published_by')}}:
-								<a href="{{ route('doctors.homepage', ['doctor_id' => $f['publisher_id']]) }}">
+								<?php echo e(trans('main2.published_by')); ?>:
+								<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $f['publisher_id']])); ?>">
 									<?php echo $f['publisher'] ?>
 								</a>
-								{{ trans('main2.on') }}:
+								<?php echo e(trans('main2.on')); ?>:
 								<?php echo $f['published_on'] ?>
 							</p>
 						</div>
@@ -39,9 +37,10 @@
 				<div class="vertical-spacing"></div>
 
 				<nav>
-					{!! $med_news->render() !!}}
+					<?php echo $med_news->render(); ?>}
 				</nav>
 			</div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

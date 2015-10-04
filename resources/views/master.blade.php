@@ -30,6 +30,8 @@
 
         <link rel="stylesheet" href="{{ url('css/bootstrap.css') }}" />
         <link rel="stylesheet" href="{{ url('css/style.css') }}" />
+		<link rel="stylesheet" href="{{ url('css/summernote.css') }}" />
+		<link rel="stylesheet" href="{{ url('css/font-awesome.css') }}" />
 
         @if($dir == 'rtl')
             <link rel="stylesheet" href="{{ url('css/bootstrap-rtl.css') }}" />
@@ -64,6 +66,7 @@
         <script src="{{ url('js/script.js') }}"></script>
         <script src="{{ url('js/elasticsearch.js') }}"></script>
         <script src="{{ url('js/elasticsearch-jquery.js') }}"></script>
+		<script src="{{ url('js/summernote.js') }}"></script>
 
         <script src="https://maps.googleapis.com/maps/api/js"></script>
         <script src="{{ url('js/maps.js') }}"></script>

@@ -7,6 +7,7 @@ use App\Models\MedicalNews;
 use Illuminate\Http\Request;
 use App\Helpers\Utils;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 class DoctorsController extends Controller
 {
@@ -49,7 +50,7 @@ class DoctorsController extends Controller
 
 		$med_news = MedicalNews::where('doctor_id', $doctor_id)
 			->orderBy('created_at', 'desc')
-			->get();
+			->paginate(10);
 		$med_news_rendered = array();
 		$first_news = true;
 		foreach($med_news as $mn) {
@@ -60,13 +61,20 @@ class DoctorsController extends Controller
 			$first_news = false;
 		}
 
-		return view('doctors.homepage', [
+		$mednews_added = false;
+		if(session('status') == 'mednews_added') {
+			$mednews_added = true;
+		}
+
+		return view('doctors.doctors-med-news', [
 			'doctor_id' => $doctor_id,
 			'name' => $doctor->name . ' ' . $doctor->lname,
 			'specialty' => $doctor->specialties[0]->title,
 			'specialty_title' => $doctor->specialties[0]->desc,
 			'about' => $doctor->bio,
+			'med_news' => $med_news,
 			'feed' => $med_news_rendered,
+			'mednews_added' => $mednews_added,
 		]);
 	}
 
@@ -77,11 +85,71 @@ class DoctorsController extends Controller
 
 	public function addMedNews(Request $request)
 	{
-		if($request->has('form-submitted')) {
-			return redirect()->route("doctors.articles", [])->with('status', 'mednews_added');
+		if(!Auth::check()) {
+			app()->abort(403, "Access denied");
+			return;
 		}
 
-		return view('doctors.add-med-news');
+		if($request->has('form-submitted')) {
+			if(strlen($request->get('title')) < 10 && strlen($request->get('body')) < 100) {
+				return view('doctors.add-med-news', [
+					'url' => route('doctors.add_med_news'),
+					'doctor_id' => Auth::user()->id,
+					'name' => Auth::user()->name . ' ' . Auth::user()->lname,
+					'specialty' => Auth::user()->specialties[0]->title,
+					'specialty_title' => Auth::user()->specialties[0]->desc,
+					'title_error' => TRUE,
+					'body_error' => TRUE,
+					'title' => $request->get('title'),
+					'body' => $request->get('body'),
+				]);
+			}
+			else if(strlen($request->get('title')) < 10) {
+				return view('doctors.add-med-news', [
+					'url' => route('doctors.add_med_news'),
+					'doctor_id' => Auth::user()->id,
+					'name' => Auth::user()->name . ' ' . Auth::user()->lname,
+					'specialty' => Auth::user()->specialties[0]->title,
+					'specialty_title' => Auth::user()->specialties[0]->desc,
+					'title_error' => TRUE,
+					'title' => $request->get('title'),
+					'body' => $request->get('body'),
+				]);
+			}
+			else if(strlen($request->get('body')) < 100) {
+				return view('doctors.add-med-news', [
+					'url' => route('doctors.add_med_news'),
+					'doctor_id' => Auth::user()->id,
+					'name' => Auth::user()->name . ' ' . Auth::user()->lname,
+					'specialty' => Auth::user()->specialties[0]->title,
+					'specialty_title' => Auth::user()->specialties[0]->desc,
+					'body_error' => TRUE,
+					'title' => $request->get('title'),
+					'body' => $request->get('body'),
+				]);
+			}
+
+			$mednews = new MedicalNews();
+			$mednews->doctor_id = Auth::user()->id;
+			$mednews->title = $request->get('title');
+			$mednews->body = $request->get('body');
+			$mednews->scope = $request->get('scope');
+			$mednews->save();
+
+			return redirect()
+				->route("doctors.articles", ['doctor_id' => Auth::user()->id])
+				->with('status', 'mednews_added');
+		}
+
+		return view('doctors.add-med-news', [
+			'url' => route('doctors.add_med_news'),
+			'doctor_id' => Auth::user()->id,
+			'name' => Auth::user()->name . ' ' . Auth::user()->lname,
+			'specialty' => Auth::user()->specialties[0]->title,
+			'specialty_title' => Auth::user()->specialties[0]->desc,
+			'title' => '',
+			'body' => '',
+		]);
 	}
 
 
@@ -102,12 +170,12 @@ class DoctorsController extends Controller
         $doctor_id = $mednews->doctor->id;
         $doctor_name = $mednews->doctor->name . ' ' . $mednews->doctor->lname;
         $published_on = jdate('Y/m/d H:i:s', $mednews->created_at);
-        $content = strip_tags(Utils::truncate($mednews->body, ($halfWidth) ? 500 : 750));
+        $content = strip_tags(Utils::truncate($mednews->body, ($halfWidth) ? 800 : 2000));
 
         $dom = new \DOMDocument();
         @$dom->loadHTML($mednews->body);
         $imgtags = $dom->getElementsByTagName('img');
-        if(count($imgtags)) {
+        if($imgtags->length > 0) {
             $cover_image = $imgtags->item(0)->getAttribute('src');
         }
         else {

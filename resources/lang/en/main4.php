@@ -15,4 +15,12 @@ return [
 	'pay' => 'Pay',
 	'edit' => 'Edit',
 	'add_medical_news' => 'Add Medical News',
+	'save' => 'Save News',
+	'mednews_added' => 'Medical News Was Added.',
+	'title_too_short' => 'Title is too short.',
+	'body_too_short' => 'Medical news body is too short.',
+	'publish_scope' => 'Publish Scope',
+	'doctors_page' => 'Doctor\'s Page',
+	'system' => 'System Home Page',
+	'both' => 'Both',
 ];

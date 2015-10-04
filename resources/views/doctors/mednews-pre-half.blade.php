@@ -1,7 +1,7 @@
-<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+<div class="col-xs-12">
 	<div class="row">
 		<div class="col-xs-12">
-			<h2><a href="{{ $url }}">{{ $title }}</a></h2>
+			<h4><a href="{{ $url }}">{{ $title }}</a></h4>
 			<p>
 				{{ trans('main2.published_by') }}:
 				<a href="{{ route('doctors.homepage', ['doctor_id' => $doctor_id]) }}">
@@ -25,4 +25,5 @@
 			</a>
 		</div>
 	</div>
+	<hr />
 </div>

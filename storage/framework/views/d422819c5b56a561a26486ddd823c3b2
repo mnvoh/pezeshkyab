@@ -1,0 +1,42 @@
+<?php $__env->startSection('content'); ?>
+    <div class="row">
+        <div class="col-sm-12 col-md-offset-1 col-md-10">
+			<h1><?php echo e(trans('main4.add_medical_news')); ?></h1>
+			<form action="<?php echo e($url); ?>" method="post" enctype="multipart/form-data"
+				  onsubmit="return prepareSummernoteSubmission();">
+
+				<?php if(isset($title_error)): ?>
+					<p class="text-error"><?php echo e(trans('main4.title_too_short')); ?></p>
+				<?php endif; ?>
+
+				<input class="form-control" type="text" id="title" name="title"
+					   placeholder="<?php echo e(trans('main.title')); ?>" value="<?php echo e($title); ?>" />
+
+				<br />
+
+				<div id="summernote"></div>
+
+				<label for="scope">
+					<?php echo e(trans('main4.publish_scope')); ?>
+
+				</label>
+				<select name="scope" id="scope" class="form-control">
+					<option value="sys"><?php echo e(trans('main4.system')); ?></option>
+					<option value="self"><?php echo e(trans('main4.doctors_page')); ?></option>
+					<option value="both"><?php echo e(trans('main4.both')); ?></option>
+				</select>
+				<br />
+				<textarea id="summernote-code" name="body" class="hidden"></textarea>
+				<pre id="summernote-prev-value" class="hidden"><?php echo $body; ?></pre>
+				<?php echo e(csrf_field()); ?>
+
+
+				<button class="btn btn-success btn-block" name="form-submitted" value="1">
+					<?php echo e(trans('main4.save')); ?>
+
+				</button>
+			</form>
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

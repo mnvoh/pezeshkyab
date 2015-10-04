@@ -121,7 +121,7 @@ Route::any('doctors/med-news/{medical_news_id}', [
     'uses' => 'DoctorsController@medNews'
 ]);
 
-Route::any('doctors/med-news/add', [
+Route::any('doctors/mednews/add', [
 	'as' => 'doctors.add_med_news',
 	'uses' => 'DoctorsController@addMedNews'
 ]);

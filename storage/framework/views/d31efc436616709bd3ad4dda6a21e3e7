@@ -33,6 +33,8 @@
 
         <link rel="stylesheet" href="<?php echo e(url('css/bootstrap.css')); ?>" />
         <link rel="stylesheet" href="<?php echo e(url('css/style.css')); ?>" />
+		<link rel="stylesheet" href="<?php echo e(url('css/summernote.css')); ?>" />
+		<link rel="stylesheet" href="<?php echo e(url('css/font-awesome.css')); ?>" />
 
         <?php if($dir == 'rtl'): ?>
             <link rel="stylesheet" href="<?php echo e(url('css/bootstrap-rtl.css')); ?>" />
@@ -67,6 +69,7 @@
         <script src="<?php echo e(url('js/script.js')); ?>"></script>
         <script src="<?php echo e(url('js/elasticsearch.js')); ?>"></script>
         <script src="<?php echo e(url('js/elasticsearch-jquery.js')); ?>"></script>
+		<script src="<?php echo e(url('js/summernote.js')); ?>"></script>
 
         <script src="https://maps.googleapis.com/maps/api/js"></script>
         <script src="<?php echo e(url('js/maps.js')); ?>"></script>
