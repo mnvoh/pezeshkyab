@@ -19,24 +19,12 @@
                                placeholder="<?php echo e(trans('main2.your_name')); ?> *"/>
                     </div>
 
-
                     <div class="form-group">
                         <input type="email" class="form-control" id="q_email"
                                placeholder="<?php echo e(trans('main.email_address')); ?> *"/>
                     </div>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="q_doctor"
-                               placeholder="<?php echo e(trans('main.doctor_name')); ?> *"/>
-                    </div>
-
-                    <div class="form-group">
-                        <?php echo $__env->make('cities_select', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-                    </div>
-
-                    <div class="form-group">
-                        <?php echo $__env->make('specialties_select', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-                    </div>
+                    <?php echo $__env->make('doctor-picker', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">

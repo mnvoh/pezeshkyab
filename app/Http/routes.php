@@ -111,14 +111,19 @@ Route::any('doctors/{doctor_id}', [
 	'uses' => 'DoctorsController@homePage'
 ]);
 
-Route::any('doctors/{doctor_id}/articles', [
+Route::any('doctors/{doctor_id}/med-news', [
 	'as' => 'doctors.articles',
-	'uses' => 'DoctorsController@articles'
+	'uses' => 'DoctorsController@doctorsMedNews'
 ]);
 
-Route::any('articles/{medical_news_id}', [
+Route::any('doctors/med-news/{medical_news_id}', [
     'as' => 'doctors.article',
-    'uses' => 'DoctorsController@article'
+    'uses' => 'DoctorsController@medNews'
+]);
+
+Route::any('doctors/med-news/add', [
+	'as' => 'doctors.add_med_news',
+	'uses' => 'DoctorsController@addMedNews'
 ]);
 
 Route::any('doctors/{doctor_id}/ask', [

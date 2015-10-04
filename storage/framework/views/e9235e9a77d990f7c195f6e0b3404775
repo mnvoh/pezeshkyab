@@ -2,47 +2,108 @@
 
 	<div class="row">
 		<div class="col-sm-12 col-md-10 col-lg-8">
-			<h1><?php echo e(trans('main2.find_a_doctor')); ?></h1>
-			<p class="help-block"><?php echo e(trans('main2.find_help')); ?></p>
-			<form action="" method="get">
-				<div class="form-group">
-					<label for="firstname" class="control-label">
-						<?php echo e(trans('main.firstname')); ?>
+			<?php if($error): ?>
+                <h3 class="text-error"><?php echo e(trans('main3.no_search_server')); ?></h3>
+            <?php elseif($no_query): ?>
+                <h3 class="text-error"><?php echo e(trans('main3.no_query')); ?></h3>
+            <?php else: ?>
+                <h3><?php echo e(trans('main3.search_results')); ?></h3>
+                <p class="help-block">
+                    <?php echo e(trans('main3.sr_stats', ['count' => $count, 'time' => $time_took])); ?>
 
-					</label>
-					<input type="text" name="firstname" id="firstname" class="form-control"
-						   placeholder="<?php echo e(trans('main.firstname')); ?>" />
-				</div>
-				<div class="form-group">
-					<label for="lastname" class="control-label">
-						<?php echo e(trans('main.lastname')); ?>
+                </p>
 
-					</label>
-					<input type="text" name="lastname" id="lastname" class="form-control"
-						   placeholder="<?php echo e(trans('main.lastname')); ?>" />
-				</div>
+                <?php if($suggestion != null): ?>
+                    <h3>
+                        <?php echo e(trans('main3.suggestion')); ?>
 
-				<div class="form-group">
-					<label for="specialty" class="control-label">
-						<?php echo e(trans('main.specialty')); ?>
+                        <form method="get" action="<?php echo e(route('search.find')); ?>" class="inline-form-control">
+                            <?php
+                            foreach($_GET as $name => $value) {
+                                $name = htmlspecialchars($name);
+                                $value = htmlspecialchars($value);
+                                if($name == 'page')
+                                    continue;
+                                if($name == 's_q')
+                                    $value = $suggestion;
+                                echo '<input type="hidden" name="'. $name .'" value="'. $value .'">';
+                            }
+                            ?>
+                            <button type="submit" class="btn btn-link" style="font-size: 20px; font-weight: bold;">
+                                <?php echo e($suggestion); ?>
 
-					</label>
-					<?php echo $__env->make('specialties_select', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-				</div>
+                            </button>
+                        </form>
+                    </h3>
+                <?php endif; ?>
 
-				<div class="form-group">
-					<label for="city" class="control-label">
-						<?php echo e(trans('main2.city')); ?>
+                <div class="search-results">
+                    <?php foreach($results as $result): ?>
+                        <div class="search-result">
+                            <h4 class="inline-form-control">
+                                <a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $result['_id']])); ?>">
+                                    <?php echo e($result['_source']['fullname']); ?>
 
-					</label>
-					<?php echo $__env->make('cities_select', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-				</div>
+                                </a>
+                                <br />
+                            </h4>
+                            &middot;
+                            <?php foreach($result['_source']['specialty'] as $specialty): ?>
+                                <?php echo e($specialty); ?>
 
-				<button type="submit" class="btn btn-block btn-success">
-					<?php echo e(trans('main2.find')); ?>
+                            <?php endforeach; ?>
+                            &middot;
+                            <?php foreach($result['_source']['city'] as $city): ?>
+                                <?php echo e($city); ?>
 
-				</button>
-			</form>
+                            <?php endforeach; ?>
+                        </div>
+                        <br />
+                    <?php endforeach; ?>
+
+                    <nav>
+                        <ul class="pagination">
+                            <?php if($currentPage > 1): ?>
+                            <li>
+                                <a href="<?php echo e($pagelessUrl . "page=" . ($currentPage - 1)); ?>" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <?php else: ?>
+                                <li class="disabled">
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+
+                            <?php for($i = 1; $i <= $pageCount; $i++): ?>
+                                <?php if($i == $currentPage): ?>
+                                    <li class="active">
+                                        <a href="<?php echo e($pagelessUrl . "page=" . $i); ?>"><?php echo e($i); ?></a>
+                                    </li>
+                                <?php else: ?>
+                                    <li><a href="<?php echo e($pagelessUrl . "page=" . $i); ?>"><?php echo e($i); ?></a></li>
+                                <?php endif; ?>
+                            <?php endfor; ?>
+
+                            <?php if($currentPage < $pageCount): ?>
+                                <li>
+                                    <a href="<?php echo e($pagelessUrl . "page=" . ($currentPage + 1)); ?>" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            <?php else: ?>
+                                <li class="disabled">
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    </nav>
+                </div>
+            <?php endif; ?>
 		</div>
 	</div>
 

@@ -25,7 +25,7 @@
             <form action="<?php echo e($next_step_link); ?>" method="post">
                 <?php echo e(csrf_field()); ?>
 
-                <button class="btn btn-success btn-block" name="tos" value="accept">
+                <button class="btn btn-success btn-block" name="form-submitted" value="true">
                     <?php echo e(trans('main.accept')); ?>
 
                 </button>

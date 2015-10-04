@@ -45,17 +45,19 @@
         <link rel="icon" href="/favicon.ico"> <!-- 32 -->
     </head>
     <body>
-    	<?php echo $__env->make('navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		<?php if(isset($use_doctors_navbar) && $use_doctors_navbar): ?>
+			<?php echo $__env->make('doctors.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		<?php else: ?>
+    		<?php echo $__env->make('navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		<?php endif; ?>
 
-        <div class="container">
+        <div class="container content-container">
             <?php $__env->startSection('content'); ?>
             <?php echo $__env->yieldSection(); ?>
         </div>
 
-        <?php if(Route::getCurrentRoute()->getName() == 'main.docfinder_home'): ?>
+        <?php if(isset($includeMedicalQuestionForm) && $includeMedicalQuestionForm): ?>
             <?php echo $__env->make('medical_question', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-        <?php else: ?>
-            <div class="row vertical-spacing"></div>
         <?php endif; ?>
 
         <?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
@@ -63,10 +65,11 @@
     	<script src="<?php echo e(url('js/jquery.js')); ?>"></script>
     	<script src="<?php echo e(url('js/bootstrap.js')); ?>"></script>
         <script src="<?php echo e(url('js/script.js')); ?>"></script>
+        <script src="<?php echo e(url('js/elasticsearch.js')); ?>"></script>
+        <script src="<?php echo e(url('js/elasticsearch-jquery.js')); ?>"></script>
 
-        <?php if($includeMaps): ?>
-            <script src="https://maps.googleapis.com/maps/api/js"></script>
-            <script src="<?php echo e(url('js/maps.js')); ?>"></script>
-        <?php endif; ?>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script src="<?php echo e(url('js/maps.js')); ?>"></script>
     </body>
 </html>
+<!-- end of master -->

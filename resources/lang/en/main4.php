@@ -14,4 +14,5 @@ return [
 	'amount' => 'Amount',
 	'pay' => 'Pay',
 	'edit' => 'Edit',
+	'add_medical_news' => 'Add Medical News',
 ];

@@ -21,7 +21,7 @@ class Utils {
      * @param boolean $considerHtml If true, HTML tags would be handled correctly
      * @return string Trimmed string.
      */
-    function truncate($text, $length = 100, $ending = '...', $exact = true, $considerHtml = false) {
+    public static function truncate($text, $length = 100, $ending = '...', $exact = true, $considerHtml = false) {
         if ($considerHtml) {
             // if the plain text is shorter than the maximum length, return the whole text
             if (strlen(preg_replace('/<.*?>/', '', $text)) <= $length) {
@@ -38,7 +38,7 @@ class Utils {
             foreach ($lines as $line_matchings) {
                 // if there is any html-tag in this line, handle it and add it (uncounted) to the output
                 if (!empty($line_matchings[1])) {
-                    // if it’s an “empty element” with or without xhtml-conform closing slash (f.e.)
+                    // if itï¿½s an ï¿½empty elementï¿½ with or without xhtml-conform closing slash (f.e.)
                     if (preg_match('/^<(\s*.+?\/\s*|\s*(img|br|input|hr|area|base|basefont|col|frame|isindex|link|meta|param)(\s.+?)?)>$/is', $line_matchings[1])) {
                         // do nothing
                         // if tag is a closing tag (f.e.)
@@ -53,7 +53,7 @@ class Utils {
                         // add tag to the beginning of $open_tags list
                         array_unshift($open_tags, strtolower($tag_matchings[1]));
                     }
-                    // add html-tag to $truncate’d text
+                    // add html-tag to $truncateï¿½d text
                     $truncate .= $line_matchings[1];
                 }
 

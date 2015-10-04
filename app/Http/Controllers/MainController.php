@@ -16,7 +16,7 @@ class MainController extends Controller {
                         . 'patients may be low',
                     'img' => 'http://cdn1.medicalnewstoday.com/content/images/articles/297/297309/'
                         . 'woman-and-doctor-talking.jpg',
-                    'content' => Utils::word_safe_substr(file_get_contents(base_path() . '/news1'), 512),
+                    'content' => '',
 					'publisher' => 'محمد محمدی',
 					'publisher_id' => 12,
 					'published_on' => Utils::shamsiDateFromGreg(time()),
@@ -25,7 +25,7 @@ class MainController extends Controller {
                     'title' => "Skin cancer risk linked with grapefruit and orange juice",
                     'img' => 'http://cdn1.medicalnewstoday.com/content/images/articles/296/296087/'
                                 . 'grapefruit-juice.jpg',
-                    'content' => Utils::word_safe_substr(file_get_contents(base_path() . '/news2'), 256),
+                    'content' => '',
 					'publisher' => 'محمد محمدی',
 					'publisher_id' => 12,
 					'published_on' => Utils::shamsiDateFromGreg(time()),
@@ -34,7 +34,7 @@ class MainController extends Controller {
                     'title' => 'Is milk bad for you?',
                     'img' => 'http://cdn1.medicalnewstoday.com/content/images/articles/296/296564/'
                                 . 'cow-and-a-jug-of-milk.jpg',
-                    'content' => Utils::word_safe_substr(file_get_contents(base_path() . '/news3'), 256),
+                    'content' => '',
 					'publisher' => 'محمد محمدی',
 					'publisher_id' => 12,
 					'published_on' => Utils::shamsiDateFromGreg(time()),

@@ -42,7 +42,11 @@
         <link rel="icon" href="/favicon.ico"> <!-- 32 -->
     </head>
     <body>
-    	@include('navbar')
+		@if(isset($use_doctors_navbar) && $use_doctors_navbar)
+			@include('doctors.navbar')
+		@else
+    		@include('navbar')
+		@endif
 
         <div class="container content-container">
             @section('content')
@@ -65,3 +69,4 @@
         <script src="{{ url('js/maps.js') }}"></script>
     </body>
 </html>
+<!-- end of master -->

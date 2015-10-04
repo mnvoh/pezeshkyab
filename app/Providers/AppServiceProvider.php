@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 
@@ -26,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
         $hour2 = jdate("H", strtotime("+7 days"), '', 'Asia/Tehran', 'en');
         $min2 = jdate("i", strtotime("+7 days"), '', 'Asia/Tehran', 'en');
 
-        //
+        //these variables are used in the search form
         view()->share("today_year", $year);
         view()->share("today_month", $month);
         view()->share("today_date", $date);
