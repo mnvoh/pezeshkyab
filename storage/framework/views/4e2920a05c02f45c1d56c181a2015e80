@@ -16,7 +16,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12">
-			<a href="#" class="feed-link">
+			<a href="<?php echo e($url); ?>" class="feed-link">
 				<?php if(isset($cover_image) && $cover_image != null): ?>
 					<span class="feed-thumbnail-lg"
 						style="background-image: url(<?php echo e($cover_image); ?>);"></span>

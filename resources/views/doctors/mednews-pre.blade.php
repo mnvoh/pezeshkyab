@@ -14,7 +14,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12">
-			<a href="#" class="feed-link">
+			<a href="{{ $url }}" class="feed-link">
 				@if(isset($cover_image) && $cover_image != null)
 					<span class="feed-thumbnail-lg"
 						style="background-image: url({{ $cover_image }});"></span>

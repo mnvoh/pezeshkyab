@@ -22,5 +22,5 @@ return [
 	'publish_scope' => 'Publish Scope',
 	'doctors_page' => 'Doctor\'s Page',
 	'system' => 'System Home Page',
-	'both' => 'Both',
+	'both' => 'Doctor\'s Page and System Home Page',
 ];

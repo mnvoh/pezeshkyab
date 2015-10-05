@@ -81,7 +81,17 @@ class DoctorsController extends Controller
 
 	public function medNews(Request $request, $medical_news_id)
 	{
+		$med_news = MedicalNews::where('id', $medical_news_id)->firstOrFail();
 
+		return view('doctors.med-news', [
+			'doctor_id' => $med_news->doctor->id,
+			'doctor_name' => $med_news->doctor->name . ' ' . $med_news->doctor->lname,
+			'published_on' => Utils::shamsiDateFromGreg(strtotime($med_news->created_at)),
+			'title' => $med_news->title,
+			'body' => $med_news->body,
+			'use_doctors_navbar' => false,
+
+		]);
 	}
 
 	public function addMedNews(Request $request)
@@ -161,16 +171,25 @@ class DoctorsController extends Controller
 
 
 
-    public static function renderMedicalNews(MedicalNews $mednews,
+    public function renderMedicalNews(MedicalNews $mednews,
 									  $halfWidth = true )
     {
+		/***************************************************
+		 * ************        ATTENSION     ***************
+		 * Remember to reflect any changes you make here
+		 * to MainController@renderMedicalNews
+		 ***************************************************/
+
         $url = $title = $doctor_name = $doctor_id = $published_on = $cover_image = $content = "";
 
-        $url = route('doctors.article', ['medical_news_id' => $mednews->id]);
+        $url = route('doctors.article', [
+			'medical_news_id' => $mednews->id,
+			'title' => urlencode($mednews->title),
+		]);
         $title = $mednews->title;
         $doctor_id = $mednews->doctor->id;
         $doctor_name = $mednews->doctor->name . ' ' . $mednews->doctor->lname;
-        $published_on = jdate('Y/m/d H:i:s', $mednews->created_at);
+        $published_on = Utils::shamsiDateFromGreg(strtotime($mednews->created_at));
         $content = strip_tags(Utils::truncate($mednews->body, ($halfWidth) ? 800 : 2000));
 
         $dom = new \DOMDocument();

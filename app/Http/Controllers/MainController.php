@@ -78,13 +78,22 @@ class MainController extends Controller
 	public static function renderMedicalNews(MedicalNews $mednews,
 											 $halfWidth = true )
 	{
+		/***************************************************
+		 * ************        ATTENSION     ***************
+		 * Remember to reflect any changes you make here
+		 * to DoctorsController@renderMedicalNews
+		 ***************************************************/
+
 		$url = $title = $doctor_name = $doctor_id = $published_on = $cover_image = $content = "";
 
-		$url = route('doctors.article', ['medical_news_id' => $mednews->id]);
+		$url = route('doctors.article', [
+			'medical_news_id' => $mednews->id,
+			'title' => urlencode($mednews->title),
+		]);
 		$title = $mednews->title;
 		$doctor_id = $mednews->doctor->id;
 		$doctor_name = $mednews->doctor->name . ' ' . $mednews->doctor->lname;
-		$published_on = jdate('Y/m/d H:i:s', $mednews->created_at);
+		$published_on = Utils::shamsiDateFromGreg(strtotime($mednews->created_at));
 		$content = strip_tags(Utils::truncate($mednews->body, ($halfWidth) ? 800 : 2000));
 
 		$dom = new \DOMDocument();

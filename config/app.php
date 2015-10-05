@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fa',
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'fa',
 
     'locales' => [ 'en' => 'English', 'fa' => 'فارسی' ],
     'locales_dir' => [ 'en' => 'ltr', 'fa' => 'rtl' ],
