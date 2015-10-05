@@ -16,15 +16,8 @@
 
 	<?php if(count($feed)): ?>
 		<br/>
-		<div class="row">
-			<div class="col-sm-12 col-md-3">
-				<a href="<?php echo e(route('main.med_news')); ?>"
-				   class="btn btn-info btn-md btn-block">
-					<?php echo e(trans('main3.view_all_articles')); ?>
+		<?php echo $med_news->render(); ?>
 
-				</a>
-			</div>
-		</div>
 	<?php endif; ?>
 	<br />
 <?php $__env->stopSection(); ?>

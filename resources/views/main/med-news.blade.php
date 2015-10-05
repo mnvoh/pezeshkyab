@@ -17,14 +17,7 @@
 
 	@if(count($feed))
 		<br/>
-		<div class="row">
-			<div class="col-sm-12 col-md-3">
-				<a href="{{ route('main.med_news') }}"
-				   class="btn btn-info btn-md btn-block">
-					{{ trans('main3.view_all_articles') }}
-				</a>
-			</div>
-		</div>
+		{!! $med_news->render() !!}
 	@endif
 	<br />
 @endsection

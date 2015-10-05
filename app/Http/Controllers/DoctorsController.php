@@ -49,6 +49,7 @@ class DoctorsController extends Controller
 		$doctor = Doctor::where('id', $doctor_id)->firstOrFail();
 
 		$med_news = MedicalNews::where('doctor_id', $doctor_id)
+			->where('scope', '<>', 'sys')
 			->orderBy('created_at', 'desc')
 			->paginate(10);
 		$med_news_rendered = array();
@@ -160,7 +161,7 @@ class DoctorsController extends Controller
 
 
 
-    public function renderMedicalNews(MedicalNews $mednews,
+    public static function renderMedicalNews(MedicalNews $mednews,
 									  $halfWidth = true )
     {
         $url = $title = $doctor_name = $doctor_id = $published_on = $cover_image = $content = "";

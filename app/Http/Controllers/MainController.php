@@ -3,44 +3,58 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Helpers\Utils;
+use App\Models\MedicalNews;
 
-class MainController extends Controller {
+class MainController extends Controller
+{
 
-	public function index(Request $request) {
+	public function index(Request $request)
+	{
+		$med_news = MedicalNews::where('scope', '<>', 'self')
+			->orderBy('created_at', 'desc')
+			->take(3)
+			->get();
+		$med_news_rendered = array();
+		$first_news = true;
+		foreach($med_news as $mn) {
+			if($first_news)
+				$med_news_rendered[] = $this->renderMedicalNews($mn, false);
+			else
+				$med_news_rendered[] = $this->renderMedicalNews($mn);
+			$first_news = false;
+		}
+
 		return view('main.home', array(
 			'includeMainCarousel' => true,
 			'includeMedicalQuestionForm' => true,
-			'feed' => array(
-                array(
-                    'title' => 'Awareness of fertility preservation options among younger cancer '
-                        . 'patients may be low',
-                    'img' => 'http://cdn1.medicalnewstoday.com/content/images/articles/297/297309/'
-                        . 'woman-and-doctor-talking.jpg',
-                    'content' => '',
-					'publisher' => 'محمد محمدی',
-					'publisher_id' => 12,
-					'published_on' => Utils::shamsiDateFromGreg(time()),
-                ),
-                array(
-                    'title' => "Skin cancer risk linked with grapefruit and orange juice",
-                    'img' => 'http://cdn1.medicalnewstoday.com/content/images/articles/296/296087/'
-                                . 'grapefruit-juice.jpg',
-                    'content' => '',
-					'publisher' => 'محمد محمدی',
-					'publisher_id' => 12,
-					'published_on' => Utils::shamsiDateFromGreg(time()),
-                ),
-                array(
-                    'title' => 'Is milk bad for you?',
-                    'img' => 'http://cdn1.medicalnewstoday.com/content/images/articles/296/296564/'
-                                . 'cow-and-a-jug-of-milk.jpg',
-                    'content' => '',
-					'publisher' => 'محمد محمدی',
-					'publisher_id' => 12,
-					'published_on' => Utils::shamsiDateFromGreg(time()),
-                )
-			),
+			'feed' => $med_news_rendered,
 		));
+	}
+
+	public function medNews(Request $request)
+	{
+		$med_news = MedicalNews::where('scope', '<>', 'self')
+			->orderBy('created_at', 'desc')
+			->paginate(10);
+		$med_news_rendered = array();
+		$first_news = true;
+		foreach($med_news as $mn) {
+			if($first_news)
+				$med_news_rendered[] = $this->renderMedicalNews($mn, false);
+			else
+				$med_news_rendered[] = $this->renderMedicalNews($mn);
+			$first_news = false;
+		}
+
+		$mednews_added = false;
+		if(session('status') == 'mednews_added') {
+			$mednews_added = true;
+		}
+
+		return view('main.med-news', [
+			'med_news' => $med_news,
+			'feed' => $med_news_rendered,
+		]);
 	}
 
     public function about() {
@@ -61,4 +75,46 @@ class MainController extends Controller {
 		return view('main.insurances');
 	}
 
+	public static function renderMedicalNews(MedicalNews $mednews,
+											 $halfWidth = true )
+	{
+		$url = $title = $doctor_name = $doctor_id = $published_on = $cover_image = $content = "";
+
+		$url = route('doctors.article', ['medical_news_id' => $mednews->id]);
+		$title = $mednews->title;
+		$doctor_id = $mednews->doctor->id;
+		$doctor_name = $mednews->doctor->name . ' ' . $mednews->doctor->lname;
+		$published_on = jdate('Y/m/d H:i:s', $mednews->created_at);
+		$content = strip_tags(Utils::truncate($mednews->body, ($halfWidth) ? 800 : 2000));
+
+		$dom = new \DOMDocument();
+		@$dom->loadHTML($mednews->body);
+		$imgtags = $dom->getElementsByTagName('img');
+		if ($imgtags->length > 0) {
+			$cover_image = $imgtags->item(0)->getAttribute('src');
+		} else {
+			$cover_image = null;
+		}
+
+		if ($halfWidth) {
+			return view('doctors.mednews-pre-half', [
+				'url' => $url,
+				'title' => $title,
+				'doctor_id' => $doctor_id,
+				'doctor_name' => $doctor_name,
+				'published_on' => $published_on,
+				'cover_image' => $cover_image,
+				'content' => $content,
+			]);
+		}
+		return view('doctors.mednews-pre', [
+			'url' => $url,
+			'title' => $title,
+			'doctor_id' => $doctor_id,
+			'doctor_name' => $doctor_name,
+			'published_on' => $published_on,
+			'cover_image' => $cover_image,
+			'content' => $content,
+		]);
+	}
 }

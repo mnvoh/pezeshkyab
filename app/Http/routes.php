@@ -21,7 +21,10 @@ Route::any('docfinder', [
     'as' => 'main.docfinder_home',
     'uses' => 'MainController@index'
 ]);
-
+Route::any('docfinder/med-news', [
+	'as' => 'main.med_news',
+	'uses' => 'MainController@medNews'
+]);
 Route::any('docfinder/about', [
     'as' => 'main.about',
     'uses' => 'MainController@about'
