@@ -3,14 +3,30 @@
 @section('content')
 	<div class="row">
 		<div class="col-lg-12">
+			@if($status_message != null)
+				<p class="alert-warning">{{ $status_message }}</p>
+			@endif
+
 			<h2>{{ trans('main3.about_doctor') }}</h2>
 			<hr />
 			<p>
-				<span class="glyphicon glyphicon-user p-starter"></span>
 				{{ $about }}
-
-				<br /><br />
+				@if($viewerIsOwner)
+					<a href="javascript:;" id="show-new-bio-form">{{ trans('main4.edit') }}</a>
+				@endif
 			</p>
+
+			@if($viewerIsOwner)
+				<form action="{{ $url }}" method="post" id="new-bio-form" style="display:none;">
+					<textarea name="bio" class="form-control" style="height: 200px;">{{ $about }}</textarea>
+					{{ csrf_field() }}
+					<br />
+					<button type="submit" name="editBioSubmitted" value="1" class="btn btn-success">
+						{{ trans('main4.save') }}
+					</button>
+				</form>
+			@endif
+			<br /><br />
 		</div>
 	</div>
 

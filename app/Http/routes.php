@@ -112,7 +112,7 @@ Route::any('docfinder/book-appointment/{doctor_id}/{step}', [
 Route::any('doctors/{doctor_id}', [
 	'as' => 'doctors.homepage',
 	'uses' => 'DoctorsController@homePage'
-]);
+])->where('doctor_id', '[0-9]+');
 
 Route::any('doctors/{doctor_id}/med-news', [
 	'as' => 'doctors.articles',
@@ -132,4 +132,13 @@ Route::any('doctors/mednews/add', [
 Route::any('doctors/{doctor_id}/ask', [
 	'as' => 'doctors.ask',
 	'uses' => 'DoctorsController@ask'
+]);
+Route::any('doctors/questions', [
+	'as' => 'doctors.asked_questions',
+	'uses' => 'DoctorsController@askedQuestions'
+]);
+
+Route::any('doctors/schedule', [
+	'as' => 'doctors.schedule',
+	'uses' => 'DoctorsController@schedule'
 ]);

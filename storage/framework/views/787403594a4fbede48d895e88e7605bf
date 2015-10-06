@@ -1,0 +1,123 @@
+<?php $__env->startSection('content'); ?>
+    <div class="row">
+        <div class="col-sm-12">
+			<?php if($status_message): ?>
+				<?php if($form_error): ?>
+					<p class="text-error"><?php echo e($status_message); ?></p>
+				<?php else: ?>
+					<p class="text-success"><?php echo e($status_message); ?></p>
+				<?php endif; ?>
+			<?php endif; ?>
+
+			<h3><?php echo e(trans('main4.add_schedule')); ?></h3>
+			<form action="<?php echo e($url); ?>" method="post">
+				<div class="form-control inline-form-control">
+					<label class="inline-form-control"><?php echo e(trans('main3.date')); ?></label>
+
+					<span dir="ltr">
+						<input type="number" min="<?php echo e($current_year); ?>" max="<?php echo e($current_year + 1); ?>"
+							   name="year" class="inline-form-control noborder text-center"
+							   value="<?php echo e($current_year); ?>" width="20" />
+						/
+						<input type="number" min="1" max="12" name="month"
+							   class="inline-form-control noborder text-center"
+							   value="<?php echo e($current_month); ?>" />
+						/
+						<input type="number" min="1" max="31" name="date"
+							   class="inline-form-control noborder text-center"
+							   value="<?php echo e(($current_date + 2) % 31); ?>" />
+					</span>
+
+
+				</div>
+				<div class="form-control inline-form-control">
+					<label class="inline-form-control"><?php echo e(trans('main3.time')); ?></label>
+					<span dir="ltr">
+						<input type="number" min="0" max="23" name="hour" class="inline-form-control noborder text-center"
+							   value="7" />
+						:
+						<input type="number" min="0" max="60" name="minute" class="inline-form-control noborder text-center"
+							   value="0" />
+					</span>
+				</div>
+				<div class="form-control inline-form-control">
+					<label class="inline-form-control"><?php echo e(trans('main2.fee')); ?></label>
+					<select name="fee">
+						<?php foreach($fees as $fee): ?>
+							<option value="<?php echo e($fee->id); ?>">
+								<?php echo e($fee->title); ?> - <?php echo e($fee->amount); ?> <?php echo e(trans('currencies.irr')); ?>
+
+							</option>
+						<?php endforeach; ?>
+					</select>
+				</div>
+
+				<?php echo e(csrf_field()); ?>
+
+
+				<button type="submit" name="new_reservation" value="1" class="btn btn-success">
+					<?php echo e(trans('main4.save')); ?>
+
+				</button>
+			</form>
+
+			<hr />
+
+			<h3><?php echo e(trans('main4.current_schedules')); ?></h3>
+
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th><?php echo e(trans('main4.id')); ?></th>
+						<th><?php echo e(trans('main4.rtime')); ?></th>
+						<th><?php echo e(trans('main2.fee')); ?></th>
+						<th><?php echo e(trans('main4.pname')); ?></th>
+						<th><?php echo e(trans('main.nationality')); ?></th>
+						<th><?php echo e(trans('main.national_code')); ?></th>
+						<th><?php echo e(trans('main.email_address')); ?></th>
+						<th><?php echo e(trans('main4.disease')); ?></th>
+						<th><?php echo e(trans('main4.delete')); ?></th>
+					</tr>
+				</thead>
+				<tbody>
+				<?php foreach($reservations as $r): ?>
+					<tr>
+						<td> <?php echo e($r->id); ?> </td>
+						<td> <?php echo e(\App\Helpers\Utils::shamsiDateFromGreg(strtotime($r->rtime))); ?> </td>
+						<td> <?php echo e($r->fee->title); ?> <?php echo e($r->fee->amount); ?> <?php echo e(trans('currencies.irr')); ?> </td>
+						<td> <?php echo e(($r->pname != null) ? $r->pname . ' ' . $r->plname : '-'); ?> </td>
+						<td>
+							<?php if($r->nationality == 'ir'): ?>
+								<?php echo e(trans('main.iranian')); ?>
+
+							<?php elseif($r->nationality == 'fo'): ?>
+								<?php echo e(trans('main.non_iranian')); ?>
+
+							<?php else: ?>
+								-
+							<?php endif; ?>
+						</td>
+						<td> <?php echo e(($r->ncode != null) ? $r->ncode : '-'); ?> </td>
+						<td> <?php echo e(($r->pemail != null) ? $r->pemail : '-'); ?> </td>
+						<td> <?php echo e(($r->disease_id != null) ? $r->disease->name : '-'); ?> </td>
+						<td>
+							<?php if($r->tracking_code == null): ?>
+								<form class="form-inline confirm-form" action="<?php echo e($url); ?>" method="post">
+									<input type="hidden" name="reservation_id" value="<?php echo e($r->id); ?>" />
+									<?php echo e(csrf_field()); ?>
+
+									<button type="submit" name="delete_reservation" value="1" class="btn btn-danger">
+										<?php echo e(trans('main4.delete')); ?>
+
+									</button>
+								</form>
+							<?php endif; ?>
+						</td>
+					</tr>
+				<?php endforeach; ?>
+				</tbody>
+			</table>
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

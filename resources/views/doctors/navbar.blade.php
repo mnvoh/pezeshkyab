@@ -202,26 +202,34 @@
 					</li>
 					<li>
 						<a href="{{ route('doctors.articles', ['doctor_id' => $doctor_id]) }}">
-							{{ trans('main2.articles') }}
+							{{ trans('main4.mednews') }}
 						</a>
 					</li>
-					<li>
-						<a href="{{ route('appointment.book_for_doctor', ['doctor_id' => $doctor_id, 'step' => 1]) }}">
-							{{ trans('main.book_appointment') }}
-						</a>
-					</li>
-					<li>
-						<a href="{{ route('doctors.ask', ['doctor_id' => $doctor_id]) }}">
-							{{ trans('main2.ask_question') }}
-						</a>
-					</li>
-                    @if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::user()->id == $doctor_id)
-                        <li class="vert-sep"></li>
-                        <li>
-                            <a href="{{ route('doctors.add_med_news') }}">
-                                {{ trans('main4.add_medical_news') }}
-                            </a>
-                        </li>
+					@if($viewerIsOwner)
+						<li>
+							<a href="{{ route('doctors.schedule') }}">
+								{{ trans('main4.manage_schedules') }}
+							</a>
+						</li>
+					@else
+						<li>
+							<a href="{{ route('appointment.book_for_doctor', ['doctor_id' => $doctor_id, 'step' => 1]) }}">
+								{{ trans('main.book_appointment') }}
+							</a>
+						</li>
+					@endif
+					@if($viewerIsOwner)
+						<li>
+							<a href="{{ route('doctors.asked_questions') }}">
+								{{ trans('main4.asked_questions') }}
+							</a>
+						</li>
+					@else
+						<li>
+							<a href="{{ route('doctors.ask', ['doctor_id' => $doctor_id]) }}">
+								{{ trans('main2.ask_question') }}
+							</a>
+						</li>
                     @endif
 				</ul>
 			</nav>

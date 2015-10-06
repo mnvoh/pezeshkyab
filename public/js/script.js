@@ -64,6 +64,10 @@
         });
 
         $('#summernote').code($('#summernote-prev-value').html());
+
+        $('a#show-new-bio-form').click(function() {
+            $('#new-bio-form').toggle("fast");
+        });
     });
 })(jQuery);
 

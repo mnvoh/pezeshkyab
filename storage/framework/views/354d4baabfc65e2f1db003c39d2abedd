@@ -209,30 +209,39 @@
 					</li>
 					<li>
 						<a href="<?php echo e(route('doctors.articles', ['doctor_id' => $doctor_id])); ?>">
-							<?php echo e(trans('main2.articles')); ?>
+							<?php echo e(trans('main4.mednews')); ?>
 
 						</a>
 					</li>
-					<li>
-						<a href="<?php echo e(route('appointment.book_for_doctor', ['doctor_id' => $doctor_id, 'step' => 1])); ?>">
-							<?php echo e(trans('main.book_appointment')); ?>
+					<?php if($viewerIsOwner): ?>
+						<li>
+							<a href="<?php echo e(route('doctors.schedule')); ?>">
+								<?php echo e(trans('main4.manage_schedules')); ?>
 
-						</a>
-					</li>
-					<li>
-						<a href="<?php echo e(route('doctors.ask', ['doctor_id' => $doctor_id])); ?>">
-							<?php echo e(trans('main2.ask_question')); ?>
+							</a>
+						</li>
+					<?php else: ?>
+						<li>
+							<a href="<?php echo e(route('appointment.book_for_doctor', ['doctor_id' => $doctor_id, 'step' => 1])); ?>">
+								<?php echo e(trans('main.book_appointment')); ?>
 
-						</a>
-					</li>
-                    <?php if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::user()->id == $doctor_id): ?>
-                        <li class="vert-sep"></li>
-                        <li>
-                            <a href="<?php echo e(route('doctors.add_med_news')); ?>">
-                                <?php echo e(trans('main4.add_medical_news')); ?>
+							</a>
+						</li>
+					<?php endif; ?>
+					<?php if($viewerIsOwner): ?>
+						<li>
+							<a href="<?php echo e(route('doctors.asked_questions')); ?>">
+								<?php echo e(trans('main4.asked_questions')); ?>
 
-                            </a>
-                        </li>
+							</a>
+						</li>
+					<?php else: ?>
+						<li>
+							<a href="<?php echo e(route('doctors.ask', ['doctor_id' => $doctor_id])); ?>">
+								<?php echo e(trans('main2.ask_question')); ?>
+
+							</a>
+						</li>
                     <?php endif; ?>
 				</ul>
 			</nav>

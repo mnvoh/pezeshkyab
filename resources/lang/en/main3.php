@@ -9,7 +9,7 @@ return [
 	'birth_date' => 'Birth Date',
 	'day' => 'Day',
 	'dr' => 'Dr.',
-	'latest_articles' => 'Latest Articles',
+	'latest_articles' => 'Latest Medical News',
 	'logout' => 'Logout',
 	'mobile_number' => 'Mobile Phone Number',
 	'month' => 'Month', 

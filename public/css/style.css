@@ -511,3 +511,10 @@ div.main-search-container div.adv-search {
     border-left: 1px solid rgba(0, 0, 0, 0.20);
     height: 64px;
 }
+.always-ltr {
+    direction: ltr !important;
+    text-align: left !important;
+    display: inline;
+}
+
+#doctor-picker { margin-bottom: 15px; }
