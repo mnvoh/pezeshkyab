@@ -66,6 +66,7 @@
         $('#summernote').code($('#summernote-prev-value').html());
 
         $('a#show-new-bio-form').click(function() {
+            $('p#doctor-bio').hide();
             $('#new-bio-form').toggle("fast");
         });
     });

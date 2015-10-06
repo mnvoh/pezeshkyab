@@ -7,8 +7,8 @@
 
 			<h2><?php echo e(trans('main3.about_doctor')); ?></h2>
 			<hr />
-			<p>
-				<?php echo e($about); ?>
+			<p id="doctor-bio">
+				<?php echo nl2br(htmlentities($about)); ?>
 
 				<?php if($viewerIsOwner): ?>
 					<a href="javascript:;" id="show-new-bio-form"><?php echo e(trans('main4.edit')); ?></a>

@@ -8,8 +8,14 @@
 ?>
 <div id="doctor-picker">
     <input class="form-control" type="text" placeholder="{{ trans('main4.type_to_find_doctor') }}" />
-    <input type="hidden" name="doctor_id" />
-    <label class="form-control">{{ trans('main4.type_to_find_doctor') }}</label>
+    <input type="hidden" name="doctor_id" @if(isset($old_doctor_id)) value="{{ $old_doctor_id }} @endif" />
+    <label class="form-control">
+		@if(isset($old_doctor_description))
+			{{ $old_doctor_description }}
+		@else
+			{{ trans('main4.type_to_find_doctor') }}
+		@endif
+	</label>
     <div id="dp-items">
     </div>
 </div>

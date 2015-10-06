@@ -135,7 +135,7 @@ class Doctor extends Model implements AuthenticatableContract, CanResetPasswordC
                 $provinces[] = $province->name;
 
             //elastic search will have the longitude in the first element.
-            $coordinates[] = [$a->lng, $a->lat];
+            $coordinates[] = [(double)$a->lng, (double)$a->lat];
         }
 
         $schedules = array();

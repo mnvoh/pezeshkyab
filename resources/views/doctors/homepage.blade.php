@@ -9,8 +9,8 @@
 
 			<h2>{{ trans('main3.about_doctor') }}</h2>
 			<hr />
-			<p>
-				{{ $about }}
+			<p id="doctor-bio">
+				{!! nl2br(htmlentities($about)) !!}
 				@if($viewerIsOwner)
 					<a href="javascript:;" id="show-new-bio-form">{{ trans('main4.edit') }}</a>
 				@endif

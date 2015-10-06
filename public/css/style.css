@@ -518,3 +518,11 @@ div.main-search-container div.adv-search {
 }
 
 #doctor-picker { margin-bottom: 15px; }
+
+.med-q {
+    background: #fcfcfc;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 10px 0;
+    padding: 10px;
+}

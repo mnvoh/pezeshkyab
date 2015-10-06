@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Doctor;
 use App\Models\Fee;
 use App\Models\MedicalNews;
+use App\Models\MedicalQuestion;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use App\Helpers\Utils;
@@ -23,6 +24,7 @@ class DoctorsController extends Controller
     {
 		$status_message = null;
         $doctor = Doctor::where('id', $doctor_id)->firstOrFail();
+		$viewer_is_owner = (Auth::check() && Auth::user()->id == $doctor_id);
 		if($request->has("editBioSubmitted") && $viewer_is_owner) {
 			$new_bio = $request->get('bio');
 			if(strlen($new_bio) < 100) {
@@ -51,7 +53,7 @@ class DoctorsController extends Controller
 
 		return view('doctors.homepage', [
 			'doctor_id' => $doctor_id,
-			'viewerIsOwner' => (Auth::check() && Auth::user()->id == $doctor_id),
+			'viewerIsOwner' => $viewer_is_owner,
 			'name' => $doctor->name . ' ' . $doctor->lname,
 			'specialty' => $doctor->specialties[0]->title,
 			'specialty_title' => $doctor->specialties[0]->desc,
@@ -185,14 +187,119 @@ class DoctorsController extends Controller
 		]);
 	}
 
-	public function ask(Request $request, $doctor_id)
+	public function ask(Request $request, $doctor_id = null)
 	{
+		$request->flash();
+		$status_message = array();
+		$form_error = false;
+		$done = false;
 
+		if($doctor_id == null && $request->has('doctor_id')) {
+			$doctor_id = $request->get('doctor_id');
+		}
+
+		$doctor = null;
+		if($doctor_id) {
+			$doctor = Doctor::where('id', $doctor_id)->first();
+		}
+		if($request->has('question_submitted')) {
+			if(!$doctor_id) {
+				$status_message[] = trans('main4.invalid_doctor');
+				$form_error = true;
+			}
+			else {
+				if(!$doctor) {
+					$status_message[] = trans('main4.invalid_doctor');
+					$form_error = true;
+				}
+			}
+
+
+			if(strlen($request->get('q_name')) < 4) {
+				$status_message[] = trans('main4.invalid_name');
+				$form_error = true;
+			}
+
+			if(!filter_var($request->get('q_email'), FILTER_VALIDATE_EMAIL)) {
+				$status_message[] = trans('main4.invalid_email');
+				$form_error = true;
+			}
+
+			if(strlen($request->get('q_title')) < 10) {
+				$status_message[] = trans('main4.invalid_title');
+				$form_error = true;
+			}
+
+			if(strlen($request->get('q_question')) < 50) {
+				$status_message[] = trans('main4.invalid_question');
+				$form_error = true;
+			}
+
+			if(!$form_error) {
+				$med_question = new MedicalQuestion();
+				$med_question->fname = $request->get('q_name');
+				$med_question->email = $request->get('q_email');
+				$med_question->doctor_id = $doctor_id;
+				$med_question->title = $request->get('q_title');
+				$med_question->question = $request->get('q_question');
+				$med_question->scope = $request->get('q_scope');
+				$med_question->save();
+				$done = true;
+			}
+		}
+
+		$old_doctor_description = null;
+		if($doctor != null) {
+			$old_doctor_description = $doctor->name . ' ' . $doctor->lname . ' &middot; ';
+			foreach($doctor->specialties as $s) {
+				$old_doctor_description .= " " . $s->title . " ";
+			}
+			$old_doctor_description .= " &middot; ";
+			foreach($doctor->addresses as $a) {
+				$old_doctor_description .= " " . $a->city->name . " ";
+			}
+		}
+
+		return view('doctors.ask-medical-question', [
+			'use_doctors_navbar' 	 => false,
+			'standalone' 			 => true,
+			'old_doctor_id' 		 => $doctor_id,
+			'old_doctor_description' => $old_doctor_description,
+			'status_message' 		 => $status_message,
+			'form_error' 			 => $form_error,
+			'done' 					 => $done,
+		]);
 	}
 
 	public function askedQuestions(Request $request)
 	{
+		if(!Auth::check()) {
+			abort(403, 'access denied');
+			return;
+		}
 
+		$doctor = Auth::user();
+
+		if($request->has('reply_sent')) {
+			$med_question = MedicalQuestion::where('id', $request->get('qid'))->first();
+			if($med_question) {
+				$med_question->response = $request->get('response');
+				$med_question->save();
+			}
+		}
+
+		$med_questions = MedicalQuestion::where('doctor_id', $doctor->id)
+			->orderby('created_at', 'desc')
+			->paginate(10);
+
+		return view('doctors.medical-questions', [
+			'doctor_id' => $doctor->id,
+			'viewerIsOwner' => true,
+			'name' => $doctor->name . ' ' . $doctor->lname,
+			'specialty' => $doctor->specialties[0]->title,
+			'specialty_title' => $doctor->specialties[0]->desc,
+			'medical_questions' => $med_questions,
+		]);
 	}
 
 	public function schedule(Request $request)
