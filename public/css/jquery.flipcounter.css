@@ -11,12 +11,6 @@ div#flip-counter-wrapper>h4 {
     font-weight: bold;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
 }
-div#flip-counter-wrapper>.fc-c {
-    color: #ddd;
-    font-size: 50px;
-    position: relative;
-    top: -22px;
-}
 div#flip-counter {
     display: inline-block;
 }

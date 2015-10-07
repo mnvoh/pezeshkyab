@@ -6,9 +6,8 @@
 
 			<div class="text-center">
 				<div id="flip-counter-wrapper">
-					<h4 class="text-center">{{ trans('main4.paid_gross') }}</h4>
+					<h4 class="text-center">{{ trans('main4.paid_gross') . '(' . trans('currencies.irr') . ')' }}</h4>
 					<div id="flip-counter" data-val="{{ (int)$paid_gross }}" dir="ltr">{{ (int)($paid_gross / 2) }}</div>
-					<span class="fc-c">{{ trans('currencies.irr') }}</span>
 				</div>
 			</div>
 
