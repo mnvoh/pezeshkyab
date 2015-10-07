@@ -243,6 +243,14 @@
 							</a>
 						</li>
                     <?php endif; ?>
+					<?php if($viewerIsOwner): ?>
+						<li>
+							<a href="<?php echo e(route('doctors.transactions')); ?>">
+								<?php echo e(trans('main4.transactions')); ?>
+
+							</a>
+						</li>
+					<?php endif; ?>
 				</ul>
 			</nav>
 		</div>

@@ -69,6 +69,13 @@
             $('p#doctor-bio').hide();
             $('#new-bio-form').toggle("fast");
         });
+
+        if($('#flip-counter').length) {
+            $('#flip-counter').flipCounterInit();
+            var flipCounterNewVal = $('#flip-counter').data('val');
+            $('#flip-counter').flipCounterUpdate(flipCounterNewVal);
+        }
+
     });
 })(jQuery);
 

@@ -63,4 +63,8 @@ return [
 	'question_submitted' => 'Your question has been submitted and the doctor will reply shortly.',
 	'sender' => 'Sender Name',
 	'response' => 'Response',
+	'transactions' => 'Transactions',
+	'paid' => 'Paid',
+	'unpaid' => 'Unpaid',
+	'paid_gross' => 'Gross amount of paid transactions',
 ];

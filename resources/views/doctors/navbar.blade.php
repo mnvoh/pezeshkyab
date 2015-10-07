@@ -231,6 +231,13 @@
 							</a>
 						</li>
                     @endif
+					@if($viewerIsOwner)
+						<li>
+							<a href="{{ route('doctors.transactions') }}">
+								{{ trans('main4.transactions') }}
+							</a>
+						</li>
+					@endif
 				</ul>
 			</nav>
 		</div>

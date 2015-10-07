@@ -7,6 +7,7 @@ use App\Models\Fee;
 use App\Models\MedicalNews;
 use App\Models\MedicalQuestion;
 use App\Models\Reservation;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Helpers\Utils;
 use App\Http\Requests;
@@ -371,6 +372,33 @@ class DoctorsController extends Controller
 			'current_year' => jdate('Y', time(), '', 'Asia/Tehran', 'en'),
 			'current_month' => jdate('m', time(), '', 'Asia/Tehran', 'en'),
 			'current_date' => jdate('d', time(), '', 'Asia/Tehran', 'en'),
+		]);
+	}
+
+	public function transactions(Request $request)
+	{
+		if(!Auth::check()) {
+			abort(403, 'access denied');
+			return;
+		}
+
+		$doctor = Auth::user();
+		$transactions = Transaction::where('doctor_id', $doctor->id)
+			->orderBy('id', 'desc')
+			->paginate(10);
+
+		$paid_gross = Transaction::where('doctor_id', $doctor->id)
+			->where('status', 'paid')
+			->sum('amount');
+
+		return view('doctors.transactions', [
+			'doctor_id' => $doctor->id,
+			'viewerIsOwner' => true,
+			'name' => $doctor->name . ' ' . $doctor->lname,
+			'specialty' => $doctor->specialties[0]->title,
+			'specialty_title' => $doctor->specialties[0]->desc,
+			'transactions' => $transactions,
+			'paid_gross' => $paid_gross,
 		]);
 	}
 

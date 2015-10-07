@@ -109,36 +109,41 @@ Route::any('docfinder/book-appointment/{doctor_id}/{step}', [
 
 /*          DoctorsController
   ======================================*/
-Route::any('doctors/{doctor_id}', [
+Route::any('docfinder/doctors/{doctor_id}', [
 	'as' => 'doctors.homepage',
 	'uses' => 'DoctorsController@homePage'
 ])->where('doctor_id', '[0-9]+');
 
-Route::any('doctors/{doctor_id}/med-news', [
+Route::any('docfinder/doctors/{doctor_id}/med-news', [
 	'as' => 'doctors.articles',
 	'uses' => 'DoctorsController@doctorsMedNews'
 ]);
 
-Route::any('med-news/{medical_news_id}/{title?}', [
+Route::any('docfinder/med-news/{medical_news_id}/{title?}', [
     'as' => 'doctors.article',
     'uses' => 'DoctorsController@medNews'
 ]);
 
-Route::any('doctors/mednews/add', [
+Route::any('docfinder/med-news/add', [
 	'as' => 'doctors.add_med_news',
 	'uses' => 'DoctorsController@addMedNews'
 ]);
 
-Route::any('doctors/ask/{doctor_id?}', [
+Route::any('docfinder/doctors/ask/{doctor_id?}', [
 	'as' => 'doctors.ask',
 	'uses' => 'DoctorsController@ask'
 ]);
-Route::any('doctors/questions', [
+Route::any('docfinder/doctors/questions', [
 	'as' => 'doctors.asked_questions',
 	'uses' => 'DoctorsController@askedQuestions'
 ]);
 
-Route::any('doctors/schedule', [
+Route::any('docfinder/doctors/schedule', [
 	'as' => 'doctors.schedule',
 	'uses' => 'DoctorsController@schedule'
+]);
+
+Route::any('docfinder/doctors/transactions', [
+	'as' => 'doctors.transactions',
+	'uses' => 'DoctorsController@transactions'
 ]);
