@@ -11,7 +11,9 @@ use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Helpers\Utils;
 use App\Http\Requests;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class DoctorsController extends Controller
 {
@@ -399,6 +401,60 @@ class DoctorsController extends Controller
 			'specialty_title' => $doctor->specialties[0]->desc,
 			'transactions' => $transactions,
 			'paid_gross' => $paid_gross,
+		]);
+	}
+
+	public function emailPatientForReservation (Request $request)
+	{
+		if(!$request->has('reservation_id')) {
+			return response()->json([
+				'error' => true,
+				'description' => trans('main4.invalid_reservation_id'),
+			]);
+		}
+
+		$id = $request->get('reservation_id');
+		$reservation = Reservation::where('id', $id)->first();
+		if(!$reservation) {
+			return response()->json([
+				'error' => true,
+				'description' => trans('main4.invalid_reservation_id'),
+			]);
+		}
+
+		$lang = $request->segment(1);
+		if(!isset(config('app.locales_dir')[$lang])) {
+			$lang = config('app.fallback_locale');
+		}
+		$dir = config('app.locales_dir')[$lang];
+		if($dir == 'ltr') {
+			$float = 'left';
+		}
+		else {
+			$float = 'right';
+		}
+		$title = $request->get('subject') . trans('email.signature_line2');
+		$content = $request->get('message');
+
+
+		Mail::send('email.doctor-reservation', [
+			'dir' => $dir,
+			'float' => $float,
+			'title' => $title,
+			'content' => $content,
+		], function($m) use ($reservation) {
+			$to = $reservation->pemail;
+			$from = $reservation->doctor->name . ' ' . $reservation->doctor->name . '(' .
+				trans('email.signature_line2') . ')';
+			$from_addr = $reservation->doctor->email;
+			$m->from($from_addr, $from);
+			$m->replyTo($from_addr);
+			$m->to($to);
+		});
+
+		return response()->json([
+			'error' => false,
+			'description' => trans('email.sent'),
 		]);
 	}
 

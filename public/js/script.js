@@ -76,6 +76,43 @@
             $('#flip-counter').flipCounterUpdate(flipCounterNewVal);
         }
 
+        $('.email-patient-form').submit(function() {
+            var reservation_id = $(this).find('input[name="reservation_id"]').val();
+            var email = $(this).find('input[name="email"]').val();
+            var name = $(this).find('input[name="name"]').val();
+
+            $('#patient-compose-mail-to').html(name + "&lt;" + email + "&gt;");
+            $('#mail-to-reservation-id').val(reservation_id);
+            $('#ajax-form').show();
+            $('#email-patient-modal').modal('show');
+
+            return false;
+        });
+
+        $('#ajax-form').submit(function() {
+            var url = $(this).prop('action');
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $(this).serialize(),
+                success: function(results) {
+                    if(results.error) {
+                        $('#ajax-form').find('p.text-error').html(results.description);
+                    }
+                    else {
+                        $('#ajax-form').hide();
+                        $('#email-patient-modal h3.text-success').show();
+                    }
+                },
+                error: function(data) {
+                    alert('error');
+                }
+            });
+
+            return false;
+        });
+
     });
 })(jQuery);
 

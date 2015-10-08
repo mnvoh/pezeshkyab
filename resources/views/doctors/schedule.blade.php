@@ -18,15 +18,15 @@
 
 					<span dir="ltr">
 						<input type="number" min="{{ $current_year }}" max="{{ $current_year + 1 }}"
-							   name="year" class="inline-form-control noborder text-center"
+							   name="year" class="inline-form-control noborder text-center sm-number-field"
 							   value="{{ $current_year }}" width="20" />
 						/
 						<input type="number" min="1" max="12" name="month"
-							   class="inline-form-control noborder text-center"
+							   class="inline-form-control noborder text-center sm-number-field"
 							   value="{{ $current_month }}" />
 						/
 						<input type="number" min="1" max="31" name="date"
-							   class="inline-form-control noborder text-center"
+							   class="inline-form-control noborder text-center sm-number-field"
 							   value="{{ ($current_date + 2) % 31 }}" />
 					</span>
 
@@ -35,16 +35,16 @@
 				<div class="form-control inline-form-control">
 					<label class="inline-form-control">{{ trans('main3.time') }}</label>
 					<span dir="ltr">
-						<input type="number" min="0" max="23" name="hour" class="inline-form-control noborder text-center"
-							   value="7" />
+						<input type="number" min="0" max="23" name="hour"
+							   class="inline-form-control noborder text-center sm-number-field" value="7" />
 						:
-						<input type="number" min="0" max="60" name="minute" class="inline-form-control noborder text-center"
-							   value="0" />
+						<input type="number" min="0" max="60" name="minute"
+							   class="inline-form-control noborder text-center sm-number-field" value="0" />
 					</span>
 				</div>
 				<div class="form-control inline-form-control">
 					<label class="inline-form-control">{{ trans('main2.fee') }}</label>
-					<select name="fee">
+					<select name="fee" class="plain-combo">
 						@foreach($fees as $fee)
 							<option value="{{ $fee->id }}">
 								{{ $fee->title }} - {{ $fee->amount }} {{ trans('currencies.irr') }}
@@ -75,7 +75,7 @@
 						<th>{{ trans('main.national_code') }}</th>
 						<th>{{ trans('main.email_address') }}</th>
 						<th>{{ trans('main4.disease') }}</th>
-						<th>{{ trans('main4.delete') }}</th>
+						<th>{{ trans('main4.action') }}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -106,6 +106,16 @@
 										{{ trans('main4.delete') }}
 									</button>
 								</form>
+							@else
+								<form class="form-inline confirm-form email-patient-form" action="{{ $url }}" method="post">
+									<input type="hidden" name="reservation_id" value="{{ $r->id }}" />
+									<input type="hidden" name="email" value="{{ $r->pemail }}" />
+									<input type="hidden" name="name" value="{{ $r->pname . ' ' . $r->plname }}" />
+									{{ csrf_field() }}
+									<button type="submit" name="email_patient" value="1" class="btn btn-default">
+										{{ trans('main4.email') }}
+									</button>
+								</form>
 							@endif
 						</td>
 					</tr>
@@ -114,4 +124,47 @@
 			</table>
         </div>
     </div>
+
+	<div class="modal fade" id="email-patient-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">
+						{{ trans('main4.send_email_to') }}:
+						<span id="patient-compose-mail-to"></span>
+					</h4>
+				</div>
+				<h3 class="text-success text-center" style="display: none;">{{ trans('email.sent') }}</h3>
+				<form action="{{ route('doctors.email_patient_reservation') }}" method="post"
+					  id="ajax-form">
+					<div class="modal-body">
+						<div class="form-group">
+							<p class="text-error"></p>
+						</div>
+						<div class="form-group">
+							<input type="text" name="subject" placeholder="{{ trans('main4.subject') }}"
+								   class="form-control" />
+						</div>
+						<div class="form-group">
+							<textarea name="message" class="form-control"
+									  placeholder="{{ trans('main4.email_patient') }}"
+									  style="height: 250px;"></textarea>
+							<input type="hidden" name="reservation_id" id="mail-to-reservation-id" />
+							{{ csrf_field() }}
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							{{ trans('main4.close') }}
+						</button>
+						<button type="submit" class="btn btn-primary">
+							<span class="glyphicon glyphicon-send"></span>
+							{{ trans('main4.send') }}
+						</button>
+					</div>
+				</form>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 @endsection

@@ -526,3 +526,11 @@ div.main-search-container div.adv-search {
     margin: 10px 0;
     padding: 10px;
 }
+
+.sm-number-field {
+    width: 50px;
+}
+.plain-combo {
+    background: transparent;
+    border: 0 none;
+}

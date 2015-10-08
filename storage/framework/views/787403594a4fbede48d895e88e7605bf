@@ -16,15 +16,15 @@
 
 					<span dir="ltr">
 						<input type="number" min="<?php echo e($current_year); ?>" max="<?php echo e($current_year + 1); ?>"
-							   name="year" class="inline-form-control noborder text-center"
+							   name="year" class="inline-form-control noborder text-center sm-number-field"
 							   value="<?php echo e($current_year); ?>" width="20" />
 						/
 						<input type="number" min="1" max="12" name="month"
-							   class="inline-form-control noborder text-center"
+							   class="inline-form-control noborder text-center sm-number-field"
 							   value="<?php echo e($current_month); ?>" />
 						/
 						<input type="number" min="1" max="31" name="date"
-							   class="inline-form-control noborder text-center"
+							   class="inline-form-control noborder text-center sm-number-field"
 							   value="<?php echo e(($current_date + 2) % 31); ?>" />
 					</span>
 
@@ -33,16 +33,16 @@
 				<div class="form-control inline-form-control">
 					<label class="inline-form-control"><?php echo e(trans('main3.time')); ?></label>
 					<span dir="ltr">
-						<input type="number" min="0" max="23" name="hour" class="inline-form-control noborder text-center"
-							   value="7" />
+						<input type="number" min="0" max="23" name="hour"
+							   class="inline-form-control noborder text-center sm-number-field" value="7" />
 						:
-						<input type="number" min="0" max="60" name="minute" class="inline-form-control noborder text-center"
-							   value="0" />
+						<input type="number" min="0" max="60" name="minute"
+							   class="inline-form-control noborder text-center sm-number-field" value="0" />
 					</span>
 				</div>
 				<div class="form-control inline-form-control">
 					<label class="inline-form-control"><?php echo e(trans('main2.fee')); ?></label>
-					<select name="fee">
+					<select name="fee" class="plain-combo">
 						<?php foreach($fees as $fee): ?>
 							<option value="<?php echo e($fee->id); ?>">
 								<?php echo e($fee->title); ?> - <?php echo e($fee->amount); ?> <?php echo e(trans('currencies.irr')); ?>
@@ -76,7 +76,7 @@
 						<th><?php echo e(trans('main.national_code')); ?></th>
 						<th><?php echo e(trans('main.email_address')); ?></th>
 						<th><?php echo e(trans('main4.disease')); ?></th>
-						<th><?php echo e(trans('main4.delete')); ?></th>
+						<th><?php echo e(trans('main4.action')); ?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -111,6 +111,18 @@
 
 									</button>
 								</form>
+							<?php else: ?>
+								<form class="form-inline confirm-form email-patient-form" action="<?php echo e($url); ?>" method="post">
+									<input type="hidden" name="reservation_id" value="<?php echo e($r->id); ?>" />
+									<input type="hidden" name="email" value="<?php echo e($r->pemail); ?>" />
+									<input type="hidden" name="name" value="<?php echo e($r->pname . ' ' . $r->plname); ?>" />
+									<?php echo e(csrf_field()); ?>
+
+									<button type="submit" name="email_patient" value="1" class="btn btn-default">
+										<?php echo e(trans('main4.email')); ?>
+
+									</button>
+								</form>
 							<?php endif; ?>
 						</td>
 					</tr>
@@ -119,5 +131,51 @@
 			</table>
         </div>
     </div>
+
+	<div class="modal fade" id="email-patient-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">
+						<?php echo e(trans('main4.send_email_to')); ?>:
+						<span id="patient-compose-mail-to"></span>
+					</h4>
+				</div>
+				<h3 class="text-success text-center" style="display: none;"><?php echo e(trans('email.sent')); ?></h3>
+				<form action="<?php echo e(route('doctors.email_patient_reservation')); ?>" method="post"
+					  id="ajax-form">
+					<div class="modal-body">
+						<div class="form-group">
+							<p class="text-error"></p>
+						</div>
+						<div class="form-group">
+							<input type="text" name="subject" placeholder="<?php echo e(trans('main4.subject')); ?>"
+								   class="form-control" />
+						</div>
+						<div class="form-group">
+							<textarea name="message" class="form-control"
+									  placeholder="<?php echo e(trans('main4.email_patient')); ?>"
+									  style="height: 250px;"></textarea>
+							<input type="hidden" name="reservation_id" id="mail-to-reservation-id" />
+							<?php echo e(csrf_field()); ?>
+
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							<?php echo e(trans('main4.close')); ?>
+
+						</button>
+						<button type="submit" class="btn btn-primary">
+							<span class="glyphicon glyphicon-send"></span>
+							<?php echo e(trans('main4.send')); ?>
+
+						</button>
+					</div>
+				</form>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

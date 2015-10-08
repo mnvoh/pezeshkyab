@@ -1,5 +1,11 @@
+## Release 2.0.2
+- Use curl opts for auth instead of inline syntax [[4b01af8]](http://github.com/elasticsearch/elasticsearch-php/commit/4b01af8)
+
+## Release 2.0.1
+- Add ClientBuilder::FromConfig to allow easier automated building of Client [[a07486d]](http://github.com/elasticsearch/elasticsearch-php/commit/a07486d)
+
 ## Release 2.0.0
-- (HEAD, origin/2.0, 2.0) Added helper iterators for scrolled search [[24598e7]](http://github.com/elasticsearch/elasticsearch-php/commit/24598e7)
+- Added helper iterators for scrolled search [[24598e7]](http://github.com/elasticsearch/elasticsearch-php/commit/24598e7)
 - comoposer command error [[8ed2885]](http://github.com/elasticsearch/elasticsearch-php/commit/8ed2885)
 
 ## Release 2.0.0-beta5

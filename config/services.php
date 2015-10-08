@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => '',
-        'secret' => '',
+        'domain' => 'tabeebyab.com',
+        'secret' => 'key-4dc2f1b3fb922a3d5b79f23e0400b9f4',
     ],
 
     'mandrill' => [
