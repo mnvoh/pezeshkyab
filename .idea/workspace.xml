@@ -2,134 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42a41d7d-bca1-4eeb-a472-3cb96465f380" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/graham-campbell/markdown/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/graham-campbell/markdown/composer.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/graham-campbell/markdown/config/markdown.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/graham-campbell/markdown/src/Compilers/MarkdownCompiler.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/graham-campbell/markdown/src/Engines/BladeMarkdownEngine.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/graham-campbell/markdown/src/Engines/PhpMarkdownEngine.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/graham-campbell/markdown/src/Facades/Markdown.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/graham-campbell/markdown/src/MarkdownServiceProvider.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/.styleci.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/composer.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/AbstractBlock.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/AbstractInlineContainer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/BlockQuote.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/Document.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/FencedCode.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/Header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/HorizontalRule.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/HtmlBlock.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/IndentedCode.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/ListBlock.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/ListData.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/ListItem.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Element/Paragraph.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Parser/ATXHeaderParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Parser/AbstractBlockParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Parser/BlockParserInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Parser/BlockQuoteParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Parser/FencedCodeParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Parser/HorizontalRuleParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Parser/HtmlBlockParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Parser/IndentedCodeParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Parser/LazyParagraphParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Parser/ListParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Parser/SetExtHeaderParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Renderer/BlockQuoteRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Renderer/BlockRendererInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Renderer/DocumentRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Renderer/FencedCodeRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Renderer/HeaderRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Renderer/HorizontalRuleRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Renderer/HtmlBlockRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Renderer/IndentedCodeRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Renderer/ListBlockRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Renderer/ListItemRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Block/Renderer/ParagraphRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/CommonMarkConverter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Context.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/ContextInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Converter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Cursor.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/CursorState.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/Delimiter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/DelimiterStack.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/DocParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/ElementRendererInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Environment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/EnvironmentAwareInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/CommonMarkCoreExtension.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Extension.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/ExtensionInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/MiscExtension.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/SmartPunctExtension.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/HtmlElement.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/HtmlRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Element/AbstractInline.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Element/AbstractInlineContainer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Element/AbstractStringContainer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Element/AbstractWebResource.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Element/Code.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Element/Emphasis.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Element/Html.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Element/Image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Element/Link.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Element/Newline.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Element/Strong.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Element/Text.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/AbstractInlineParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/AutolinkParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/BacktickParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/BangParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/CloseBracketParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/EmphasisParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/EntityParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/EscapableParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/InlineParserInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/NewlineParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/OpenBracketParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/QuoteParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/RawHtmlParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Parser/SmartPunctParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Processor/EmphasisProcessor.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Processor/InlineProcessorInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Processor/QuoteProcessor.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Renderer/CodeRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Renderer/EmphasisRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Renderer/ImageRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Renderer/InlineRendererInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Renderer/LinkRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Renderer/NewlineRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Renderer/RawHtmlRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Renderer/StrongRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Inline/Renderer/TextRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/InlineParserContext.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/InlineParserEngine.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Reference/Reference.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Reference/ReferenceMap.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/ReferenceParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/UnmatchedBlockCloser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/ArrayCollection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/Configuration.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/Html5Entities.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/LinkParserHelper.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/RegexHelper.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/UrlEncoder.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Helpers/Utils.php" afterPath="$PROJECT_DIR$/app/Helpers/Utils.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel.log" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap/cache/services.json" afterPath="$PROJECT_DIR$/bootstrap/cache/services.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" />
     </list>
     <ignored path="pezeshkyab.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -182,23 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Helpers/Utils.php">
+      <file leaf-file-name="SearchController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SearchController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.037037">
-              <caret line="159" column="19" selection-start-line="159" selection-start-column="19" selection-end-line="159" selection-end-column="19" />
-              <folding>
-                <element signature="e#30#58#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26045015">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.36334404">
+              <caret line="171" column="62" selection-start-line="171" selection-start-column="62" selection-end-line="171" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -283,7 +144,6 @@
         <option value="$PROJECT_DIR$/public/js/jquery.ui.js" />
         <option value="$PROJECT_DIR$/resources/views/search/find.blade.php" />
         <option value="$PROJECT_DIR$/public/css/style.rtl.css" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" />
         <option value="$PROJECT_DIR$/resources/views/navbar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/appointment/step3.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/appointment/step1.blade.php" />
@@ -331,6 +191,7 @@
         <option value="$PROJECT_DIR$/app/Helpers/Utils.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" />
       </list>
     </option>
   </component>
@@ -780,7 +641,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="guzzlehttp" />
+              <option name="myItemId" value="laravel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -798,37 +663,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="guzzlehttp" />
+              <option name="myItemId" value="laravel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="guzzle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pezeshkyab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pezeshkyab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="guzzlehttp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="guzzle" />
+              <option name="myItemId" value="framework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Illuminate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pezeshkyab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pezeshkyab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Illuminate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1267,13 +1148,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/appointment/step5.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.153846">
-          <caret line="70" column="16" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/framework/views/4918230029d724415bd02a92053e8e2d">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.7561779">
@@ -1394,13 +1268,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.8649517">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SearchController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6045017">
-          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="48" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1650,8 +1517,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26045015">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="41" />
+        <state vertical-scroll-proportion="-9.333333">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/DetectsLostConnections.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.0">
+          <caret line="7" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SearchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36334404">
+          <caret line="171" column="62" selection-start-line="171" selection-start-column="62" selection-end-line="171" selection-end-column="62" />
           <folding />
         </state>
       </provider>

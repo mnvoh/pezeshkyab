@@ -169,7 +169,7 @@ class SearchController extends Controller
         try {
             $client = ClientBuilder::create()->build();
             $results = $client->search($params);
-            if(count($results['suggest']['simple_phrase'])) {
+            if(isset($results['suggest']['simple_phrase']) && count($results['suggest']['simple_phrase'])) {
                 if(count($results['suggest']['simple_phrase'][0]['options'])) {
                     return $results['suggest']['simple_phrase'][0]['options'][0]['text'];
                 }
