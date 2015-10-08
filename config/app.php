@@ -27,7 +27,7 @@ return [
     */
 
     'url' => 'http://www.pezeshkyab.lcom',
-
+	'domain' => 'pezeshkyab.lcom',
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

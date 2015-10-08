@@ -288,6 +288,19 @@ class DoctorsController extends Controller
 			if($med_question) {
 				$med_question->response = $request->get('response');
 				$med_question->save();
+
+				$to = $med_question->email;
+				$from_name = $med_question->doctor->name . ' ' . $med_question->doctor->lname .
+					' | ' . trans('email.signature_line2');
+				$from_address = null;
+				$subject = trans('email.med_question_response');
+				$content = [
+					'question' => $med_question->question,
+					'response' => $med_question->response,
+				];
+
+				Utils::sendEmail($request, $to, $from_name, $from_address, $subject, $content
+					, 'medical-question-response');
 			}
 		}
 
@@ -422,35 +435,16 @@ class DoctorsController extends Controller
 			]);
 		}
 
-		$lang = $request->segment(1);
-		if(!isset(config('app.locales_dir')[$lang])) {
-			$lang = config('app.fallback_locale');
-		}
-		$dir = config('app.locales_dir')[$lang];
-		if($dir == 'ltr') {
-			$float = 'left';
-		}
-		else {
-			$float = 'right';
-		}
+
 		$title = $request->get('subject') . trans('email.signature_line2');
 		$content = $request->get('message');
 
+		$to = $reservation->pemail;
+		$from = $reservation->doctor->name . ' ' . $reservation->doctor->lname . '(' .
+			trans('email.signature_line2') . ')';
+		$from_addr = $reservation->doctor->email;
 
-		Mail::send('email.doctor-reservation', [
-			'dir' => $dir,
-			'float' => $float,
-			'title' => $title,
-			'content' => $content,
-		], function($m) use ($reservation) {
-			$to = $reservation->pemail;
-			$from = $reservation->doctor->name . ' ' . $reservation->doctor->name . '(' .
-				trans('email.signature_line2') . ')';
-			$from_addr = $reservation->doctor->email;
-			$m->from($from_addr, $from);
-			$m->replyTo($from_addr);
-			$m->to($to);
-		});
+		Utils::sendEmail($request, $to, $from, $from_addr, $title, $content, 'doctor-reservation');
 
 		return response()->json([
 			'error' => false,

@@ -2,286 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42a41d7d-bca1-4eeb-a472-3cb96465f380" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/email/doctor-reservation.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/email/email.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lang/en/email.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bin/phpunit.bat" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/.gitignore" afterPath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/.travis.yml" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/.travis.yml" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/1021.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/1021.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1149.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1149.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1216.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1216.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1265.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1265.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1330.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1330.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1335.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1335.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1337.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1337.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1348.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1348.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1374.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1374.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1437.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/1437.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/244.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/244.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/322.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/322.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/433.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/433.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/445.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/445.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/498.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/498.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/503.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/503.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/523.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/523.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/578.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/578.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/581.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/581.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/684.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/684.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/74.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/74.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/765.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/765.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/783.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/783.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/787403594a4fbede48d895e88e7605bf" afterPath="$PROJECT_DIR$/storage/framework/views/787403594a4fbede48d895e88e7605bf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/797.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/797.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/873-php5.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/873-php5.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/873-php7.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/873-php7.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/Tests/AbstractEventDispatcherTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/Tests/AbstractEventDispatcherTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/league/flysystem/src/Adapter/AbstractFtpAdapter.php" afterPath="$PROJECT_DIR$/vendor/league/flysystem/src/Adapter/AbstractFtpAdapter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/AppNameCommand.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/AppNameCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Application.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Application.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/ApplicationTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/ApplicationTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Arr.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Arr.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Artisan.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Artisan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Providers/ArtisanServiceProvider.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Providers/ArtisanServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/Assert.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/Assert.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Framework/AssertTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Framework/AssertTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/Access/AuthorizesRequests.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/Access/AuthorizesRequests.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/BindingResolutionException.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/BindingResolutionException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Container/BindingResolutionException.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Container/BindingResolutionException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/Blacklist.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/Blacklist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Bus.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Bus.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/nikic/php-parser/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/nikic/php-parser/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/CONTRIBUTING.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/Caster.php" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/Caster.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/ChangeLog-2.2.md" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/ChangeLog-2.2.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/ChangeLog-4.8.md" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/ChangeLog-4.8.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/css-selector/Parser/Shortcut/ClassParser.php" afterPath="$PROJECT_DIR$/vendor/symfony/css-selector/Parser/Shortcut/ClassParser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/ClassTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/ClassTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/src/Elasticsearch/ClientBuilder.php" afterPath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/src/Elasticsearch/ClientBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/tests/Elasticsearch/Tests/ClientTest.php" afterPath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/tests/Elasticsearch/Tests/ClientTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Tests/ClockMock.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Tests/ClockMock.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Filesystem/Cloud.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Filesystem/Cloud.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/PHP/CodeCoverageTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/PHP/CodeCoverageTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Collection.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Collection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/TextUI/Command.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/TextUI/Command.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Composer.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Composer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/Configuration.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/Configuration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/ConfirmableTrait.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/ConfirmableTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php" afterPath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Connection.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Connection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Output/ConsoleOutput.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Output/ConsoleOutput.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/Container.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/Container.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/ContainerAwareEventDispatcher.php" afterPath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/ContainerAwareEventDispatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cookie/CookieJar.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cookie/CookieJar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Tests/CookieTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Tests/CookieTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/CoverageTwoDefaultClassAnnotations.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/CoverageTwoDefaultClassAnnotations.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Crap4j.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Crap4j.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Crawler.php" afterPath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Crawler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Tests/CrawlerTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Tests/CrawlerTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/CrawlerTrait.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/CrawlerTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Dashboard.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/DateRangeFilterIteratorTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/DateRangeFilterIteratorTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/debug/DebugClassLoader.php" afterPath="$PROJECT_DIR$/vendor/symfony/debug/DebugClassLoader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/debug/Tests/DebugClassLoaderTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/debug/Tests/DebugClassLoaderTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Encryption/DecryptException.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Encryption/DecryptException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/DepthRangeFilterIteratorTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/DepthRangeFilterIteratorTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Helper/DialogHelper.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Helper/DialogHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/email/medical-question-response.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DoctorsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DoctorsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/css-selector/Parser/Shortcut/ElementParser.php" afterPath="$PROJECT_DIR$/vendor/symfony/css-selector/Parser/Shortcut/ElementParser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Encryption/EncryptException.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Encryption/EncryptException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/HttpCache/Esi.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/HttpCache/Esi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/HttpCache/EsiTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/HttpCache/EsiTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/EventDispatcher.php" afterPath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/EventDispatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Iterator/ExcludeDirectoryFilterIterator.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Iterator/ExcludeDirectoryFilterIterator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/ExcludeDirectoryFilterIteratorTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/ExcludeDirectoryFilterIteratorTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/PHP/CodeCoverage/Report/FactoryTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/PHP/CodeCoverage/Report/FactoryTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Node/File.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Node/File.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Filesystem/FileNotFoundException.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Filesystem/FileNotFoundException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/FileTypeFilterIteratorTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/FileTypeFilterIteratorTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage/Filter.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage/Filter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Tests/FinderTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Tests/FinderTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Fluent.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Fluent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Form.php" afterPath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Tests/FormTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Tests/FormTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/league/flysystem/src/Adapter/Ftp.php" afterPath="$PROJECT_DIR$/vendor/league/flysystem/src/Adapter/Ftp.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Access/Gate.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Access/Gate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Generator.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Generator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/GeneratorTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/GeneratorTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/Grammar.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/Grammar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/css-selector/Parser/Shortcut/HashParser.php" afterPath="$PROJECT_DIR$/vendor/symfony/css-selector/Parser/Shortcut/HashParser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/HtmlDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/HtmlDumper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/IteratorTestCase.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/IteratorTestCase.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/JoinClause.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/JoinClause.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Kernel.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/KernelTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/KernelTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Helper/LegacyProgressHelperTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Helper/LegacyProgressHelperTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Listener.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Listener.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/league/flysystem/src/Adapter/Local.php" afterPath="$PROJECT_DIR$/vendor/league/flysystem/src/Adapter/Local.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/MassAssignmentException.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/MassAssignmentException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Encryption/McryptEncrypter.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Encryption/McryptEncrypter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/MigrationServiceProvider.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/MigrationServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Output/OutputInterface.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Output/OutputInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/nikic/php-parser/lib/PhpParser/Parser.php" afterPath="$PROJECT_DIR$/vendor/nikic/php-parser/lib/PhpParser/Parser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/yaml/Parser.php" afterPath="$PROJECT_DIR$/vendor/symfony/yaml/Parser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/yaml/Tests/ParserTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/yaml/Tests/ParserTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Adapter/PhpAdapter.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Adapter/PhpAdapter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Pivot.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Pivot.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Exception/PostTooLargeException.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Exception/PostTooLargeException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/process/Process.php" afterPath="$PROJECT_DIR$/vendor/symfony/process/Process.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Helper/ProcessHelper.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Helper/ProcessHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Helper/ProgressBar.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Helper/ProgressBar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Helper/ProgressBarTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Helper/ProgressBarTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Helper/QuestionHelper.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Helper/QuestionHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/README.md" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/README.md" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/RateLimiter.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/RateLimiter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/RealIteratorTestCase.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/RealIteratorTestCase.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Iterator/RecursiveDirectoryIterator.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Iterator/RecursiveDirectoryIterator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Relation.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Relation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/Repository.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/Repository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ResetsPasswords.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ResetsPasswords.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Tests/ResponseHeaderBagTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Tests/ResponseHeaderBagTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/Fragment/RoutableFragmentRendererTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/Fragment/RoutableFragmentRendererTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Route.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Route.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Router.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Router.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/SQLiteGrammar.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/SQLiteGrammar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Schedule.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Schedule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Bus/SelfHandling.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Bus/SelfHandling.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/Console/SessionTableCommand.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/Console/SessionTableCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeQueued.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeQueued.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueue.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueue.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/SizeRangeFilterIteratorTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/SizeRangeFilterIteratorTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/SortableIteratorTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/SortableIteratorTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/SqlServerGrammar.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/SqlServerGrammar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/src/Token/Stream.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/src/Token/Stream.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Output/StreamOutput.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Output/StreamOutput.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php" afterPath="$PROJECT_DIR$/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Helper/Table.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Helper/Table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/TaggedCache.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/TaggedCache.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/Test.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/Test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestCase.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestCase.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/TestCase.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/TestCase.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/PHP/Template/TestCaseMethod.tpl.dist" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/PHP/Template/TestCaseMethod.tpl.dist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/TextUI/TestRunner.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/TextUI/TestRunner.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Util/TestTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Util/TestTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ThrottlesLogins.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ThrottlesLogins.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/TokenMismatchException.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/TokenMismatchException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/css-selector/XPath/TranslatorInterface.php" afterPath="$PROJECT_DIR$/vendor/symfony/css-selector/XPath/TranslatorInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Validation/UnauthorizedException.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Validation/UnauthorizedException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/league/flysystem/src/Util.php" afterPath="$PROJECT_DIR$/vendor/league/flysystem/src/Util.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Test/VarDumperTestTrait.php" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/Test/VarDumperTestTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Runner/Version.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Runner/Version.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/View.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/View.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Worker.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Worker.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/XML.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/XML.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Loader/YamlFileLoader.php" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Loader/YamlFileLoader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Tests/Loader/YamlFileLoaderTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Tests/Loader/YamlFileLoaderTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/application_asxml1.txt" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/application_asxml1.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/application_asxml2.txt" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/application_asxml2.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/colors-always.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/colors-always.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/league/flysystem/composer.json" afterPath="$PROJECT_DIR$/vendor/league/flysystem/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Optimize/config.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Optimize/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/docs/configuration.asciidoc" afterPath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/docs/configuration.asciidoc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Console/stubs/controller.plain.stub" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Console/stubs/controller.plain.stub" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Console/stubs/controller.stub" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Console/stubs/controller.stub" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/custom-printer-debug.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/custom-printer-debug.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/custom-printer-verbose.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/custom-printer-verbose.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/Console/stubs/database.stub" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/Console/stubs/database.stub" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/dataprovider-debug.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/dataprovider-debug.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/debug.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/debug.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/default-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/default-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/default.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/default.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/exclude-group-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/exclude-group-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/exclude-group.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/exclude-group.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-class-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-class-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-class.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-class.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-classname-and-range-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-classname-and-range-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-classname-and-range.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-classname-and-range.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-number-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-number-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-number.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-number.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-only-range-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-only-range-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-only-range.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-only-range.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-only-regexp-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-only-regexp-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-only-regexp.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-only-regexp.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-only-string-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-only-string-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-only-string.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-only-string.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-range-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-range-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-range.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-range.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-regexp-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-regexp-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-regexp.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-regexp.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-string-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-string-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-string.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-dataprovider-by-string.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-method-case-insensitive.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-method-case-insensitive.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-method-case-sensitive-no-result.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-method-case-sensitive-no-result.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-method-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-method-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-method.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-method.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-no-results.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/filter-no-results.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/group-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/group-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/group.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/group.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/helpers.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/helpers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Helpers/Utils.php" afterPath="$PROJECT_DIR$/app/Helpers/Utils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/email.php" afterPath="$PROJECT_DIR$/resources/lang/en/email.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel.log" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/list-groups.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/list-groups.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/log-json-no-pretty-print.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/log-json-no-pretty-print.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/log-json-post-66021.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/log-json-post-66021.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/log-json-pre-66021.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/log-json-pre-66021.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/log-tap.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/log-tap.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/log-xml.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/log-xml.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/mail.php" afterPath="$PROJECT_DIR$/config/mail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/main4.php" afterPath="$PROJECT_DIR$/resources/lang/en/main4.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/mnvoh.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/mnvoh.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/options-after-arguments.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/options-after-arguments.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/output-isolation.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/output-isolation.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bin/phpunit" afterPath="$PROJECT_DIR$/vendor/bin/phpunit" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/nikic/php-parser/grammar/rebuildParser.php" afterPath="$PROJECT_DIR$/vendor/nikic/php-parser/grammar/rebuildParser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/repeat.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/repeat.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/run_travis_test.sh" afterPath="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch/run_travis_test.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/doctors/schedule.blade.php" afterPath="$PROJECT_DIR$/resources/views/doctors/schedule.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/script.js" afterPath="$PROJECT_DIR$/public/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap/cache/services.json" afterPath="$PROJECT_DIR$/bootstrap/cache/services.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/services.php" afterPath="$PROJECT_DIR$/config/services.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/source_with_namespace.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/source_with_namespace.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/source_without_namespace.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/source_without_namespace.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/tap.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/tap.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/test-suffix-multiple.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/test-suffix-multiple.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/test-suffix-single.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/test-suffix-single.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/testdox-html.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/testdox-html.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/testdox-text.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/testdox-text.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/testdox.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/testdox.phpt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pezeshkyab.iws" />
@@ -319,8 +46,8 @@
       <file leaf-file-name="DoctorsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DoctorsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.037037">
-              <caret line="439" column="8" selection-start-line="439" selection-start-column="8" selection-end-line="452" selection-end-column="11" />
+            <state vertical-scroll-proportion="-12.37037">
+              <caret line="447" column="0" selection-start-line="447" selection-start-column="0" selection-end-line="447" selection-end-column="0" />
               <folding>
                 <element signature="e#40#62#0#PHP" expanded="true" />
                 <element signature="e#549#1899#0#PHP" expanded="false" />
@@ -328,10 +55,29 @@
                 <element signature="e#2978#3457#0#PHP" expanded="false" />
                 <element signature="e#3460#5904#0#PHP" expanded="false" />
                 <element signature="e#5907#8226#0#PHP" expanded="false" />
-                <element signature="e#8229#9045#0#PHP" expanded="false" />
-                <element signature="e#9048#11393#0#PHP" expanded="false" />
-                <element signature="e#13485#15418#0#PHP" expanded="false" />
+                <element signature="e#9521#11866#0#PHP" expanded="false" />
+                <element signature="e#13548#15481#0#PHP" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Helpers/Utils.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.76848876">
+              <caret line="171" column="32" selection-start-line="171" selection-start-column="32" selection-end-line="171" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.037037">
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -366,15 +112,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="email.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/email/email.blade.php">
+      <file leaf-file-name="medical-question-response.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/email/medical-question-response.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26045015">
-              <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
-              <folding>
-                <element signature="e#300#74057#1#HTML" expanded="true" />
-                <element signature="e#74401#74666#2#HTML" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-4.6666665">
+              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -407,10 +150,14 @@
       <projects_view />
     </option>
   </component>
+  <component name="GulpTreeLayoutManager">
+    <layout place="tools.popup">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/lang/en/main3.php" />
         <option value="$PROJECT_DIR$/public/js/jquery.ui.js" />
         <option value="$PROJECT_DIR$/resources/views/search/find.blade.php" />
         <option value="$PROJECT_DIR$/public/css/style.rtl.css" />
@@ -428,10 +175,8 @@
         <option value="$PROJECT_DIR$/resources/views/doctors/dr-master.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/resources/views/doctors/add-med-news.blade.php" />
-        <option value="$PROJECT_DIR$/app/Helpers/Utils.php" />
         <option value="$PROJECT_DIR$/resources/views/main/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/main/med-news.blade.php" />
-        <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/doctors/med-news.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MainController.php" />
         <option value="$PROJECT_DIR$/resources/views/doctors/mednews-pre.blade.php" />
@@ -451,7 +196,6 @@
         <option value="$PROJECT_DIR$/resources/views/email/email.blade.php.html" />
         <option value="$PROJECT_DIR$/resources/lang/en/email.php" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/DoctorsController.php" />
         <option value="$PROJECT_DIR$/resources/views/doctors/schedule.blade.php" />
         <option value="$PROJECT_DIR$/public/js/script.js" />
         <option value="$PROJECT_DIR$/config/mail.php" />
@@ -461,6 +205,10 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/email/email.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/email/doctor-reservation.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/email/medical-question-response.blade.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DoctorsController.php" />
+        <option value="$PROJECT_DIR$/app/Helpers/Utils.php" />
       </list>
     </option>
   </component>
@@ -1397,13 +1145,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/appointment/step1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/appointment/step5.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.153846">
@@ -1449,25 +1190,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Helpers/Utils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/main/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.0">
           <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24758843">
-          <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1698,24 +1424,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DoctorsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.037037">
-          <caret line="439" column="8" selection-start-line="439" selection-start-column="8" selection-end-line="452" selection-end-column="11" />
-          <folding>
-            <element signature="e#40#62#0#PHP" expanded="true" />
-            <element signature="e#549#1899#0#PHP" expanded="false" />
-            <element signature="e#1902#2975#0#PHP" expanded="false" />
-            <element signature="e#2978#3457#0#PHP" expanded="false" />
-            <element signature="e#3460#5904#0#PHP" expanded="false" />
-            <element signature="e#5907#8226#0#PHP" expanded="false" />
-            <element signature="e#8229#9045#0#PHP" expanded="false" />
-            <element signature="e#9048#11393#0#PHP" expanded="false" />
-            <element signature="e#13485#15418#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26045015">
@@ -1756,14 +1464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.0">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/email/doctor-reservation.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.115755625">
@@ -1774,12 +1474,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/email/email.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26045015">
+        <state vertical-scroll-proportion="-1.3729904">
           <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
           <folding>
             <element signature="e#300#74057#1#HTML" expanded="true" />
             <element signature="e#74401#74666#2#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.0">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/email/medical-question-response.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.6666665">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.037037">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DoctorsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.37037">
+          <caret line="447" column="0" selection-start-line="447" selection-start-column="0" selection-end-line="447" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#62#0#PHP" expanded="true" />
+            <element signature="e#549#1899#0#PHP" expanded="false" />
+            <element signature="e#1902#2975#0#PHP" expanded="false" />
+            <element signature="e#2978#3457#0#PHP" expanded="false" />
+            <element signature="e#3460#5904#0#PHP" expanded="false" />
+            <element signature="e#5907#8226#0#PHP" expanded="false" />
+            <element signature="e#9521#11866#0#PHP" expanded="false" />
+            <element signature="e#13548#15481#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Helpers/Utils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76848876">
+          <caret line="171" column="32" selection-start-line="171" selection-start-column="32" selection-end-line="171" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

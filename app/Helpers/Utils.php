@@ -3,7 +3,9 @@ namespace App\Helpers;
 
 use \App\Models\MedicalNews;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Http\Request;
 use \Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Mail;
 
 require_once(dirname(__FILE__) . '/jdf.php');
 
@@ -130,4 +132,44 @@ class Utils {
     {
 
     }
+
+	public static function sendEmail(Request $request, $to, $from_name, $from_addr, $subject, $content, $template)
+	{
+		$lang = $request->segment(1);
+		if(!isset(config('app.locales_dir')[$lang])) {
+			$lang = config('app.fallback_locale');
+		}
+		$dir = config('app.locales_dir')[$lang];
+		if($dir == 'ltr') {
+			$float = 'left';
+		}
+		else {
+			$float = 'right';
+		}
+
+		$params = array(
+			'dir' => $dir,
+			'float' => $float,
+			'title' => $subject,
+		);
+
+		if(is_array($content)) {
+			$params = array_merge($params, $content);
+		}
+		else {
+			$params['content'] = $content;
+		}
+
+		Mail::send('email.' . $template, $params, function($m) use ($to, $from_addr, $from_name, $subject) {
+			if($from_addr != null) {
+				$m->from($from_addr, $from_name);
+				$m->replyTo($from_addr);
+			}
+			else {
+				$m->from('no-reply@' . config('app.domain'), $from_name);
+			}
+			$m->to($to);
+			$m->subject($subject);
+		});
+	}
 }
