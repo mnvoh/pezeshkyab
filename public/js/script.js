@@ -38,7 +38,10 @@
         });
 
 
-        var es = new ElasticSearch({callback: refreshDoctorPickerResults});
+        var es = new ElasticSearch({
+            host: document.domain,
+            callback: refreshDoctorPickerResults
+        });
         $('#doctor-picker input[type="text"]').keyup(function() {
             if($(this).val().length <= 0) {
                 $('div#doctor-picker>div#dp-items>p').remove();
