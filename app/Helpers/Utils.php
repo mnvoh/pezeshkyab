@@ -1,10 +1,7 @@
 <?php
 namespace App\Helpers;
 
-use \App\Models\MedicalNews;
-use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Http\Request;
-use \Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Mail;
 
 require_once(dirname(__FILE__) . '/jdf.php');
