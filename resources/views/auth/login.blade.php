@@ -12,7 +12,7 @@
                     </a>
                 </li>
                 <li role="presentation">
-                    <a href="#moderators" aria-controls="moderators" role="tab" data-toggle="tab">
+                    <a href="#moderators" aria-controls="moderators" role="tab" data-toggle="tab" id="tab-sel-mod">
                         {{ trans('main2.mod_login') }}
                     </a>
                 </li>
@@ -23,9 +23,7 @@
                 <div role="tabpanel" class="tab-pane active login-form" id="doctors">
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
-                            <strong>Whoops! </strong> There were some problems with your input. <br> <br>
                             <ul>
-
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }} </li>
                                 @endforeach
@@ -79,26 +77,36 @@
 
 
                 <div role="tabpanel" class="tab-pane login-form" id="moderators">
-                    <form action="#" method="post">
+					@if (isset($errors) && count($errors) > 0)
+						<div class="alert alert-danger">
+							<ul>
+
+								@foreach ($errors->all() as $error)
+									<li>{{ $error }} </li>
+								@endforeach
+							</ul>
+						</div>
+					@endif
+                    <form action="{{ route('user.admin_login') }}" method="post">
                         <div class="form-group">
                             <label for="m_email">{{ trans('main.email_address') }}</label>
-                            <input type="email" class="form-control" id="m_email" name="m_email"
+                            <input type="email" class="form-control" id="m_email" name="email"
                                    placeholder="{{ trans('main.email_address') }}" />
                         </div>
 
                         <div class="form-group">
                             <label for="password">{{ trans('main.password') }}</label>
-                            <input type="password" class="form-control" id="m_password" name="m_password"
+                            <input type="password" class="form-control" id="m_password" name="password"
                                    placeholder="{{ trans('main.password') }}" />
                         </div>
 
                         <div>
                             <label>
-                                <input type="checkbox" name="m_remember_me" id="m_remember_me" checked="checked" />
+                                <input type="checkbox" name="remember_me" id="remember_me" checked="checked" />
                                 {{ trans('main.remember_me') }}
                             </label>
                         </div>
-
+						{{ csrf_field() }}
                         <button type="submit" class="btn btn-success btn-block">
                             {{ trans('main.login') }}
                         </button>

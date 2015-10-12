@@ -19,14 +19,14 @@
 
         $('.main-search-input').focus(function() {
             $(this).parents("div.form-control").addClass("form-control-focus");
-        });
-        $('.main-search-input').blur(function() {
+        }).blur(function() {
             $(this).parents("div.form-control").removeClass("form-control-focus");
-        });
+        });;
 
         $('#show-find-doctor').click(function() {
              $('div.main-search-container').slideToggle(200);
         });
+
         $('#btn-adv-search').click(function() {
             $('div.main-search-container div.adv-search').slideToggle(200);
             var currentState = $('input#s_adv').prop('checked');
@@ -37,12 +37,12 @@
             }
         });
 
-
         var es = new ElasticSearch({
             host: document.domain,
             callback: refreshDoctorPickerResults
         });
-        $('#doctor-picker input[type="text"]').keyup(function() {
+
+        $('div#doctor-picker input[type="text"]').keyup(function() {
             if($(this).val().length <= 0) {
                 $('div#doctor-picker>div#dp-items>p').remove();
                 $('div#doctor-picker>div#dp-items').hide();
@@ -64,16 +64,14 @@
             minHeight: null,
             maxHeight: null,
             focus: true,
-        });
-
-        $('#summernote').code($('#summernote-prev-value').html());
+        }).code($('#summernote-prev-value').html());
 
         $('a#show-new-bio-form').click(function() {
             $('p#doctor-bio').hide();
             $('#new-bio-form').toggle("fast");
         });
 
-        if($('#flip-counter').length) {
+        if($('div#flip-counter').length) {
             $('#flip-counter').flipCounterInit();
             var flipCounterNewVal = $('#flip-counter').data('val');
             $('#flip-counter').flipCounterUpdate(flipCounterNewVal);
@@ -116,6 +114,10 @@
             return false;
         });
 
+        var tab_sel_mod = $('a#tab-sel-mod');
+        if(window.location.hash == "#moderators" && tab_sel_mod.length) {
+            tab_sel_mod.click();
+        }
     });
 })(jQuery);
 

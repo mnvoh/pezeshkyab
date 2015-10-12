@@ -72,7 +72,7 @@ Route::get('docfinder/login', [
 ]);
 Route::post('docfinder/login', [
     'as' => 'user.login',
-    'uses' => 'Auth\AuthController@postLogin'
+    'uses' => 'Auth\AuthController@postLogin',
 ]);
 Route::get('docfinder/logout', [
     'as' => 'user.logout',
@@ -92,9 +92,20 @@ Route::get('docfinder/register-complete', [
     'uses' => 'Auth\AuthController@getRegisterComplete'
 ]);
 
+////////////
+
+Route::post('docfinder/alogin', [
+	'as' => 'user.admin_login',
+	'uses' => 'Auth\AuthController@postAdminLogin',
+]);
+
+////////////
+
 Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
+
+
 
 
 /*          SearchController
@@ -161,4 +172,13 @@ Route::any('docfinder/doctors/transactions', [
 Route::any('docfinder/doctors/email-patient-reservation', [
 	'as' => 'doctors.email_patient_reservation',
 	'uses' => 'DoctorsController@emailPatientForReservation'
+]);
+
+
+/*          AdminsController
+  ======================================*/
+
+Route::any('docfinder/admin', [
+	'as' => 'admins.home',
+	'uses' => 'AdminsController@home'
 ]);

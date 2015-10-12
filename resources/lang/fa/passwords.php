@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'password' => 'Passwords must be at least six characters and match the confirmation.',
-    'reset' => 'Your password has been reset!',
-    'sent' => 'We have e-mailed your password reset link!',
-    'token' => 'This password reset token is invalid.',
-    'user' => "We can't find a user with that e-mail address.",
+    'password' => 'گذرواژه می بایست حداقل ۶ حرف بوده و با تکرار خود مطابقت داشته باشد.',
+    'reset' => 'گذرواژه شنا بازنشانی شد!',
+    'sent' => 'لینک بازنشانی گذرواژه به شما ایمیل شد!',
+    'token' => 'عبارت بازنشانی گذرواژه اشتباه است.',
+    'user' => "کابری با این ایمیل پیدا نشد.",
 
 ];

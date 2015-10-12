@@ -27,7 +27,8 @@ class DoctorsController extends Controller
     {
 		$status_message = null;
         $doctor = Doctor::where('id', $doctor_id)->firstOrFail();
-		$viewer_is_owner = (Auth::check() && Auth::user()->id == $doctor_id);
+		$viewer_is_owner = (Auth::check() && Auth::user()->id == $doctor_id &&
+							is_a(Auth::user(), Doctor::class));
 		if($request->has("editBioSubmitted") && $viewer_is_owner) {
 			$new_bio = $request->get('bio');
 			if(strlen($new_bio) < 100) {
@@ -92,7 +93,7 @@ class DoctorsController extends Controller
 
 		return view('doctors.doctors-med-news', [
 			'doctor_id' => $doctor_id,
-			'viewerIsOwner' => (Auth::check() && Auth::user()->id == $doctor_id),
+			'viewerIsOwner' => (Auth::check() && Auth::user()->id == $doctor_id && is_a(Auth::user(), Doctor::class)),
 			'name' => $doctor->name . ' ' . $doctor->lname,
 			'specialty' => $doctor->specialties[0]->title,
 			'specialty_title' => $doctor->specialties[0]->desc,
@@ -120,7 +121,7 @@ class DoctorsController extends Controller
 
 	public function addMedNews(Request $request)
 	{
-		if(!Auth::check()) {
+		if(!Auth::check() || !is_a(Auth::user(), Doctor::class)) {
 			app()->abort(403, "Access denied");
 			return;
 		}
@@ -276,7 +277,7 @@ class DoctorsController extends Controller
 
 	public function askedQuestions(Request $request)
 	{
-		if(!Auth::check()) {
+		if(!Auth::check() || !is_a(Auth::user(), Doctor::class)) {
 			abort(403, 'access denied');
 			return;
 		}
@@ -320,7 +321,7 @@ class DoctorsController extends Controller
 
 	public function schedule(Request $request)
 	{
-		if(!Auth::check()) {
+		if(!Auth::check() || !is_a(Auth::user(), Doctor::class)) {
 			abort(403, 'access denied');
 			return;
 		}
@@ -392,12 +393,13 @@ class DoctorsController extends Controller
 
 	public function transactions(Request $request)
 	{
-		if(!Auth::check()) {
+		if(!Auth::check() || !is_a(Auth::user(), Doctor::class)) {
 			abort(403, 'access denied');
 			return;
 		}
 
 		$doctor = Auth::user();
+
 		$transactions = Transaction::where('doctor_id', $doctor->id)
 			->orderBy('id', 'desc')
 			->paginate(10);
@@ -419,6 +421,11 @@ class DoctorsController extends Controller
 
 	public function emailPatientForReservation (Request $request)
 	{
+		if(!Auth::check() || !is_a(Auth::user(), Doctor::class)) {
+			abort(403, 'access denied');
+			return;
+		}
+
 		if(!$request->has('reservation_id')) {
 			return response()->json([
 				'error' => true,

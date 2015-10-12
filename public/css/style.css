@@ -534,3 +534,4 @@ div.main-search-container div.adv-search {
     background: transparent;
     border: 0 none;
 }
+.carousel-indicators { padding: 0; }
