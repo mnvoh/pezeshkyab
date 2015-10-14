@@ -144,7 +144,7 @@ Route::any('docfinder/doctors/{doctor_id}/med-news', [
 Route::any('docfinder/med-news/{medical_news_id}/{title?}', [
     'as' => 'doctors.article',
     'uses' => 'DoctorsController@medNews'
-]);
+])->where('medical_news_id', '[0-9]+');
 
 Route::any('docfinder/med-news/add', [
 	'as' => 'doctors.add_med_news',
