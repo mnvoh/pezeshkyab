@@ -17,20 +17,15 @@
 						</div>
 					</div>
 
-					<br />
+					<hr />
 
 					<div class="adv-search">
 						<div class="form-group">
 							<label>{{ trans('main3.search_rating') }}</label>
-							<select name="s_rating" id="s_rating" name="s_rating"
-									class="form-control inline-form-control">
-								<option value="0">{{ trans('main3.doesnt_matter') }}</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-							</select>
+							@include('fivestar')
 						</div>
+
+						<hr />
 
 						<div class="form-group">
 							<label>
@@ -93,18 +88,28 @@
 							</div>
 						</div>
 
+						<hr />
+
+
 						<div class="form-group">
 							<label>{{ trans('main3.search_radius') }}</label>
-							<select name="s_distance" id="s_distance" class="form-control inline-form-control">
-								<option value="0">{{ trans('main3.doesnt_matter') }}</option>
-								<option value="500">500 {{ trans('main3.meters') }}</option>
-								<option value="1000">1 {{ trans('main3.km') }}</option>
-								<option value="2000">2 {{ trans('main3.km') }}</option>
-								<option value="3000">3 {{ trans('main3.km') }}</option>
-								<option value="5000">5 {{ trans('main3.km') }}</option>
-								<option value="10000">10 {{ trans('main3.km') }}</option>
-								<option value="20000">20 {{ trans('main3.km') }}</option>
-							</select>
+							<div class="select2slider-wrapper">
+								<select name="s_distance" id="s_distance"
+										class="form-control inline-form-control select2slider">
+									<option value="0">{{ trans('main3.doesnt_matter') }}</option>
+									<option value="500">500 {{ trans('main3.meters') }}</option>
+									<option value="1000">1 {{ trans('main3.km') }}</option>
+									<option value="2000">2 {{ trans('main3.km') }}</option>
+									<option value="3000">3 {{ trans('main3.km') }}</option>
+									<option value="5000">5 {{ trans('main3.km') }}</option>
+									<option value="10000">10 {{ trans('main3.km') }}</option>
+									<option value="20000">20 {{ trans('main3.km') }}</option>
+									<option value="50000">50 {{ trans('main3.km') }}</option>
+									<option value="100000">100 {{ trans('main3.km') }}</option>
+									<option value="200000">200 {{ trans('main3.km') }}</option>
+									<option value="500000">500 {{ trans('main3.km') }}</option>
+								</select>
+							</div>
 						</div>
 
 						<label class="help-block">

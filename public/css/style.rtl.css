@@ -14,9 +14,6 @@ div.main-search-container form>div.main-searchbox-wrapper>a#btn-adv-search {
     float: right;
 }
 div.main-search-container form>div.main-searchbox-wrapper>div.input-wrapper {
-    margin: 0 50px 0 100px;
-}
-div.main-search-container form>div.main-searchbox-wrapper.advanced-search>div.input-wrapper {
     margin: 0 10px 0 100px;
 }
 div.main-search-container form>div.main-searchbox-wrapper>button {

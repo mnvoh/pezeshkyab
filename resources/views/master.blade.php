@@ -28,6 +28,7 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+		<link rel="stylesheet" href="{{ url('css/jquery-ui.css') }}" />
         <link rel="stylesheet" href="{{ url('css/bootstrap.css') }}" />
         <link rel="stylesheet" href="{{ url('css/style.css') }}" />
 		<link rel="stylesheet" href="{{ url('css/summernote.css') }}" />
@@ -63,6 +64,7 @@
         @include('footer')
 
     	<script src="{{ url('js/jquery.js') }}"></script>
+		<script src="{{ url('js/jquery-ui.js') }}"></script>
     	<script src="{{ url('js/bootstrap.js') }}"></script>
         <script src="{{ url('js/script.js') }}"></script>
         <script src="{{ url('js/elasticsearch.js') }}"></script>

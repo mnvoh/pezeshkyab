@@ -75,4 +75,8 @@ return [
 	'transactions' => 'Transactions',
 	'unpaid' => 'Unpaid',
 	'subject' => 'Subject',
+	
+	/****************************************************************************************/
+	
+	'advanced_search' => 'Advanced Search',
 ];

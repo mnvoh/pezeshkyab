@@ -1,11 +1,17 @@
 (function($) {
     $(document).ready(function() {
+        /**
+         * Handle the clicks on the reservation dates which are shown like calendar pages.
+         */
         $('.calpage').click(function() {
             $('.calpage').removeClass('selected');
             $(this).addClass('selected');
             $('#reservation_id').val($(this).find('input[name="cal-value"]').val());
         });
 
+        /**
+         * Handle the nationality change which toggles between national code and passport number
+         */
         $('select#nationality').change(function() {
             if(this.value == "fo") {
                 $('#signup-national-code').slideUp(300);
@@ -17,12 +23,19 @@
             }
         });
 
+        /**
+         * in the search form, glow the parent div when the child gets focus
+         */
         $('.main-search-input').focus(function() {
             $(this).parents("div.form-control").addClass("form-control-focus");
         }).blur(function() {
             $(this).parents("div.form-control").removeClass("form-control-focus");
         });
 
+        /**
+         * in advanced search, the schedule range selection is washed out, and clicking the
+         * filter by schedule checkbox should return it to normal status.
+         */
         $('input#search_schedule').click(function() {
             if(!$(this).prop('checked')) {
                 $('.disabled-form-group-overlay').show();
@@ -32,6 +45,11 @@
             }
         });
 
+
+        /**
+         * Do quick search using elastic in the doctor selection sections.
+         * @type {ElasticSearch}
+         */
         var es = new ElasticSearch({
             host: document.domain,
             callback: refreshDoctorPickerResults
@@ -54,6 +72,10 @@
             es.request("POST", "pezeshkyab/doctor/_search", data);
         });
 
+
+        /**
+         * Initiate summernote
+         */
         $('#summernote').summernote({
             height: 300,
             minHeight: null,
@@ -61,17 +83,28 @@
             focus: true,
         }).code($('#summernote-prev-value').html());
 
+
+        /**
+         * Edit the doctor's bio
+         */
         $('a#show-new-bio-form').click(function() {
             $('p#doctor-bio').hide();
             $('#new-bio-form').toggle("fast");
         });
 
+
+        /**
+         * initiate flip counter
+         */
         if($('div#flip-counter').length) {
             $('#flip-counter').flipCounterInit();
             var flipCounterNewVal = $('#flip-counter').data('val');
             $('#flip-counter').flipCounterUpdate(flipCounterNewVal);
         }
 
+        /**
+         * popup the email sending modal and then send email using ajax
+         */
         $('.email-patient-form').submit(function() {
             var reservation_id = $(this).find('input[name="reservation_id"]').val();
             var email = $(this).find('input[name="email"]').val();
@@ -109,10 +142,50 @@
             return false;
         });
 
+        /**
+         * if there's the #moderators hash in the login page, change the tabs accordingly
+         * @type {*|HTMLElement}
+         */
         var tab_sel_mod = $('a#tab-sel-mod');
         if(window.location.hash == "#moderators" && tab_sel_mod.length) {
             tab_sel_mod.click();
         }
+
+
+        /**
+         *
+         * FIVE STAR
+         */
+
+        var divFiveStar = $('div.fivestar');
+        divFiveStar.mousemove(setFiveStarToMousePositionTemp);
+        divFiveStar.mouseleave(setFiveStarToInputValue);
+        divFiveStar.click(setFiveStarToMouseClickPosition);
+
+
+        /**
+         * Interchange select.select2slider with jquery-ui sliders
+         *
+         */
+        var select = $("select.select2slider");
+        if(select.length) {
+            var slider = $("<div class='slider'></div>").insertAfter(select).slider({
+                min: 1,
+                max: select.find('option').length,
+                range: "min",
+                value: select[ 0 ].selectedIndex + 1,
+                slide: function( event, ui ) {
+                    select[ 0 ].selectedIndex = ui.value - 1;
+                    $('label.slider-label').html(select.find('option:nth-child(' + ui.value + ')').html());
+                }
+            });
+            var label = $("<label class='slider-label'></label>").insertAfter(slider.parent());
+            label.html(select.find('option:selected').text())
+            select.change(function() {
+                slider.slider( "value", this.selectedIndex + 1 );
+            });
+        }
+
     });
 })(jQuery);
 
@@ -168,3 +241,90 @@ var pickDoctor = function() {
 var prepareSummernoteSubmission = function() {
     $('textarea#summernote-code').html($('#summernote').code());
 };
+
+
+function setFiveStarToMouseClickPosition(event) {
+    var localX = event.pageX - $(this).offset().left;
+    var rating = (localX / $(this).width()) * 5;
+    var ratingInt = parseInt(rating);
+    var ratingFloat = rating - ratingInt;
+    var value;
+
+    for(var i = 1; i <= 5; i++) {
+        $(this).find('span:nth-child(' + i + ')').removeClass();
+    }
+
+    for(var j = 1; j <= ratingInt; j++) {
+        $(this).find('span:nth-child(' + j + ')').addClass('fa fa-star');
+    }
+
+    if(ratingFloat >= 0.5) {
+        value = ratingInt + 1;
+        $(this).find('span:nth-child(' + (ratingInt + 1) + ')').addClass('fa fa-star');
+    }
+    else {
+        value = ratingInt + 0.5;
+        $(this).find('span:nth-child(' + (ratingInt + 1) + ')').addClass('fa fa-star-half-o');
+    }
+
+
+    for(var k = ratingInt + 2; k <= 5; k++) {
+        $(this).find('span:nth-child(' + k + ')').addClass('fa fa-star-o');
+    }
+
+    value = value > 5 ? 5 : value;
+    $(this).find('input').val(value);
+}
+
+function setFiveStarToInputValue() {
+    var rating = $(this).find('input').val();
+    var ratingInt = parseInt(rating);
+    var ratingFloat = rating - ratingInt;
+    for(var i = 1; i <= 5; i++) {
+        $(this).find('span:nth-child(' + i + ')').removeClass();
+    }
+
+    for(var j = 1; j <= ratingInt; j++) {
+        $(this).find('span:nth-child(' + j + ')').addClass('fa fa-star');
+    }
+
+    if(ratingFloat > 0.5) {
+        $(this).find('span:nth-child(' + (ratingInt + 1) + ')').addClass('fa fa-star');
+    }
+    else if(ratingFloat > 0) {
+        $(this).find('span:nth-child(' + (ratingInt + 1) + ')').addClass('fa fa-star-half-o');
+    }
+    else {
+        $(this).find('span:nth-child(' + (ratingInt + 1) + ')').addClass('fa fa-star-o');
+    }
+
+    for(var k = ratingInt + 2; k <= 5; k++) {
+        $(this).find('span:nth-child(' + k + ')').addClass('fa fa-star-o');
+    }
+}
+
+function setFiveStarToMousePositionTemp(event) {
+    var localX = event.pageX - $(this).offset().left;
+    var rating = (localX / $(this).width()) * 5;
+    var ratingInt = parseInt(rating);
+    var ratingFloat = rating - ratingInt;
+
+    for(var i = 1; i <= 5; i++) {
+        $(this).find('span:nth-child(' + i + ')').removeClass();
+    }
+
+    for(var j = 1; j <= ratingInt; j++) {
+        $(this).find('span:nth-child(' + j + ')').addClass('fa fa-star');
+    }
+
+    if(ratingFloat >= 0.5) {
+        $(this).find('span:nth-child(' + (ratingInt + 1) + ')').addClass('fa fa-star');
+    }
+    else {
+        $(this).find('span:nth-child(' + (ratingInt + 1) + ')').addClass('fa fa-star-half-o');
+    }
+
+    for(var k = ratingInt + 2; k <= 5; k++) {
+        $(this).find('span:nth-child(' + k + ')').addClass('fa fa-star-o');
+    }
+}

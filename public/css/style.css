@@ -416,9 +416,6 @@ div.main-search-container form>div.main-searchbox-wrapper>a#btn-adv-search {
 div.main-search-container form>div.main-searchbox-wrapper>div.input-wrapper {
     height: 40px;
     font-size: 20px;
-    margin: 0 100px 0 50px;
-}
-div.main-search-container form>div.main-searchbox-wrapper.advanced-search>div.input-wrapper {
     margin: 0 100px 0 10px;
 }
 div.main-search-container form>div.main-searchbox-wrapper>div.input-wrapper>input {
@@ -530,4 +527,29 @@ div.main-search-container form div.main-searchbox-wrapper input:focus {
     background: rgba(255, 255, 255, 0.75);
     position: absolute;
     left: 0; right: 0; top: 0; bottom: 0;
+}
+
+.fivestar {
+    background: #ffffb8;
+    border: 2px solid #eabc00;
+    border-radius: 4px;
+    color: #eabc00;
+    padding: 0 5px;
+    display: inline-block;
+    font-size: 20px;
+}
+.fivestar>span {
+    text-shadow: 0 0 1px #fff;
+}
+
+.select2slider-wrapper {
+    width: 400px;
+    display: inline-block;
+    margin: 0 20px;
+}
+.select2slider {
+    display: none;
+}
+.slider-label {
+    text-align: center;
 }

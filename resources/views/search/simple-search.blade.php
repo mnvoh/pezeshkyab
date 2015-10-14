@@ -3,10 +3,6 @@
 		<div class="col-xs-12">
 			<form method="get" action="{{ route('search.find') }}">
 				<div class="form-control main-searchbox-wrapper">
-					<a id="btn-adv-search" href="{{ route('search.find') }}">
-						<span class="glyphicon glyphicon-cog"></span>
-					</a>
-
 					<button type="submit" class="btn-success">
 						<span class="glyphicon glyphicon-search"></span>
 					</button>
@@ -21,6 +17,11 @@
 					</div>
 				</div>
 			</form>
+			<div style="height: 10px;"></div>
+			<a id="btn-adv-search" href="{{ route('search.find') }}">
+				<span class="glyphicon glyphicon-cog"></span>
+				{{ trans('main4.advanced_search') }}
+			</a>
 		</div>
 	</div>
 </div>

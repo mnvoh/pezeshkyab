@@ -31,6 +31,7 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+		<link rel="stylesheet" href="<?php echo e(url('css/jquery-ui.css')); ?>" />
         <link rel="stylesheet" href="<?php echo e(url('css/bootstrap.css')); ?>" />
         <link rel="stylesheet" href="<?php echo e(url('css/style.css')); ?>" />
 		<link rel="stylesheet" href="<?php echo e(url('css/summernote.css')); ?>" />
@@ -66,6 +67,7 @@
         <?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
     	<script src="<?php echo e(url('js/jquery.js')); ?>"></script>
+		<script src="<?php echo e(url('js/jquery-ui.js')); ?>"></script>
     	<script src="<?php echo e(url('js/bootstrap.js')); ?>"></script>
         <script src="<?php echo e(url('js/script.js')); ?>"></script>
         <script src="<?php echo e(url('js/elasticsearch.js')); ?>"></script>

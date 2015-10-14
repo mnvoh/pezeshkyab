@@ -49,7 +49,7 @@ class SearchController extends Controller
         }
 
         $query = $request->get("s_q");
-        $rating = $request->get("s_rating", 0);
+        $rating = $request->get("rating", 0);
 
         $temp_date = jalali_to_gregorian(
             $request->get("s_date_from_y"),
