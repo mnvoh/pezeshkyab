@@ -93,7 +93,7 @@ class DoctorsController extends Controller
 
 		return view('doctors.doctors-med-news', [
 			'doctor_id' => $doctor_id,
-			'viewerIsOwner' => (Auth::check() && Auth::user()->id == $doctor_id && is_a(Auth::user(), Doctor::class)),
+			'viewerIsOwner' => (Auth::check() && Auth::user()->id == $doctor_id),
 			'name' => $doctor->name . ' ' . $doctor->lname,
 			'specialty' => $doctor->specialties[0]->title,
 			'specialty_title' => $doctor->specialties[0]->desc,

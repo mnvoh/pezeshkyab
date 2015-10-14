@@ -81,7 +81,7 @@ class Doctor extends Model implements AuthenticatableContract, CanResetPasswordC
 
     public function rating()
     {
-        return $this->ratings()->avg('rating');
+        return (float)$this->ratings()->avg('rating');
     }
 
     public function ratings()

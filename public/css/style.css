@@ -40,7 +40,7 @@ html {
 }
 .navbar-brand {
     color: #ffcc00;
-    padding: 20px 0;
+    padding: 20px 15px;
 }
 .navbar-brand:hover {
     color: #fffd00;
@@ -377,20 +377,8 @@ hr {
     border-top-color: #dddddd;
 }
 
-
-
-
-
-
-
-
-
-
-
 div.main-search-container {
-    background: #234487;
-    color: #fff;
-    padding: 12px 0;
+
 }
 div.hidden-search {
     display: none;
@@ -398,7 +386,10 @@ div.hidden-search {
 #show-find-doctor {
     color: #fc0;
 }
-
+div.main-search-container.simple-search {
+    width: 60%;
+    margin: auto;
+}
 div.main-search-container label {
     font-weight: normal;
 }
@@ -427,6 +418,9 @@ div.main-search-container form>div.main-searchbox-wrapper>div.input-wrapper {
     font-size: 20px;
     margin: 0 100px 0 50px;
 }
+div.main-search-container form>div.main-searchbox-wrapper.advanced-search>div.input-wrapper {
+    margin: 0 100px 0 10px;
+}
 div.main-search-container form>div.main-searchbox-wrapper>div.input-wrapper>input {
     width: 100%;
     height: 100%;
@@ -440,10 +434,6 @@ div.main-search-container form>div.main-searchbox-wrapper>button {
 
 div.main-search-container form div.main-searchbox-wrapper input:focus {
     outline: none;
-}
-
-div.main-search-container div.adv-search {
-    display: none;
 }
 
 .form-control-focus {
@@ -535,3 +525,9 @@ div.main-search-container div.adv-search {
     border: 0 none;
 }
 .carousel-indicators { padding: 0; }
+.disabled-form-group { position: relative; }
+.disabled-form-group-overlay {
+    background: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+}

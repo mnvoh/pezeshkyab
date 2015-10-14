@@ -13,6 +13,9 @@ class AppointmentController extends Controller
 {
     public function book(Request $request, $step)
     {
+		view()->share('go_back_url', route('appointment.book', [
+			'step' => 2,
+		]));
 
         if($request->has('form-submitted') && $step < 6) {
             $validation = $this->validateData($request, $step, $error);
@@ -159,7 +162,12 @@ class AppointmentController extends Controller
         return view("appointment.step$step", $data);
     }
 
-	public function bookForDoctor(Request $request, $doctor_id, $step) {
+	public function bookForDoctor(Request $request, $doctor_id, $step)
+	{
+		view()->share('go_back_url', route('appointment.book_for_doctor', [
+			'doctor_id' => $doctor_id,
+			'step' => 2,
+		]));
 		if($step == 3) {
 			return redirect()->route('appointment.book_for_doctor', [
 				'doctor_id' => $doctor_id,
@@ -167,18 +175,89 @@ class AppointmentController extends Controller
 			]);
 		}
 
+		if($request->has('form-submitted') && $step < 6) {
+			$validation = $this->validateData($request, $step, $error);
+
+			if ($validation == false) {
+				$request->session()->put('book_error', $error);
+			}
+			else {
+				return redirect()->route('appointment.book_for_doctor', [
+					'doctor_id' => $doctor_id,
+					'step' => $step + 1,
+				]);
+			}
+		}
+
 		if($step == 4) {
-            $r = Reservation::all()->where("doctor_id", $request->session()->get("doctor_id"));
-
-            $reservations = array();
-
-            foreach($r as $res) {
-                $reservations[$res->id] = $this->getCalPage($res->id, jdate("YmdHis", $res->rtime));
-            }
+			$r = Reservation::where("doctor_id", $doctor_id)
+				->where('tracking_code', null)
+				->get();
+			$reservations = array();
+			foreach($r as $res) {
+				$reservations[] = $this->getCalPage($res->id, $res->rtime);
+			}
 
 			$data = [
 				'step' => $step,
 				'open_appointments' => $reservations,
+				'next_step_link' => route('appointment.book_for_doctor', [
+					'doctor_id' => $doctor_id,
+					'step' => $step,
+				])
+			];
+		}
+		else if($step == 5) {
+			if(!$request->session()->has('booking_firstname') ||
+				!$request->session()->has('booking_lastname') ||
+				!$request->session()->has('booking_nationality') ||
+				!$request->session()->has('booking_ncode'))
+			{
+				$data = [
+					'step' => $step,
+					'error' => trans('main4.incomplete_information'),
+					'next_step_link' => route('appointment.book_for_doctor', [
+						'doctor_id' => $doctor_id,
+						'step' => 2,
+					]),
+				];
+			}
+			else if(!$request->session()->has('booking_doctor_id'))
+			{
+				$data = [
+					'step' => $step,
+					'error' => trans('main4.incomplete_information'),
+					'next_step_link' => route('appointment.book_for_doctor', [
+						'doctor_id' => $doctor_id,
+						'step' => 3,
+					]),
+				];
+			}
+			else if(!$request->session()->has('booking_reservation_id'))
+			{
+				$data = [
+					'step' => $step,
+					'error' => trans('main4.incomplete_information'),
+					'next_step_link' => route('appointment.book_for_doctor', [
+						'doctor_id' => $doctor_id,
+						'step' => 4,
+					]),
+				];
+			}
+			else
+			{
+				$data = [
+					'step' => $step,
+					'next_step_link' => route('appointment.book_for_doctor', [
+						'doctor_id' => $doctor_id,
+						'step' => 6,
+					]),
+				];
+			}
+		}
+		else if($step == 6) {
+			$data = [
+				'step' => $step,
 				'next_step_link' => route('appointment.book_for_doctor', [
 					'doctor_id' => $doctor_id,
 					'step' => $step + 1,
@@ -190,10 +269,64 @@ class AppointmentController extends Controller
 				'step' => $step,
 				'next_step_link' => route('appointment.book_for_doctor', [
 					'doctor_id' => $doctor_id,
-					'step' => $step + 1,
+					'step' => $step,
 				]),
 			];
 		}
+
+		if($request->session()->has('book_error')) {
+			$data['error'] = $request->session()->get('book_error');
+			$request->session()->forget('book_error');
+		}
+
+
+		if($request->session()->get('booking_doctor_id') != null) {
+			$doctor = Doctor::where('id', $request->session()->get('booking_doctor_id'))->first();
+
+			$docstr = $doctor->name . " " . $doctor->lname . " &middot; ";
+
+			foreach ($doctor->specialties as $s) {
+				$docstr .= " " . $s->title . " ";
+			}
+
+
+			$docstr .= " &middot; ";
+
+			foreach ($doctor->addresses as $c) {
+				$docstr .= " " . $c->city->name . " ";
+			}
+		}
+		else {
+			$docstr = "-";
+		}
+
+
+		if($request->session()->get('booking_reservation_id') != null) {
+			$reservation = Reservation::where('id', $request->session()->get('booking_reservation_id'))->first();
+			$rtime = jdate('Y/m/d H:i:s', strtotime($reservation->rtime));
+			$fee_title = $reservation->fee->title;
+			$fee_amount = $reservation->fee->amount;
+		}
+		else {
+			$rtime = "-";
+			$fee_title = '';
+			$fee_amount = '';
+		}
+
+
+		$data['filled_info'] = [
+			'b_firstname' => $request->session()->get('booking_firstname', ""),
+			'b_lastname' => $request->session()->get('booking_lastname', ""),
+			'b_nationality' => $request->session()->get('booking_nationality', null),
+			'b_ncode' => $request->session()->get('booking_ncode', ""),
+			'b_doctor_id' => $doctor_id,
+			'b_doctor_label' => $docstr,
+			'b_reservation_id' => $request->session()->get('booking_reservation_id', ""),
+			'b_rtime' => $rtime,
+			'b_fee_title' => $fee_title,
+			'b_fee_amount' => $fee_amount,
+		];
+
 		return view("appointment.step$step", $data);
 	}
 

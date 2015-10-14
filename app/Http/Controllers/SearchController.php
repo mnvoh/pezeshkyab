@@ -15,17 +15,40 @@ class SearchController extends Controller
 
     public function find(Request $request)
     {
-        if(!$request->has('s_q')) {
+		$advanced = ($request->get("s_rating", 0) > 0) ||
+			$request->has("schedule") ||
+			($request->get("s_distance", 0) > 0);
+
+        if(!$request->has('s_q') && !$advanced) {
+			$year = jdate("Y", '', '', 'Asia/Tehran', 'en');
+			$month = jdate("m", '', '', 'Asia/Tehran', 'en');
+			$date = jdate("d", '', '', 'Asia/Tehran', 'en');
+			$hour = jdate("H", '', '', 'Asia/Tehran', 'en');
+			$min = jdate("i", '', '', 'Asia/Tehran', 'en');
+
+			$year2 = jdate("Y", strtotime("+7 days"), '', 'Asia/Tehran', 'en');
+			$month2 = jdate("m", strtotime("+7 days"), '', 'Asia/Tehran', 'en');
+			$date2 = jdate("d", strtotime("+7 days"), '', 'Asia/Tehran', 'en');
+			$hour2 = jdate("H", strtotime("+7 days"), '', 'Asia/Tehran', 'en');
+			$min2 = jdate("i", strtotime("+7 days"), '', 'Asia/Tehran', 'en');
             return view('search.find', array(
                 'error' => false,
                 'no_query' => true,
-                'showSearchForm' => true,
+				"today_year"=> $year,
+				"today_month"=> $month,
+				"today_date"=> $date,
+				"today_hour"=> $hour,
+				"today_minute"=> $min,
+				"twoday_year"=> $year2,
+				"twoday_month"=> $month2,
+				"twoday_date"=> $date2,
+				"twoday_hour"=> $hour2,
+				"twoday_minute"=> $min2,
             ));
         }
 
         $query = $request->get("s_q");
         $rating = $request->get("s_rating", 0);
-        $advanced = $request->get("s_adv", false);
 
         $temp_date = jalali_to_gregorian(
             $request->get("s_date_from_y"),
@@ -33,7 +56,7 @@ class SearchController extends Controller
             $request->get("s_date_from_d")
         );
 
-        $start_date = date("y-m-d H:i:s", mktime(
+        $start_date = date("o-m-d H:i:s", mktime(
             $request->get("s_date_from_h"),
             $request->get("s_date_from_min"),
             0,
@@ -48,7 +71,7 @@ class SearchController extends Controller
             $request->get("s_date_to_d")
         );
 
-        $end_date = date("y-m-d H:i:s", mktime(
+        $end_date = date("Y-m-d H:i:s", mktime(
             $request->get("s_date_to_h"),
             $request->get("s_date_to_min"),
             0,
@@ -69,38 +92,55 @@ class SearchController extends Controller
         $q_f_query['match']['_all']['fuzziness'] = "AUTO";
 
         $q_f_filter = array();
+		if($request->has('schedule')) {
+			$schedule_filter = array(
+				'range' => array(
+					'open_schedules' => array(
+						'from' => $start_date,
+						'to' => $end_date
+					)
+				)
+			);
+		}
+		else {
+			$schedule_filter = (object)array();
+		}
+
+		if($locationLat && strlen($locationLat)) {
+			$locationFilter = array(
+				'geo_distance' => array(
+					'distance' => $distance . "m",
+					'location' => array(
+						'lat' => $locationLat,
+						'lon' => $locationLon
+					)
+				)
+			);
+		}
+		else {
+			$locationFilter = (object)array();
+		}
         $q_f_filter['bool']['must'] = array(
             array(
                 'range' => array(
                     'rating' => array(
-                        'gt' => $rating,
+                        'gt' => (int)$rating,
                         'lte' => 5.0
                     )
                 )
             ),
-            array(
-                'geo_distance' => array(
-                    'distance' => $distance . "m",
-                    'location' => array(
-                        'lat' => $locationLat,
-                        'lon' => $locationLon
-                    )
-                )
-            ),
-            array(
-                'range' => array(
-                    'open_schedules' => array(
-                        'from' => $start_date,
-                        'to' => $end_date
-                    )
-                )
-            )
+			$locationFilter,
+			$schedule_filter
         );
+
+
 
         $params['index'] = 'pezeshkyab';
         $params['type'] = 'doctor';
         $params['from'] = $from;
-        $params['body']['query']['filtered']['query'] = $q_f_query;
+		if(strlen($query) > 0) {
+			$params['body']['query']['filtered']['query'] = $q_f_query;
+		}
         if($advanced) {
             $params['body']['query']['filtered']['filter'] = $q_f_filter;
         }
@@ -113,7 +153,6 @@ class SearchController extends Controller
             return view('search.find', array(
                 'error' => true,
                 'no_query' => false,
-                'showSearchForm' => true,
             ));
         }
 
@@ -128,7 +167,6 @@ class SearchController extends Controller
 		return view('search.find', array(
             'error' => false,
             'no_query' => false,
-            'showSearchForm' => true,
             'time_took' => $results['took'] / 1000,
             'count' => $results['hits']['total'],
             'results' => $results['hits']['hits'],

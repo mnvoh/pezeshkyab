@@ -18,6 +18,7 @@ Route::any('/', ['as' => 'root', function () {
 Route::any('/index_doctors', ['as' => 'index_doctors', function () {
 	$doctors = \App\Models\Doctor::all();
 	foreach($doctors as $doctor) {
+		echo "Rating({$doctor->id}): " . $doctor->rating() . "\n<br />";
 		$doctor->indexInElasticsearch();
 	}
 	echo "done";

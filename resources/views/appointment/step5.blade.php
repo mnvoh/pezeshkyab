@@ -66,7 +66,7 @@
             </form>
         </div>
         <div class="col-xs-1">
-            <a href="{{ route('appointment.book', ['step' => 2]) }}" class="btn btn-warning">
+            <a href="{{ $go_back_url }}" class="btn btn-warning">
                 {{ trans('main4.go_back') }}
             </a>
         </div>

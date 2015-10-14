@@ -69,7 +69,7 @@
             </form>
         </div>
         <div class="col-xs-1">
-            <a href="<?php echo e(route('appointment.book', ['step' => 2])); ?>" class="btn btn-warning">
+            <a href="<?php echo e($go_back_url); ?>" class="btn btn-warning">
                 <?php echo e(trans('main4.go_back')); ?>
 
             </a>

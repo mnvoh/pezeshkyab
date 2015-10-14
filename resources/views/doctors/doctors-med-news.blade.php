@@ -3,10 +3,12 @@
 @section('content')
 	<div class="row">
 		<div class="col-lg-12">
-			<a href="{{ route('doctors.add_med_news') }}" class="btn btn-default btn-block"
-			   title="{{ trans('main4.add_medical_news') }}">
-				{{ trans('main4.add_medical_news') }}
-			</a>
+			@if($viewerIsOwner)
+				<a href="{{ route('doctors.add_med_news') }}" class="btn btn-default btn-block"
+				   title="{{ trans('main4.add_medical_news') }}">
+					{{ trans('main4.add_medical_news') }}
+				</a>
+			@endif
 
 			<h2>{{ trans('main3.latest_articles') }}</h2>
 			<hr />
