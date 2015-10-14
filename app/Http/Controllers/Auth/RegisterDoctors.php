@@ -17,9 +17,9 @@ trait RegisterDoctors
      */
     public function getRegister()
     {
-
-        Doctor::all()->where("id", 10)->first()->update(["lname" => "mohamafdifi"]);
-        return view('auth.register', ['no_search' => true]);
+        return view('auth.register', [
+			'include_maps' => true
+		]);
     }
 
     /**

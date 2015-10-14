@@ -34,6 +34,7 @@ class SearchController extends Controller
             return view('search.find', array(
                 'error' => false,
                 'no_query' => true,
+				'include_maps' => true,
 				"today_year"=> $year,
 				"today_month"=> $month,
 				"today_date"=> $date,

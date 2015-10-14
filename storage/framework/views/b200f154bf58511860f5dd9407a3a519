@@ -1,10 +1,10 @@
-<?php $provinces = \DbOps::getProvinces(); ?>
+<?php $provinces = App\Models\Province::with('cities')->get(); ?>
 <select name="city" id="city" class="form-control">
     <option value="-1" disabled selected><?php echo e(trans('main.select_a_city')); ?></option>
-    <?php foreach($provinces as $pid => $p): ?>
-        <optgroup label="<?php echo $p; ?>">
-            <?php foreach(\DbOps::getCities($pid) as $cid => $city): ?>
-                <option value="<?php echo $cid; ?>"><?php echo $city; ?></option>
+    <?php foreach($provinces as $p): ?>
+        <optgroup label="<?php echo $p->name; ?>">
+            <?php foreach($p->cities as $city): ?>
+                <option value="<?php echo $city->id; ?>"><?php echo $city->name; ?></option>
             <?php endforeach; ?>
         </optgroup>
     <?php endforeach; ?>

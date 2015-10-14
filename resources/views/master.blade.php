@@ -71,8 +71,10 @@
 		<script src="{{ url('js/jquery.flipcounter.js') }}"></script>
 		<script src="{{ url('js/jstween-1.1.min.js') }}"></script>
 
-        <script src="https://maps.googleapis.com/maps/api/js"></script>
-        <script src="{{ url('js/maps.js') }}"></script>
+		@if(isset($include_maps) && $include_maps)
+			<script src="https://maps.googleapis.com/maps/api/js"></script>
+			<script src="{{ url('js/maps.js') }}"></script>
+		@endif
     </body>
 </html>
 <!-- end of master -->
