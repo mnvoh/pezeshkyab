@@ -168,6 +168,7 @@ class AppointmentController extends Controller
 			'doctor_id' => $doctor_id,
 			'step' => 2,
 		]));
+		$request->session()->put('booking_doctor_id', $doctor_id);
 		if($step == 3) {
 			return redirect()->route('appointment.book_for_doctor', [
 				'doctor_id' => $doctor_id,

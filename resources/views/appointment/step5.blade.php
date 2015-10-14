@@ -54,16 +54,14 @@
     </div>
     <div class="row">
         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-7">
-            <form action="{{ $next_step_link }}" method="post">
-                {{ csrf_field() }}
-                <button type="submit" class="btn btn-block btn-success" name="form-submitted" value="true">
-                    @if(isset($error))
-                        {{ trans('main4.go_back') }}
-                    @else
-                        {{ trans('main.confirm') }}
-                    @endif
-                </button>
-            </form>
+			@if(!isset($error) || !$error)
+				<form action="{{ $next_step_link }}" method="post">
+					{{ csrf_field() }}
+					<button type="submit" class="btn btn-block btn-success" name="form-submitted" value="true">
+						{{ trans('main.confirm') }}
+					</button>
+				</form>
+			@endif
         </div>
         <div class="col-xs-1">
             <a href="{{ $go_back_url }}" class="btn btn-warning">
