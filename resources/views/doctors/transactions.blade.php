@@ -22,9 +22,9 @@
 							<th>{{ trans('main4.amount') }}</th>
 							<th>{{ trans('main4.status') }}</th>
 							<th>{{ trans('main4.gateway_receipt') }}</th>
-							<th>{{ trans('main.receipt') }}</th>
-							<th>{{ trans('main.req_time') }}</th>
-							<th>{{ trans('main.comp_time') }}</th>
+							<th>{{ trans('main4.receipt') }}</th>
+							<th>{{ trans('main4.req_time') }}</th>
+							<th>{{ trans('main4.comp_time') }}</th>
 							<th>{{ trans('main.name') }}</th>
 							<th>{{ trans('main.national_code') }}</th>
 						</tr>

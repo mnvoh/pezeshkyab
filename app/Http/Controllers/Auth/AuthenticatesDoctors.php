@@ -65,7 +65,7 @@ trait AuthenticatesDoctors
             ->withInput($request->only($this->loginUsername(), 'remember'))
             ->withErrors([
                 $this->loginUsername() => $this->getFailedLoginMessage(),
-            ]);
+		]);
     }
 
     /**

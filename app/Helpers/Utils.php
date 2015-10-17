@@ -2,6 +2,7 @@
 namespace App\Helpers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
 
 require_once(dirname(__FILE__) . '/jdf.php');
@@ -168,5 +169,56 @@ class Utils {
 			$m->to($to);
 			$m->subject($subject);
 		});
+	}
+
+	public static function makeThumbnail($filename, $size)
+	{
+		$ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+
+		$path = Config::get('constants.UPLOAD_PATH') . 'thumbs/' . $size . '/';
+		if(!file_exists($path)) {
+			mkdir($path, 0777, true);
+		}
+		$path = $path . '/' . pathinfo($filename, PATHINFO_FILENAME) . ".jpg";
+
+		//return the cached version if it exists
+		if(file_exists($path)) {
+			return $path;
+		}
+
+		if($ext == 'png') {
+			$img = imagecreatefrompng("{$filename}");
+		}
+		else if($ext == 'jpg' || $ext == "jpeg") {
+			$img = imagecreatefromjpeg("{$filename}");
+		}
+		else if($ext == 'gif') {
+			$img = imagecreatefromgif("{$filename}");
+		}
+		else {
+			return null;
+		}
+		$width = imagesx($img);
+		$height = imagesy($img);
+
+		$tmp_image = imagecreatetruecolor($size, $size);
+		$white_color = imagecolorallocate($tmp_image, 255, 255, 255);
+		imagefill($tmp_image, 0, 0, $white_color);
+
+		if($width > $height) {
+			$x = ($width - $height) / 2;
+			$y = 0;
+			imagecopyresampled($tmp_image, $img, 0, 0, $x, $y, $size, $size, $height, $height);
+		}
+		else {
+			$x = 0;
+			$y = ($height - $width) / 2;
+			imagecopyresampled($tmp_image, $img, 0, 0, $x, $y, $size, $size, $width, $width);
+		}
+
+		imagejpeg($tmp_image, $path);
+		imagedestroy($img);
+		imagedestroy($tmp_image);
+		return $path;
 	}
 }

@@ -34,6 +34,7 @@
 		<link rel="stylesheet" href="{{ url('css/summernote.css') }}" />
 		<link rel="stylesheet" href="{{ url('css/font-awesome.css') }}" />
 		<link rel="stylesheet" href="{{ url('css/jquery.flipcounter.css') }}" />
+		<link rel="stylesheet" href="{{ url('css/jquery-fullsizable.css') }}" />
 
         @if($dir == 'rtl')
             <link rel="stylesheet" href="{{ url('css/bootstrap-rtl.css') }}" />
@@ -48,6 +49,8 @@
     <body>
 		@if(isset($use_doctors_navbar) && $use_doctors_navbar)
 			@include('doctors.navbar')
+		@elseif(isset($user_admin_navbar) && $user_admin_navbar)
+			@include('admin.navbar')
 		@else
     		@include('navbar')
 		@endif
@@ -65,6 +68,7 @@
 
     	<script src="{{ url('js/jquery.js') }}"></script>
 		<script src="{{ url('js/jquery-ui.js') }}"></script>
+		<script src="{{ url('js/jquery-fullsizable.js') }}"></script>
     	<script src="{{ url('js/bootstrap.js') }}"></script>
         <script src="{{ url('js/script.js') }}"></script>
         <script src="{{ url('js/elasticsearch.js') }}"></script>

@@ -49,8 +49,8 @@
         </nav>
     </div>
 
-    <div id="dr-hp-h-img" class="table-display" style="background-image: url({{ url('img/specialists/' . $specialty . '.jpg') }});">
-		<div class="container table-cell">
+    <div id="dr-hp-h-img" style="background-image: url({{ url('img/specialists/' . $specialty . '.jpg') }});">
+		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="text-center">{{ trans('main3.dr') }} {{ $name }}</h1>
@@ -58,6 +58,10 @@
 				</div>
 			</div>
 		</div>
+		@if($viewerIsOwner)
+			<?php $upload_button = true; ?>
+		@endif
+		@include('avatar200')
     </div>
 
 	<div class="doc-navbar">

@@ -6,7 +6,7 @@
 		@include('search.advanced-search')
 	@else
 		<div class="row">
-			<div class="col-sm-12 col-md-10 col-lg-8">
+			<div class="col-sm-12">
 				<?php if($error): ?>
 					<h3 class="text-error">{{ trans('main3.no_search_server') }}</h3>
 				<?php else: ?>
@@ -37,15 +37,24 @@
 						</h3>
 					@endif
 
+					<hr />
+
 					<div class="search-results">
 						@foreach($results as $result)
 							<div class="search-result">
-								<h4 class="inline-form-control">
-									<a href="{{ route('doctors.homepage', ['doctor_id' => $result['_id']]) }}">
-										{{ $result['_source']['fullname'] }}
-									</a>
+
+								<a href="{{ route('doctors.homepage', ['doctor_id' => $result['_id']]) }}">
+									<?php
+										$avatar = $result['avatar'];
+										$name = $result['_source']['fullname'];
+									?>
+									@include('avatar200')
 									<br />
-								</h4>
+									<span>
+										{{ $result['_source']['fullname'] }}
+									</span>
+								</a>
+								<br />
 								&middot;
 								@foreach($result['_source']['specialty'] as $specialty)
 									{{ $specialty }}
@@ -55,7 +64,6 @@
 									{{ $city }}
 								@endforeach
 							</div>
-							<br />
 						@endforeach
 
 						<nav>

@@ -44,7 +44,7 @@ class Doctor extends Model implements AuthenticatableContract, CanResetPasswordC
         return $this->belongsToMany('App\Models\Address');
     }
 
-    public function avatar()
+    public function image()
     {
         return $this->belongsTo('App\Models\Image');
     }

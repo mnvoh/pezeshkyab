@@ -186,10 +186,75 @@
             });
         }
 
+
+        /**
+         * Initiate uploaders
+         *
+         */
+
+        $('#upload-avatar>a').click(function() {
+            var fileInput = document.getElementById('avatar-file');
+            fileInput.click();
+            fileInput.addEventListener('change', function() {
+                var file = this.files[0];
+                var csrf = $('input[name=_token]').val();
+                var xhr = new XMLHttpRequest();
+
+                (xhr.upload || xhr).addEventListener('progress', function(e) {
+                    var done = e.loaded
+                    var total = e.total;
+                    var percent = Math.round(done/total*100) + '%';
+                    $('#upload-avatar>.cprogress').width(percent);
+                });
+                xhr.addEventListener('load', function(e) {
+                    var response = $.parseJSON(this.responseText);
+                    if(response.error) {
+                        alert(response.error_desc);
+                        return;
+                    }
+                    var avatarImg = $('.avatar200>img');
+                    avatarImg.attr('src', response.new_image);
+                    avatarImg.css({width: "100%", height: "100%", margin: 0});
+                    $('#upload-avatar>.cprogress').width(0);
+
+                });
+                xhr.open('post', $(fileInput).data('url'), true);
+                var fd = new FormData;
+                fd.append("file", file);
+                fd.append("_token", csrf);
+                xhr.setRequestHeader('X-XSRF-TOKEN', csrf);
+                xhr.send(fd);
+            });
+
+        });
+
+
+        /**
+         * Fullsizable - fullscreen image viewer
+         *
+         */
+        $('a.fullsizable').fullsizable();
+
+
+        /**
+         * In the admins home, if the number is bigger than 7 character, add a small class to it
+         *
+         */
+        $('.admin-stat-item>span.stat').each(function(index, value) {
+            if($(this).text().length > 9) {
+                $(this).addClass('tiny');
+            }
+            else if($(this).text().length > 7) {
+                $(this).addClass('small');
+            }
+            else if($(this).text().length > 4) {
+                $(this).addClass('medium');
+            }
+        });
     });
 })(jQuery);
 
-var refreshDoctorPickerResults = function(data, xhr) {
+function refreshDoctorPickerResults(data, xhr) {
     var results = data;
     var hits = results.hits.hits;
     $('div#doctor-picker>div#dp-items>p').remove();
@@ -228,7 +293,7 @@ var refreshDoctorPickerResults = function(data, xhr) {
     $('div#doctor-picker>div#dp-items>p').click(pickDoctor);
 };
 
-var pickDoctor = function() {
+function pickDoctor() {
     var id = $(this).data("doctorid");
     var label = $(this).html();
     $('div#doctor-picker>div#dp-items>p').remove();
@@ -238,10 +303,9 @@ var pickDoctor = function() {
     $('div#doctor-picker>input[type="text"]').val('');
 };
 
-var prepareSummernoteSubmission = function() {
+function prepareSummernoteSubmission() {
     $('textarea#summernote-code').html($('#summernote').code());
 };
-
 
 function setFiveStarToMouseClickPosition(event) {
     var localX = event.pageX - $(this).offset().left;

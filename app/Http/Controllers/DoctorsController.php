@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Doctor;
 use App\Models\Fee;
+use App\Models\Image;
 use App\Models\MedicalNews;
 use App\Models\MedicalQuestion;
 use App\Models\Reservation;
@@ -13,6 +14,7 @@ use App\Helpers\Utils;
 use App\Http\Requests;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
 
 class DoctorsController extends Controller
@@ -59,6 +61,8 @@ class DoctorsController extends Controller
 			'doctor_id' => $doctor_id,
 			'viewerIsOwner' => $viewer_is_owner,
 			'name' => $doctor->name . ' ' . $doctor->lname,
+			'avatar' => ($doctor->image) ? Utils::makeThumbnail($doctor->image->path, 200) : null,
+			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
 			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
 			'about' => $doctor->bio,
@@ -95,8 +99,10 @@ class DoctorsController extends Controller
 			'doctor_id' => $doctor_id,
 			'viewerIsOwner' => (Auth::check() && Auth::user()->id == $doctor_id),
 			'name' => $doctor->name . ' ' . $doctor->lname,
-			'specialty' => $doctor->specialties[0]->title,
-			'specialty_title' => $doctor->specialties[0]->desc,
+			'avatar' => ($doctor->image) ? Utils::makeThumbnail($doctor->image->path, 200) : null,
+			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
+			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
+			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
 			'about' => $doctor->bio,
 			'med_news' => $med_news,
 			'feed' => $med_news_rendered,
@@ -121,7 +127,7 @@ class DoctorsController extends Controller
 
 	public function addMedNews(Request $request)
 	{
-		if(!Auth::check() || !is_a(Auth::user(), Doctor::class)) {
+		if(!Auth::check()) {
 			app()->abort(403, "Access denied");
 			return;
 		}
@@ -132,6 +138,8 @@ class DoctorsController extends Controller
 					'url' => route('doctors.add_med_news'),
 					'doctor_id' => Auth::user()->id,
 					'name' => Auth::user()->name . ' ' . Auth::user()->lname,
+					'avatar' => (Auth::user()->image) ? Utils::makeThumbnail(Auth::user()->image->path, 200) : null,
+					'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 					'specialty' => Auth::user()->specialties[0]->title,
 					'specialty_title' => Auth::user()->specialties[0]->desc,
 					'title_error' => TRUE,
@@ -146,6 +154,8 @@ class DoctorsController extends Controller
 					'doctor_id' => Auth::user()->id,
 					'viewerIsOwner' => true,
 					'name' => Auth::user()->name . ' ' . Auth::user()->lname,
+					'avatar' => (Auth::user()->image) ? Utils::makeThumbnail(Auth::user()->image->path, 200) : null,
+					'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 					'specialty' => Auth::user()->specialties[0]->title,
 					'specialty_title' => Auth::user()->specialties[0]->desc,
 					'title_error' => TRUE,
@@ -159,6 +169,8 @@ class DoctorsController extends Controller
 					'doctor_id' => Auth::user()->id,
 					'viewerIsOwner' => true,
 					'name' => Auth::user()->name . ' ' . Auth::user()->lname,
+					'avatar' => (Auth::user()->image) ? Utils::makeThumbnail(Auth::user()->image->path, 200) : null,
+					'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 					'specialty' => Auth::user()->specialties[0]->title,
 					'specialty_title' => Auth::user()->specialties[0]->desc,
 					'body_error' => TRUE,
@@ -184,6 +196,8 @@ class DoctorsController extends Controller
 			'doctor_id' => Auth::user()->id,
 			'viewerIsOwner' => true,
 			'name' => Auth::user()->name . ' ' . Auth::user()->lname,
+			'avatar' => (Auth::user()->image) ? Utils::makeThumbnail(Auth::user()->image->path, 200) : null,
+			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => Auth::user()->specialties[0]->title,
 			'specialty_title' => Auth::user()->specialties[0]->desc,
 			'title' => '',
@@ -277,7 +291,7 @@ class DoctorsController extends Controller
 
 	public function askedQuestions(Request $request)
 	{
-		if(!Auth::check() || !is_a(Auth::user(), Doctor::class)) {
+		if(!Auth::check()) {
 			abort(403, 'access denied');
 			return;
 		}
@@ -313,15 +327,17 @@ class DoctorsController extends Controller
 			'doctor_id' => $doctor->id,
 			'viewerIsOwner' => true,
 			'name' => $doctor->name . ' ' . $doctor->lname,
-			'specialty' => $doctor->specialties[0]->title,
-			'specialty_title' => $doctor->specialties[0]->desc,
+			'avatar' => ($doctor->image) ? Utils::makeThumbnail($doctor->image->path, 200) : null,
+			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
+			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
+			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
 			'medical_questions' => $med_questions,
 		]);
 	}
 
 	public function schedule(Request $request)
 	{
-		if(!Auth::check() || !is_a(Auth::user(), Doctor::class)) {
+		if(!Auth::check()) {
 			abort(403, 'access denied');
 			return;
 		}
@@ -378,8 +394,10 @@ class DoctorsController extends Controller
 			'doctor_id' => $doctor->id,
 			'viewerIsOwner' => true,
 			'name' => $doctor->name . ' ' . $doctor->lname,
-			'specialty' => $doctor->specialties[0]->title,
-			'specialty_title' => $doctor->specialties[0]->desc,
+			'avatar' => ($doctor->image) ? Utils::makeThumbnail($doctor->image->path, 200) : null,
+			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
+			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
+			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
 			'status_message' => $status_message,
 			'form_error' => $form_error,
 			'reservations' => $current_reservations,
@@ -393,7 +411,7 @@ class DoctorsController extends Controller
 
 	public function transactions(Request $request)
 	{
-		if(!Auth::check() || !is_a(Auth::user(), Doctor::class)) {
+		if(!Auth::check()) {
 			abort(403, 'access denied');
 			return;
 		}
@@ -406,14 +424,17 @@ class DoctorsController extends Controller
 
 		$paid_gross = Transaction::where('doctor_id', $doctor->id)
 			->where('status', 'paid')
+			->where('settled', 0)
 			->sum('amount');
 
 		return view('doctors.transactions', [
 			'doctor_id' => $doctor->id,
 			'viewerIsOwner' => true,
 			'name' => $doctor->name . ' ' . $doctor->lname,
-			'specialty' => $doctor->specialties[0]->title,
-			'specialty_title' => $doctor->specialties[0]->desc,
+			'avatar' => ($doctor->image) ? Utils::makeThumbnail($doctor->image->path, 200) : null,
+			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
+			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
+			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
 			'transactions' => $transactions,
 			'paid_gross' => $paid_gross,
 		]);
@@ -421,7 +442,7 @@ class DoctorsController extends Controller
 
 	public function emailPatientForReservation (Request $request)
 	{
-		if(!Auth::check() || !is_a(Auth::user(), Doctor::class)) {
+		if(!Auth::check()) {
 			abort(403, 'access denied');
 			return;
 		}
@@ -458,6 +479,49 @@ class DoctorsController extends Controller
 			'description' => trans('email.sent'),
 		]);
 	}
+
+	public function uploadAvatar(Request $request)
+	{
+		if ( isset($_FILES['file']) ) {
+			if(!Auth::check()) {
+				return response()->json([
+					'error' => true,
+					'error_desc' => trans('main4.error_uploading') . ': 403',
+				]);
+			}
+
+			$filename = basename($_FILES['file']['name']);
+			$ext = (new \SplFileInfo($filename))->getExtension();
+			$new_filename = sha1($filename . time() . Auth::user()->id) . ".$ext";
+			$path = Config::get('constants.UPLOAD_PATH') . date('Ym') . '/' . $new_filename;
+			$error = !move_uploaded_file($_FILES['file']['tmp_name'], $path);
+
+			if($error) {
+				return response()->json([
+					'error' => true,
+					'error_desc' => trans('main4.error_uploading') . ': 100',
+				]);
+			}
+
+			$avatar = new Image();
+			$avatar->path = $path;
+			$avatar->orig_name = $filename;
+			$avatar->doctor_id = Auth::user()->id;
+			$avatar->save();
+
+			Doctor::where('id', Auth::user()->id)->update([
+				'image_id' => $avatar->id,
+			]);
+
+
+			return response()->json(array(
+				'error' => $error,
+				'new_image' => url($path),
+			));
+		}
+	}
+
+
 
     public function renderMedicalNews(MedicalNews $mednews,
 									  $halfWidth = true )

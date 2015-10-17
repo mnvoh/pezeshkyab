@@ -36,10 +36,14 @@
             <ul class="nav navbar-nav navbar-right">
                 <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
                     <li><a href="<?php echo e(route('user.logout')); ?>"> <?php echo e(trans('main3.logout')); ?> </a></li>
+				<?php elseif(\App\Auth\AdminAuth::check()): ?>
+					<li><a href="<?php echo e(route('admins.home')); ?>"> <?php echo e(trans('main4.administration')); ?> </a></li>
+					<li><a href="<?php echo e(route('admins.logout')); ?>"> <?php echo e(trans('main3.logout')); ?> </a></li>
                 <?php else: ?>
                     <li><a href="<?php echo e(route('user.login')); ?>"> <?php echo e(trans('main.login')); ?> </a></li>
                     <li><a href="<?php echo e(route('user.register')); ?>"> <?php echo e(trans('main.register')); ?> </a></li>
                 <?php endif; ?>
+
                 <?php foreach($langs as $l => $ll): ?>
                     <?php if($l != $lang): ?>
                         <li><a href="<?php echo LangChanger::change($l); ?>"> <?php echo $ll; ?> </a></li>

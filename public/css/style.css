@@ -339,6 +339,7 @@ a {
     color: #666;
     color: rgba(255, 255, 255, 1);
     text-shadow: 0 1px 1px #000, 0 0 5px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
 .table-display {
@@ -351,7 +352,8 @@ a {
     width: 100%;
 }
 
-.doc-navbar {
+.doc-navbar,
+.admin-navbar {
     background: #2775c8;
 }
 
@@ -553,3 +555,203 @@ div.main-search-container form div.main-searchbox-wrapper input:focus {
 .slider-label {
     text-align: center;
 }
+
+#dr-hp-h-img .avatar200 {
+    position: absolute;
+    bottom: 50px;
+    right: 60px;
+    z-index: 1;
+}
+.avatar {
+    background: #fff;
+    border: 5px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 3px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+}
+.avatar128 {
+    width: 128px;
+    height: 128px;
+}
+.avatar200 {
+    width: 200px;
+    height: 200px;
+}
+.avatar>img.landscape {
+    height: 100%;
+    width: auto;
+}
+.avatar>img.portrait {
+    width: 100%;
+    height: auto;
+}
+.avatar #upload-avatar {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    transition: all 100ms ease-in-out;
+}
+.avatar #upload-avatar>.cprogress {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+}
+.avatar:hover #upload-avatar {
+    bottom: 0;
+}
+.avatar #upload-avatar>a {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    font-size: 24px;
+    padding: 10px 0;
+    text-decoration: none;
+    text-align: center;
+}
+.avatar #upload-avatar>a:hover { color: #0073ea; }
+.search-result { text-align: center; display: inline-block; margin: 10px; }
+.search-result>a>span { font-size: 22px; }
+#jquery-fullsizable { z-index: 1001 !important; }
+
+.admin-stat-item {
+    color: rgba(0, 0, 0, 0.05);
+    border: 2px solid #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.5), 0 2px 9px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);
+    display: inline-block;
+    width: 196px;
+    height: 164px;
+    margin: 10px;
+    padding: 10px;
+    transition: all 100ms ease-in-out;
+    position: relative;
+}
+.admin-stat-item:hover {
+    color: rgba(0, 0, 0, 0.05);
+    top: -10px;
+    box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.5), 0 12px 9px 2px rgba(0, 0, 0, 0.5);
+}
+.admin-stat-item>span.title {
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+.admin-stat-item>span.stat {
+    color: #ddd;
+    line-height: 130px;
+    font-size: 64px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.admin-stat-item>span.stat.medium {
+    font-size: 44px;
+}
+.admin-stat-item>span.stat.small {
+    font-size: 36px;
+}
+.admin-stat-item>span.stat.tiny {
+    font-size: 24px;
+}
+.admin-stat-item.shade1 {
+    background: #2775C8;
+    background-image: linear-gradient(to bottom, #2775C8, #1F5A99);
+}
+.admin-stat-item.shade2 {
+    background: #DF0553;
+    background-image: linear-gradient(to bottom, #DF0553, #B10A46);
+}
+.admin-stat-item.shade3 {
+    background: #EC4C05;
+    background-image: linear-gradient(to bottom, #EC4C05, #BE440F);
+}
+.admin-stat-item.shade4 {
+    background: #22D23B;
+    background-image: linear-gradient(to bottom, #22D23B, #20A533);
+}
+.admin-stat-item.shade5 {
+    background: #FED51B;
+    background-image: linear-gradient(to bottom, #FED51B, #FD8909);
+}
+.admin-stat-item.shade6 {
+    background: #D60DEA;
+    background-image: linear-gradient(to bottom, #D60DEA, #9D04B7);
+}
+.admin-navbar { background: #182f5d; }
+.admin-navbar .navbar-nav>li.shade1,
+.admin-navbar .dropdown {
+    position: relative;
+}
+.admin-navbar .navbar-nav>li.shade1>a:hover,
+.admin-navbar .navbar-nav>li.shade2>a:hover,
+.admin-navbar .navbar-nav>li.shade3>a:hover,
+.admin-navbar .navbar-nav>li.shade4>a:hover,
+.admin-navbar .navbar-nav>li.shade5>a:hover { background: transparent; }
+
+.admin-navbar .navbar-nav>li.shade1>span,
+.admin-navbar .navbar-nav>li.shade2>span,
+.admin-navbar .navbar-nav>li.shade3>span,
+.admin-navbar .navbar-nav>li.shade4>span,
+.admin-navbar .navbar-nav>li.shade5>span,
+.admin-navbar .dropdown.shade6>span {
+    transition: height 200ms ease-in-out;
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    left: 0;
+    bottom: 0;
+}
+
+.admin-navbar .navbar-nav>li.shade1>span {
+    background-image: linear-gradient(to bottom, #2775C8, #2775C8);
+}
+.admin-navbar .navbar-nav>li.shade2>span {
+    background-image: linear-gradient(to bottom, #DF0553, #DF0553);
+}
+.admin-navbar .navbar-nav>li.shade3>span {
+    background-image: linear-gradient(to bottom, #EC4C05, #EC4C05);
+}
+.admin-navbar .navbar-nav>li.shade4>span {
+    background-image: linear-gradient(to bottom, #22D23B, #22D23B);
+}
+.admin-navbar .navbar-nav>li.shade5>span {
+    background-image: linear-gradient(to bottom, #FD8909, #FD8909);
+}
+.admin-navbar .dropdown.shade6>span {
+    background-image: linear-gradient(to bottom, #D60DEA, #D60DEA);
+}
+
+.admin-navbar .navbar-nav>li.shade1:hover>span,
+.admin-navbar .navbar-nav>li.shade2:hover>span,
+.admin-navbar .navbar-nav>li.shade3:hover>span,
+.admin-navbar .navbar-nav>li.shade4:hover>span,
+.admin-navbar .navbar-nav>li.shade5:hover>span,
+.admin-navbar div.dropdown:hover>span { height: 100%; }
+
+.admin-navbar div.dropdown { width: 100px; text-align: center; display: inline-block; }
+.admin-navbar div.dropdown>button {
+    background: transparent;
+    border: 0 none;
+    color: #fff;
+    padding: 22px;
+    z-index: 1;
+    position: relative;
+}
+.admin-navbar div.dropdown>button:focus { outline: 0 none; }

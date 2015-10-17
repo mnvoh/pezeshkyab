@@ -174,12 +174,48 @@ Route::any('docfinder/doctors/email-patient-reservation', [
 	'as' => 'doctors.email_patient_reservation',
 	'uses' => 'DoctorsController@emailPatientForReservation'
 ]);
-
+Route::any('docfinder/doctors/upload-avatar', [
+	'as' => 'doctors.upload_avatar',
+	'uses' => 'DoctorsController@uploadAvatar'
+]);
 
 /*          AdminsController
   ======================================*/
+Route::get('docfinder/admin/login', [
+	'as' => 'admins.login',
+	'uses' => 'AdminsController@loginGet'
+]);
+Route::post('docfinder/admin/login', [
+	'as' => 'admins.login',
+	'uses' => 'AdminsController@loginPost'
+]);
+Route::get('docfinder/admin/logout', [
+	'as' => 'admins.logout',
+	'uses' => 'AdminsController@logout'
+]);
+
 
 Route::any('docfinder/admin', [
 	'as' => 'admins.home',
 	'uses' => 'AdminsController@home'
+]);
+Route::any('docfinder/admin/doctors', [
+	'as' => 'admins.doctors',
+	'uses' => 'AdminsController@doctors'
+]);
+Route::any('docfinder/admin/admins', [
+	'as' => 'admins.admins',
+	'uses' => 'AdminsController@admins'
+]);
+Route::any('docfinder/admin/transactions', [
+	'as' => 'admins.transactions',
+	'uses' => 'AdminsController@transactions'
+]);
+Route::any('docfinder/admin/reservations', [
+	'as' => 'admins.reservations',
+	'uses' => 'AdminsController@reservations'
+]);
+Route::any('docfinder/admin/medical-question', [
+	'as' => 'admins.medical_question',
+	'uses' => 'AdminsController@medical_question'
 ]);

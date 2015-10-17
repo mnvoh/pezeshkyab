@@ -34,17 +34,21 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
+                @if(\Illuminate\Support\Facades\Auth::check())
                     <li><a href="{{ route('user.logout') }}"> {{ trans('main3.logout') }} </a></li>
-                <?php else: ?>
+				@elseif(\App\Auth\AdminAuth::check())
+					<li><a href="{{ route('admins.home') }}"> {{ trans('main4.administration') }} </a></li>
+					<li><a href="{{ route('admins.logout') }}"> {{ trans('main3.logout') }} </a></li>
+                @else
                     <li><a href="{{ route('user.login') }}"> {{ trans('main.login') }} </a></li>
                     <li><a href="{{ route('user.register') }}"> {{ trans('main.register') }} </a></li>
-                <?php endif; ?>
-                <?php foreach($langs as $l => $ll): ?>
-                    <?php if($l != $lang): ?>
+                @endif
+
+                @foreach($langs as $l => $ll)
+                    @if($l != $lang)
                         <li><a href="<?php echo LangChanger::change($l); ?>"> <?php echo $ll; ?> </a></li>
-                    <?php endif; ?>
-                <?php endforeach; ?>
+                    @endif
+                @endforeach
             </ul>
         </nav>
     </div>

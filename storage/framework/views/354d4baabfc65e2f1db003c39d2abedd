@@ -49,8 +49,8 @@
         </nav>
     </div>
 
-    <div id="dr-hp-h-img" class="table-display" style="background-image: url(<?php echo e(url('img/specialists/' . $specialty . '.jpg')); ?>);">
-		<div class="container table-cell">
+    <div id="dr-hp-h-img" style="background-image: url(<?php echo e(url('img/specialists/' . $specialty . '.jpg')); ?>);">
+		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="text-center"><?php echo e(trans('main3.dr')); ?> <?php echo e($name); ?></h1>
@@ -58,6 +58,10 @@
 				</div>
 			</div>
 		</div>
+		<?php if($viewerIsOwner): ?>
+			<?php $upload_button = true; ?>
+		<?php endif; ?>
+		<?php echo $__env->make('avatar200', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     </div>
 
 	<div class="doc-navbar">

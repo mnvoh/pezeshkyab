@@ -2,8 +2,15 @@
   <dictionary name="mnvoh">
     <words>
       <w>addr</w>
+      <w>cprogress</w>
+      <w>csrf</w>
+      <w>fileupload</w>
       <w>fivestar</w>
+      <w>flipcounter</w>
+      <w>fullsizable</w>
+      <w>fullsizeable</w>
       <w>guzzlehttp</w>
+      <w>jstween</w>
       <w>mailgun</w>
       <w>noborder</w>
       <w>smtp</w>

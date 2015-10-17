@@ -4,7 +4,7 @@
 		<?php echo $__env->make('search.advanced-search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 	<?php else: ?>
 		<div class="row">
-			<div class="col-sm-12 col-md-10 col-lg-8">
+			<div class="col-sm-12">
 				<?php if($error): ?>
 					<h3 class="text-error"><?php echo e(trans('main3.no_search_server')); ?></h3>
 				<?php else: ?>
@@ -38,16 +38,25 @@
 						</h3>
 					<?php endif; ?>
 
+					<hr />
+
 					<div class="search-results">
 						<?php foreach($results as $result): ?>
 							<div class="search-result">
-								<h4 class="inline-form-control">
-									<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $result['_id']])); ?>">
+
+								<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $result['_id']])); ?>">
+									<?php
+										$avatar = $result['avatar'];
+										$name = $result['_source']['fullname'];
+									?>
+									<?php echo $__env->make('avatar200', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+									<br />
+									<span>
 										<?php echo e($result['_source']['fullname']); ?>
 
-									</a>
-									<br />
-								</h4>
+									</span>
+								</a>
+								<br />
 								&middot;
 								<?php foreach($result['_source']['specialty'] as $specialty): ?>
 									<?php echo e($specialty); ?>
@@ -59,7 +68,6 @@
 
 								<?php endforeach; ?>
 							</div>
-							<br />
 						<?php endforeach; ?>
 
 						<nav>

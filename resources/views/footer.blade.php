@@ -17,6 +17,8 @@
             <li><a href="{{ route('user.login') }}"> {{ trans('main.login') }} </a></li>
             <li>&middot;</li>
             <li><a href="{{ route('user.register') }}"> {{ trans('main.register') }} </a></li>
+			<li>&middot;</li>
+			<li><a href="{{ route('admins.login') }}"> {{ trans('main4.admin_login') }} </a></li>
         </ul>
     </div>
 </footer>

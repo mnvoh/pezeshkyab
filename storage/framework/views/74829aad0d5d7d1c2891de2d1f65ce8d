@@ -17,6 +17,8 @@
             <li><a href="<?php echo e(route('user.login')); ?>"> <?php echo e(trans('main.login')); ?> </a></li>
             <li>&middot;</li>
             <li><a href="<?php echo e(route('user.register')); ?>"> <?php echo e(trans('main.register')); ?> </a></li>
+			<li>&middot;</li>
+			<li><a href="<?php echo e(route('admins.login')); ?>"> <?php echo e(trans('main4.admin_login')); ?> </a></li>
         </ul>
     </div>
 </footer>

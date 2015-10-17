@@ -19,3 +19,7 @@ div.main-search-container form>div.main-searchbox-wrapper>div.input-wrapper {
 div.main-search-container form>div.main-searchbox-wrapper>button {
     float: left;
 }
+#dr-hp-h-img .avatar200 {
+    right: auto;
+    left: 60px;
+}

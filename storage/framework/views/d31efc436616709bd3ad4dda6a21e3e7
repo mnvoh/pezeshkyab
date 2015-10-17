@@ -37,6 +37,7 @@
 		<link rel="stylesheet" href="<?php echo e(url('css/summernote.css')); ?>" />
 		<link rel="stylesheet" href="<?php echo e(url('css/font-awesome.css')); ?>" />
 		<link rel="stylesheet" href="<?php echo e(url('css/jquery.flipcounter.css')); ?>" />
+		<link rel="stylesheet" href="<?php echo e(url('css/jquery-fullsizable.css')); ?>" />
 
         <?php if($dir == 'rtl'): ?>
             <link rel="stylesheet" href="<?php echo e(url('css/bootstrap-rtl.css')); ?>" />
@@ -51,6 +52,8 @@
     <body>
 		<?php if(isset($use_doctors_navbar) && $use_doctors_navbar): ?>
 			<?php echo $__env->make('doctors.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		<?php elseif(isset($user_admin_navbar) && $user_admin_navbar): ?>
+			<?php echo $__env->make('admin.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 		<?php else: ?>
     		<?php echo $__env->make('navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 		<?php endif; ?>
@@ -68,6 +71,7 @@
 
     	<script src="<?php echo e(url('js/jquery.js')); ?>"></script>
 		<script src="<?php echo e(url('js/jquery-ui.js')); ?>"></script>
+		<script src="<?php echo e(url('js/jquery-fullsizable.js')); ?>"></script>
     	<script src="<?php echo e(url('js/bootstrap.js')); ?>"></script>
         <script src="<?php echo e(url('js/script.js')); ?>"></script>
         <script src="<?php echo e(url('js/elasticsearch.js')); ?>"></script>

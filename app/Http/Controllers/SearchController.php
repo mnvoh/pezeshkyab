@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Utils;
+use App\Models\Doctor;
 use Elasticsearch\Common\Exceptions\NoNodesAvailableException;
 use Illuminate\Http\Request;
 use Elasticsearch\ClientBuilder;
@@ -15,7 +17,7 @@ class SearchController extends Controller
 
     public function find(Request $request)
     {
-		$advanced = ($request->get("s_rating", 0) > 0) ||
+		$advanced = ($request->get("rating", 0) > 0) ||
 			$request->has("schedule") ||
 			($request->get("s_distance", 0) > 0);
 
@@ -164,6 +166,12 @@ class SearchController extends Controller
                 $pagelessUrl .= "$key=$value&";
             }
         }
+
+		for($i = 0; $i < count($results['hits']['hits']); $i++) {
+			$doc = Doctor::where('id', $results['hits']['hits'][$i]['_id'])->first();
+			$results['hits']['hits'][$i]['avatar'] = @Utils::makeThumbnail($doc->image->path, 200);
+		}
+
 
 		return view('search.find', array(
             'error' => false,
