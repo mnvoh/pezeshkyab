@@ -30,12 +30,12 @@
                     <a href="<?php echo e(route('main.links')); ?>"> <?php echo e(trans('main.links')); ?> </a>
                 </li>
                 <li>
-                    <a href="<?php echo e(route('search.find')); ?>" id="show-find-doctor"> <?php echo e(trans('main3.find_a_doctor')); ?> </a>
+                    <a href="<?php echo e(route('search.find')); ?>" id="show-find-doctor"> <?php echo e(trans('main.find_a_doctor')); ?> </a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
-                <li><a href="<?php echo e(route('user.logout')); ?>"> <?php echo e(trans('main3.logout')); ?> </a></li>
+                <li><a href="<?php echo e(route('user.logout')); ?>"> <?php echo e(trans('main.logout')); ?> </a></li>
                 <?php else: ?>
                 <li><a href="<?php echo e(route('user.login')); ?>"> <?php echo e(trans('main.login')); ?> </a></li>
                 <li><a href="<?php echo e(route('user.register')); ?>"> <?php echo e(trans('main.register')); ?> </a></li>
@@ -53,7 +53,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="text-center"><?php echo e(trans('main3.dr')); ?> <?php echo e($name); ?></h1>
+					<h1 class="text-center"><?php echo e(trans('main.dr')); ?> <?php echo e($name); ?></h1>
 					<h2 class="text-center"><?php echo e($specialty_title); ?></h2>
 				</div>
 			</div>
@@ -75,7 +75,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $doctor_id])); ?>" class="navbar-brand">
-					<?php echo e(trans('main3.dr')); ?> <?php echo e($name); ?>
+					<?php echo e(trans('main.dr')); ?> <?php echo e($name); ?>
 
 				</a>
 			</div>
@@ -83,14 +83,14 @@
 				<ul class="nav navbar-nav">
 					<li>
 						<a href="<?php echo e(route('doctors.articles', ['doctor_id' => $doctor_id])); ?>">
-							<?php echo e(trans('main4.mednews')); ?>
+							<?php echo e(trans('main.mednews')); ?>
 
 						</a>
 					</li>
 					<?php if($viewerIsOwner): ?>
 						<li>
 							<a href="<?php echo e(route('doctors.schedule')); ?>">
-								<?php echo e(trans('main4.manage_schedules')); ?>
+								<?php echo e(trans('main.manage_schedules')); ?>
 
 							</a>
 						</li>
@@ -105,14 +105,14 @@
 					<?php if($viewerIsOwner): ?>
 						<li>
 							<a href="<?php echo e(route('doctors.asked_questions')); ?>">
-								<?php echo e(trans('main4.asked_questions')); ?>
+								<?php echo e(trans('main.asked_questions')); ?>
 
 							</a>
 						</li>
 					<?php else: ?>
 						<li>
 							<a href="<?php echo e(route('doctors.ask', ['doctor_id' => $doctor_id])); ?>">
-								<?php echo e(trans('main2.ask_question')); ?>
+								<?php echo e(trans('main.ask_question')); ?>
 
 							</a>
 						</li>
@@ -120,7 +120,7 @@
 					<?php if($viewerIsOwner): ?>
 						<li>
 							<a href="<?php echo e(route('doctors.transactions')); ?>">
-								<?php echo e(trans('main4.transactions')); ?>
+								<?php echo e(trans('main.transactions')); ?>
 
 							</a>
 						</li>

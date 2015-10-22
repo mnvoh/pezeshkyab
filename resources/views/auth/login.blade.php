@@ -16,9 +16,9 @@
 				@endif
 				<form action="#" method="post">
 					<div class="form-group">
-						<label for="d_license">{{ trans('main2.physician_license_number') }}</label>
+						<label for="d_license">{{ trans('main.physician_license_number') }}</label>
 						<input type="text" class="form-control" id="license" name="license"
-							   placeholder="{{ trans('main2.physician_license_number') }}"
+							   placeholder="{{ trans('main.physician_license_number') }}"
 							   value="{{ old('license') }}" />
 					</div>
 

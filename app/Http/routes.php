@@ -215,7 +215,11 @@ Route::any('docfinder/admin/reservations', [
 	'as' => 'admins.reservations',
 	'uses' => 'AdminsController@reservations'
 ]);
-Route::any('docfinder/admin/medical-question', [
+Route::any('docfinder/admin/medical-questions', [
 	'as' => 'admins.medical_question',
-	'uses' => 'AdminsController@medical_question'
+	'uses' => 'AdminsController@medicalQuestions'
+]);
+Route::any('docfinder/admin/medical-questions', [
+	'as' => 'admins.medical_question',
+	'uses' => 'AdminsController@medicalQuestions'
 ]);

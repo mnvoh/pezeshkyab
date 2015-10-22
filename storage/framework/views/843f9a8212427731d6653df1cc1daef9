@@ -46,7 +46,7 @@
                     <td> <?php echo e($filled_info['b_doctor_label']); ?> </td>
                 </tr>
                 <tr>
-                    <th><?php echo e(trans('main4.reservation_time')); ?></th>
+                    <th><?php echo e(trans('main.reservation_time')); ?></th>
                     <td><?php echo e($filled_info['b_rtime']); ?></td>
                 </tr>
             </table>
@@ -59,7 +59,7 @@
 
                 <button type="submit" class="btn btn-block btn-success" name="form-submitted" value="true">
                     <?php if(isset($error)): ?>
-                        <?php echo e(trans('main4.go_back')); ?>
+                        <?php echo e(trans('main.go_back')); ?>
 
                     <?php else: ?>
                         <?php echo e(trans('main.confirm')); ?>
@@ -70,7 +70,7 @@
         </div>
         <div class="col-xs-1">
             <a href="<?php echo e(route('appointment.book', ['step' => 2])); ?>" class="btn btn-warning">
-                <?php echo e(trans('main4.go_back')); ?>
+                <?php echo e(trans('main.go_back')); ?>
 
             </a>
         </div>

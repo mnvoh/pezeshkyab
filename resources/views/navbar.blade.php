@@ -30,15 +30,15 @@
                     <a href="{{ route('main.links') }}"> {{ trans('main.links') }} </a>
                 </li>
                 <li>
-                    <a href="{{ route('search.find') }}" id="show-find-doctor"> {{ trans('main3.find_a_doctor') }} </a>
+                    <a href="{{ route('search.find') }}" id="show-find-doctor"> {{ trans('main.find_a_doctor') }} </a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if(\Illuminate\Support\Facades\Auth::check())
-                    <li><a href="{{ route('user.logout') }}"> {{ trans('main3.logout') }} </a></li>
+                    <li><a href="{{ route('user.logout') }}"> {{ trans('main.logout') }} </a></li>
 				@elseif(\App\Auth\AdminAuth::check())
-					<li><a href="{{ route('admins.home') }}"> {{ trans('main4.administration') }} </a></li>
-					<li><a href="{{ route('admins.logout') }}"> {{ trans('main3.logout') }} </a></li>
+					<li><a href="{{ route('admins.home') }}"> {{ trans('main.administration') }} </a></li>
+					<li><a href="{{ route('admins.logout') }}"> {{ trans('main.logout') }} </a></li>
                 @else
                     <li><a href="{{ route('user.login') }}"> {{ trans('main.login') }} </a></li>
                     <li><a href="{{ route('user.register') }}"> {{ trans('main.register') }} </a></li>
@@ -64,35 +64,35 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="{{ url('/img/carousel/1.jpg') }}" alt="{{ trans('main2.carousel_title_1') }}" />
+                    <img src="{{ url('/img/carousel/1.jpg') }}" alt="{{ trans('main.carousel_title_1') }}" />
                     <div class="carousel-caption">
-                        <h1 class="hidden-xs">{{ trans('main2.carousel_title_1') }}</h1>
-                        <p class="hidden-xs">{{ trans('main2.carousel_desc_1') }}</p>
-                        <a href="{{ route('search.find') }}" title="{{ trans('main2.carousel_title_1') }}"
+                        <h1 class="hidden-xs">{{ trans('main.carousel_title_1') }}</h1>
+                        <p class="hidden-xs">{{ trans('main.carousel_desc_1') }}</p>
+                        <a href="{{ route('search.find') }}" title="{{ trans('main.carousel_title_1') }}"
                                 class="btn btn-default btn-lg">
-                            {{ trans('main2.carousel_title_1') }}
+                            {{ trans('main.carousel_title_1') }}
                         </a>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="{{ url('/img/carousel/2.jpg') }}" alt="{{ trans('main2.carousel_title_2') }}" />
+                    <img src="{{ url('/img/carousel/2.jpg') }}" alt="{{ trans('main.carousel_title_2') }}" />
                     <div class="carousel-caption">
-                        <h1 class="hidden-xs">{{ trans('main2.carousel_title_2') }}</h1>
-                        <p class="hidden-xs">{{ trans('main2.carousel_desc_2') }}</p>
-                        <a href="{{ route('appointment.book', ['step' => 1]) }}" title="{{ trans('main2.carousel_title_2') }}"
+                        <h1 class="hidden-xs">{{ trans('main.carousel_title_2') }}</h1>
+                        <p class="hidden-xs">{{ trans('main.carousel_desc_2') }}</p>
+                        <a href="{{ route('appointment.book', ['step' => 1]) }}" title="{{ trans('main.carousel_title_2') }}"
                            class="btn btn-default btn-lg">
-                            {{ trans('main2.carousel_title_2') }}
+                            {{ trans('main.carousel_title_2') }}
                         </a>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="{{ url('/img/carousel/3.jpg') }}" alt="{{ trans('main2.carousel_title_3') }}" />
+                    <img src="{{ url('/img/carousel/3.jpg') }}" alt="{{ trans('main.carousel_title_3') }}" />
                     <div class="carousel-caption">
-                        <h1 class="hidden-xs">{{ trans('main2.carousel_title_3') }}</h1>
-                        <p class="hidden-xs">{{ trans('main2.carousel_desc_3') }}</p>
-                        <a href="{{ route('main.docfinder_home') }}#medical-question" title="{{ trans('main2.carousel_title_3') }}"
+                        <h1 class="hidden-xs">{{ trans('main.carousel_title_3') }}</h1>
+                        <p class="hidden-xs">{{ trans('main.carousel_desc_3') }}</p>
+                        <a href="{{ route('main.docfinder_home') }}#medical-question" title="{{ trans('main.carousel_title_3') }}"
                            class="btn btn-default btn-lg">
-                            {{ trans('main2.carousel_title_3.1') }}
+                            {{ trans('main.carousel_title_3.1') }}
                         </a>
                     </div>
                 </div>
@@ -112,35 +112,35 @@
 
         <div id="quick-links" class="row">
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-                <a href="{{ route('search.find') }}" title="{{ trans('main2.systems_doctors') }}">
-                    <img src="{{ url('img/quicklinks/doctors.svg') }}" alt="{{ trans('main2.systems_doctors') }}"
+                <a href="{{ route('search.find') }}" title="{{ trans('main.systems_doctors') }}">
+                    <img src="{{ url('img/quicklinks/doctors.svg') }}" alt="{{ trans('main.systems_doctors') }}"
                             width="96" height="96"/>
-                    <h3>{{ trans('main2.systems_doctors') }}</h3>
-                    <p>{{ trans('main2.systems_doctors_desc') }}</p>
+                    <h3>{{ trans('main.systems_doctors') }}</h3>
+                    <p>{{ trans('main.systems_doctors_desc') }}</p>
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-                <a href="{{ route('appointment.book', ['step' => 1]) }}" title="{{ trans('main2.online_appointment_booking') }}">
-                    <img src="{{ url('img/quicklinks/schedule.svg') }}" alt="{{ trans('main2.online_appointment_booking') }}"
+                <a href="{{ route('appointment.book', ['step' => 1]) }}" title="{{ trans('main.online_appointment_booking') }}">
+                    <img src="{{ url('img/quicklinks/schedule.svg') }}" alt="{{ trans('main.online_appointment_booking') }}"
                          width="96" height="96"/>
-                    <h3>{{ trans('main2.online_appointment_booking') }}</h3>
-                    <p>{{ trans('main2.online_appointment_booking_desc') }}</p>
+                    <h3>{{ trans('main.online_appointment_booking') }}</h3>
+                    <p>{{ trans('main.online_appointment_booking_desc') }}</p>
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-                <a href="{{ route('main.insurances') }}" title="{{ trans('main2.insurance') }}">
-                    <img src="{{ url('img/quicklinks/insurances.svg') }}" alt="{{ trans('main2.insurance') }}"
+                <a href="{{ route('main.insurances') }}" title="{{ trans('main.insurance') }}">
+                    <img src="{{ url('img/quicklinks/insurances.svg') }}" alt="{{ trans('main.insurance') }}"
                          width="96" height="96"/>
-                    <h3>{{ trans('main2.insurance') }}</h3>
-                    <p>{{ trans('main2.insurance_desc') }}</p>
+                    <h3>{{ trans('main.insurance') }}</h3>
+                    <p>{{ trans('main.insurance_desc') }}</p>
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-                <a href="{{ route('main.fees') }}" title="{{ trans('main2.fees') }}">
-                    <img src="{{ url('img/quicklinks/fees.svg') }}" alt="{{ trans('main2.fees') }}"
+                <a href="{{ route('main.fees') }}" title="{{ trans('main.fees') }}">
+                    <img src="{{ url('img/quicklinks/fees.svg') }}" alt="{{ trans('main.fees') }}"
                          width="96" height="96"/>
-                    <h3>{{ trans('main2.fees') }}</h3>
-                    <p>{{ trans('main2.fees_desc') }}</p>
+                    <h3>{{ trans('main.fees') }}</h3>
+                    <p>{{ trans('main.fees_desc') }}</p>
                 </a>
             </div>
         </div>

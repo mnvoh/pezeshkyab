@@ -11,10 +11,10 @@
 				@endif
 			@endif
 
-			<h3>{{ trans('main4.add_schedule') }}</h3>
+			<h3>{{ trans('main.add_schedule') }}</h3>
 			<form action="{{ $url }}" method="post">
 				<div class="form-control inline-form-control">
-					<label class="inline-form-control">{{ trans('main3.date') }}</label>
+					<label class="inline-form-control">{{ trans('main.date') }}</label>
 
 					<span dir="ltr">
 						<input type="number" min="{{ $current_year }}" max="{{ $current_year + 1 }}"
@@ -33,7 +33,7 @@
 
 				</div>
 				<div class="form-control inline-form-control">
-					<label class="inline-form-control">{{ trans('main3.time') }}</label>
+					<label class="inline-form-control">{{ trans('main.time') }}</label>
 					<span dir="ltr">
 						<input type="number" min="0" max="23" name="hour"
 							   class="inline-form-control noborder text-center sm-number-field" value="7" />
@@ -43,7 +43,7 @@
 					</span>
 				</div>
 				<div class="form-control inline-form-control">
-					<label class="inline-form-control">{{ trans('main2.fee') }}</label>
+					<label class="inline-form-control">{{ trans('main.fee') }}</label>
 					<select name="fee" class="plain-combo">
 						@foreach($fees as $fee)
 							<option value="{{ $fee->id }}">
@@ -56,26 +56,26 @@
 				{{ csrf_field() }}
 
 				<button type="submit" name="new_reservation" value="1" class="btn btn-success">
-					{{ trans('main4.save') }}
+					{{ trans('main.save') }}
 				</button>
 			</form>
 
 			<hr />
 
-			<h3>{{ trans('main4.current_schedules') }}</h3>
+			<h3>{{ trans('main.current_schedules') }}</h3>
 
 			<table class="table table-responsive table-striped">
 				<thead>
 					<tr>
-						<th>{{ trans('main4.id') }}</th>
-						<th>{{ trans('main4.rtime') }}</th>
-						<th>{{ trans('main2.fee') }}</th>
-						<th>{{ trans('main4.pname') }}</th>
+						<th>{{ trans('main.id') }}</th>
+						<th>{{ trans('main.rtime') }}</th>
+						<th>{{ trans('main.fee') }}</th>
+						<th>{{ trans('main.pname') }}</th>
 						<th>{{ trans('main.nationality') }}</th>
 						<th>{{ trans('main.national_code') }}</th>
 						<th>{{ trans('main.email_address') }}</th>
-						<th>{{ trans('main4.disease') }}</th>
-						<th>{{ trans('main4.action') }}</th>
+						<th>{{ trans('main.disease') }}</th>
+						<th>{{ trans('main.action') }}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -103,7 +103,7 @@
 									<input type="hidden" name="reservation_id" value="{{ $r->id }}" />
 									{{ csrf_field() }}
 									<button type="submit" name="delete_reservation" value="1" class="btn btn-danger">
-										{{ trans('main4.delete') }}
+										{{ trans('main.delete') }}
 									</button>
 								</form>
 							@else
@@ -113,7 +113,7 @@
 									<input type="hidden" name="name" value="{{ $r->pname . ' ' . $r->plname }}" />
 									{{ csrf_field() }}
 									<button type="submit" name="email_patient" value="1" class="btn btn-default">
-										{{ trans('main4.email') }}
+										{{ trans('main.email') }}
 									</button>
 								</form>
 							@endif
@@ -131,7 +131,7 @@
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title">
-						{{ trans('main4.send_email_to') }}:
+						{{ trans('main.send_email_to') }}:
 						<span id="patient-compose-mail-to"></span>
 					</h4>
 				</div>
@@ -143,12 +143,12 @@
 							<p class="text-error"></p>
 						</div>
 						<div class="form-group">
-							<input type="text" name="subject" placeholder="{{ trans('main4.subject') }}"
+							<input type="text" name="subject" placeholder="{{ trans('main.subject') }}"
 								   class="form-control" />
 						</div>
 						<div class="form-group">
 							<textarea name="message" class="form-control"
-									  placeholder="{{ trans('main4.email_patient') }}"
+									  placeholder="{{ trans('main.email_patient') }}"
 									  style="height: 250px;"></textarea>
 							<input type="hidden" name="reservation_id" id="mail-to-reservation-id" />
 							{{ csrf_field() }}
@@ -156,11 +156,11 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">
-							{{ trans('main4.close') }}
+							{{ trans('main.close') }}
 						</button>
 						<button type="submit" class="btn btn-primary">
 							<span class="glyphicon glyphicon-send"></span>
-							{{ trans('main4.send') }}
+							{{ trans('main.send') }}
 						</button>
 					</div>
 				</form>

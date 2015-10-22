@@ -2,8 +2,12 @@
   <dictionary name="mnvoh">
     <words>
       <w>addr</w>
+      <w>adminaction</w>
       <w>cprogress</w>
       <w>csrf</w>
+      <w>docname</w>
+      <w>doesnot</w>
+      <w>dropdown</w>
       <w>fileupload</w>
       <w>fivestar</w>
       <w>flipcounter</w>
@@ -12,6 +16,9 @@
       <w>guzzlehttp</w>
       <w>jstween</w>
       <w>mailgun</w>
+      <w>menuitem</w>
+      <w>mqid</w>
+      <w>ncode</w>
       <w>noborder</w>
       <w>smtp</w>
       <w>summernote</w>

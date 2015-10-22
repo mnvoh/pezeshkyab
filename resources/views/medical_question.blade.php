@@ -1,7 +1,7 @@
 <div id="medical-question" @if(!isset($standalone) || !$standalone) class="medical-question" @endif>
     <div class="container">
 		@if(isset($done) && $done)
-			<h2 class="text-success">{{ trans('main4.question_submitted') }}</h2>
+			<h2 class="text-success">{{ trans('main.question_submitted') }}</h2>
 		@else
 			<div class="row">
 				<div class="col-lg-12">
@@ -31,7 +31,7 @@
 
 						<div class="form-group">
 							<input type="text" class="form-control" id="q_name" name="q_name"
-								   placeholder="{{ trans('main2.your_name') }} *" value="{{ old('q_name') }}"/>
+								   placeholder="{{ trans('main.your_name') }} *" value="{{ old('q_name') }}"/>
 						</div>
 
 						<div class="form-group">
@@ -41,8 +41,8 @@
 
 						<div class="form-group">
 							<select name="q_scope" class="form-control">
-								<option value="public">{{ trans('main4.public') }}</option>
-								<option value="private">{{ trans('main4.private') }}</option>
+								<option value="public">{{ trans('main.public') }}</option>
+								<option value="private">{{ trans('main.private') }}</option>
 							</select>
 						</div>
 

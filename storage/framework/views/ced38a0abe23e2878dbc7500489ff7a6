@@ -30,12 +30,12 @@
                     <a href="<?php echo e(route('main.links')); ?>"> <?php echo e(trans('main.links')); ?> </a>
                 </li>
                 <li>
-                    <a href="javascript:;" id="show-find-doctor"> <?php echo e(trans('main3.find_a_doctor')); ?> </a>
+                    <a href="javascript:;" id="show-find-doctor"> <?php echo e(trans('main.find_a_doctor')); ?> </a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
-                    <li><a href="<?php echo e(route('user.logout')); ?>"> <?php echo e(trans('main3.logout')); ?> </a></li>
+                    <li><a href="<?php echo e(route('user.logout')); ?>"> <?php echo e(trans('main.logout')); ?> </a></li>
                 <?php else: ?>
                     <li><a href="<?php echo e(route('user.login')); ?>"> <?php echo e(trans('main.login')); ?> </a></li>
                     <li><a href="<?php echo e(route('user.register')); ?>"> <?php echo e(trans('main.register')); ?> </a></li>
@@ -55,7 +55,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h1><?php echo e(trans('main3.find_a_doctor')); ?></h1>
+                        <h1><?php echo e(trans('main.find_a_doctor')); ?></h1>
                         <form method="get" action="<?php echo e(route('search.find')); ?>">
                             <div class="form-control main-searchbox-wrapper">
                                 <a id="btn-adv-search">
@@ -68,7 +68,7 @@
 
                                 <div class="input-wrapper">
                                     <input type="text" class="noborder main-search-input" name="s_q"
-                                           placeholder="<?php echo e(trans('main3.search_example')); ?>" autocomplete="on"
+                                           placeholder="<?php echo e(trans('main.search_example')); ?>" autocomplete="on"
                                             <?php if(isset($showSearchForm)): ?>
                                                 value="<?php echo e(filter_input(INPUT_GET, "s_q")); ?>"
                                             <?php endif; ?>
@@ -81,10 +81,10 @@
                             <div class="adv-search">
                                 <input type="checkbox" class="hidden" name="s_adv" id="s_adv" />
                                 <div class="form-group">
-                                    <label><?php echo e(trans('main3.search_rating')); ?></label>
+                                    <label><?php echo e(trans('main.search_rating')); ?></label>
                                     <select name="s_rating" id="s_rating" name="s_rating"
                                             class="form-control inline-form-control">
-                                        <option value="0"><?php echo e(trans('main3.doesnt_matter')); ?></option>
+                                        <option value="0"><?php echo e(trans('main.doesnt_matter')); ?></option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -93,12 +93,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label><?php echo e(trans('main3.search_schedule')); ?></label>
+                                    <label><?php echo e(trans('main.search_schedule')); ?></label>
 
                                     <br />
-                                    <label style="width: 50px;"><?php echo e(trans('main3.from')); ?>: </label>
+                                    <label style="width: 50px;"><?php echo e(trans('main.from')); ?>: </label>
                                     <span class="form-control date-wrapper">
-                                        <?php echo e(trans('main3.date')); ?>
+                                        <?php echo e(trans('main.date')); ?>
 
                                         <input type="text" name="s_date_from_y" id="s_date_from_y"
                                                class="noborder" value="<?php echo e($today_year); ?>" />
@@ -109,7 +109,7 @@
                                         <input type="text" name="s_date_from_d" id="s_date_from_d"
                                                class="noborder" value="<?php echo e($today_date); ?>" />
 
-                                        <?php echo e(trans('main3.time')); ?>
+                                        <?php echo e(trans('main.time')); ?>
 
                                         <input type="text" name="s_date_from_h" id="s_date_from_h"
                                                class="noborder" value="<?php echo e($today_hour); ?>" />
@@ -119,9 +119,9 @@
                                     </span>
                                     <br />
                                     <br />
-                                    <label style="width: 50px;"><?php echo e(trans('main3.to')); ?>: </label>
+                                    <label style="width: 50px;"><?php echo e(trans('main.to')); ?>: </label>
                                     <span class="form-control date-wrapper">
-                                        <?php echo e(trans('main3.date')); ?>
+                                        <?php echo e(trans('main.date')); ?>
 
                                         <input type="text" name="s_date_to_y" id="s_date_to_y"
                                                class="noborder" value="<?php echo e($twoday_year); ?>" />
@@ -132,7 +132,7 @@
                                         <input type="text" name="s_date_to_d" id="s_date_to_d"
                                                class="noborder" value="<?php echo e($twoday_date); ?>" />
 
-                                        <?php echo e(trans('main3.time')); ?>
+                                        <?php echo e(trans('main.time')); ?>
 
                                         <input type="text" name="s_date_to_h" id="s_date_to_h"
                                                class="noborder" value="<?php echo e($twoday_hour); ?>" />
@@ -143,21 +143,21 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label><?php echo e(trans('main3.search_radius')); ?></label>
+                                    <label><?php echo e(trans('main.search_radius')); ?></label>
                                     <select name="s_distance" id="s_distance" class="form-control inline-form-control">
-                                        <option value="0"><?php echo e(trans('main3.doesnt_matter')); ?></option>
-                                        <option value="500">500 <?php echo e(trans('main3.meters')); ?></option>
-                                        <option value="1000">1 <?php echo e(trans('main3.km')); ?></option>
-                                        <option value="2000">2 <?php echo e(trans('main3.km')); ?></option>
-                                        <option value="3000">3 <?php echo e(trans('main3.km')); ?></option>
-                                        <option value="5000">5 <?php echo e(trans('main3.km')); ?></option>
-                                        <option value="10000">10 <?php echo e(trans('main3.km')); ?></option>
-                                        <option value="20000">20 <?php echo e(trans('main3.km')); ?></option>
+                                        <option value="0"><?php echo e(trans('main.doesnt_matter')); ?></option>
+                                        <option value="500">500 <?php echo e(trans('main.meters')); ?></option>
+                                        <option value="1000">1 <?php echo e(trans('main.km')); ?></option>
+                                        <option value="2000">2 <?php echo e(trans('main.km')); ?></option>
+                                        <option value="3000">3 <?php echo e(trans('main.km')); ?></option>
+                                        <option value="5000">5 <?php echo e(trans('main.km')); ?></option>
+                                        <option value="10000">10 <?php echo e(trans('main.km')); ?></option>
+                                        <option value="20000">20 <?php echo e(trans('main.km')); ?></option>
                                     </select>
                                 </div>
 
                                 <label class="help-block">
-                                    <?php echo e(trans('main3.s_distance_help')); ?>
+                                    <?php echo e(trans('main.s_distance_help')); ?>
 
                                 </label>
 
@@ -186,37 +186,37 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="<?php echo e(url('/img/carousel/1.jpg')); ?>" alt="<?php echo e(trans('main2.carousel_title_1')); ?>" />
+                    <img src="<?php echo e(url('/img/carousel/1.jpg')); ?>" alt="<?php echo e(trans('main.carousel_title_1')); ?>" />
                     <div class="carousel-caption">
-                        <h1 class="hidden-xs"><?php echo e(trans('main2.carousel_title_1')); ?></h1>
-                        <p class="hidden-xs"><?php echo e(trans('main2.carousel_desc_1')); ?></p>
-                        <a href="<?php echo e(route('search.find')); ?>" title="<?php echo e(trans('main2.carousel_title_1')); ?>"
+                        <h1 class="hidden-xs"><?php echo e(trans('main.carousel_title_1')); ?></h1>
+                        <p class="hidden-xs"><?php echo e(trans('main.carousel_desc_1')); ?></p>
+                        <a href="<?php echo e(route('search.find')); ?>" title="<?php echo e(trans('main.carousel_title_1')); ?>"
                                 class="btn btn-default btn-lg">
-                            <?php echo e(trans('main2.carousel_title_1')); ?>
+                            <?php echo e(trans('main.carousel_title_1')); ?>
 
                         </a>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="<?php echo e(url('/img/carousel/2.jpg')); ?>" alt="<?php echo e(trans('main2.carousel_title_2')); ?>" />
+                    <img src="<?php echo e(url('/img/carousel/2.jpg')); ?>" alt="<?php echo e(trans('main.carousel_title_2')); ?>" />
                     <div class="carousel-caption">
-                        <h1 class="hidden-xs"><?php echo e(trans('main2.carousel_title_2')); ?></h1>
-                        <p class="hidden-xs"><?php echo e(trans('main2.carousel_desc_2')); ?></p>
-                        <a href="<?php echo e(route('appointment.book', ['step' => 1])); ?>" title="<?php echo e(trans('main2.carousel_title_2')); ?>"
+                        <h1 class="hidden-xs"><?php echo e(trans('main.carousel_title_2')); ?></h1>
+                        <p class="hidden-xs"><?php echo e(trans('main.carousel_desc_2')); ?></p>
+                        <a href="<?php echo e(route('appointment.book', ['step' => 1])); ?>" title="<?php echo e(trans('main.carousel_title_2')); ?>"
                            class="btn btn-default btn-lg">
-                            <?php echo e(trans('main2.carousel_title_2')); ?>
+                            <?php echo e(trans('main.carousel_title_2')); ?>
 
                         </a>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="<?php echo e(url('/img/carousel/3.jpg')); ?>" alt="<?php echo e(trans('main2.carousel_title_3')); ?>" />
+                    <img src="<?php echo e(url('/img/carousel/3.jpg')); ?>" alt="<?php echo e(trans('main.carousel_title_3')); ?>" />
                     <div class="carousel-caption">
-                        <h1 class="hidden-xs"><?php echo e(trans('main2.carousel_title_3')); ?></h1>
-                        <p class="hidden-xs"><?php echo e(trans('main2.carousel_desc_3')); ?></p>
-                        <a href="<?php echo e(route('main.docfinder_home')); ?>#medical-question" title="<?php echo e(trans('main2.carousel_title_3')); ?>"
+                        <h1 class="hidden-xs"><?php echo e(trans('main.carousel_title_3')); ?></h1>
+                        <p class="hidden-xs"><?php echo e(trans('main.carousel_desc_3')); ?></p>
+                        <a href="<?php echo e(route('main.docfinder_home')); ?>#medical-question" title="<?php echo e(trans('main.carousel_title_3')); ?>"
                            class="btn btn-default btn-lg">
-                            <?php echo e(trans('main2.carousel_title_3.1')); ?>
+                            <?php echo e(trans('main.carousel_title_3.1')); ?>
 
                         </a>
                     </div>
@@ -237,35 +237,35 @@
 
         <div id="quick-links" class="row">
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-                <a href="<?php echo e(route('search.find')); ?>" title="<?php echo e(trans('main2.systems_doctors')); ?>">
-                    <img src="<?php echo e(url('img/quicklinks/doctors.svg')); ?>" alt="<?php echo e(trans('main2.systems_doctors')); ?>"
+                <a href="<?php echo e(route('search.find')); ?>" title="<?php echo e(trans('main.systems_doctors')); ?>">
+                    <img src="<?php echo e(url('img/quicklinks/doctors.svg')); ?>" alt="<?php echo e(trans('main.systems_doctors')); ?>"
                             width="96" height="96"/>
-                    <h3><?php echo e(trans('main2.systems_doctors')); ?></h3>
-                    <p><?php echo e(trans('main2.systems_doctors_desc')); ?></p>
+                    <h3><?php echo e(trans('main.systems_doctors')); ?></h3>
+                    <p><?php echo e(trans('main.systems_doctors_desc')); ?></p>
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-                <a href="<?php echo e(route('appointment.book', ['step' => 1])); ?>" title="<?php echo e(trans('main2.online_appointment_booking')); ?>">
-                    <img src="<?php echo e(url('img/quicklinks/schedule.svg')); ?>" alt="<?php echo e(trans('main2.online_appointment_booking')); ?>"
+                <a href="<?php echo e(route('appointment.book', ['step' => 1])); ?>" title="<?php echo e(trans('main.online_appointment_booking')); ?>">
+                    <img src="<?php echo e(url('img/quicklinks/schedule.svg')); ?>" alt="<?php echo e(trans('main.online_appointment_booking')); ?>"
                          width="96" height="96"/>
-                    <h3><?php echo e(trans('main2.online_appointment_booking')); ?></h3>
-                    <p><?php echo e(trans('main2.online_appointment_booking_desc')); ?></p>
+                    <h3><?php echo e(trans('main.online_appointment_booking')); ?></h3>
+                    <p><?php echo e(trans('main.online_appointment_booking_desc')); ?></p>
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-                <a href="<?php echo e(route('main.insurances')); ?>" title="<?php echo e(trans('main2.insurance')); ?>">
-                    <img src="<?php echo e(url('img/quicklinks/insurances.svg')); ?>" alt="<?php echo e(trans('main2.insurance')); ?>"
+                <a href="<?php echo e(route('main.insurances')); ?>" title="<?php echo e(trans('main.insurance')); ?>">
+                    <img src="<?php echo e(url('img/quicklinks/insurances.svg')); ?>" alt="<?php echo e(trans('main.insurance')); ?>"
                          width="96" height="96"/>
-                    <h3><?php echo e(trans('main2.insurance')); ?></h3>
-                    <p><?php echo e(trans('main2.insurance_desc')); ?></p>
+                    <h3><?php echo e(trans('main.insurance')); ?></h3>
+                    <p><?php echo e(trans('main.insurance_desc')); ?></p>
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-                <a href="<?php echo e(route('main.fees')); ?>" title="<?php echo e(trans('main2.fees')); ?>">
-                    <img src="<?php echo e(url('img/quicklinks/fees.svg')); ?>" alt="<?php echo e(trans('main2.fees')); ?>"
+                <a href="<?php echo e(route('main.fees')); ?>" title="<?php echo e(trans('main.fees')); ?>">
+                    <img src="<?php echo e(url('img/quicklinks/fees.svg')); ?>" alt="<?php echo e(trans('main.fees')); ?>"
                          width="96" height="96"/>
-                    <h3><?php echo e(trans('main2.fees')); ?></h3>
-                    <p><?php echo e(trans('main2.fees_desc')); ?></p>
+                    <h3><?php echo e(trans('main.fees')); ?></h3>
+                    <p><?php echo e(trans('main.fees_desc')); ?></p>
                 </a>
             </div>
         </div>

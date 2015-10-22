@@ -5,12 +5,12 @@
 		<div class="col-lg-12">
 			@if($viewerIsOwner)
 				<a href="{{ route('doctors.add_med_news') }}" class="btn btn-default btn-block"
-				   title="{{ trans('main4.add_medical_news') }}">
-					{{ trans('main4.add_medical_news') }}
+				   title="{{ trans('main.add_medical_news') }}">
+					{{ trans('main.add_medical_news') }}
 				</a>
 			@endif
 
-			<h2>{{ trans('main3.latest_articles') }}</h2>
+			<h2>{{ trans('main.latest_articles') }}</h2>
 			<hr />
 			<div class="row">
 				@if(count($feed))

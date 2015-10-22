@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
 	<div class="row">
 		<div class="col-lg-12">
-			<h2><?php echo e(trans('main3.about_doctor')); ?></h2>
+			<h2><?php echo e(trans('main.about_doctor')); ?></h2>
 			<hr />
 			<p>
 				<span class="glyphicon glyphicon-user p-starter"></span>
@@ -15,7 +15,7 @@
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h2><?php echo e(trans('main3.latest_articles')); ?></h2>
+			<h2><?php echo e(trans('main.latest_articles')); ?></h2>
 			<hr />
 			<?php if(count($feed)): ?>
 				<?php
@@ -27,11 +27,11 @@
 						<div class="col-xs-12">
 							<h3><a href="#"><?php echo $first_feed['title'] ?></a></h3>
 							<p>
-								<?php echo e(trans('main2.published_by')); ?>:
+								<?php echo e(trans('main.published_by')); ?>:
 								<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $first_feed['publisher_id']])); ?>">
 									<?php echo $first_feed['publisher'] ?>
 								</a>
-								<?php echo e(trans('main2.on')); ?>:
+								<?php echo e(trans('main.on')); ?>:
 								<?php echo $first_feed['published_on'] ?>
 							</p>
 						</div>
@@ -57,11 +57,11 @@
 						<div class="col-md-6 col-sm-12">
 							<h4><a href="#"><?php echo $feed[$i]['title']; ?></a></h4>
 							<p>
-								<?php echo e(trans('main2.published_by')); ?>:
+								<?php echo e(trans('main.published_by')); ?>:
 								<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $first_feed['publisher_id']])); ?>">
 									<?php echo $first_feed['publisher'] ?>
 								</a>
-								<?php echo e(trans('main2.on')); ?>:
+								<?php echo e(trans('main.on')); ?>:
 								<?php echo $first_feed['published_on'] ?>
 							</p>
 							<a href="#" class="feed-link">
@@ -79,11 +79,11 @@
 						<div class="col-md-6 col-sm-12">
 							<h4><a href="#"><?php echo $feed[$i + 1]['title']; ?></a></h4>
 							<p>
-								<?php echo e(trans('main2.published_by')); ?>:
+								<?php echo e(trans('main.published_by')); ?>:
 								<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $first_feed['publisher_id']])); ?>">
 									<?php echo $first_feed['publisher'] ?>
 								</a>
-								<?php echo e(trans('main2.on')); ?>:
+								<?php echo e(trans('main.on')); ?>:
 								<?php echo $first_feed['published_on'] ?>
 							</p>
 							<a href="#" class="feed-link">
@@ -109,7 +109,7 @@
 					<div class="col-sm-12 col-md-3">
 						<a href="<?php echo e(route('doctors.articles', ['doctor_id' => $doctor_id])); ?>"
 						   class="btn btn-info btn-md btn-block">
-							<?php echo e(trans('main3.view_all_articles')); ?>
+							<?php echo e(trans('main.view_all_articles')); ?>
 
 						</a>
 					</div>

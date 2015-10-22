@@ -41,10 +41,10 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">{{ trans('main4.access_denied') }}</div>
+                <div class="title">{{ trans('main.access_denied') }}</div>
 				<div>
-					<a href="{{ route('user.login') }}"> {{ trans('main4.doctors_login') }} </a>
-					<a href="{{ route('admins.login') }}"> {{ trans('main4.admins_login') }} </a>
+					<a href="{{ route('user.login') }}"> {{ trans('main.doctors_login') }} </a>
+					<a href="{{ route('admins.login') }}"> {{ trans('main.admins_login') }} </a>
 				</div>
             </div>
         </div>

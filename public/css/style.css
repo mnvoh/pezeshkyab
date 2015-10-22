@@ -755,3 +755,15 @@ div.main-search-container form div.main-searchbox-wrapper input:focus {
     position: relative;
 }
 .admin-navbar div.dropdown>button:focus { outline: 0 none; }
+
+.btn-menuitem {
+    border: 0 none;
+    border-radius: 0;
+    text-align: left;
+    padding: 3px 20px;
+}
+.btn-menuitem:hover { background: #f5f5f5; }
+.lg-fa { font-size: 44px !important; }
+.pointer-cursor { cursor: pointer; }
+.one-row-td { white-space: nowrap; text-overflow: ellipsis; }
+.expandable-tr { display: none; }

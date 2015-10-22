@@ -9,11 +9,11 @@
             <div class="col-xs-12">
                 <h2><a href="#"><?php echo $first_feed['title'] ?></a></h2>
 				<p>
-					<?php echo e(trans('main2.published_by')); ?>:
+					<?php echo e(trans('main.published_by')); ?>:
 					<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $first_feed['publisher_id']])); ?>">
 						<?php echo $first_feed['publisher'] ?>
 					</a>
-					<?php echo e(trans('main2.on')); ?>:
+					<?php echo e(trans('main.on')); ?>:
 					<?php echo $first_feed['published_on'] ?>
 				</p>
             </div>
@@ -39,11 +39,11 @@
                     <div class="col-md-6 col-sm-12">
                         <h4><a href="#"><?php echo $feed[$i]['title']; ?></a></h4>
 						<p>
-							<?php echo e(trans('main2.published_by')); ?>:
+							<?php echo e(trans('main.published_by')); ?>:
 							<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $first_feed['publisher_id']])); ?>">
 								<?php echo $first_feed['publisher'] ?>
 							</a>
-							<?php echo e(trans('main2.on')); ?>:
+							<?php echo e(trans('main.on')); ?>:
 							<?php echo $first_feed['published_on'] ?>
 						</p>
                         <a href="#" class="feed-link">
@@ -61,11 +61,11 @@
                         <div class="col-md-6 col-sm-12">
                             <h4><a href="#"><?php echo $feed[$i + 1]['title']; ?></a></h4>
 							<p>
-								<?php echo e(trans('main2.published_by')); ?>:
+								<?php echo e(trans('main.published_by')); ?>:
 								<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $first_feed['publisher_id']])); ?>">
 									<?php echo $first_feed['publisher'] ?>
 								</a>
-								<?php echo e(trans('main2.on')); ?>:
+								<?php echo e(trans('main.on')); ?>:
 								<?php echo $first_feed['published_on'] ?>
 							</p>
                             <a href="#" class="feed-link">

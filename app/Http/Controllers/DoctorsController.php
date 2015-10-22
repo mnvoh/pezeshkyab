@@ -34,12 +34,12 @@ class DoctorsController extends Controller
 		if($request->has("editBioSubmitted") && $viewer_is_owner) {
 			$new_bio = $request->get('bio');
 			if(strlen($new_bio) < 100) {
-				$status_message = trans('main4.bio_too_short');
+				$status_message = trans('main.bio_too_short');
 			}
 			else {
 				$doctor->bio = $new_bio;
 				$doctor->save();
-				$status_message = trans('main4.bio_saved');
+				$status_message = trans('main.bio_saved');
 			}
 		}
 
@@ -222,34 +222,34 @@ class DoctorsController extends Controller
 		}
 		if($request->has('question_submitted')) {
 			if(!$doctor_id) {
-				$status_message[] = trans('main4.invalid_doctor');
+				$status_message[] = trans('main.invalid_doctor');
 				$form_error = true;
 			}
 			else {
 				if(!$doctor) {
-					$status_message[] = trans('main4.invalid_doctor');
+					$status_message[] = trans('main.invalid_doctor');
 					$form_error = true;
 				}
 			}
 
 
 			if(strlen($request->get('q_name')) < 4) {
-				$status_message[] = trans('main4.invalid_name');
+				$status_message[] = trans('main.invalid_name');
 				$form_error = true;
 			}
 
 			if(!filter_var($request->get('q_email'), FILTER_VALIDATE_EMAIL)) {
-				$status_message[] = trans('main4.invalid_email');
+				$status_message[] = trans('main.invalid_email');
 				$form_error = true;
 			}
 
 			if(strlen($request->get('q_title')) < 10) {
-				$status_message[] = trans('main4.invalid_title');
+				$status_message[] = trans('main.invalid_title');
 				$form_error = true;
 			}
 
 			if(strlen($request->get('q_question')) < 50) {
-				$status_message[] = trans('main4.invalid_question');
+				$status_message[] = trans('main.invalid_question');
 				$form_error = true;
 			}
 
@@ -360,7 +360,7 @@ class DoctorsController extends Controller
 			|| $year 	< $cyear	|| $year > $cyear + 1
 			|| $month 	> 12 		|| $month < 1
 			|| $date 	> 31 		|| $date < 1) {
-				$status_message = trans('main4.invalid_time');
+				$status_message = trans('main.invalid_time');
 				$form_error = true;
 			}
 			else {
@@ -371,18 +371,18 @@ class DoctorsController extends Controller
 					mktime($hour, $minute, 0, $greg_date[1], $greg_date[2], $greg_date[0]));
 				$new_reservation->fee_id = $fee_id;
 				$new_reservation->save();
-				$status_message = trans('main4.reservation_saved');
+				$status_message = trans('main.reservation_saved');
 			}
 		}
 		else if($request->has('delete_reservation')) {
 			$reservation = Reservation::where('id', $request->get('reservation_id'))->first();
 			if($reservation && $reservation->tracking_code == null) {
 				$reservation->delete();
-				$status_message = trans('main4.schedule_deleted');
+				$status_message = trans('main.schedule_deleted');
 			}
 			else {
 				$form_error = true;
-				$status_message = trans('main4.schedule_not_deleted');
+				$status_message = trans('main.schedule_not_deleted');
 			}
 		}
 
@@ -450,7 +450,7 @@ class DoctorsController extends Controller
 		if(!$request->has('reservation_id')) {
 			return response()->json([
 				'error' => true,
-				'description' => trans('main4.invalid_reservation_id'),
+				'description' => trans('main.invalid_reservation_id'),
 			]);
 		}
 
@@ -459,7 +459,7 @@ class DoctorsController extends Controller
 		if(!$reservation) {
 			return response()->json([
 				'error' => true,
-				'description' => trans('main4.invalid_reservation_id'),
+				'description' => trans('main.invalid_reservation_id'),
 			]);
 		}
 
@@ -486,7 +486,7 @@ class DoctorsController extends Controller
 			if(!Auth::check()) {
 				return response()->json([
 					'error' => true,
-					'error_desc' => trans('main4.error_uploading') . ': 403',
+					'error_desc' => trans('main.error_uploading') . ': 403',
 				]);
 			}
 
@@ -499,7 +499,7 @@ class DoctorsController extends Controller
 			if($error) {
 				return response()->json([
 					'error' => true,
-					'error_desc' => trans('main4.error_uploading') . ': 100',
+					'error_desc' => trans('main.error_uploading') . ': 100',
 				]);
 			}
 

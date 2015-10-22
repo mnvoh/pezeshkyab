@@ -13,7 +13,7 @@
                         foreach ($errors->all() as $error):
                             if($alreadyEchoedMapError)
                                 continue;
-                            if(strstr($error, trans('main3.must_specify_location')))
+                            if(strstr($error, trans('main.must_specify_location')))
                                 $alreadyEchoedMapError = true;
                             echo "<li>$error</li>";
                         endforeach;
@@ -92,13 +92,13 @@
 
                 <div class="form-group">
                     <label for="license" class="control-label">
-                        <?php echo e(trans('main2.physician_license_number')); ?>
+                        <?php echo e(trans('main.physician_license_number')); ?>
 
                         <span class="text-danger">*</span>
                     </label>
 
                     <input type="text" name="license" id="license" class="form-control"
-                           placeholder="<?php echo e(trans('main2.physician_license_number')); ?>" value="<?php echo e(old('license')); ?>" />
+                           placeholder="<?php echo e(trans('main.physician_license_number')); ?>" value="<?php echo e(old('license')); ?>" />
                 </div>
 
                 <div class="form-group" id="specialty_detail">
@@ -112,29 +112,29 @@
 
                 <div class="form-group">
                     <label for="ban" class="control-label">
-                        <?php echo e(trans('main3.bank_account_number')); ?>
+                        <?php echo e(trans('main.bank_account_number')); ?>
 
                         <span class="text-danger">*</span>
                     </label>
 
                     <input type="text" name="ban" id="ban" class="form-control"
-                           placeholder="<?php echo e(trans('main3.bank_account_number')); ?>" value="<?php echo e(old('ban')); ?>" />
+                           placeholder="<?php echo e(trans('main.bank_account_number')); ?>" value="<?php echo e(old('ban')); ?>" />
                 </div>
 
                 <div class="form-group">
                     <label for="mobile" class="control-label">
-                        <?php echo e(trans('main3.mobile_number')); ?>
+                        <?php echo e(trans('main.mobile_number')); ?>
 
                         <span class="text-danger">*</span>
                     </label>
 
                     <input type="text" name="mobile" id="mobile" class="form-control"
-                           placeholder="<?php echo e(trans('main3.mobile_number')); ?>" value="<?php echo e(old('mobile')); ?>" />
+                           placeholder="<?php echo e(trans('main.mobile_number')); ?>" value="<?php echo e(old('mobile')); ?>" />
                 </div>
 
                 <div class="form-group">
                     <label class="control-label">
-                        <?php echo e(trans('main3.birth_date')); ?>
+                        <?php echo e(trans('main.birth_date')); ?>
 
                         <span class="text-danger">*</span>
                     </label>
@@ -142,28 +142,28 @@
                     <div class="form-control">
                         <div class="col-xs-4">
                             <input type="text" name="bd_year" id="bd_year" class="noborder transparent"
-                                   placeholder="<?php echo e(trans('main3.year')); ?>" value="<?php echo e(old('bd_year')); ?>" />
+                                   placeholder="<?php echo e(trans('main.year')); ?>" value="<?php echo e(old('bd_year')); ?>" />
                         </div>
                         <div class="col-xs-4">
                             <input type="text" name="bd_month" id="bd_month" class="noborder transparent"
-                                   placeholder="<?php echo e(trans('main3.month')); ?>" value="<?php echo e(old('bd_month')); ?>" />
+                                   placeholder="<?php echo e(trans('main.month')); ?>" value="<?php echo e(old('bd_month')); ?>" />
                         </div>
                         <div class="col-xs-4">
                             <input type="text" name="bd_date" id="bd_date" class="noborder transparent"
-                                   placeholder="<?php echo e(trans('main3.day')); ?>" value="<?php echo e(old('bd_date')); ?>" />
+                                   placeholder="<?php echo e(trans('main.day')); ?>" value="<?php echo e(old('bd_date')); ?>" />
                         </div>
                     </div>
                 </div>
 
                 <hr />
                 <label>
-                    <?php echo e(trans('main2.clinic_address')); ?>
+                    <?php echo e(trans('main.clinic_address')); ?>
 
                 </label>
 
 				<div class="form-group">
 					<label for="city" class="control-label">
-						<?php echo e(trans('main2.city')); ?>
+						<?php echo e(trans('main.city')); ?>
 
 						<span class="text-danger">*</span>
 					</label>
@@ -172,37 +172,37 @@
 
                 <div class="form-group">
                     <label for="street_address1" class="control-label">
-                        <?php echo e(trans('main3.street_addr_1')); ?>
+                        <?php echo e(trans('main.street_addr_1')); ?>
 
                         <span class="text-danger">*</span>
                     </label>
                     <input type="text" name="street_address1" id="street_address1" class="form-control"
-                           placeholder="<?php echo e(trans('main3.street_addr_1')); ?>" value="<?php echo e(old('street_address1')); ?>" />
+                           placeholder="<?php echo e(trans('main.street_addr_1')); ?>" value="<?php echo e(old('street_address1')); ?>" />
                 </div>
 
                 <div class="form-group">
                     <label for="street_address2" class="control-label">
-                        <?php echo e(trans('main3.street_addr_2')); ?>
+                        <?php echo e(trans('main.street_addr_2')); ?>
 
                     </label>
                     <input type="text" name="street_address2" id="street_address2" class="form-control"
-                           placeholder="<?php echo e(trans('main3.street_addr_2')); ?>" value="<?php echo e(old('street_address2')); ?>" />
+                           placeholder="<?php echo e(trans('main.street_addr_2')); ?>" value="<?php echo e(old('street_address2')); ?>" />
                 </div>
 
                 <div class="form-group">
                     <label for="postal_code" class="control-label">
-                        <?php echo e(trans('main3.postal_code')); ?>
+                        <?php echo e(trans('main.postal_code')); ?>
 
                         <span class="text-danger">*</span>
                     </label>
                     <input type="text" name="postal_code" id="postal_code" class="form-control"
-                           placeholder="<?php echo e(trans('main3.postal_code')); ?>" value="<?php echo e(old('postal_code')); ?>" />
+                           placeholder="<?php echo e(trans('main.postal_code')); ?>" value="<?php echo e(old('postal_code')); ?>" />
                 </div>
 
 				<div class="form-group">
 					<label class="control-label">
 						<p class="help-block">
-                            <?php echo e(trans('main2.clinic_address_help')); ?>
+                            <?php echo e(trans('main.clinic_address_help')); ?>
 
                             <span class="text-danger">*</span>
                         </p>
@@ -223,10 +223,10 @@
 								<?php
 									$tosUrl = route('main.tos');
 									$privacyUrl = route('main.privacy_policy');
-									$tosLink = "<a href='{$tosUrl}'>" . trans('main2.tos') . "</a>";
-									$privacyLink = "<a href='{$privacyUrl}'>" . trans('main2.privacy_policy') . "</a>";
+									$tosLink = "<a href='{$tosUrl}'>" . trans('main.tos') . "</a>";
+									$privacyLink = "<a href='{$privacyUrl}'>" . trans('main.privacy_policy') . "</a>";
 
-									$acceptText = trans('main2.accept_terms');
+									$acceptText = trans('main.accept_terms');
 									$acceptText = str_replace('--tos--', $tosLink, $acceptText);
 									$acceptText = str_replace('--privacy--', $privacyLink, $acceptText);
 									echo $acceptText;

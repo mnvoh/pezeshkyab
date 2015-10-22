@@ -14,9 +14,9 @@
 				<?php endif; ?>
 				<form action="#" method="post">
 					<div class="form-group">
-						<label for="d_license"><?php echo e(trans('main2.physician_license_number')); ?></label>
+						<label for="d_license"><?php echo e(trans('main.physician_license_number')); ?></label>
 						<input type="text" class="form-control" id="license" name="license"
-							   placeholder="<?php echo e(trans('main2.physician_license_number')); ?>"
+							   placeholder="<?php echo e(trans('main.physician_license_number')); ?>"
 							   value="<?php echo e(old('license')); ?>" />
 					</div>
 

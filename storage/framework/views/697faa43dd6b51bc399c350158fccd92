@@ -10,14 +10,14 @@
             <?php endif; ?>
             <table class="table table-bordered">
                 <tr>
-                    <th colspan="2" class="text-center"><?php echo e(trans('main4.invoice')); ?></th>
+                    <th colspan="2" class="text-center"><?php echo e(trans('main.invoice')); ?></th>
                 </tr>
                 <tr>
                     <th><?php echo e(trans('main.title')); ?></th>
                     <td><?php echo e($filled_info['b_fee_title']); ?></td>
                 </tr>
                 <tr>
-                    <th><?php echo e(trans('main4.amount')); ?></th>
+                    <th><?php echo e(trans('main.amount')); ?></th>
                     <td><?php echo e($filled_info['b_fee_amount']); ?> <?php echo e(trans('currencies.irr')); ?></td>
                 </tr>
             </table>
@@ -26,7 +26,7 @@
                     <?php echo e(csrf_field()); ?>
 
                     <button type="submit" class="btn btn-block btn-success"  name="form-submitted" value="true">
-                        <?php echo e(trans('main4.pay')); ?>
+                        <?php echo e(trans('main.pay')); ?>
 
                     </button>
                 </form>

@@ -7,14 +7,14 @@
  */
 ?>
 <div id="doctor-picker">
-    <input class="form-control" type="text" placeholder="<?php echo e(trans('main4.type_to_find_doctor')); ?>" />
+    <input class="form-control" type="text" placeholder="<?php echo e(trans('main.type_to_find_doctor')); ?>" />
     <input type="hidden" name="doctor_id" <?php if(isset($old_doctor_id)): ?> value="<?php echo e($old_doctor_id); ?> <?php endif; ?>" />
     <label class="form-control">
 		<?php if(isset($old_doctor_description)): ?>
 			<?php echo e($old_doctor_description); ?>
 
 		<?php else: ?>
-			<?php echo e(trans('main4.type_to_find_doctor')); ?>
+			<?php echo e(trans('main.type_to_find_doctor')); ?>
 
 		<?php endif; ?>
 	</label>

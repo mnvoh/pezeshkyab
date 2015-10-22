@@ -71,18 +71,18 @@
 
                 <div class="form-group">
                     <label for="license" class="control-label">
-                        <?php echo e(trans('main2.physician_license_number')); ?>
+                        <?php echo e(trans('main.physician_license_number')); ?>
 
                         <span class="text-danger">*</span>
                     </label>
 
                     <input type="text" name="license" id="license" class="form-control"
-                           placeholder="<?php echo e(trans('main2.physician_license_number')); ?>" required />
+                           placeholder="<?php echo e(trans('main.physician_license_number')); ?>" required />
                 </div>
 
 				<div class="form-group">
 					<label for="city" class="control-label">
-						<?php echo e(trans('main2.city')); ?>
+						<?php echo e(trans('main.city')); ?>
 
 						<span class="text-danger">*</span>
 					</label>
@@ -91,10 +91,10 @@
 
 				<div class="form-group">
 					<label class="control-label">
-						<?php echo e(trans('main2.clinic_address')); ?>
+						<?php echo e(trans('main.clinic_address')); ?>
 
 						<span class="text-danger">*</span>
-						<p class="help-block"><?php echo e(trans('main2.clinic_address_help')); ?></p>
+						<p class="help-block"><?php echo e(trans('main.clinic_address_help')); ?></p>
 					</label>
 					<input type="hidden" name="clinicLat" id="clinicLat" value="NaN" />
 					<input type="hidden" name="clinicLng" id="clinicLng" value="NaN" />
@@ -112,10 +112,10 @@
 								<?php
 									$tosUrl = route('main.tos');
 									$privacyUrl = route('main.privacy_policy');
-									$tosLink = "<a href='{$tosUrl}'>" . trans('main2.tos') . "</a>";
-									$privacyLink = "<a href='{$privacyUrl}'>" . trans('main2.privacy_policy') . "</a>";
+									$tosLink = "<a href='{$tosUrl}'>" . trans('main.tos') . "</a>";
+									$privacyLink = "<a href='{$privacyUrl}'>" . trans('main.privacy_policy') . "</a>";
 
-									$acceptText = trans('main2.accept_terms');
+									$acceptText = trans('main.accept_terms');
 									$acceptText = str_replace('--tos--', $tosLink, $acceptText);
 									$acceptText = str_replace('--privacy--', $privacyLink, $acceptText);
 									echo $acceptText;

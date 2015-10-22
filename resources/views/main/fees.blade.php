@@ -3,15 +3,15 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12 col-md-10 col-lg-8">
-			<h1>{{ trans('main2.fees') }}</h1>
-			<p class="help-block">{{ trans('main2.fees_title') }}</p>
+			<h1>{{ trans('main.fees') }}</h1>
+			<p class="help-block">{{ trans('main.fees_title') }}</p>
 			<div class="table-responsive">
 				<table class="table table-striped">
 					<thead>
 					<tr>
 						<th class="min-width-cell">#</th>
 						<th>{{ trans('main.title') }}</th>
-						<th>{{ trans('main2.fee') }}</th>
+						<th>{{ trans('main.fee') }}</th>
 					</tr>
 					</thead>
 					<tbody>

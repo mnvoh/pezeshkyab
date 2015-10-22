@@ -7,9 +7,9 @@
  */
 ?>
 <div id="doctor-picker">
-    <input class="form-control" type="text" placeholder="<?php echo e(trans('main4.type_to_find_doctor')); ?>" />
+    <input class="form-control" type="text" placeholder="<?php echo e(trans('main.type_to_find_doctor')); ?>" />
     <input type="hidden" name="doctor_id" />
-    <label class="form-control"><?php echo e(trans('main4.type_to_find_doctor')); ?></label>
+    <label class="form-control"><?php echo e(trans('main.type_to_find_doctor')); ?></label>
     <div id="dp-items">
     </div>
 </div>

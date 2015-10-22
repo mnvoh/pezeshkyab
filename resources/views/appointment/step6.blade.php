@@ -12,14 +12,14 @@
             @endif
             <table class="table table-bordered">
                 <tr>
-                    <th colspan="2" class="text-center">{{ trans('main4.invoice') }}</th>
+                    <th colspan="2" class="text-center">{{ trans('main.invoice') }}</th>
                 </tr>
                 <tr>
                     <th>{{ trans('main.title') }}</th>
                     <td>{{ $filled_info['b_fee_title'] }}</td>
                 </tr>
                 <tr>
-                    <th>{{ trans('main4.amount') }}</th>
+                    <th>{{ trans('main.amount') }}</th>
                     <td>{{ $filled_info['b_fee_amount'] }} {{ trans('currencies.irr') }}</td>
                 </tr>
             </table>
@@ -27,7 +27,7 @@
                 <form action="{{ $next_step_link }}" method="post">
                     {{ csrf_field() }}
                     <button type="submit" class="btn btn-block btn-success"  name="form-submitted" value="true">
-                        {{ trans('main4.pay') }}
+                        {{ trans('main.pay') }}
                     </button>
                 </form>
             @endif

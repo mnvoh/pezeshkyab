@@ -23,3 +23,6 @@ div.main-search-container form>div.main-searchbox-wrapper>button {
     right: auto;
     left: 60px;
 }
+.btn-menuitem {
+    text-align: right;
+}

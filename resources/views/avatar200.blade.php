@@ -38,7 +38,7 @@
 				<div class="cprogress"></div>
 				<a href="javascript:;">
 					<span class="fa fa-upload"></span>
-					{{ trans('main4.upload') }}
+					{{ trans('main.upload') }}
 				</a>
 				<input
 						id="avatar-file"

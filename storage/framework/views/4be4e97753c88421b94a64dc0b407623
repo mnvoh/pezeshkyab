@@ -3,19 +3,19 @@
 	<div class="row">
 		<div class="col-sm-12 col-md-10 col-lg-8">
 			<?php if($error): ?>
-                <h3 class="text-error"><?php echo e(trans('main3.no_search_server')); ?></h3>
+                <h3 class="text-error"><?php echo e(trans('main.no_search_server')); ?></h3>
             <?php elseif($no_query): ?>
-                <h3 class="text-error"><?php echo e(trans('main3.no_query')); ?></h3>
+                <h3 class="text-error"><?php echo e(trans('main.no_query')); ?></h3>
             <?php else: ?>
-                <h3><?php echo e(trans('main3.search_results')); ?></h3>
+                <h3><?php echo e(trans('main.search_results')); ?></h3>
                 <p class="help-block">
-                    <?php echo e(trans('main3.sr_stats', ['count' => $count, 'time' => $time_took])); ?>
+                    <?php echo e(trans('main.sr_stats', ['count' => $count, 'time' => $time_took])); ?>
 
                 </p>
 
                 <?php if($suggestion != null): ?>
                     <h3>
-                        <?php echo e(trans('main3.suggestion')); ?>
+                        <?php echo e(trans('main.suggestion')); ?>
 
                         <form method="get" action="<?php echo e(route('search.find')); ?>" class="inline-form-control">
                             <?php

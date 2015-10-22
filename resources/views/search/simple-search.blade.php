@@ -9,7 +9,7 @@
 
 					<div class="input-wrapper">
 						<input type="text" class="noborder main-search-input" name="s_q"
-							   placeholder="{{trans('main3.search_example')}}" autocomplete="on"
+							   placeholder="{{trans('main.search_example')}}" autocomplete="on"
 							   @if(isset($showSearchForm))
 							   value="{{ filter_input(INPUT_GET, "s_q") }}"
 								@endif
@@ -20,7 +20,7 @@
 			<div style="height: 10px;"></div>
 			<a id="btn-adv-search" href="{{ route('search.find') }}">
 				<span class="glyphicon glyphicon-cog"></span>
-				{{ trans('main4.advanced_search') }}
+				{{ trans('main.advanced_search') }}
 			</a>
 		</div>
 	</div>

@@ -8,16 +8,16 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<?php if($error): ?>
-					<h3 class="text-error">{{ trans('main3.no_search_server') }}</h3>
+					<h3 class="text-error">{{ trans('main.no_search_server') }}</h3>
 				<?php else: ?>
-					<h3>{{ trans('main3.search_results') }}</h3>
+					<h3>{{ trans('main.search_results') }}</h3>
 					<p class="help-block">
-						{{ trans('main3.sr_stats', ['count' => $count, 'time' => $time_took]) }}
+						{{ trans('main.sr_stats', ['count' => $count, 'time' => $time_took]) }}
 					</p>
 
 					@if($suggestion != null)
 						<h3>
-							{{ trans('main3.suggestion') }}
+							{{ trans('main.suggestion') }}
 							<form method="get" action="{{ route('search.find') }}" class="inline-form-control">
 								<?php
 								foreach($_GET as $name => $value) {

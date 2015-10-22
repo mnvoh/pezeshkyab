@@ -53,7 +53,7 @@ class AppointmentController extends Controller
             {
                 $data = [
                     'step' => $step,
-                    'error' => trans('main4.incomplete_information'),
+                    'error' => trans('main.incomplete_information'),
                     'next_step_link' => route('appointment.book', [
                         'step' => 2,
                     ]),
@@ -63,7 +63,7 @@ class AppointmentController extends Controller
             {
                 $data = [
                     'step' => $step,
-                    'error' => trans('main4.incomplete_information'),
+                    'error' => trans('main.incomplete_information'),
                     'next_step_link' => route('appointment.book', [
                         'step' => 3,
                     ]),
@@ -73,7 +73,7 @@ class AppointmentController extends Controller
             {
                 $data = [
                     'step' => $step,
-                    'error' => trans('main4.incomplete_information'),
+                    'error' => trans('main.incomplete_information'),
                     'next_step_link' => route('appointment.book', [
                         'step' => 4,
                     ]),
@@ -216,7 +216,7 @@ class AppointmentController extends Controller
 			{
 				$data = [
 					'step' => $step,
-					'error' => trans('main4.incomplete_information'),
+					'error' => trans('main.incomplete_information'),
 					'next_step_link' => route('appointment.book_for_doctor', [
 						'doctor_id' => $doctor_id,
 						'step' => 2,
@@ -227,7 +227,7 @@ class AppointmentController extends Controller
 			{
 				$data = [
 					'step' => $step,
-					'error' => trans('main4.incomplete_information'),
+					'error' => trans('main.incomplete_information'),
 					'next_step_link' => route('appointment.book_for_doctor', [
 						'doctor_id' => $doctor_id,
 						'step' => 3,
@@ -238,7 +238,7 @@ class AppointmentController extends Controller
 			{
 				$data = [
 					'step' => $step,
-					'error' => trans('main4.incomplete_information'),
+					'error' => trans('main.incomplete_information'),
 					'next_step_link' => route('appointment.book_for_doctor', [
 						'doctor_id' => $doctor_id,
 						'step' => 4,
@@ -367,15 +367,15 @@ class AppointmentController extends Controller
                 //nationality
                 //based on nationality: national_code | passport_number
                 if(strlen($request->get('firstname')) < 2) {
-                    $error = trans('main4.invalid_firstname');
+                    $error = trans('main.invalid_firstname');
                     return false;
                 }
                 if(strlen($request->get('lastname')) < 2) {
-                    $error = trans('main4.invalid_lastname');
+                    $error = trans('main.invalid_lastname');
                     return false;
                 }
                 if(!preg_match('/^[0-9]{10}$/', $request->get('national_code'))) {
-                    $error = trans('main4.invalid_national_code');
+                    $error = trans('main.invalid_national_code');
                     return false;
                 }
 
@@ -393,14 +393,14 @@ class AppointmentController extends Controller
                 //store the datum for step 3 which is:
                 //doctor_id
                 if(!$request->has('doctor_id')) {
-                    $error = trans('main4.select_doctor');
+                    $error = trans('main.select_doctor');
                     return false;
                 }
 
                 $doc = Doctor::where('id', $request->get('doctor_id'))->first();
 
                 if($doc == null) {
-                    $error = trans('main4.select_doctor');
+                    $error = trans('main.select_doctor');
                     return false;
                 }
                 $request->session()->put("booking_doctor_id", $request->get('doctor_id'));
@@ -410,14 +410,14 @@ class AppointmentController extends Controller
                 //date which in turn must broken down into date pieces and
                 //be converted to gregorian: ex is: 139404021130 => 1394/04/02 11:30
                 if(!$request->has('reservation_id')) {
-                    $error = trans('main4.select_reservation_time');
+                    $error = trans('main.select_reservation_time');
                     return false;
                 }
 
                 $res = Reservation::where('id', $request->get('reservation_id'))->first();
 
                 if(!$res || $res->tracking_code != null) {
-                    $error = trans('main4.invalid_reservation');
+                    $error = trans('main.invalid_reservation');
                     return false;
                 }
 

@@ -30,12 +30,12 @@
                     <a href="{{ route('main.links') }}"> {{ trans('main.links') }} </a>
                 </li>
                 <li>
-                    <a href="{{ route('search.find') }}" id="show-find-doctor"> {{ trans('main3.find_a_doctor') }} </a>
+                    <a href="{{ route('search.find') }}" id="show-find-doctor"> {{ trans('main.find_a_doctor') }} </a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
-                <li><a href="{{ route('user.logout') }}"> {{ trans('main3.logout') }} </a></li>
+                <li><a href="{{ route('user.logout') }}"> {{ trans('main.logout') }} </a></li>
                 <?php else: ?>
                 <li><a href="{{ route('user.login') }}"> {{ trans('main.login') }} </a></li>
                 <li><a href="{{ route('user.register') }}"> {{ trans('main.register') }} </a></li>
@@ -53,7 +53,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="text-center">{{ trans('main3.dr') }} {{ $name }}</h1>
+					<h1 class="text-center">{{ trans('main.dr') }} {{ $name }}</h1>
 					<h2 class="text-center">{{ $specialty_title }}</h2>
 				</div>
 			</div>
@@ -75,20 +75,20 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a href="{{ route('doctors.homepage', ['doctor_id' => $doctor_id]) }}" class="navbar-brand">
-					{{ trans('main3.dr') }} {{ $name }}
+					{{ trans('main.dr') }} {{ $name }}
 				</a>
 			</div>
 			<nav id="doc-navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li>
 						<a href="{{ route('doctors.articles', ['doctor_id' => $doctor_id]) }}">
-							{{ trans('main4.mednews') }}
+							{{ trans('main.mednews') }}
 						</a>
 					</li>
 					@if($viewerIsOwner)
 						<li>
 							<a href="{{ route('doctors.schedule') }}">
-								{{ trans('main4.manage_schedules') }}
+								{{ trans('main.manage_schedules') }}
 							</a>
 						</li>
 					@else
@@ -101,20 +101,20 @@
 					@if($viewerIsOwner)
 						<li>
 							<a href="{{ route('doctors.asked_questions') }}">
-								{{ trans('main4.asked_questions') }}
+								{{ trans('main.asked_questions') }}
 							</a>
 						</li>
 					@else
 						<li>
 							<a href="{{ route('doctors.ask', ['doctor_id' => $doctor_id]) }}">
-								{{ trans('main2.ask_question') }}
+								{{ trans('main.ask_question') }}
 							</a>
 						</li>
                     @endif
 					@if($viewerIsOwner)
 						<li>
 							<a href="{{ route('doctors.transactions') }}">
-								{{ trans('main4.transactions') }}
+								{{ trans('main.transactions') }}
 							</a>
 						</li>
 					@endif

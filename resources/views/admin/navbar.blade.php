@@ -9,7 +9,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a href="{{ route('main.docfinder_home') }}" class="navbar-brand">
-				{{ trans('main2.home') }}
+				{{ trans('main.home') }}
 			</a>
 		</div>
 		<nav id="admin-navbar" class="collapse navbar-collapse">
@@ -17,13 +17,13 @@
 				<ul class="nav navbar-nav">
 					<li>
 						<a href="{{ route('admins.home') }}">
-							{{ trans('main4.admin_home') }}
+							{{ trans('main.admin_home') }}
 						</a>
 					</li>
 					<li class="shade1">
 						<span></span>
 						<a href="{{ route('admins.doctors') }}">
-							{{ trans('main4.doctors') }}
+							{{ trans('main.doctors') }}
 						</a>
 					</li>
 
@@ -31,7 +31,7 @@
 					<li class="shade2">
 						<span></span>
 						<a href="{{ route('admins.admins') }}">
-							{{ trans('main4.admins') }}
+							{{ trans('main.admins') }}
 						</a>
 					</li>
 				@endif
@@ -39,14 +39,14 @@
 					<li class="shade3">
 						<span></span>
 						<a href="{{ route('admins.transactions') }}">
-							{{ trans('main4.transactions') }}
+							{{ trans('main.transactions') }}
 						</a>
 					</li>
 
 					<li class="shade4">
 						<span></span>
 						<a href="{{ route('admins.reservations') }}">
-							{{ trans('main4.reservations') }}
+							{{ trans('main.reservations') }}
 						</a>
 					</li>
 
@@ -61,33 +61,33 @@
 				<div class="dropdown shade6">
 					<span></span>
 					<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						{{ trans('main4.other') }}
+						{{ trans('main.other') }}
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" aria-labelledby="dLabel">
 						<li>
 							<a href="{{ route('admins.medical_question') }}">
-								{{ trans('main2.fees') }}
+								{{ trans('main.fees') }}
 							</a>
 						</li>
 						<li>
 							<a href="{{ route('admins.medical_question') }}">
-								{{ trans('main4.hospitals') }}
+								{{ trans('main.hospitals') }}
 							</a>
 						</li>
 						<li>
 							<a href="{{ route('admins.medical_question') }}">
-								{{ trans('main4.mednews') }}
+								{{ trans('main.mednews') }}
 							</a>
 						</li>
 						<li>
 							<a href="{{ route('admins.medical_question') }}">
-								{{ trans('main4.chat_msgs') }}
+								{{ trans('main.chat_msgs') }}
 							</a>
 						</li>
 						<li>
 							<a href="{{ route('admins.medical_question') }}">
-								{{ trans('main4.specialties') }}
+								{{ trans('main.specialties') }}
 							</a>
 						</li>
 					</ul>
@@ -96,7 +96,7 @@
 
 			<ul class="nav navbar-nav navbar-right">
 				@if(\App\Auth\AdminAuth::check())
-					<li><a href="{{ route('admins.logout') }}"> {{ trans('main3.logout') }} </a></li>
+					<li><a href="{{ route('admins.logout') }}"> {{ trans('main.logout') }} </a></li>
 				@else
 					<li><a href="{{ route('admins.login') }}"> {{ trans('main.login') }} </a></li>
 				@endif

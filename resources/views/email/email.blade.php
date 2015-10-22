@@ -72,9 +72,9 @@
 					<li>&middot;</li>
 					<li><a href="{{ route('main.links') }}"> {{ trans('main.links') }} </a></li>
 					<li>&middot;</li>
-					<li><a href="{{ route('main.med_news') }}"> {{ trans('main4.mednews') }} </a></li>
+					<li><a href="{{ route('main.med_news') }}"> {{ trans('main.mednews') }} </a></li>
 					<li>&middot;</li>
-					<li><a href="{{ route('main.insurances') }}"> {{ trans('main2.insurance') }} </a></li>
+					<li><a href="{{ route('main.insurances') }}"> {{ trans('main.insurance') }} </a></li>
 				</ul>
 
 				<a href="{{ route('root') }}">

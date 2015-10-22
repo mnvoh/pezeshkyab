@@ -3,11 +3,11 @@
 		<div class="col-xs-12">
 			<h4><a href="{{ $url }}">{{ $title }}</a></h4>
 			<p>
-				{{ trans('main2.published_by') }}:
+				{{ trans('main.published_by') }}:
 				<a href="{{ route('doctors.homepage', ['doctor_id' => $doctor_id]) }}">
 					{{ $doctor_name }}
 				</a>
-				{{ trans('main2.on') }}:
+				{{ trans('main.on') }}:
 				{{ $published_on }}
 			</p>
 		</div>

@@ -5,13 +5,13 @@
 				<p class="alert-warning"><?php echo e($status_message); ?></p>
 			<?php endif; ?>
 
-			<h2><?php echo e(trans('main3.about_doctor')); ?></h2>
+			<h2><?php echo e(trans('main.about_doctor')); ?></h2>
 			<hr />
 			<p id="doctor-bio">
 				<?php echo nl2br(htmlentities($about)); ?>
 
 				<?php if($viewerIsOwner): ?>
-					<a href="javascript:;" id="show-new-bio-form"><?php echo e(trans('main4.edit')); ?></a>
+					<a href="javascript:;" id="show-new-bio-form"><?php echo e(trans('main.edit')); ?></a>
 				<?php endif; ?>
 			</p>
 
@@ -22,7 +22,7 @@
 
 					<br />
 					<button type="submit" name="editBioSubmitted" value="1" class="btn btn-success">
-						<?php echo e(trans('main4.save')); ?>
+						<?php echo e(trans('main.save')); ?>
 
 					</button>
 				</form>
@@ -33,7 +33,7 @@
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h2><?php echo e(trans('main3.latest_articles')); ?></h2>
+			<h2><?php echo e(trans('main.latest_articles')); ?></h2>
 			<hr />
 			<div class="row">
 				<?php if(count($feed)): ?>
@@ -52,7 +52,7 @@
 			<div class="col-sm-12 col-md-3">
 				<a href="<?php echo e(route('doctors.articles', ['doctor_id' => $doctor_id])); ?>"
 				   class="btn btn-info btn-md btn-block">
-					<?php echo e(trans('main3.view_all_articles')); ?>
+					<?php echo e(trans('main.view_all_articles')); ?>
 
 				</a>
 			</div>

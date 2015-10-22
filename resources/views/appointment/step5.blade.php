@@ -46,7 +46,7 @@
                     <td> {{ $filled_info['b_doctor_label'] }} </td>
                 </tr>
                 <tr>
-                    <th>{{ trans('main4.reservation_time') }}</th>
+                    <th>{{ trans('main.reservation_time') }}</th>
                     <td>{{ $filled_info['b_rtime'] }}</td>
                 </tr>
             </table>
@@ -65,7 +65,7 @@
         </div>
         <div class="col-xs-1">
             <a href="{{ $go_back_url }}" class="btn btn-warning">
-                {{ trans('main4.go_back') }}
+                {{ trans('main.go_back') }}
             </a>
         </div>
     </div>

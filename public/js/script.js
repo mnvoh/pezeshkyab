@@ -251,6 +251,54 @@
                 $(this).addClass('medium');
             }
         });
+
+
+        /**
+         * Popup the payment registration modal
+         */
+        $('.reg-payment').click(function() {
+            var doctor_id = $(this).find('input[name="doctor_id"]').val();
+            var amount = $(this).find('input[name="amount"]').val();
+
+            var modal = $('#register-payment-modal');
+            modal.find("input[name=doctor_id]").val(doctor_id);
+            modal.find("span.amount").html(amount);
+            modal.modal('show');
+
+            return false;
+        });
+
+
+        /**
+         * Popup the admin's password change modal
+         */
+        $('.change-admin-pass').click(function() {
+            var admin_id = $(this).find('input[name="admin_id"]').val();
+
+            var modal = $('#change-password-modal');
+            modal.find("input[name=admin_id]").val(admin_id);
+            modal.modal('show');
+
+            return false;
+        });
+
+        /**
+         * General modal opening link, without any other extra work
+         */
+        $('.open-modal').click(function() {
+            var modal = $(this).data('modal');
+            $('#' + modal).modal('show');
+        });
+
+
+        /**
+         *
+         * Handle expandable table rows
+         *
+         */
+        $('tr.tr-expand-below').click(function() {
+            $(this).next().slideToggle(0);
+        });
     });
 })(jQuery);
 
