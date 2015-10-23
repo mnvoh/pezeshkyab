@@ -50,7 +50,7 @@ class SearchController extends Controller
             ));
         }
 
-        $query = $request->get("s_q");
+        $query = $this->filterQuery($request->get("s_q"));
         $rating = $request->get("rating", 0);
 
         $temp_date = jalali_to_gregorian(
@@ -231,4 +231,15 @@ class SearchController extends Controller
         }
         return null;
     }
+
+	private function filterQuery($query)
+	{
+		$filter_words = [
+			'آقا',
+			'آقای',
+			'دکتر',
+		];
+
+		return str_replace($filter_words, '', $query);
+	}
 }

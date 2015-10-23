@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-sm-12 col-md-8">
 			@if($status_message != null)
 				<p class="alert-warning">{{ $status_message }}</p>
 			@endif
@@ -27,6 +27,34 @@
 				</form>
 			@endif
 			<br /><br />
+		</div>
+
+		<div class="col-sm-12 col-md-4">
+			<h2>{{ trans('main.rate_doctor') }}</h2>
+			<hr />
+			<form action="{{ route('doctors.rate') }}" method="post" id="rating-form">
+				<p class="text-error"></p>
+				<input type="hidden" name="doctor_id" value="{{ $doctor_id }}" />
+				<input type="text" class="form-control" name="name" id="name"
+					   placeholder="{{ trans('main.firstname') }}" />
+				<br />
+				<input type="text" class="form-control" name="lname" id="lname"
+					   placeholder="{{ trans('main.lastname') }}" />
+				<br />
+				<div class="input-group">
+					<label class="">{{ trans('main.rating') }}</label>:
+					@include('fivestar')
+				</div>
+				<br />
+				<textarea class="form-control" name="description" placeholder="{{ trans('main.description') }}" style="height: 150px;"></textarea>
+				<br />
+				{{ csrf_field() }}
+				<button type="submit" class="btn btn-info btn-block">
+					<span class="fa fa-send"></span>
+					{{ trans('main.submit') }}
+				</button>
+			</form>
+			<p class="text-success hidden" id="rating-submitted-message">{{ trans('main.rating_submitted') }}</p>
 		</div>
 	</div>
 

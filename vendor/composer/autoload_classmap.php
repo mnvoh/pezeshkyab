@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Auth\\AdminAuth' => $baseDir . '/app/Auth/AdminAuth.php',
+    'App\\Auth\\AdminAuthManager' => $baseDir . '/app/Auth/AdminAuthManager.php',
+    'App\\Auth\\AdminAuthServiceProvider' => $baseDir . '/app/Auth/AdminAuthServiceProvider.php',
     'App\\Console\\Commands\\Inspire' => $baseDir . '/app/Console/Commands/Inspire.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Events\\Event' => $baseDir . '/app/Events/Event.php',
@@ -38,6 +41,8 @@ return array(
     'App\\Models\\Fee' => $baseDir . '/app/Models/Fee.php',
     'App\\Models\\Hospital' => $baseDir . '/app/Models/Hospital.php',
     'App\\Models\\Image' => $baseDir . '/app/Models/Image.php',
+    'App\\Models\\Insurance' => $baseDir . '/app/Models/Insurance.php',
+    'App\\Models\\Link' => $baseDir . '/app/Models/Link.php',
     'App\\Models\\MedicalNews' => $baseDir . '/app/Models/MedicalNews.php',
     'App\\Models\\MedicalQuestion' => $baseDir . '/app/Models/MedicalQuestion.php',
     'App\\Models\\Observers\\ElasticsearchDoctorObserver' => $baseDir . '/app/Models/Observers/ElasticsearchDoctorObserver.php',
@@ -1852,6 +1857,7 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'Parsedown' => $vendorDir . '/erusev/parsedown/Parsedown.php',
     'PhpSpec\\CodeAnalysis\\MagicAwareAccessInspector' => $vendorDir . '/phpspec/phpspec/src/PhpSpec/CodeAnalysis/MagicAwareAccessInspector.php',
     'PhpSpec\\CodeAnalysis\\VisibilityAccessInspector' => $vendorDir . '/phpspec/phpspec/src/PhpSpec/CodeAnalysis/VisibilityAccessInspector.php',
     'PhpSpec\\CodeGenerator\\GeneratorManager' => $vendorDir . '/phpspec/phpspec/src/PhpSpec/CodeGenerator/GeneratorManager.php',

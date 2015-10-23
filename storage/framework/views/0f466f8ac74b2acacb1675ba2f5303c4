@@ -13,7 +13,6 @@
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h2><?php echo e(trans('main.latest_articles')); ?></h2>
 			<hr />
 			<div class="row">
 				<?php if(count($feed)): ?>
@@ -39,5 +38,30 @@
 		</div>
 	<?php endif; ?>
 	<br />
+	<hr />
+
+	<div class="row">
+		<div class="col-lg-12">
+			<h3><?php echo e(trans('main.latest_medical_questions')); ?></h3>
+			<?php foreach($medical_questions as $m): ?>
+				<blockquote>
+					<?php echo e($m->question); ?>
+
+					<blockquote>
+						<?php echo e(trans('main.doctors_response', ['name' => $m->doctor->name . ' ' . $m->doctor->lname])); ?>
+
+						<br /> <hr />
+						<?php echo e($m->response); ?>
+
+					</blockquote>
+				</blockquote>
+			<?php endforeach; ?>
+
+			<a href="<?php echo e(route('main.med_questions')); ?>">
+				<?php echo e(trans('main.view_all')); ?>
+
+			</a>
+		</div>
+	</div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

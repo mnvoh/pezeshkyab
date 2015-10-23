@@ -35,10 +35,13 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
-                <li><a href="<?php echo e(route('user.logout')); ?>"> <?php echo e(trans('main.logout')); ?> </a></li>
+                	<li><a href="<?php echo e(route('user.logout')); ?>"> <?php echo e(trans('main.logout')); ?> </a></li>
+				<?php elseif(\App\Auth\AdminAuth::check()): ?>
+					<li><a href="<?php echo e(route('admins.home')); ?>"> <?php echo e(trans('main.administration')); ?> </a></li>
+					<li><a href="<?php echo e(route('admins.logout')); ?>"> <?php echo e(trans('main.logout')); ?> </a></li>
                 <?php else: ?>
-                <li><a href="<?php echo e(route('user.login')); ?>"> <?php echo e(trans('main.login')); ?> </a></li>
-                <li><a href="<?php echo e(route('user.register')); ?>"> <?php echo e(trans('main.register')); ?> </a></li>
+               	 	<li><a href="<?php echo e(route('user.login')); ?>"> <?php echo e(trans('main.login')); ?> </a></li>
+                	<li><a href="<?php echo e(route('user.register')); ?>"> <?php echo e(trans('main.register')); ?> </a></li>
                 <?php endif; ?>
                 <?php foreach($langs as $l => $ll): ?>
                 <?php if($l != $lang): ?>
@@ -49,12 +52,36 @@
         </nav>
     </div>
 
-    <div id="dr-hp-h-img" style="background-image: url(<?php echo e(url('img/specialists/' . $specialty . '.jpg')); ?>);">
+    <div id="dr-hp-h-img" style="background-image: url(<?php echo e($specialty_image); ?>);">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="text-center"><?php echo e(trans('main.dr')); ?> <?php echo e($name); ?></h1>
 					<h2 class="text-center"><?php echo e($specialty_title); ?></h2>
+					<div class="rating" dir="ltr">
+						<?php
+						$rating = \App\Models\Doctor::where('id', $doctor_id)->first()->rating();
+						$ratingInt = (int)$rating;
+						$ratingFloat = $rating - $ratingInt;
+						for($j = 1; $j <= $ratingInt; $j++) {
+							echo "<span class='fa fa-star fa-2x'></span>";
+						}
+
+						if($ratingFloat >= 0.5) {
+							$value = $ratingInt + 1;
+							echo "<span class='fa fa-star fa-2x'></span>";
+						}
+						else {
+							$value = $ratingInt + 0.5;
+							echo "<span class='fa fa-star-half-o fa-2x'></span>";
+						}
+
+						for($k = $ratingInt + 2; $k <= 5; $k++) {
+							echo "<span class='fa fa-star-o fa-2x'></span>";
+						}
+						?>
+					</div>
+
 				</div>
 			</div>
 		</div>

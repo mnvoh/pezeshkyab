@@ -228,6 +228,41 @@
 
         });
 
+        $('a.upload-specialty-image').click(function() {
+            var inputId = $(this).find('input[type=file]').prop('id');
+            var specialty_id = $(this).find('input[name=specialty_id]').val();
+            var fileInput = document.getElementById(inputId);
+            fileInput.click();
+            fileInput.addEventListener('change', function() {
+                var file = this.files[0];
+                var csrf = $('input[name=_token]').val();
+                var xhr = new XMLHttpRequest();
+                $('#specialty-image-upload-progress-modal').modal('show');
+                (xhr.upload || xhr).addEventListener('progress', function(e) {
+                    var done = e.loaded
+                    var total = e.total;
+                    var percent = Math.round(done/total*100);
+                    $('#specialty-image-upload-progress-modal .progress-bar')
+                        .css('width', percent+'%').attr('aria-valuenow', percent);
+                });
+                xhr.addEventListener('load', function(e) {
+                    var response = $.parseJSON(this.responseText);
+                    if(response.error) {
+                        alert(response.error_desc);
+                        return;
+                    }
+                    document.location.reload();
+                });
+                xhr.open('post', $(fileInput).data('url'), true);
+                var fd = new FormData;
+                fd.append("file", file);
+                fd.append("specialty_id", specialty_id);
+                fd.append("_token", csrf);
+                xhr.setRequestHeader('X-XSRF-TOKEN', csrf);
+                xhr.send(fd);
+            });
+        });
+
 
         /**
          * Fullsizable - fullscreen image viewer
@@ -298,6 +333,105 @@
          */
         $('tr.tr-expand-below').click(function() {
             $(this).next().slideToggle(0);
+        });
+
+
+        /**
+         * launch the fee edition modal when .edit-fee links are clicked
+         */
+
+        $('.edit-fee').click(function() {
+            var modal = $('#add-fee-modal');
+            var fee_id = $(this).find('input[name="fee_id"]').val();
+            var title = $(this).find('input[name="title"]').val();
+            var amount = $(this).find('input[name="amount"]').val();
+            modal.modal('show');
+            modal.find('input[name="fee_id"]').val(fee_id);
+            modal.find('input[name="title"]').val(title);
+            modal.find('input[name="amount"]').val(amount);
+        });
+
+        /**
+         * launch the fee edition modal when .edit-insurance links are clicked
+         */
+
+        $('.edit-insurance').click(function() {
+            var modal = $('#add-insurance-modal');
+            var insurance_id = $(this).find('input[name="insurance_id"]').val();
+            var title = $(this).find('input[name="title"]').val();
+            var description = $(this).find('input[name="description"]').val();
+            var rate = $(this).find('input[name="rate"]').val();
+            modal.modal('show');
+            modal.find('input[name="insurance_id"]').val(insurance_id);
+            modal.find('input[name="title"]').val(title);
+            modal.find('input[name="description"]').val(description);
+            modal.find('input[name="rate"]').val(rate);
+        });
+
+
+        /**
+         * launch the specialty edition modal when .edit-specialty links are clicked
+         */
+
+        $('.edit-specialty').click(function() {
+            var modal = $('#add-specialty-modal');
+            var specialty_id = $(this).find('input[name="specialty_id"]').val();
+            var title = $(this).find('input[name="title"]').val();
+            var description = $(this).find('input[name="description"]').val();
+            modal.modal('show');
+            modal.find('input[name="specialty_id"]').val(specialty_id);
+            modal.find('input[name="title"]').val(title);
+            modal.find('input[name="description"]').val(description);
+        });
+
+        /**
+         * launch the hospital edition modal when .edit-hospital links are clicked
+         */
+
+        $('.edit-hospital').click(function() {
+            var modal = $('#add-hospital-modal');
+            var hospital_id = $(this).find('input[name="hospital_id"]').val();
+            var name = $(this).find('input[name="name"]').val();
+            modal.modal('show');
+            modal.find('input[name="hospital_id"]').val(hospital_id);
+            modal.find('input[name="name"]').val(name);
+        });
+
+        /**
+         * launch the hospital address edition modal when .change-address links are clicked
+         */
+
+        $('.change-address').click(function() {
+            var modal = $('#add-hospital-address-modal');
+            var hospital_id = $(this).find('input[name="hospital_id"]').val();
+            modal.modal('show');
+            modal.find('input[name="hospital_id"]').val(hospital_id);
+            $('#map-canvas').html('');
+            initMap();
+        });
+
+        $('#rating-form').submit(function() {
+            var url = $(this).prop('action');
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $(this).serialize(),
+                success: function(results) {
+                    if(results.error) {
+                        $('#rating-form').find('p.text-error').html(results.description);
+                    }
+                    else {
+                        $('#rating-form').hide();
+                        $('#rating-submitted-message').removeClass('hidden');
+                    }
+                },
+                error: function(data) {
+                    alert('error');
+                }
+            });
+
+            return false;
         });
     });
 })(jQuery);

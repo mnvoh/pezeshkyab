@@ -87,8 +87,8 @@ class AuthController extends Controller
             'street_address1' => 'required|max:512',
             'street_address2' => 'max:512',
             'postal_code' => 'required|numeric|digits:10',
-            'clinicLat' => 'required|numeric',
-            'clinicLng' => 'required|numeric',
+            'locationLat' => 'required|numeric',
+            'locationLon' => 'required|numeric',
             'acceptTerms' => 'required',
         );
 

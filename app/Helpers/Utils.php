@@ -221,4 +221,11 @@ class Utils {
 		imagedestroy($tmp_image);
 		return $path;
 	}
+
+	public static function markdownToHtml($markdown)
+	{
+		$parsedown = new \Parsedown();
+		return $parsedown->text($markdown);
+	}
+
 }

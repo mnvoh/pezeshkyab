@@ -27,7 +27,18 @@
                     <a href="{{ route('main.contact') }}"> {{ trans('main.contact') }} </a>
                 </li>
                 <li>
-                    <a href="{{ route('main.links') }}"> {{ trans('main.links') }} </a>
+					<a class="dropdown-toggle" id="linksDropDown" data-toggle="dropdown"
+					   aria-haspopup="true" aria-expanded="true">
+						{{ trans('main.links') }}
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="linksDropDown">
+						@foreach(\App\Models\Link::all() as $link)
+							<li>
+								<a href="{{ $link->url }}">{{ $link->title }}</a>
+							</li>
+						@endforeach
+					</ul>
                 </li>
                 <li>
                     <a href="{{ route('search.find') }}" id="show-find-doctor"> {{ trans('main.find_a_doctor') }} </a>

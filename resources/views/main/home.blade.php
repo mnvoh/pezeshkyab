@@ -15,7 +15,6 @@
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h2>{{ trans('main.latest_articles') }}</h2>
 			<hr />
 			<div class="row">
 				@if(count($feed))
@@ -39,4 +38,25 @@
 		</div>
 	@endif
 	<br />
+	<hr />
+
+	<div class="row">
+		<div class="col-lg-12">
+			<h3>{{ trans('main.latest_medical_questions') }}</h3>
+			@foreach($medical_questions as $m)
+				<blockquote>
+					{{ $m->question }}
+					<blockquote>
+						{{ trans('main.doctors_response', ['name' => $m->doctor->name . ' ' . $m->doctor->lname]) }}
+						<br /> <hr />
+						{{ $m->response }}
+					</blockquote>
+				</blockquote>
+			@endforeach
+
+			<a href="{{ route('main.med_questions') }}">
+				{{ trans('main.view_all') }}
+			</a>
+		</div>
+	</div>
 @endsection

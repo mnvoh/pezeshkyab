@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-sm-12 col-md-8">
 			<?php if($status_message != null): ?>
 				<p class="alert-warning"><?php echo e($status_message); ?></p>
 			<?php endif; ?>
@@ -28,6 +28,36 @@
 				</form>
 			<?php endif; ?>
 			<br /><br />
+		</div>
+
+		<div class="col-sm-12 col-md-4">
+			<h2><?php echo e(trans('main.rate_doctor')); ?></h2>
+			<hr />
+			<form action="<?php echo e(route('doctors.rate')); ?>" method="post" id="rating-form">
+				<p class="text-error"></p>
+				<input type="hidden" name="doctor_id" value="<?php echo e($doctor_id); ?>" />
+				<input type="text" class="form-control" name="name" id="name"
+					   placeholder="<?php echo e(trans('main.firstname')); ?>" />
+				<br />
+				<input type="text" class="form-control" name="lname" id="lname"
+					   placeholder="<?php echo e(trans('main.lastname')); ?>" />
+				<br />
+				<div class="input-group">
+					<label class=""><?php echo e(trans('main.rating')); ?></label>:
+					<?php echo $__env->make('fivestar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+				</div>
+				<br />
+				<textarea class="form-control" name="description" placeholder="<?php echo e(trans('main.description')); ?>" style="height: 150px;"></textarea>
+				<br />
+				<?php echo e(csrf_field()); ?>
+
+				<button type="submit" class="btn btn-info btn-block">
+					<span class="fa fa-send"></span>
+					<?php echo e(trans('main.submit')); ?>
+
+				</button>
+			</form>
+			<p class="text-success hidden" id="rating-submitted-message"><?php echo e(trans('main.rating_submitted')); ?></p>
 		</div>
 	</div>
 

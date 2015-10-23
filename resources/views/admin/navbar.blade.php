@@ -66,17 +66,27 @@
 					</button>
 					<ul class="dropdown-menu" aria-labelledby="dLabel">
 						<li>
-							<a href="{{ route('admins.medical_question') }}">
+							<a href="{{ route('admins.fees') }}">
 								{{ trans('main.fees') }}
 							</a>
 						</li>
 						<li>
-							<a href="{{ route('admins.medical_question') }}">
+							<a href="{{ route('admins.insurances') }}">
+								{{ trans('main.insurances') }}
+							</a>
+						</li>
+						<li>
+							<a href="{{ route('admins.specialties') }}">
+								{{ trans('main.specialties') }}
+							</a>
+						</li>
+						<li>
+							<a href="{{ route('admins.hospitals') }}">
 								{{ trans('main.hospitals') }}
 							</a>
 						</li>
 						<li>
-							<a href="{{ route('admins.medical_question') }}">
+							<a href="{{ route('admins.medical_news') }}">
 								{{ trans('main.mednews') }}
 							</a>
 						</li>
@@ -86,8 +96,8 @@
 							</a>
 						</li>
 						<li>
-							<a href="{{ route('admins.medical_question') }}">
-								{{ trans('main.specialties') }}
+							<a href="{{ route('admins.links') }}">
+								{{ trans('main.links') }}
 							</a>
 						</li>
 					</ul>

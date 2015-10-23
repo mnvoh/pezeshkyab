@@ -14,7 +14,7 @@
                 {{ trans('main.tos_desc') }}
             </p>
             <p class="text-justify">
-                {{ file_get_contents(base_path('tos.' . $lang . '.md')) }}
+                {!! \App\Helpers\Utils::markdownToHtml(file_get_contents(base_path('tos.' . $lang . '.md'))) !!}
             </p>
         </div>
     </div>

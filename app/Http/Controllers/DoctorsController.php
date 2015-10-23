@@ -7,6 +7,7 @@ use App\Models\Fee;
 use App\Models\Image;
 use App\Models\MedicalNews;
 use App\Models\MedicalQuestion;
+use App\Models\Rating;
 use App\Models\Reservation;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
@@ -16,11 +17,13 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Route;
 
 class DoctorsController extends Controller
 {
 	public function __construct()
 	{
+		$doctor_id = Route::current()->getParameter('doctor_id');
 		view()->share('viewerIsOwner', false);
 		view()->share('use_doctors_navbar', true);
 	}
@@ -65,6 +68,7 @@ class DoctorsController extends Controller
 			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
 			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
+			'specialty_image' => @url($doctor->specialties[0]->image->path),
 			'about' => $doctor->bio,
 			'feed' => $med_news_rendered,
 			'status_message' => $status_message,
@@ -103,6 +107,7 @@ class DoctorsController extends Controller
 			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
 			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
+			'specialty_image' => @url($doctor->specialties[0]->image->path),
 			'about' => $doctor->bio,
 			'med_news' => $med_news,
 			'feed' => $med_news_rendered,
@@ -142,6 +147,7 @@ class DoctorsController extends Controller
 					'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 					'specialty' => Auth::user()->specialties[0]->title,
 					'specialty_title' => Auth::user()->specialties[0]->desc,
+					'specialty_image' => @url(Auth::user()->specialties[0]->image->path),
 					'title_error' => TRUE,
 					'body_error' => TRUE,
 					'title' => $request->get('title'),
@@ -158,6 +164,7 @@ class DoctorsController extends Controller
 					'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 					'specialty' => Auth::user()->specialties[0]->title,
 					'specialty_title' => Auth::user()->specialties[0]->desc,
+					'specialty_image' => @url(Auth::user()->specialties[0]->image->path),
 					'title_error' => TRUE,
 					'title' => $request->get('title'),
 					'body' => $request->get('body'),
@@ -173,6 +180,7 @@ class DoctorsController extends Controller
 					'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 					'specialty' => Auth::user()->specialties[0]->title,
 					'specialty_title' => Auth::user()->specialties[0]->desc,
+					'specialty_image' => @url(Auth::user()->specialties[0]->image->path),
 					'body_error' => TRUE,
 					'title' => $request->get('title'),
 					'body' => $request->get('body'),
@@ -200,6 +208,7 @@ class DoctorsController extends Controller
 			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => Auth::user()->specialties[0]->title,
 			'specialty_title' => Auth::user()->specialties[0]->desc,
+			'specialty_image' => @url(Auth::user()->specialties[0]->image->path),
 			'title' => '',
 			'body' => '',
 		]);
@@ -331,6 +340,7 @@ class DoctorsController extends Controller
 			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
 			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
+			'specialty_image' => @url($doctor->specialties[0]->image->path),
 			'medical_questions' => $med_questions,
 		]);
 	}
@@ -398,6 +408,7 @@ class DoctorsController extends Controller
 			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
 			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
+			'specialty_image' => @url($doctor->specialties[0]->image->path),
 			'status_message' => $status_message,
 			'form_error' => $form_error,
 			'reservations' => $current_reservations,
@@ -435,6 +446,7 @@ class DoctorsController extends Controller
 			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
 			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
+			'specialty_image' => @url($doctor->specialties[0]->image->path),
 			'transactions' => $transactions,
 			'paid_gross' => $paid_gross,
 		]);
@@ -521,6 +533,33 @@ class DoctorsController extends Controller
 		}
 	}
 
+	public function rate(Request $request)
+	{
+		$name = $request->get('name', null);
+		$lname = $request->get('lname', null);
+		$ratingValue = $request->get('rating', null);
+		$description = $request->get('description', null);
+		if(!$name || !strlen($name) || !$lname || !strlen($lname)) {
+			return response()->json(array(
+				'error' => true,
+				'description' => trans('main.enter_full_name'),
+			));
+		}
+
+		$rating = new Rating;
+		$rating->doctor_id = $request->get('doctor_id', 0);
+		$rating->rating = $ratingValue;
+		$rating->ip = $_SERVER['REMOTE_ADDR'];
+		$rating->desc = $description;
+		$rating->name = $name;
+		$rating->lname = $lname;
+		$rating->ncode = '';
+		$rating->save();
+
+		return response()->json(array(
+			'error' => false,
+		));
+	}
 
 
     public function renderMedicalNews(MedicalNews $mednews,

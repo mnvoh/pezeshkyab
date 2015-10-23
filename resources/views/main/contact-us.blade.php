@@ -2,10 +2,8 @@
 
 @section('content')
     <div class="row">
-        <div class="col-sm-12">
-			MNT News Desk:<br />
-			editors@medicalnewstoday.com <br />
-			Tel: +44 (0) 845 468 0075 (UK)* <br />
+        <div class="col-sm-12 col-md-8">
+			{!! \App\Helpers\Utils::markdownToHtml(file_get_contents(base_path('contact-us.md'))) !!}
 		</div>
     </div>
 @endsection

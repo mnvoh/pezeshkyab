@@ -6,7 +6,11 @@
 	<option value="0"><?php echo e(trans('main.general_practitioner')); ?></option>
 	<optgroup label="<?php echo e(trans('main.specialist')); ?>">
 		<?php foreach($specialties as $specialty): ?>
-			<option value="<?php echo $specialty->id; ?>"><?php echo$specialty->title; ?></option>
+			<?php if(old('specialty') == $specialty->id): ?>
+				<option value="<?php echo $specialty->id; ?>" selected><?php echo$specialty->title; ?></option>
+			<?php else: ?>
+				<option value="<?php echo $specialty->id; ?>"><?php echo$specialty->title; ?></option>
+			<?php endif; ?>
 		<?php endforeach; ?>
 	</optgroup>
 </select>

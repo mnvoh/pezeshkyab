@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\MedicalQuestion;
 use Illuminate\Http\Request;
 use App\Helpers\Utils;
 use App\Models\MedicalNews;
@@ -24,10 +25,17 @@ class MainController extends Controller
 			$first_news = false;
 		}
 
+		$med_questions = MedicalQuestion::where('scope', 'public')
+			->whereNotNull('response')
+			->orderBy('created_at', 'desc')
+			->take(3)
+			->get();
+
 		return view('main.home', array(
 			'includeMainCarousel' => true,
 			'includeMedicalQuestionForm' => true,
 			'feed' => $med_news_rendered,
+			'medical_questions' => $med_questions,
 		));
 	}
 
@@ -75,8 +83,13 @@ class MainController extends Controller
 		return view('main.insurances');
 	}
 
-	public static function renderMedicalNews(MedicalNews $mednews,
-											 $halfWidth = true )
+	public function medQuestions()
+	{
+		$questions = MedicalQuestion::paginate(10);
+		return view('main.med-questions', ['questions' => $questions]);
+	}
+
+	public static function renderMedicalNews(MedicalNews $mednews, $halfWidth = true )
 	{
 		/***************************************************
 		 * ************        ATTENSION     ***************

@@ -1,6 +1,7 @@
 <component name="ProjectDictionaryState">
   <dictionary name="mnvoh">
     <words>
+      <w>addon</w>
       <w>addr</w>
       <w>adminaction</w>
       <w>cprogress</w>
@@ -15,14 +16,18 @@
       <w>fullsizeable</w>
       <w>guzzlehttp</w>
       <w>jstween</w>
+      <w>lname</w>
       <w>mailgun</w>
       <w>menuitem</w>
       <w>mqid</w>
       <w>ncode</w>
       <w>noborder</w>
+      <w>setaddress</w>
+      <w>setimage</w>
       <w>smtp</w>
       <w>summernote</w>
       <w>tabeebyab</w>
+      <w>valuenow</w>
     </words>
   </dictionary>
 </component>

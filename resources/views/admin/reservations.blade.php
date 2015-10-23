@@ -17,6 +17,19 @@
 					   placeholder="{{ trans('main.tracking_code') }}"
 					   value="{{ $filter_tracking_code }}"/>
 
+				<select class="form-control inline-form-control" name="status">
+					<option value="any">{{ trans('main.any') }}</option>
+					<option value="active" @if($filter_status == 'active') {{ 'selected' }} @endif>
+						{{ trans('main.active_reservations') }}
+					</option>
+					<option value="free" @if($filter_status == 'free') {{ 'selected' }} @endif>
+						{{ trans('main.free_reservations') }}
+					</option>
+					<option value="done" @if($filter_status == 'done') {{ 'selected' }} @endif>
+						{{ trans('main.done_reservations') }}
+					</option>
+				</select>
+
 				<button type="submit" class="btn btn-info">
 					{{ trans('main.apply') }}
 				</button>

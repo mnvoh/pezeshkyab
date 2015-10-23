@@ -6,12 +6,12 @@
 					<div class="col-xs-12">
 						<h2><?php echo e($title); ?></h2>
 						<p>
-							<?php echo e(trans('main2.published_by')); ?>:
+							<?php echo e(trans('main.published_by')); ?>:
 							<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $doctor_id])); ?>">
 								<?php echo e($doctor_name); ?>
 
 							</a>
-							<?php echo e(trans('main2.on')); ?>:
+							<?php echo e(trans('main.on')); ?>:
 							<?php echo e($published_on); ?>
 
 						</p>

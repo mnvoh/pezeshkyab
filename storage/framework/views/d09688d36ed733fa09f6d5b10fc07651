@@ -27,7 +27,19 @@
                     <a href="<?php echo e(route('main.contact')); ?>"> <?php echo e(trans('main.contact')); ?> </a>
                 </li>
                 <li>
-                    <a href="<?php echo e(route('main.links')); ?>"> <?php echo e(trans('main.links')); ?> </a>
+					<a class="dropdown-toggle" id="linksDropDown" data-toggle="dropdown"
+					   aria-haspopup="true" aria-expanded="true">
+						<?php echo e(trans('main.links')); ?>
+
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="linksDropDown">
+						<?php foreach(\App\Models\Link::all() as $link): ?>
+							<li>
+								<a href="<?php echo e($link->url); ?>"><?php echo e($link->title); ?></a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
                 </li>
                 <li>
                     <a href="<?php echo e(route('search.find')); ?>" id="show-find-doctor"> <?php echo e(trans('main.find_a_doctor')); ?> </a>

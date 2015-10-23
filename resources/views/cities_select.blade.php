@@ -4,7 +4,11 @@
     <?php foreach($provinces as $p): ?>
         <optgroup label="<?php echo $p->name; ?>">
             <?php foreach($p->cities as $city): ?>
-                <option value="<?php echo $city->id; ?>"><?php echo $city->name; ?></option>
+				@if(old('city') == $city->id)
+					<option value="<?php echo $city->id; ?>" selected><?php echo $city->name; ?></option>
+				@else
+					<option value="<?php echo $city->id; ?>"><?php echo $city->name; ?></option>
+				@endif
             <?php endforeach; ?>
         </optgroup>
     <?php endforeach; ?>

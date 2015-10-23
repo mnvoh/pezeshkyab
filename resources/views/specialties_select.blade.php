@@ -6,7 +6,11 @@
 	<option value="0">{{ trans('main.general_practitioner') }}</option>
 	<optgroup label="{{ trans('main.specialist') }}">
 		<?php foreach($specialties as $specialty): ?>
-			<option value="<?php echo $specialty->id; ?>"><?php echo$specialty->title; ?></option>
+			@if(old('specialty') == $specialty->id)
+				<option value="<?php echo $specialty->id; ?>" selected><?php echo$specialty->title; ?></option>
+			@else
+				<option value="<?php echo $specialty->id; ?>"><?php echo$specialty->title; ?></option>
+			@endif
 		<?php endforeach; ?>
 	</optgroup>
 </select>

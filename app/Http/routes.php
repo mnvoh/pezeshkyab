@@ -36,6 +36,10 @@ Route::any('docfinder/med-news', [
 	'as' => 'main.med_news',
 	'uses' => 'MainController@medNews'
 ]);
+Route::any('docfinder/med-questions', [
+	'as' => 'main.med_questions',
+	'uses' => 'MainController@medQuestions'
+]);
 Route::any('docfinder/about', [
     'as' => 'main.about',
     'uses' => 'MainController@about'
@@ -179,6 +183,11 @@ Route::any('docfinder/doctors/upload-avatar', [
 	'uses' => 'DoctorsController@uploadAvatar'
 ]);
 
+Route::any('docfinder/doctors/rate', [
+	'as' => 'doctors.rate',
+	'uses' => 'DoctorsController@rate'
+]);
+
 /*          AdminsController
   ======================================*/
 Route::get('docfinder/admin/login', [
@@ -219,7 +228,35 @@ Route::any('docfinder/admin/medical-questions', [
 	'as' => 'admins.medical_question',
 	'uses' => 'AdminsController@medicalQuestions'
 ]);
-Route::any('docfinder/admin/medical-questions', [
-	'as' => 'admins.medical_question',
-	'uses' => 'AdminsController@medicalQuestions'
+Route::any('docfinder/admin/fees', [
+	'as' => 'admins.fees',
+	'uses' => 'AdminsController@fees'
+]);
+Route::any('docfinder/admin/insurances', [
+	'as' => 'admins.insurances',
+	'uses' => 'AdminsController@insurances'
+]);
+Route::any('docfinder/admin/specialties', [
+	'as' => 'admins.specialties',
+	'uses' => 'AdminsController@specialties'
+]);
+Route::any('docfinder/admin/upload-specialty-image', [
+	'as' => 'admins.upload_specialty_image',
+	'uses' => 'AdminsController@uploadSpecialtyImage'
+]);
+Route::any('docfinder/admin/hospitals', [
+	'as' => 'admins.hospitals',
+	'uses' => 'AdminsController@hospitals'
+]);
+Route::any('docfinder/admin/medical-news', [
+	'as' => 'admins.medical_news',
+	'uses' => 'AdminsController@medicalNews'
+]);
+Route::any('docfinder/admin/chats', [
+	'as' => 'admins.chats',
+	'uses' => 'AdminsController@chats'
+]);
+Route::any('docfinder/admin/links', [
+	'as' => 'admins.links',
+	'uses' => 'AdminsController@links'
 ]);

@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Auth\AdminAuth;
 use App\Helpers\Utils;
+use App\Models\Address;
 use App\Models\Admin;
 use App\Models\Doctor;
 use App\Models\Fee;
 use App\Models\Hospital;
+use App\Models\Image;
+use App\Models\Insurance;
+use App\Models\Link;
 use App\Models\MedicalNews;
 use App\Models\MedicalQuestion;
 use App\Models\PublicChat;
@@ -114,6 +118,7 @@ class AdminsController extends Controller
 
 
 		$data['fees'] = Fee::count();
+		$data['insurances'] = Insurance::count();
 		$data['hospitals'] = Hospital::count();
 		$data['medical_news'] = MedicalNews::count();
 		$data['chat_msgs'] = PublicChat::count();
@@ -339,6 +344,7 @@ class AdminsController extends Controller
 
 		if($status == 'any') $status = '';
 		if($settled == 'any') $settled = '';
+		if($settled == '0' || $settled == '1') $status = 'paid';
 
 		if(strlen($doctor_id) + strlen($receipt) + strlen($status) + strlen($settled) <= 0) {
 			$transactions = Transaction::paginate(10);
@@ -398,12 +404,13 @@ class AdminsController extends Controller
 		$doctor_id = $request->get('doctor_id', '');
 		$ncode = $request->get('ncode', '');
 		$tracking_code = $request->get('tracking_code', '');
+		$status = $request->get('status', '');
 
-		if(strlen($doctor_id) + strlen($ncode) + strlen($tracking_code) <= 0) {
+		if(strlen($doctor_id) + strlen($ncode) + strlen($tracking_code) + strlen($status) <= 0) {
 			$reservations = Reservation::paginate(10);
 		}
 		else {
-			$reservations = Reservation::where(function($query) use ($doctor_id, $ncode, $tracking_code) {
+			$reservations = Reservation::where(function($query) use ($doctor_id, $ncode, $tracking_code, $status) {
 				if(strlen($doctor_id)) {
 					$query->where('doctor_id', $doctor_id);
 				}
@@ -412,6 +419,14 @@ class AdminsController extends Controller
 				}
 				if(strlen($tracking_code)) {
 					$query->where('tracking_code', $tracking_code);
+				}
+				if(strlen($status)) {
+					if($status == 'active')
+						$query->whereNotNull('tracking_code')->where('rtime', '>', date('Y-m-d H:i:s'));
+					else if($status == 'free')
+						$query->whereNull('tracking_code')->where('rtime', '>', date('Y-m-d H:i:s'));
+					else if($status == 'done')
+						$query->whereNotNull('tracking_code')->where('rtime', '<', date('Y-m-d H:i:s'));
 				}
 				return $query;
 			})->paginate(10);
@@ -423,6 +438,7 @@ class AdminsController extends Controller
 			'filter_doctor_id' => $request->get('doctor_id', ''),
 			'filter_ncode' => $request->get('ncode', ''),
 			'filter_tracking_code' => $tracking_code,
+			'filter_status' => $status,
 		]);
 	}
 
@@ -467,6 +483,332 @@ class AdminsController extends Controller
 			'filter_answered' => $answered,
 			'action_message' => $action_message,
 			'delete_question' => $delete_question,
+		]);
+	}
+
+	public function fees(Request $request)
+	{
+		if(!AdminAuth::check()) {
+			abort(403, 'access denied');
+			return;
+		}
+
+		$action_message = null;
+
+		if($request->has('delete')) {
+			Fee::where('id', $request->get('fee_id', null))->delete();
+			$action_message = trans('main.fee_deleted');
+		}
+		elseif($request->has('save')) {
+			if($request->has('fee_id') && (int)$request->get('fee_id', 0) > 0) {
+				Fee::where('id', $request->get('fee_id', null))
+					->update([
+						'title' => $request->get('title', ''),
+						'amount' => $request->get('amount', 0),
+					]);
+			}
+			else {
+				$new_fee = new Fee;
+				$new_fee->title = $request->get('title', '');
+				$new_fee->amount = $request->get('amount', 0);
+				$new_fee->save();
+			}
+			$action_message = trans('main.fee_saved');
+		}
+
+		$title = $request->get('title', '');
+
+		if(strlen($title) <= 0) {
+			$fees = Fee::paginate(10);
+		}
+		else {
+			$fees = Fee::where(function($query) use ($title) {
+				if(strlen($title) > 0) {
+					$query->where('title', 'LIKE', "%{$title}%");
+				}
+				return $query;
+			})->paginate(10);
+		}
+
+		return view('admin.fees', [
+			'fees' => $fees,
+			'master_admin' => AdminAuth::admin()->type == 'master',
+			'filter_title' => $title,
+			'action_message' => $action_message,
+		]);
+	}
+
+	public function insurances(Request $request)
+	{
+		if(!AdminAuth::check()) {
+			abort(403, 'access denied');
+			return;
+		}
+
+		$action_message = null;
+
+		if($request->has('delete')) {
+			Insurance::where('id', $request->get('insurance_id', null))->delete();
+			$action_message = trans('main.insurance_deleted');
+		}
+		elseif($request->has('save')) {
+			if($request->has('insurance_id') && (int)$request->get('insurance_id', 0) > 0) {
+				Insurance::where('id', $request->get('insurance_id', null))
+					->update([
+						'title' => $request->get('title', ''),
+						'description' => $request->get('description', ''),
+						'rate' => $request->get('rate', 0) / 100,
+					]);
+			}
+			else {
+				$new_insurance = new Insurance;
+				$new_insurance->title = $request->get('title', '');
+				$new_insurance->description = $request->get('description', '');
+				$new_insurance->rate = $request->get('rate', 0) / 100;
+				$new_insurance->save();
+			}
+			$action_message = trans('main.insurance_saved');
+		}
+
+		$title = $request->get('title', '');
+
+		if(strlen($title) <= 0) {
+			$insurances = Insurance::paginate(10);
+		}
+		else {
+			$insurances = Insurance::where(function($query) use ($title) {
+				if(strlen($title) > 0) {
+					$query->where('title', 'LIKE', "%{$title}%");
+				}
+				return $query;
+			})->paginate(10);
+		}
+
+		return view('admin.insurances', [
+			'insurances' => $insurances,
+			'master_admin' => AdminAuth::admin()->type == 'master',
+			'filter_title' => $title,
+			'action_message' => $action_message,
+		]);
+	}
+
+	public function specialties(Request $request)
+	{
+		if(!AdminAuth::check()) {
+			abort(403, 'access denied');
+			return;
+		}
+
+		$action_message = null;
+
+		if($request->has('delete')) {
+			Specialty::where('id', $request->get('specialty_id', null))->delete();
+			$action_message = trans('main.specialty_deleted');
+		}
+		elseif($request->has('save')) {
+			if($request->has('specialty_id') && (int)$request->get('specialty_id', 0) > 0) {
+				Specialty::where('id', $request->get('specialty_id', null))
+					->update([
+						'title' => $request->get('title', ''),
+						'desc' => $request->get('description', ''),
+					]);
+			}
+			else {
+				$new_specialty = new Specialty;
+				$new_specialty->title = $request->get('title', '');
+				$new_specialty->desc = $request->get('description', '');
+				$new_specialty->save();
+			}
+			$action_message = trans('main.specialty_saved');
+		}
+		else if($request->has('setimage')) {
+			$image_id = $request->get('setimage', 0);
+			$specialty_id = $request->get('specialty_id', 0);
+			Specialty::where('id', $specialty_id)
+				->update([
+					'image_id' => $image_id,
+				]);
+			return redirect()->route('admins.specialties');
+		}
+
+		$title = $request->get('title', '');
+
+		if(strlen($title) <= 0) {
+			$specialties = Specialty::paginate(10);
+		}
+		else {
+			$specialties = Specialty::where(function($query) use ($title) {
+				if(strlen($title) > 0) {
+					$query->where('title', 'LIKE', "%{$title}%");
+				}
+				return $query;
+			})->paginate(10);
+		}
+
+		return view('admin.specialties', [
+			'specialties' => $specialties,
+			'master_admin' => AdminAuth::admin()->type == 'master',
+			'filter_title' => $title,
+			'action_message' => $action_message,
+		]);
+	}
+
+	public function uploadSpecialtyImage(Request $request)
+	{
+		if (isset($_FILES['file'])) {
+			if(!AdminAuth::check()) {
+				return response()->json([
+					'error' => true,
+					'error_desc' => trans('main.error_uploading') . ': 403',
+				]);
+			}
+
+			$filename = basename($_FILES['file']['name']);
+			$ext = (new \SplFileInfo($filename))->getExtension();
+			$new_filename = sha1($filename . time() . AdminAuth::admin()->id) . ".$ext";
+			$path = Config::get('constants.UPLOAD_PATH') . date('Ym') . '/' . $new_filename;
+			$error = !move_uploaded_file($_FILES['file']['tmp_name'], $path);
+
+			if($error) {
+				return response()->json([
+					'error' => true,
+					'error_desc' => trans('main.error_uploading') . ': 100',
+				]);
+			}
+
+			$image = new Image();
+			$image->path = $path;
+			$image->orig_name = $filename;
+			$image->admin_id = AdminAuth::admin()->id;
+			$image->save();
+
+			$specialty_id = $request->get('specialty_id', 0);
+			Specialty::where('id', $specialty_id)->update([
+				'image_id' => $image->id,
+			]);
+
+			return response()->json(array(
+				'error' => $error,
+			));
+		}
+	}
+
+	public function hospitals(Request $request)
+	{
+		if(!AdminAuth::check()) {
+			abort(403, 'access denied');
+			return;
+		}
+
+		$action_message = null;
+
+		if($request->has('delete')) {
+			Hospital::where('id', $request->get('hospital_id', null))->delete();
+			$action_message = trans('main.hospital_deleted');
+		}
+		elseif($request->has('save')) {
+			if($request->has('hospital_id') && (int)$request->get('hospital_id', 0) > 0) {
+				Hospital::where('id', $request->get('hospital_id', null))
+					->update([
+						'name' => $request->get('name', ''),
+					]);
+			}
+			else {
+				$new_hospital = new Hospital;
+				$new_hospital->name = $request->get('name', '');
+				$new_hospital->save();
+			}
+			$action_message = trans('main.hospital_saved');
+		}
+		elseif($request->has('save-address')) {
+			$new_address = new Address();
+			$new_address->city_id = $request->get('city', '');
+			$new_address->street_addr_1 = $request->get('addr1', '');
+			$new_address->street_addr_2 = $request->get('addr2', '');
+			$new_address->zip = $request->get('postal_code', '');
+			$new_address->lat = $request->get('locationLat', '');
+			$new_address->lng = $request->get('locationLon', '');
+			$new_address->save();
+			Hospital::where('id', $request->get('hospital_id', null))
+				->update([
+					'address_id' => $new_address->id,
+				]);
+			$action_message = trans('main.hospital_saved');
+		}
+		else if($request->has('setaddress')) {
+
+			return redirect()->route('admins.hospitals');
+		}
+
+		$name = $request->get('name', '');
+
+		if(strlen($name) <= 0) {
+			$hospitals = Hospital::paginate(10);
+		}
+		else {
+			$hospitals = Hospital::where(function($query) use ($name) {
+				if(strlen($name) > 0) {
+					$query->where('name', 'LIKE', "%{$name}%");
+				}
+				return $query;
+			})->paginate(10);
+		}
+
+		return view('admin.hospitals', [
+			'hospitals' => $hospitals,
+			'master_admin' => AdminAuth::admin()->type == 'master',
+			'filter_name' => $name,
+			'action_message' => $action_message,
+			'include_maps' => true,
+		]);
+	}
+
+	public function medicalNews(Request $request)
+	{
+		if(!AdminAuth::check()) {
+			abort(403, 'access denied');
+			return;
+		}
+
+		$action_message = null;
+
+		if($request->has('delete')) {
+			MedicalNews::where('id', $request->get('mnid', null))->delete();
+			$action_message = trans('main.medical_news_deleted');
+		}
+
+		$mednews = MedicalNews::paginate(10);
+
+		return view('admin.medical_news', [
+			'mednews' => $mednews,
+			'master_admin' => AdminAuth::admin()->type == 'master',
+			'action_message' => $action_message,
+		]);
+	}
+
+	public function links(Request $request)
+	{
+		if(!AdminAuth::check()) {
+			abort(403, 'access denied');
+			return;
+		}
+
+		if($request->has('delete')) {
+			Link::where('id', $request->get('link_id', null))->delete();
+		}
+		elseif($request->has('save')) {
+			$new_link = new Link;
+			$new_link->title = $request->get('title', '');
+			$new_link->url = $request->get('url', '');
+			$new_link->save();
+		}
+
+		$links = Link::all();
+
+
+		return view('admin.links', [
+			'links' => $links,
+			'master_admin' => AdminAuth::admin()->type == 'master',
 		]);
 	}
 }
