@@ -205,7 +205,7 @@ class DoctorsController extends Controller
 			'viewerIsOwner' => true,
 			'name' => Auth::user()->name . ' ' . Auth::user()->lname,
 			'avatar' => (Auth::user()->image) ? Utils::makeThumbnail(Auth::user()->image->path, 200) : null,
-			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
+			'avatar_url' => (Auth::user()->image) ? url(Auth::user()->image->path) : null,
 			'specialty' => Auth::user()->specialties[0]->title,
 			'specialty_title' => Auth::user()->specialties[0]->desc,
 			'specialty_image' => @url(Auth::user()->specialties[0]->image->path),

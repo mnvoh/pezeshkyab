@@ -22,6 +22,17 @@
                     <th>{{ trans('main.amount') }}</th>
                     <td>{{ $filled_info['b_fee_amount'] }} {{ trans('currencies.irr') }}</td>
                 </tr>
+				<tr>
+					<th>{{ trans('main.selected_insurance') }}</th>
+					<td>{{ $filled_info['b_insurance_title'] ? $filled_info['b_insurance_title'] : '-' }}</td>
+				</tr>
+				<tr>
+					<th>{{ trans('main.final_amount') }}</th>
+					<td>
+						{{ $filled_info['b_fee_amount'] * $filled_info['b_insurance_rate'] }}
+						{{ trans('currencies.irr') }}
+					</td>
+				</tr>
             </table>
             @if(is_numeric($filled_info['b_fee_amount']) && $filled_info['b_fee_amount'] > 0)
                 <form action="{{ $next_step_link }}" method="post">

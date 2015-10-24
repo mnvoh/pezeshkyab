@@ -1,12 +1,12 @@
 <?php $__env->startSection('content'); ?>
     <div class="row">
         <div class="col-sm-12 col-md-offset-1 col-md-10">
-			<h1><?php echo e(trans('main4.add_medical_news')); ?></h1>
+			<h1><?php echo e(trans('main.add_medical_news')); ?></h1>
 			<form action="<?php echo e($url); ?>" method="post" enctype="multipart/form-data"
 				  onsubmit="return prepareSummernoteSubmission();">
 
 				<?php if(isset($title_error)): ?>
-					<p class="text-error"><?php echo e(trans('main4.title_too_short')); ?></p>
+					<p class="text-error"><?php echo e(trans('main.title_too_short')); ?></p>
 				<?php endif; ?>
 
 				<input class="form-control" type="text" id="title" name="title"
@@ -17,13 +17,13 @@
 				<div id="summernote"></div>
 
 				<label for="scope">
-					<?php echo e(trans('main4.publish_scope')); ?>
+					<?php echo e(trans('main.publish_scope')); ?>
 
 				</label>
 				<select name="scope" id="scope" class="form-control">
-					<option value="sys"><?php echo e(trans('main4.system')); ?></option>
-					<option value="self"><?php echo e(trans('main4.doctors_page')); ?></option>
-					<option value="both"><?php echo e(trans('main4.both')); ?></option>
+					<option value="sys"><?php echo e(trans('main.system')); ?></option>
+					<option value="self"><?php echo e(trans('main.doctors_page')); ?></option>
+					<option value="both"><?php echo e(trans('main.both')); ?></option>
 				</select>
 				<br />
 				<textarea id="summernote-code" name="body" class="hidden"></textarea>
@@ -32,7 +32,7 @@
 
 
 				<button class="btn btn-success btn-block" name="form-submitted" value="1">
-					<?php echo e(trans('main4.save')); ?>
+					<?php echo e(trans('main.save')); ?>
 
 				</button>
 			</form>

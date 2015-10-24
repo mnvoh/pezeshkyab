@@ -6,14 +6,18 @@
 			<h3>{{ trans('main.medical_questions') }}</h3>
 			<hr />
 			@foreach($questions as $m)
-				<blockquote>
-					{{ $m->question }}
+				<div class="medical-question-response">
+					<p class="text-info">
+						{{ $m->question }}
+					</p>
 					<blockquote>
-						{{ trans('main.doctors_response', ['name' => $m->doctor->name . ' ' . $m->doctor->lname]) }}
-						<br /> <hr />
+						<hr />
+						<p class="text-success">
+							{{ trans('main.doctors_response', ['name' => $m->doctor->name . ' ' . $m->doctor->lname]) }}
+						</p>
 						{{ $m->response }}
 					</blockquote>
-				</blockquote>
+				</div>
 			@endforeach
 			<br />
 			{!! $questions->render() !!}

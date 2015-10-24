@@ -9,10 +9,10 @@
 				<?php endif; ?>
 			<?php endif; ?>
 
-			<h3><?php echo e(trans('main4.add_schedule')); ?></h3>
+			<h3><?php echo e(trans('main.add_schedule')); ?></h3>
 			<form action="<?php echo e($url); ?>" method="post">
 				<div class="form-control inline-form-control">
-					<label class="inline-form-control"><?php echo e(trans('main3.date')); ?></label>
+					<label class="inline-form-control"><?php echo e(trans('main.date')); ?></label>
 
 					<span dir="ltr">
 						<input type="number" min="<?php echo e($current_year); ?>" max="<?php echo e($current_year + 1); ?>"
@@ -31,7 +31,7 @@
 
 				</div>
 				<div class="form-control inline-form-control">
-					<label class="inline-form-control"><?php echo e(trans('main3.time')); ?></label>
+					<label class="inline-form-control"><?php echo e(trans('main.time')); ?></label>
 					<span dir="ltr">
 						<input type="number" min="0" max="23" name="hour"
 							   class="inline-form-control noborder text-center sm-number-field" value="7" />
@@ -41,7 +41,7 @@
 					</span>
 				</div>
 				<div class="form-control inline-form-control">
-					<label class="inline-form-control"><?php echo e(trans('main2.fee')); ?></label>
+					<label class="inline-form-control"><?php echo e(trans('main.fee')); ?></label>
 					<select name="fee" class="plain-combo">
 						<?php foreach($fees as $fee): ?>
 							<option value="<?php echo e($fee->id); ?>">
@@ -56,27 +56,27 @@
 
 
 				<button type="submit" name="new_reservation" value="1" class="btn btn-success">
-					<?php echo e(trans('main4.save')); ?>
+					<?php echo e(trans('main.save')); ?>
 
 				</button>
 			</form>
 
 			<hr />
 
-			<h3><?php echo e(trans('main4.current_schedules')); ?></h3>
+			<h3><?php echo e(trans('main.current_schedules')); ?></h3>
 
 			<table class="table table-responsive table-striped">
 				<thead>
 					<tr>
-						<th><?php echo e(trans('main4.id')); ?></th>
-						<th><?php echo e(trans('main4.rtime')); ?></th>
-						<th><?php echo e(trans('main2.fee')); ?></th>
-						<th><?php echo e(trans('main4.pname')); ?></th>
+						<th><?php echo e(trans('main.id')); ?></th>
+						<th><?php echo e(trans('main.rtime')); ?></th>
+						<th><?php echo e(trans('main.fee')); ?></th>
+						<th><?php echo e(trans('main.pname')); ?></th>
 						<th><?php echo e(trans('main.nationality')); ?></th>
 						<th><?php echo e(trans('main.national_code')); ?></th>
 						<th><?php echo e(trans('main.email_address')); ?></th>
-						<th><?php echo e(trans('main4.disease')); ?></th>
-						<th><?php echo e(trans('main4.action')); ?></th>
+						<th><?php echo e(trans('main.disease')); ?></th>
+						<th><?php echo e(trans('main.action')); ?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -85,7 +85,7 @@
 						<td> <?php echo e($r->id); ?> </td>
 						<td> <?php echo e(\App\Helpers\Utils::shamsiDateFromGreg(strtotime($r->rtime))); ?> </td>
 						<td> <?php echo e($r->fee->title); ?> <?php echo e($r->fee->amount); ?> <?php echo e(trans('currencies.irr')); ?> </td>
-						<td> <?php echo e(($r->pname != null) ? $r->pname . ' ' . $r->plname : '-'); ?> </td>
+						<td> <?php echo e(($r->pname != null) ? @$r->pname . ' ' . @$r->plname : '-'); ?> </td>
 						<td>
 							<?php if($r->nationality == 'ir'): ?>
 								<?php echo e(trans('main.iranian')); ?>
@@ -107,7 +107,7 @@
 									<?php echo e(csrf_field()); ?>
 
 									<button type="submit" name="delete_reservation" value="1" class="btn btn-danger">
-										<?php echo e(trans('main4.delete')); ?>
+										<?php echo e(trans('main.delete')); ?>
 
 									</button>
 								</form>
@@ -119,7 +119,7 @@
 									<?php echo e(csrf_field()); ?>
 
 									<button type="submit" name="email_patient" value="1" class="btn btn-default">
-										<?php echo e(trans('main4.email')); ?>
+										<?php echo e(trans('main.email')); ?>
 
 									</button>
 								</form>
@@ -138,7 +138,7 @@
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title">
-						<?php echo e(trans('main4.send_email_to')); ?>:
+						<?php echo e(trans('main.send_email_to')); ?>:
 						<span id="patient-compose-mail-to"></span>
 					</h4>
 				</div>
@@ -150,12 +150,12 @@
 							<p class="text-error"></p>
 						</div>
 						<div class="form-group">
-							<input type="text" name="subject" placeholder="<?php echo e(trans('main4.subject')); ?>"
+							<input type="text" name="subject" placeholder="<?php echo e(trans('main.subject')); ?>"
 								   class="form-control" />
 						</div>
 						<div class="form-group">
 							<textarea name="message" class="form-control"
-									  placeholder="<?php echo e(trans('main4.email_patient')); ?>"
+									  placeholder="<?php echo e(trans('main.email_patient')); ?>"
 									  style="height: 250px;"></textarea>
 							<input type="hidden" name="reservation_id" id="mail-to-reservation-id" />
 							<?php echo e(csrf_field()); ?>
@@ -164,12 +164,12 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">
-							<?php echo e(trans('main4.close')); ?>
+							<?php echo e(trans('main.close')); ?>
 
 						</button>
 						<button type="submit" class="btn btn-primary">
 							<span class="glyphicon glyphicon-send"></span>
-							<?php echo e(trans('main4.send')); ?>
+							<?php echo e(trans('main.send')); ?>
 
 						</button>
 					</div>

@@ -779,3 +779,17 @@ div.main-search-container form div.main-searchbox-wrapper input:focus {
 .pointer-cursor { cursor: pointer; }
 .one-row-td { white-space: nowrap; text-overflow: ellipsis; }
 .expandable-tr { display: none; }
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus { background-color: #2775C8; }
+.nav.navbar-nav li a:hover,
+.nav.navbar-nav li a:focus {
+    color: #fff;
+}
+div.medical-question-response {
+    background: #fafafa;
+    border: 1px dashed #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+}

@@ -1,7 +1,7 @@
 <div class="main-search-container">
 		<div class="row">
 			<div class="col-xs-12">
-				<form method="get" action="{{ route('search.find') }}">
+				<form method="get" action="{{ route('search.find') }}" id="adv-search-from">
 					<div class="form-control main-searchbox-wrapper advanced-search">
 						<button type="submit" class="btn-success">
 							<span class="glyphicon glyphicon-search"></span>
@@ -91,7 +91,7 @@
 						<hr />
 
 
-						<div class="form-group">
+						<div class="form-group search-radius">
 							<label>{{ trans('main.search_radius') }}</label>
 							<div class="select2slider-wrapper">
 								<select name="s_distance" id="s_distance"
@@ -110,6 +110,7 @@
 									<option value="500000">500 {{ trans('main.km') }}</option>
 								</select>
 							</div>
+							<p class="text-error hidden">{{ trans('main.select_radius') }}</p>
 						</div>
 
 						<label class="help-block">
@@ -122,6 +123,12 @@
 						<input type="hidden" name="locationLat" />
 						<input type="hidden" name="locationLon" />
 					</div>
+
+					<br />
+
+					<button type="submit" class="btn btn-success btn-block">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
 				</form>
 			</div>
 		</div>

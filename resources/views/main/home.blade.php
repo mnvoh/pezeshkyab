@@ -44,17 +44,21 @@
 		<div class="col-lg-12">
 			<h3>{{ trans('main.latest_medical_questions') }}</h3>
 			@foreach($medical_questions as $m)
-				<blockquote>
-					{{ $m->question }}
+				<div class="medical-question-response">
+					<p class="text-info">
+						{{ $m->question }}
+					</p>
 					<blockquote>
-						{{ trans('main.doctors_response', ['name' => $m->doctor->name . ' ' . $m->doctor->lname]) }}
-						<br /> <hr />
+						<hr />
+						<p class="text-success">
+							{{ trans('main.doctors_response', ['name' => $m->doctor->name . ' ' . $m->doctor->lname]) }}
+						</p>
 						{{ $m->response }}
 					</blockquote>
-				</blockquote>
+				</div>
 			@endforeach
 
-			<a href="{{ route('main.med_questions') }}">
+			<a href="{{ route('main.med_questions') }}" class="btn btn-block btn-info">
 				{{ trans('main.view_all') }}
 			</a>
 		</div>

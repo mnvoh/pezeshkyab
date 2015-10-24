@@ -120,7 +120,7 @@
 						</li>
 					@else
 						<li>
-							<a href="{{ route('appointment.book_for_doctor', ['doctor_id' => $doctor_id, 'step' => 1]) }}">
+							<a href="{{ route('appointment.book', ['step' => 1, 'doctor_id' => $doctor_id]) }}">
 								{{ trans('main.book_appointment') }}
 							</a>
 						</li>

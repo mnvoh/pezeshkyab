@@ -353,4 +353,9 @@ return [
 	'link_saved' => 'Link saved!',
 	'add_link' => 'Add Link',
 	'url' => 'URL',
+	'select_insurance' => 'If you have insurance, please select it.',
+	'no_insurance' => 'I don\'t have insurance',
+	'final_amount' => 'Final Amount',
+	'selected_insurance' => 'Selected Insurance',
+	'select_radius' => 'Since you have selected a place on the map, you need to select a radius too.',
 ];

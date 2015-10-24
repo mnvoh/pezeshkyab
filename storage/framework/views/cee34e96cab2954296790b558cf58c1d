@@ -2,79 +2,89 @@
 
     <?php echo $__env->make('appointment.step-viewer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
+	<form action="<?php echo e($next_step_link); ?>" method="post">
+		<div class="row">
+			<div class="col-sm12 col-md-10 col-lg-8">
+				<?php if(isset($error)): ?>
+					<p class="text-error"><?php echo e($error); ?></p>
+				<?php endif; ?>
 
-    <div class="row">
-        <div class="col-sm12 col-md-10 col-lg-8">
-            <?php if(isset($error)): ?>
-                <p class="text-error"><?php echo e($error); ?></p>
-            <?php endif; ?>
+				<table class="table table-bordered">
+					<tr>
+						<th><?php echo e(trans('main.firstname')); ?></th>
+						<td><?php echo e($filled_info['b_firstname']); ?></td>
+					</tr>
+					<tr>
+						<th><?php echo e(trans('main.lastname')); ?></th>
+						<td><?php echo e($filled_info['b_lastname']); ?></td>
+					</tr>
+					<tr>
+						<th><?php echo e(trans('main.nationality')); ?></th>
+						<td>
+							<?php if($filled_info['b_nationality'] == "ir"): ?>
+								<?php echo e(trans('main.iranian')); ?>
 
-            <table class="table table-bordered">
-                <tr>
-                    <th><?php echo e(trans('main.firstname')); ?></th>
-                    <td><?php echo e($filled_info['b_firstname']); ?></td>
-                </tr>
-                <tr>
-                    <th><?php echo e(trans('main.lastname')); ?></th>
-                    <td><?php echo e($filled_info['b_lastname']); ?></td>
-                </tr>
-                <tr>
-                    <th><?php echo e(trans('main.nationality')); ?></th>
-                    <td>
-                        <?php if($filled_info['b_nationality'] == "ir"): ?>
-                            <?php echo e(trans('main.iranian')); ?>
+							<?php else: ?>
+								<?php echo e(trans('main.non_iranian')); ?>
 
-                        <?php else: ?>
-                            <?php echo e(trans('main.non_iranian')); ?>
+							<?php endif; ?>
+						</td>
+					</tr>
+					<?php if($filled_info['b_nationality'] == 'ir'): ?>
+						<tr>
+							<th><?php echo e(trans('main.national_code')); ?></th>
+							<td><?php echo e($filled_info['b_ncode']); ?></td>
+						</tr>
+					<?php else: ?>
+						<tr>
+							<th><?php echo e(trans('main.passport_number')); ?></th>
+							<td><?php echo e($filled_info['b_ncode']); ?></td>
+						</tr>
+					<?php endif; ?>
+					<tr>
+						<th><?php echo e(trans('main.doctor')); ?></th>
+						<td> <?php echo e($filled_info['b_doctor_label']); ?> </td>
+					</tr>
+					<tr>
+						<th><?php echo e(trans('main.reservation_time')); ?></th>
+						<td><?php echo e($filled_info['b_rtime']); ?></td>
+					</tr>
+					<tr>
+						<th class="text-error">
+							<?php echo e(trans('main.select_insurance')); ?>
 
-                        <?php endif; ?>
-                    </td>
-                </tr>
-                <?php if($filled_info['b_nationality'] == 'ir'): ?>
-                    <tr>
-                        <th><?php echo e(trans('main.national_code')); ?></th>
-                        <td><?php echo e($filled_info['b_ncode']); ?></td>
-                    </tr>
-                <?php else: ?>
-                    <tr>
-                        <th><?php echo e(trans('main.passport_number')); ?></th>
-                        <td><?php echo e($filled_info['b_ncode']); ?></td>
-                    </tr>
-                <?php endif; ?>
-                <tr>
-                    <th><?php echo e(trans('main.doctor')); ?></th>
-                    <td> <?php echo e($filled_info['b_doctor_label']); ?> </td>
-                </tr>
-                <tr>
-                    <th><?php echo e(trans('main.reservation_time')); ?></th>
-                    <td><?php echo e($filled_info['b_rtime']); ?></td>
-                </tr>
-            </table>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-7">
-            <form action="<?php echo e($next_step_link); ?>" method="post">
-                <?php echo e(csrf_field()); ?>
+						</th>
+						<td>
+							<select class="form-control" name="insurance">
+								<option value="-1"><?php echo e(trans('main.no_insurance')); ?></option>
+								<?php foreach(\App\Models\Insurance::all() as $i): ?>
+									<option value="<?php echo e($i->id); ?>"><?php echo e($i->title); ?></option>
+								<?php endforeach; ?>
+							</select>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-9 col-sm-9 col-md-9 col-lg-7">
+				<?php if(!isset($error) || !$error): ?>
+					<?php echo e(csrf_field()); ?>
 
-                <button type="submit" class="btn btn-block btn-success" name="form-submitted" value="true">
-                    <?php if(isset($error)): ?>
-                        <?php echo e(trans('main.go_back')); ?>
+					<button type="submit" class="btn btn-block btn-success" name="form-submitted" value="true">
+						<?php echo e(trans('main.confirm')); ?>
 
-                    <?php else: ?>
-                        <?php echo e(trans('main.confirm')); ?>
+					</button>
+				<?php endif; ?>
+			</div>
+			<div class="col-xs-1">
+				<a href="<?php echo e($go_back_url); ?>" class="btn btn-warning">
+					<?php echo e(trans('main.go_back')); ?>
 
-                    <?php endif; ?>
-                </button>
-            </form>
-        </div>
-        <div class="col-xs-1">
-            <a href="<?php echo e($go_back_url); ?>" class="btn btn-warning">
-                <?php echo e(trans('main.go_back')); ?>
-
-            </a>
-        </div>
-    </div>
+				</a>
+			</div>
+		</div>
+	</form>
 <?php $__env->stopSection(); ?>
 
 

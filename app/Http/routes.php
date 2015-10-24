@@ -123,14 +123,9 @@ Route::any('docfinder/find', [
 
 /*          AppointmentController
   ======================================*/
-Route::any('docfinder/book-appointment/{step}', [
+Route::any('docfinder/book-appointment/{step}/{doctor_id?}', [
     'as' => 'appointment.book',
     'uses' => 'AppointmentController@book'
-]);
-
-Route::any('docfinder/book-appointment/{doctor_id}/{step}', [
-	'as' => 'appointment.book_for_doctor',
-	'uses' => 'AppointmentController@bookForDoctor'
 ]);
 
 /*          DoctorsController

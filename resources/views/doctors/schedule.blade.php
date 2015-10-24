@@ -84,7 +84,7 @@
 						<td> {{ $r->id }} </td>
 						<td> {{ \App\Helpers\Utils::shamsiDateFromGreg(strtotime($r->rtime)) }} </td>
 						<td> {{ $r->fee->title }} {{ $r->fee->amount }} {{ trans('currencies.irr') }} </td>
-						<td> {{ ($r->pname != null) ? $r->pname . ' ' . $r->plname : '-' }} </td>
+						<td> {{ ($r->pname != null) ? @$r->pname . ' ' . @$r->plname : '-' }} </td>
 						<td>
 							@if($r->nationality == 'ir')
 								{{ trans('main.iranian') }}

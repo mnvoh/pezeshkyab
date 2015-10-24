@@ -20,6 +20,19 @@
                     <th><?php echo e(trans('main.amount')); ?></th>
                     <td><?php echo e($filled_info['b_fee_amount']); ?> <?php echo e(trans('currencies.irr')); ?></td>
                 </tr>
+				<tr>
+					<th><?php echo e(trans('main.selected_insurance')); ?></th>
+					<td><?php echo e($filled_info['b_insurance_title'] ? $filled_info['b_insurance_title'] : '-'); ?></td>
+				</tr>
+				<tr>
+					<th><?php echo e(trans('main.final_amount')); ?></th>
+					<td>
+						<?php echo e($filled_info['b_fee_amount'] * $filled_info['b_insurance_rate']); ?>
+
+						<?php echo e(trans('currencies.irr')); ?>
+
+					</td>
+				</tr>
             </table>
             <?php if(is_numeric($filled_info['b_fee_amount']) && $filled_info['b_fee_amount'] > 0): ?>
                 <form action="<?php echo e($next_step_link); ?>" method="post">

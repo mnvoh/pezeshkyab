@@ -47,6 +47,25 @@
 
 
         /**
+         *
+         * in the advanced search section, if there's a placed marker on the map
+         * check to see there's also a selected distance
+         *
+         */
+        $('#adv-search-from').submit(function() {
+            if($('input[name=locationLat]').val().length && $('#s_distance').val() <= 0) {
+                $('html, body').animate({
+                    scrollTop: $(".search-radius").offset().top - 50
+                }, 300);
+
+                $(".search-radius").fadeOut(1200).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
+                $(".search-radius p.text-error").removeClass('hidden');
+                return false;
+            }
+        });
+
+
+        /**
          * Do quick search using elastic in the doctor selection sections.
          * @type {ElasticSearch}
          */
