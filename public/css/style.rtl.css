@@ -26,3 +26,6 @@ div.main-search-container form>div.main-searchbox-wrapper>button {
 .btn-menuitem {
     text-align: right;
 }
+.floating-chat-header>h5>a>span.unread-count {
+    float: left;
+}

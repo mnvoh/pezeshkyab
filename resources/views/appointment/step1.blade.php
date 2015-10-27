@@ -16,24 +16,27 @@
             <p class="text-justify">
                 {!! \App\Helpers\Utils::markdownToHtml(file_get_contents(base_path('tos.' . $lang . '.md'))) !!}
             </p>
-        </div>
+
+
+			<div class="row">
+				<div class="col-xs-9">
+					<form action="{{ $next_step_link }}" method="post">
+						{{ csrf_field() }}
+						<button class="btn btn-success btn-block" name="form-submitted" value="true">
+							{{ trans('main.accept') }}
+						</button>
+					</form>
+				</div>
+				<div class="col-xs-3">
+					<a href="{{ route('main.docfinder_home') }}" class="btn btn-warning btn-block">
+						{{ trans('main.decline') }}
+					</a>
+				</div>
+			</div>
+
+		</div>
     </div>
 
-    <div class="row">
-        <div class="col-sm-11 col-md-9 col-lg-7">
-            <form action="{{ $next_step_link }}" method="post">
-                {{ csrf_field() }}
-                <button class="btn btn-success btn-block" name="form-submitted" value="true">
-                    {{ trans('main.accept') }}
-                </button>
-            </form>
-        </div>
-        <div class="col-sm-1">
-            <a href="{{ route('main.docfinder_home') }}" class="btn btn-link">
-                {{ trans('main.decline') }}
-            </a>
-        </div>
-    </div>
 
 @endsection
 

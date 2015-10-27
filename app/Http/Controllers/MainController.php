@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Fee;
 use App\Models\MedicalQuestion;
 use Illuminate\Http\Request;
 use App\Helpers\Utils;
@@ -75,7 +76,7 @@ class MainController extends Controller
 
 	public function fees() {
 		return view('main.fees', [
-			'fees' => \DbOps::getFees(),
+			'fees' => Fee::all(),
 		]);
 	}
 

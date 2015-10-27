@@ -181,6 +181,8 @@ a {
     color: #999;
     font-weight: bold;
     text-align: center;
+    white-space: nowrap;
+    line-break: strict;
 }
 .step-viewer .sv-li.active .sv-label {
     color: #2775c8;
@@ -792,4 +794,94 @@ div.medical-question-response {
     border-radius: 4px;
     padding: 15px;
     margin: 15px 0;
+}
+
+/******** FLOATING CHAT ***************/
+
+
+.floating-chat {
+    background: #234487;
+    border: 1px solid #223e7c;
+    border-radius: 4px 4px 0 0;
+    box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.15), 0 -2px 10px 2px rgba(0, 0, 0, 0.75);
+
+    position: fixed !important;
+    bottom: 0 !important;
+    /*right: 0 !important;*/
+    transition: bottom 200ms ease-in-out;
+    z-index: 10000;
+}
+.floating-chat.hidden-floating-chat {
+    bottom: -360px !important;
+}
+.floating-chat-header {
+    padding: 3px 0;
+    cursor: pointer;
+}
+.floating-chat-header>h5>a {
+    color: #fff;
+    padding: 5px;
+}
+.floating-chat-header>h5>a:hover,
+.floating-chat-header>h5>a:focus {
+    text-decoration: none;
+}
+.floating-chat-header>h5>a>span.unread-count {
+    background: #900;
+    border: 1px solid #900;
+    border-radius: 50px;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 8px;
+    float: right;
+}
+.floating-chat-header>h5>a>span.unread-count.zero {
+    background: #aaa;
+    border-color: #999;
+}
+
+.floating-chat-messages {
+    background: #fff;
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.75);
+    height: 300px;
+    margin: 10px 0;
+    overflow-y: scroll;
+}
+p.message {
+    display: inline-block;
+    max-width: 70%;
+    margin: 15px;
+    padding: 10px;
+}
+p.message.message-from {
+    background: #2072ff;
+    border: solid 1px #205ebb;
+    border-radius: 4px;
+    float: left;
+    color: #eee;
+}
+p.message.message-to {
+    background: #eee;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    color: #222;
+    float: right;
+}
+p.message>span.sender {
+    display: block;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+p.message.message-to>span.sender {
+    border-bottom: 1px solid #222;
+}
+
+.floating-chat-compose {
+    margin-bottom: 10px;
+}
+.floating-chat-compose input[name=message] {
+    width: 90%;
+    display: inline-block;
 }

@@ -81,6 +81,10 @@
 			<script src="https://maps.googleapis.com/maps/api/js"></script>
 			<script src="{{ url('js/maps.js') }}"></script>
 		@endif
+
+		@if(\Illuminate\Support\Facades\Auth::check())
+			@include('doctors.floating-chat')
+		@endif
     </body>
 </html>
 <!-- end of master -->

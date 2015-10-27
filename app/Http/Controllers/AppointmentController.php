@@ -15,7 +15,7 @@ class AppointmentController extends Controller
     public function book(Request $request, $step, $doctor_id = null)
     {
 		view()->share('go_back_url', route('appointment.book', [
-			'step' => 2,
+			'step' => $step - 1,
 		]));
 
         if($request->has('form-submitted') && $step < 6) {
@@ -162,6 +162,7 @@ class AppointmentController extends Controller
 
 		$insurance = Insurance::where('id', $request->session()->get('booking_insurance_id', -1))
 			->first();
+		$insurance_id = ($insurance) ? $insurance->id : null;
 		$insurance_title = ($insurance) ? $insurance->title : null;
 		$insurance_rate = ($insurance) ? 1 - $insurance->rate : 1;
 
@@ -176,6 +177,7 @@ class AppointmentController extends Controller
             'b_rtime' => $rtime,
             'b_fee_title' => $fee_title,
             'b_fee_amount' => $fee_amount,
+			'b_insurance_id' => $insurance_id,
 			'b_insurance_rate' => $insurance_rate,
 			'b_insurance_title' => $insurance_title,
         ];

@@ -358,4 +358,8 @@ return [
 	'final_amount' => 'Final Amount',
 	'selected_insurance' => 'Selected Insurance',
 	'select_radius' => 'Since you have selected a place on the map, you need to select a radius too.',
+	'not_found' => 'The page you\'re looking for cannot be found!',
+	'confirm_pay' => 'Confirm and Pay',
+	'no_open_schedules' => 'This doctor has no free schedules for reservations',
+	'public_chat' => 'Public Chat',
 ];

@@ -1,7 +1,9 @@
 <?php $__env->startSection('content'); ?>
     <div class="row">
         <div class="col-sm-12 col-md-10 col-lg-8">
-			<h1><?php echo e(trans('main.fees')); ?></h1>
+			<?php echo nl2br(\App\Helpers\Utils::markdownToHtml(file_get_contents(base_path("fees.{$lang}.md")))); ?>
+
+
 			<p class="help-block"><?php echo e(trans('main.fees_title')); ?></p>
 			<div class="table-responsive">
 				<table class="table table-striped">
@@ -17,11 +19,11 @@
 					<?php foreach($fees as $fee): ?>
 						<tr>
 							<td><?php echo e($counter); ?></td>
-							<td><?php echo e($fee['title']); ?></td>
+							<td><?php echo e($fee->title); ?></td>
 							<td>
-								<?php echo e($fee['fee']); ?>
+								<?php echo e($fee->amount); ?>
 
-								<?php echo e(trans('currencies.' . $fee['currency'])); ?>
+								<?php echo e(trans('currencies.irr')); ?>
 
 							</td>
 						</tr>

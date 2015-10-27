@@ -452,6 +452,45 @@
 
             return false;
         });
+
+
+        /**
+         *
+         * Chat functionality
+         *
+         */
+        $('.floating-chat-header').click(function() {
+            $('.floating-chat').toggleClass('hidden-floating-chat');
+        });
+
+        $('#send-chat-msg-form').submit(function() {
+            var url = $(this).prop('action');
+            var form = $(this);
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $(this).serialize(),
+                success: function(results) {
+                    if(!results.error) {
+                        form.find('input[name=message]').val('');
+                        var new_msg = "<p id='msg" + results.message_id + "' class='message message-to'>";
+                        new_msg += "<span class='sender'>" + results.from + "</span>";
+                        new_msg += results.message;
+                        new_msg += "</p>";
+                        $('.floating-chat-messages').append(new_msg);
+                        $('.floating-chat-messages').animate({
+                            scrollTop: $('.floating-chat-messages')[0].scrollHeight
+                        });
+                    }
+                },
+                error: function(data) {
+                    alert('error');
+                }
+            });
+
+            return false;
+        });
+
     });
 })(jQuery);
 

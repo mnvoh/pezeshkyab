@@ -255,3 +255,10 @@ Route::any('docfinder/admin/links', [
 	'as' => 'admins.links',
 	'uses' => 'AdminsController@links'
 ]);
+
+/*          ChatController
+  ======================================*/
+Route::post('docfinder/chat/send', [
+	'as' => 'chat.send',
+	'uses' => 'ChatController@send'
+]);

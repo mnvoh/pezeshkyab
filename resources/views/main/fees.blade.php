@@ -3,7 +3,8 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12 col-md-10 col-lg-8">
-			<h1>{{ trans('main.fees') }}</h1>
+			{!! nl2br(\App\Helpers\Utils::markdownToHtml(file_get_contents(base_path("fees.{$lang}.md")))) !!}
+
 			<p class="help-block">{{ trans('main.fees_title') }}</p>
 			<div class="table-responsive">
 				<table class="table table-striped">
@@ -19,10 +20,10 @@
 					@foreach($fees as $fee)
 						<tr>
 							<td>{{ $counter }}</td>
-							<td>{{ $fee['title'] }}</td>
+							<td>{{ $fee->title }}</td>
 							<td>
-								{{ $fee['fee'] }}
-								{{ trans('currencies.' . $fee['currency']) }}
+								{{ $fee->amount }}
+								{{ trans('currencies.irr') }}
 							</td>
 						</tr>
 						<?php $counter++; ?>

@@ -2,28 +2,42 @@
 
     <?php echo $__env->make('appointment.step-viewer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
+	<form action="<?php echo e($next_step_link); ?>" method="post">
+		<div class="row">
+			<div class="col-sm12 col-md-10 col-lg-8">
+				<h2><?php echo e(trans('main.doctor_desc')); ?></h2>
+				<?php if(isset($error)): ?>
+					<p class="text-error"><?php echo e($error); ?></p>
+				<?php endif; ?>
 
-    <div class="row">
-        <div class="col-sm12 col-md-10 col-lg-8">
-            <h2><?php echo e(trans('main.doctor_desc')); ?></h2>
-            <?php if(isset($error)): ?>
-                <p class="text-error"><?php echo e($error); ?></p>
-            <?php endif; ?>
-            <form action="<?php echo e($next_step_link); ?>" method="post">
-                <?php echo $__env->make('doctor-picker', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+				<?php
+					if($filled_info['b_doctor_label'] != '-') {
+						$old_doctor_id = $filled_info['b_doctor_id'];
+						$old_doctor_description = $filled_info['b_doctor_label'];
+					}
+				?>
+				<?php echo $__env->make('doctor-picker', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-                <?php echo e(csrf_field()); ?>
+				<?php echo e(csrf_field()); ?>
 
 
-                <button type="submit" class="btn btn-block btn-success" name="form-submitted" value="true">
-                    <?php echo e(trans('main.next')); ?>
+				<div class="row">
+					<div class="col-xs-9">
+						<button type="submit" class="btn btn-block btn-success" name="form-submitted" value="true">
+							<?php echo e(trans('main.next')); ?>
 
-                </button>
+						</button>
+					</div>
+					<div class="col-xs-3">
+						<a href="<?php echo e($go_back_url); ?>" class="btn btn-warning btn-block">
+							<?php echo e(trans('main.go_back')); ?>
 
-                <div class="row vertical-spacing"></div>
-            </form>
-        </div>
-    </div> <!-- <div class="row"> -->
+						</a>
+					</div>
+				</div>
+			</div>
+		</div> <!-- <div class="row"> -->
+	</form>
 <?php $__env->stopSection(); ?>
 
 

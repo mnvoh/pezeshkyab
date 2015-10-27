@@ -25,12 +25,12 @@
                 <li class="sv-li <?php echo $step == 5 ?  'active' : ''; ?>
                                 <?php echo $step > 5 ?  'success' : ''; ?>">
                     <p class="sv-num">{{ trans('main.5') }}</p>
-                    <p class="sv-label hidden-xs">{{ trans('main.confirm') }}</p>
+                    <p class="sv-label hidden-xs">{{ trans('main.insurance') }}</p>
                 </li>
                 <li class="sv-li <?php echo $step == 6 ?  'active' : ''; ?>
                                 <?php echo $step > 6 ?  'success' : ''; ?>">
                     <p class="sv-num">{{ trans('main.6') }}</p>
-                    <p class="sv-label hidden-xs">{{ trans('main.pay') }}</p>
+                    <p class="sv-label hidden-xs">{{ trans('main.confirm_pay') }}</p>
                 </li>
                 <li class="sv-li <?php echo $step == 7 ?  'active' : ''; ?>
                                 <?php echo $step > 7 ?  'success' : ''; ?>">
