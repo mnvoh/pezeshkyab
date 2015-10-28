@@ -466,6 +466,8 @@
         $('#send-chat-msg-form').submit(function() {
             var url = $(this).prop('action');
             var form = $(this);
+            var hasSender = $(this).find('input[name=sender]').length > 0;
+            var messageClass = hasSender ? "message message-from" : "message message-to";
             $.ajax({
                 type: "POST",
                 url: url,
@@ -473,13 +475,13 @@
                 success: function(results) {
                     if(!results.error) {
                         form.find('input[name=message]').val('');
-                        var new_msg = "<p id='msg" + results.message_id + "' class='message message-to'>";
+                        var new_msg = "<div class='clearfix'><p id='msg" + results.message_id + "' class='"+messageClass+"'>";
                         new_msg += "<span class='sender'>" + results.from + "</span>";
                         new_msg += results.message;
-                        new_msg += "</p>";
-                        $('.floating-chat-messages').append(new_msg);
-                        $('.floating-chat-messages').animate({
-                            scrollTop: $('.floating-chat-messages')[0].scrollHeight
+                        new_msg += "</p></div>";
+                        $('.chat-messages').append(new_msg);
+                        $('.chat-messages').animate({
+                            scrollTop: $('.chat-messages')[0].scrollHeight
                         });
                     }
                 },
@@ -491,6 +493,17 @@
             return false;
         });
 
+        if($('.chat-box').length) {
+            refreshMessages();
+        }
+
+        /**
+         * Handle the print button
+         */
+
+        $('.print-button').click(function() {
+            window.print();
+        });
     });
 })(jQuery);
 
@@ -631,4 +644,57 @@ function setFiveStarToMousePositionTemp(event) {
     for(var k = ratingInt + 2; k <= 5; k++) {
         $(this).find('span:nth-child(' + k + ')').addClass('fa fa-star-o');
     }
+}
+
+function refreshMessages()
+{
+    var getMessagesForm = $('#get-messages-form');
+    var getMessagesUrl = $(getMessagesForm).prop('action');
+    var doctorIdInput = $('#get-messages-form input[name=doctor_id]');
+    var data;
+    if(doctorIdInput.length) {
+        data = {
+            _token: $('input[name=_token]').val(),
+            doctor_id: $(doctorIdInput).val()
+        };
+    }
+    else {
+        data = { _token: $('input[name=_token]').val() };
+    }
+    $.ajax({
+        type: "POST",
+        url: getMessagesUrl,
+        data: data,
+        success: function(results) {
+            if(!results.error) {
+                var messages = results.messages;
+                var anyMessagesAdded = false;
+                var currentMessagesCount = $('.chat-messages p.message').length;
+                for(var i = 0; i < messages.length; i++) {
+                    if(!$("#msg" + messages[i].message_id).length) {
+                        var msg_class = (messages[i].from_doctor) ? "message message-to" :
+                            "message message-from";
+                        var new_msg = "<div class='clearfix'><p id='msg" + messages[i].message_id + "' class='" + msg_class + "'>";
+                        new_msg += "<span class='sender'>" + messages[i].from + "</span>";
+                        new_msg += messages[i].message;
+                        new_msg += "</p></div>";
+                        $('.chat-messages').append(new_msg);
+                        anyMessagesAdded = true;
+                    }
+                }
+                if(anyMessagesAdded && currentMessagesCount > 0) {
+                    $('.floating-chat').removeClass('hidden-floating-chat');
+                }
+                if(anyMessagesAdded) {
+                    $('.chat-messages').animate({
+                        scrollTop: $('.chat-messages')[0].scrollHeight
+                    });
+                }
+            }
+            setTimeout(refreshMessages, 1000);
+        },
+        error: function(data) {
+            alert('error');
+        }
+    });
 }

@@ -3,6 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12">
+			<h3 class="text-center">{{ trans('main.doctors') }}</h3>
 
 			@if(isset($action_message) && $action_message != null)
 				@if($action_error)
@@ -32,8 +33,9 @@
 				</div>
 			@endif
 
-			<h4>{{ trans('main.filter_results') }}</h4>
-			<form action="" method="get" class="form-horizontal">
+
+			<form action="" method="get" class="form-horizontal hidden-print">
+				<h4>{{ trans('main.filter_results') }}</h4>
 				<input type="text" class="form-control inline-form-control" name="ncode"
 					   placeholder="{{ trans('main.national_code') }}"
 						value="{{ $filter_ncode }}"/>
@@ -67,6 +69,10 @@
 			<hr />
 
 
+			<button class="print-button btn btn-info btn-block">
+				<span class="fa fa-print"></span>
+				{{ trans('main.print') }}
+			</button>
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -82,7 +88,7 @@
 						<th>{{ trans('main.birth_date') }}</th>
 						<th>{{ trans('main.registration_date') }}</th>
 						@if($master_admin)
-							<th>{{ trans('main.action') }}</th>
+							<th class="hidden-print">{{ trans('main.action') }}</th>
 						@endif
 					</tr>
 				</thead>
@@ -111,7 +117,7 @@
 							<td>{{ $d->bd_year . '/' . $d->bd_month . '/' . $d->bd_date }}</td>
 							<td>{{ jdate('Y/m/d H:i:s', strtotime($d->created_at)) }}</td>
 							@if($master_admin)
-							<td>
+							<td class="hidden-print">
 								<div class="dropdown">
 									<button id="docaction{{ $d->id }}" type="button"
 											data-toggle="dropdown" aria-haspopup="true"

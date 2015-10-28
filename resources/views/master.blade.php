@@ -35,6 +35,7 @@
 		<link rel="stylesheet" href="{{ url('css/font-awesome.css') }}" />
 		<link rel="stylesheet" href="{{ url('css/jquery.flipcounter.css') }}" />
 		<link rel="stylesheet" href="{{ url('css/jquery-fullsizable.css') }}" />
+		<link rel="stylesheet" media="print" href="{{ url('css/print.css') }}" />
 
         @if($dir == 'rtl')
             <link rel="stylesheet" href="{{ url('css/bootstrap-rtl.css') }}" />

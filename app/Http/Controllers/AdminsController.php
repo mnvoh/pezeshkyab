@@ -20,7 +20,6 @@ use App\Models\Specialty;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Config;
 
 class AdminsController extends Controller
@@ -29,7 +28,6 @@ class AdminsController extends Controller
 	{
 		view()->share('user_admin_navbar', true);
 	}
-
 
 	public function loginGet(Request $request)
 	{
@@ -138,7 +136,7 @@ class AdminsController extends Controller
 		$action_message = null;
 		$delete_doctor = null;
 
-		if($request->has('activate')) {
+		if($request->has('activate') && $this->isMasterAdmin()) {
 			$doctor = Doctor::where('id', $request->get('doctor_id', null))->first();
 			if(!$doctor) {
 				$action_error = true;
@@ -161,7 +159,7 @@ class AdminsController extends Controller
 				$action_message = trans('main.doctor_activated');
 			}
 		}
-		else if($request->has('ban')) {
+		else if($request->has('ban') && $this->isMasterAdmin()) {
 			$doctor = Doctor::where('id', $request->get('doctor_id', null))->first();
 			if(!$doctor) {
 				$action_error = true;
@@ -173,14 +171,14 @@ class AdminsController extends Controller
 				$action_message = trans('main.doctor_banned');
 			}
 		}
-		else if($request->has('delete')) {
+		else if($request->has('delete') && $this->isMasterAdmin()) {
 			$delete_doctor = Doctor::where('id', $request->get('doctor_id', null))->first();
 		}
-		else if($request->has('confirm-deletion')) {
+		else if($request->has('confirm-deletion') && $this->isMasterAdmin()) {
 			Doctor::where('id', $request->get('doctor_id', null))->delete();
 			$action_message = trans('main.doctor_deleted');
 		}
-		else if($request->has('register-payment')) {
+		else if($request->has('register-payment') && $this->isMasterAdmin()) {
 			if(strlen($request->get('tracking_number')) < 2
 				|| strlen($request->get('transaction_time')) < 2) {
 				$action_error = true;
@@ -206,7 +204,7 @@ class AdminsController extends Controller
 		$status = $request->get('status', '');
 
 		if(strlen($ncode) + strlen($license) + strlen($email) + strlen($status) <= 0) {
-			$doctors = Doctor::paginate(10);
+			$doctors = Doctor::paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 		else {
 			$doctors = Doctor::where(function($query) use ($ncode, $license, $email, $status) {
@@ -223,7 +221,7 @@ class AdminsController extends Controller
 					$query->where('status', $status);
 				}
 				return $query;
-			})->paginate(10);
+			})->paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 
 		return view('admin.doctors',[
@@ -241,7 +239,7 @@ class AdminsController extends Controller
 
 	public function admins(Request $request)
 	{
-		if(!AdminAuth::check()) {
+		if(!AdminAuth::check() || !$this->isMasterAdmin()) {
 			abort(403, 'access denied');
 			return;
 		}
@@ -301,7 +299,7 @@ class AdminsController extends Controller
 		$email = $request->get('email', '');
 
 		if(strlen($id) + strlen($type) + strlen($email) <= 0) {
-			$admins = Admin::paginate(10);
+			$admins = Admin::paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 		else {
 			$admins = Admin::where(function($query) use ($id, $type, $email) {
@@ -315,7 +313,7 @@ class AdminsController extends Controller
 					$query->where('email', 'LIKE', "%{$email}%");
 				}
 				return $query;
-			})->paginate(10);
+			})->paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 
 		return view('admin.admins', [
@@ -347,7 +345,7 @@ class AdminsController extends Controller
 		if($settled == '0' || $settled == '1') $status = 'paid';
 
 		if(strlen($doctor_id) + strlen($receipt) + strlen($status) + strlen($settled) <= 0) {
-			$transactions = Transaction::paginate(10);
+			$transactions = Transaction::paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 		else {
 			$transactions = Transaction::where(function($query) use ($doctor_id, $receipt, $settled, $status) {
@@ -364,7 +362,7 @@ class AdminsController extends Controller
 					$query->where('status', $status);
 				}
 				return $query;
-			})->paginate(10);
+			})->paginate(Config::get('constants.ITEMS_PER_PAGE'));
 
 			$gross = Transaction::where(function($query) use ($doctor_id, $receipt, $settled, $status) {
 				if(strlen($doctor_id)) {
@@ -396,7 +394,7 @@ class AdminsController extends Controller
 
 	public function reservations(Request $request)
 	{
-		if(!AdminAuth::check()) {
+		if(!AdminAuth::check() || !$this->isMasterAdmin()) {
 			abort(403, 'access denied');
 			return;
 		}
@@ -407,7 +405,7 @@ class AdminsController extends Controller
 		$status = $request->get('status', '');
 
 		if(strlen($doctor_id) + strlen($ncode) + strlen($tracking_code) + strlen($status) <= 0) {
-			$reservations = Reservation::paginate(10);
+			$reservations = Reservation::paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 		else {
 			$reservations = Reservation::where(function($query) use ($doctor_id, $ncode, $tracking_code, $status) {
@@ -429,7 +427,7 @@ class AdminsController extends Controller
 						$query->whereNotNull('tracking_code')->where('rtime', '<', date('Y-m-d H:i:s'));
 				}
 				return $query;
-			})->paginate(10);
+			})->paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 
 		return view('admin.reservations', [
@@ -444,7 +442,7 @@ class AdminsController extends Controller
 
 	public function medicalQuestions(Request $request)
 	{
-		if(!AdminAuth::check()) {
+		if(!AdminAuth::check() || !$this->isMasterAdmin()) {
 			abort(403, 'access denied');
 			return;
 		}
@@ -463,7 +461,7 @@ class AdminsController extends Controller
 		$answered = $request->get('answered', 'any');
 
 		if($answered != 'answered' && $answered != 'unanswered') {
-			$questions = MedicalQuestion::paginate(10);
+			$questions = MedicalQuestion::paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 		else {
 			$questions = MedicalQuestion::where(function($query) use ($answered) {
@@ -474,7 +472,7 @@ class AdminsController extends Controller
 					$query->whereNull('response');
 				}
 				return $query;
-			})->paginate(10);
+			})->paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 
 		return view('admin.medical-questions', [
@@ -519,7 +517,7 @@ class AdminsController extends Controller
 		$title = $request->get('title', '');
 
 		if(strlen($title) <= 0) {
-			$fees = Fee::paginate(10);
+			$fees = Fee::paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 		else {
 			$fees = Fee::where(function($query) use ($title) {
@@ -527,7 +525,7 @@ class AdminsController extends Controller
 					$query->where('title', 'LIKE', "%{$title}%");
 				}
 				return $query;
-			})->paginate(10);
+			})->paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 
 		return view('admin.fees', [
@@ -573,7 +571,7 @@ class AdminsController extends Controller
 		$title = $request->get('title', '');
 
 		if(strlen($title) <= 0) {
-			$insurances = Insurance::paginate(10);
+			$insurances = Insurance::paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 		else {
 			$insurances = Insurance::where(function($query) use ($title) {
@@ -581,7 +579,7 @@ class AdminsController extends Controller
 					$query->where('title', 'LIKE', "%{$title}%");
 				}
 				return $query;
-			})->paginate(10);
+			})->paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 
 		return view('admin.insurances', [
@@ -634,7 +632,7 @@ class AdminsController extends Controller
 		$title = $request->get('title', '');
 
 		if(strlen($title) <= 0) {
-			$specialties = Specialty::paginate(10);
+			$specialties = Specialty::paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 		else {
 			$specialties = Specialty::where(function($query) use ($title) {
@@ -642,7 +640,7 @@ class AdminsController extends Controller
 					$query->where('title', 'LIKE', "%{$title}%");
 				}
 				return $query;
-			})->paginate(10);
+			})->paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 
 		return view('admin.specialties', [
@@ -743,7 +741,7 @@ class AdminsController extends Controller
 		$name = $request->get('name', '');
 
 		if(strlen($name) <= 0) {
-			$hospitals = Hospital::paginate(10);
+			$hospitals = Hospital::paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 		else {
 			$hospitals = Hospital::where(function($query) use ($name) {
@@ -751,7 +749,7 @@ class AdminsController extends Controller
 					$query->where('name', 'LIKE', "%{$name}%");
 				}
 				return $query;
-			})->paginate(10);
+			})->paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		}
 
 		return view('admin.hospitals', [
@@ -777,7 +775,7 @@ class AdminsController extends Controller
 			$action_message = trans('main.medical_news_deleted');
 		}
 
-		$mednews = MedicalNews::paginate(10);
+		$mednews = MedicalNews::paginate(Config::get('constants.ITEMS_PER_PAGE'));
 
 		return view('admin.medical_news', [
 			'mednews' => $mednews,
@@ -810,5 +808,14 @@ class AdminsController extends Controller
 			'links' => $links,
 			'master_admin' => AdminAuth::admin()->type == 'master',
 		]);
+	}
+
+	private function isMasterAdmin()
+	{
+		if(!AdminAuth::check())
+			return false;
+		if(AdminAuth::admin()->type != 'master')
+			return false;
+		return true;
 	}
 }

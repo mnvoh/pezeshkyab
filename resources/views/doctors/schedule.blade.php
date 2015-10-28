@@ -11,8 +11,9 @@
 				@endif
 			@endif
 
-			<h3>{{ trans('main.add_schedule') }}</h3>
-			<form action="{{ $url }}" method="post">
+
+			<form action="{{ $url }}" method="post" class="hidden-print">
+				<h3>{{ trans('main.add_schedule') }}</h3>
 				<div class="form-control inline-form-control">
 					<label class="inline-form-control">{{ trans('main.date') }}</label>
 
@@ -60,9 +61,16 @@
 				</button>
 			</form>
 
-			<hr />
+			<hr class="hidden-print" />
 
 			<h3>{{ trans('main.current_schedules') }}</h3>
+
+			<button class="print-button btn btn-info btn-block">
+				<span class="fa fa-print"></span>
+				{{ trans('main.print') }}
+			</button>
+
+			<br />
 
 			<table class="table table-responsive table-striped">
 				<thead>

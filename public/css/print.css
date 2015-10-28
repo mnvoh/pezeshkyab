@@ -1,0 +1,12 @@
+a:after {
+    content: '' !important;
+}
+footer.main-footer {
+    display: none;
+}
+ul.pagination {
+    display: none;
+}
+.print-button {
+    display: none;
+}

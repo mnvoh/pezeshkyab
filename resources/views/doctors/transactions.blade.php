@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-sm-12">
 
-			<div class="text-center">
+			<div class="text-center hidden-print">
 				<div id="flip-counter-wrapper">
 					<h4 class="text-center">{{ trans('main.paid_gross') . '(' . trans('currencies.irr') . ')' }}</h4>
 					<div id="flip-counter" data-val="{{ (int)$paid_gross }}" dir="ltr">{{ (int)($paid_gross / 2) }}</div>
@@ -14,6 +14,14 @@
 			<br />
 
 			<h3>{{ trans('main.transactions') }}</h3>
+
+			<button class="print-button btn btn-info btn-block">
+				<span class="fa fa-print"></span>
+				{{ trans('main.print') }}
+			</button>
+
+			<br />
+
 			<div class="table-responsive">
 				<table class="table table-responsive table-striped">
 					<thead>

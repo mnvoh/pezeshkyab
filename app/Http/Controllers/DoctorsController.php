@@ -83,7 +83,7 @@ class DoctorsController extends Controller
 		$med_news = MedicalNews::where('doctor_id', $doctor_id)
 			->where('scope', '<>', 'sys')
 			->orderBy('created_at', 'desc')
-			->paginate(10);
+			->paginate(Config::get('constants.ITEMS_PER_PAGE'));
 		$med_news_rendered = array();
 		$first_news = true;
 		foreach($med_news as $mn) {
@@ -330,7 +330,7 @@ class DoctorsController extends Controller
 
 		$med_questions = MedicalQuestion::where('doctor_id', $doctor->id)
 			->orderby('created_at', 'desc')
-			->paginate(10);
+			->paginate(Config::get('constants.ITEMS_PER_PAGE'));
 
 		return view('doctors.medical-questions', [
 			'doctor_id' => $doctor->id,
@@ -431,7 +431,7 @@ class DoctorsController extends Controller
 
 		$transactions = Transaction::where('doctor_id', $doctor->id)
 			->orderBy('id', 'desc')
-			->paginate(10);
+			->paginate(Config::get('constants.ITEMS_PER_PAGE'));
 
 		$paid_gross = Transaction::where('doctor_id', $doctor->id)
 			->where('status', 'paid')
@@ -449,6 +449,33 @@ class DoctorsController extends Controller
 			'specialty_image' => @url($doctor->specialties[0]->image->path),
 			'transactions' => $transactions,
 			'paid_gross' => $paid_gross,
+		]);
+	}
+
+	public function chat(Request $request, $doctor_id)
+	{
+		if(Auth::check()) {
+			return redirect()->route('doctors.homepage');
+		}
+
+		$doctor = Doctor::where('id', $doctor_id)->firstOrFail();
+
+		if($request->has('chat_name')) {
+			$request->session()->set('chat_name', $request->get('chat_name', null));
+		}
+
+		$from = $request->session()->get('chat_name', null);
+
+		return view('doctors.chat', [
+			'doctor_id' => $doctor->id,
+			'viewerIsOwner' => false,
+			'name' => $doctor->name . ' ' . $doctor->lname,
+			'avatar' => ($doctor->image) ? Utils::makeThumbnail($doctor->image->path, 200) : null,
+			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
+			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
+			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
+			'specialty_image' => @url($doctor->specialties[0]->image->path),
+			'from' => $from,
 		]);
 	}
 

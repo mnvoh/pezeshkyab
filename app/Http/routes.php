@@ -182,6 +182,10 @@ Route::any('docfinder/doctors/rate', [
 	'as' => 'doctors.rate',
 	'uses' => 'DoctorsController@rate'
 ]);
+Route::any('docfinder/doctors/chat/{doctor_id}', [
+	'as' => 'doctors.chat',
+	'uses' => 'DoctorsController@chat'
+]);
 
 /*          AdminsController
   ======================================*/
@@ -261,4 +265,8 @@ Route::any('docfinder/admin/links', [
 Route::post('docfinder/chat/send', [
 	'as' => 'chat.send',
 	'uses' => 'ChatController@send'
+]);
+Route::post('docfinder/chat/get', [
+	'as' => 'chat.get',
+	'uses' => 'ChatController@get'
 ]);

@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-
+			<h3 class="text-center">{{ trans('main.admins') }}</h3>
 			@if(isset($action_message) && $action_message != null)
 				@if($action_error)
 					<div class="alert alert-danger">{{ $action_message }}</div>
@@ -31,8 +31,8 @@
 				</div>
 			@endif
 
-			<h4>{{ trans('main.filter_results') }}</h4>
-			<form action="" method="get" class="form-horizontal">
+			<form action="" method="get" class="form-horizontal hidden-print">
+				<h4>{{ trans('main.filter_results') }}</h4>
 				<input type="text" class="form-control inline-form-control" name="email"
 					   placeholder="{{ trans('main.email_address') }}"
 						value="{{ $filter_email }}"/>
@@ -54,11 +54,24 @@
 				</a>
 			</form>
 
-			<hr />
+			<hr class="hidden-print" />
 
-			<a href="javascript:;" class="open-modal" data-modal="add-admin-modal">
-				<span class="fa fa-user-plus lg-fa"></span>
-			</a>
+
+
+			<div class="row hidden-print">
+				<div class="col-xs-6">
+					<a href="javascript:;" class="open-modal btn btn-info btn-block" data-modal="add-admin-modal">
+						<span class="fa fa-user-plus"></span>
+					</a>
+				</div>
+				<div class="col-xs-6">
+					<button class="print-button btn btn-info btn-block">
+						<span class="fa fa-print"></span>
+						{{ trans('main.print') }}
+					</button>
+				</div>
+			</div>
+
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -67,7 +80,7 @@
 						<th>{{ trans('main.email_address') }}</th>
 						<th> {{ trans('main.type') }}</th>
 						<th>{{ trans('main.last_activity') }}</th>
-						<th>{{ trans('main.action') }}</th>
+						<th class="hidden-print">{{ trans('main.action') }}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -84,7 +97,7 @@
 								@endif
 							</td>
 							<td>{{ jdate('Y/m/d H:i:s', strtotime($a->last_activity)) }}</td>
-							<td>
+							<td class="hidden-print">
 								<div class="dropdown">
 									<button id="adminaction{{ $a->id }}" type="button"
 											data-toggle="dropdown" aria-haspopup="true"

@@ -3,6 +3,8 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12">
+			<h3 class="text-center">{{ trans('main.transactions') }}</h3>
+
 			@if($gross)
 				<div class="text-center">
 					<div id="flip-counter-wrapper">
@@ -14,8 +16,8 @@
 				</div>
 			@endif
 
-			<h4>{{ trans('main.filter_results') }}</h4>
-			<form action="" method="get" class="form-horizontal">
+			<form action="" method="get" class="form-horizontal hidden-print">
+				<h4>{{ trans('main.filter_results') }}</h4>
 				<input type="text" class="form-control inline-form-control" name="doctor_id"
 					   placeholder="{{ trans('main.doctor_id') }}"
 						value="{{ $filter_doctor_id }}"/>
@@ -49,7 +51,12 @@
 				</a>
 			</form>
 
-			<hr />
+			<hr class="hidden-print" />
+
+			<button class="print-button btn btn-info btn-block">
+				<span class="fa fa-print"></span>
+				{{ trans('main.print') }}
+			</button>
 			<div class="table-responsive">
 				<table class="table table-striped">
 					<thead>

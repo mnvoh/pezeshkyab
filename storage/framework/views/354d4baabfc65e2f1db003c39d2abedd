@@ -148,6 +148,12 @@
 
 							</a>
 						</li>
+						<li>
+							<a href="<?php echo e(route('doctors.transactions')); ?>">
+								<?php echo e(trans('main.transactions')); ?>
+
+							</a>
+						</li>
 					<?php else: ?>
 						<li>
 							<a href="<?php echo e(route('doctors.ask', ['doctor_id' => $doctor_id])); ?>">
@@ -155,15 +161,13 @@
 
 							</a>
 						</li>
-                    <?php endif; ?>
-					<?php if($viewerIsOwner): ?>
 						<li>
-							<a href="<?php echo e(route('doctors.transactions')); ?>">
-								<?php echo e(trans('main.transactions')); ?>
+							<a href="<?php echo e(route('doctors.chat', ['doctor_id' => $doctor_id])); ?>">
+								<?php echo e(trans('main.public_chat')); ?>
 
 							</a>
 						</li>
-					<?php endif; ?>
+                    <?php endif; ?>
 				</ul>
 			</nav>
 		</div>

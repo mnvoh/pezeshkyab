@@ -9,8 +9,9 @@
 				<?php endif; ?>
 			<?php endif; ?>
 
-			<h3><?php echo e(trans('main.add_schedule')); ?></h3>
-			<form action="<?php echo e($url); ?>" method="post">
+
+			<form action="<?php echo e($url); ?>" method="post" class="hidden-print">
+				<h3><?php echo e(trans('main.add_schedule')); ?></h3>
 				<div class="form-control inline-form-control">
 					<label class="inline-form-control"><?php echo e(trans('main.date')); ?></label>
 
@@ -61,9 +62,17 @@
 				</button>
 			</form>
 
-			<hr />
+			<hr class="hidden-print" />
 
 			<h3><?php echo e(trans('main.current_schedules')); ?></h3>
+
+			<button class="print-button btn btn-info btn-block">
+				<span class="fa fa-print"></span>
+				<?php echo e(trans('main.print')); ?>
+
+			</button>
+
+			<br />
 
 			<table class="table table-responsive table-striped">
 				<thead>

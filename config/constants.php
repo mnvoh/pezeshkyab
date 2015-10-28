@@ -8,4 +8,5 @@
 
 return [
 	'UPLOAD_PATH' => 'u/i/',
+	'ITEMS_PER_PAGE' => 15,
 ];

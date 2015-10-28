@@ -142,20 +142,23 @@
 								{{ trans('main.asked_questions') }}
 							</a>
 						</li>
+						<li>
+							<a href="{{ route('doctors.transactions') }}">
+								{{ trans('main.transactions') }}
+							</a>
+						</li>
 					@else
 						<li>
 							<a href="{{ route('doctors.ask', ['doctor_id' => $doctor_id]) }}">
 								{{ trans('main.ask_question') }}
 							</a>
 						</li>
-                    @endif
-					@if($viewerIsOwner)
 						<li>
-							<a href="{{ route('doctors.transactions') }}">
-								{{ trans('main.transactions') }}
+							<a href="{{ route('doctors.chat', ['doctor_id' => $doctor_id]) }}">
+								{{ trans('main.public_chat') }}
 							</a>
 						</li>
-					@endif
+                    @endif
 				</ul>
 			</nav>
 		</div>

@@ -38,6 +38,7 @@
 		<link rel="stylesheet" href="<?php echo e(url('css/font-awesome.css')); ?>" />
 		<link rel="stylesheet" href="<?php echo e(url('css/jquery.flipcounter.css')); ?>" />
 		<link rel="stylesheet" href="<?php echo e(url('css/jquery-fullsizable.css')); ?>" />
+		<link rel="stylesheet" media="print" href="<?php echo e(url('css/print.css')); ?>" />
 
         <?php if($dir == 'rtl'): ?>
             <link rel="stylesheet" href="<?php echo e(url('css/bootstrap-rtl.css')); ?>" />

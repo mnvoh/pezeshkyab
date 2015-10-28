@@ -362,4 +362,6 @@ return [
 	'confirm_pay' => 'Confirm and Pay',
 	'no_open_schedules' => 'This doctor has no free schedules for reservations',
 	'public_chat' => 'Public Chat',
+	'enter_name_to_chat' => 'Enter your name to start chatting',
+	'print' => 'Print',
 ];

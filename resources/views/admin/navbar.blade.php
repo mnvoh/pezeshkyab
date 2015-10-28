@@ -1,4 +1,4 @@
-<div class="admin-navbar">
+<div class="admin-navbar hidden-print">
 	<div class="container">
 		<div class="navbar-header">
 			<button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
