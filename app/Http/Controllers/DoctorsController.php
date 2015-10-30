@@ -64,7 +64,7 @@ class DoctorsController extends Controller
 			'doctor_id' => $doctor_id,
 			'viewerIsOwner' => $viewer_is_owner,
 			'name' => $doctor->name . ' ' . $doctor->lname,
-			'avatar' => ($doctor->image) ? Utils::makeThumbnail($doctor->image->path, 200) : null,
+			'avatar' => Utils::makeThumbnail(($doctor->image) ? $doctor->image->path : null, 200),
 			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
 			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
@@ -103,7 +103,7 @@ class DoctorsController extends Controller
 			'doctor_id' => $doctor_id,
 			'viewerIsOwner' => (Auth::check() && Auth::user()->id == $doctor_id),
 			'name' => $doctor->name . ' ' . $doctor->lname,
-			'avatar' => ($doctor->image) ? Utils::makeThumbnail($doctor->image->path, 200) : null,
+			'avatar' => Utils::makeThumbnail(($doctor->image) ? $doctor->image->path : null, 200),
 			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
 			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
@@ -143,7 +143,7 @@ class DoctorsController extends Controller
 					'url' => route('doctors.add_med_news'),
 					'doctor_id' => Auth::user()->id,
 					'name' => Auth::user()->name . ' ' . Auth::user()->lname,
-					'avatar' => (Auth::user()->image) ? Utils::makeThumbnail(Auth::user()->image->path, 200) : null,
+					'avatar' => Utils::makeThumbnail((Auth::user()->image) ? Auth::user()->image->path : null, 200),
 					'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 					'specialty' => Auth::user()->specialties[0]->title,
 					'specialty_title' => Auth::user()->specialties[0]->desc,
@@ -160,7 +160,7 @@ class DoctorsController extends Controller
 					'doctor_id' => Auth::user()->id,
 					'viewerIsOwner' => true,
 					'name' => Auth::user()->name . ' ' . Auth::user()->lname,
-					'avatar' => (Auth::user()->image) ? Utils::makeThumbnail(Auth::user()->image->path, 200) : null,
+					'avatar' => Utils::makeThumbnail((Auth::user()->image) ? Auth::user()->image->path : null, 200),
 					'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 					'specialty' => Auth::user()->specialties[0]->title,
 					'specialty_title' => Auth::user()->specialties[0]->desc,
@@ -176,7 +176,7 @@ class DoctorsController extends Controller
 					'doctor_id' => Auth::user()->id,
 					'viewerIsOwner' => true,
 					'name' => Auth::user()->name . ' ' . Auth::user()->lname,
-					'avatar' => (Auth::user()->image) ? Utils::makeThumbnail(Auth::user()->image->path, 200) : null,
+					'avatar' => Utils::makeThumbnail((Auth::user()->image) ? Auth::user()->image->path : null, 200),
 					'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 					'specialty' => Auth::user()->specialties[0]->title,
 					'specialty_title' => Auth::user()->specialties[0]->desc,
@@ -204,7 +204,7 @@ class DoctorsController extends Controller
 			'doctor_id' => Auth::user()->id,
 			'viewerIsOwner' => true,
 			'name' => Auth::user()->name . ' ' . Auth::user()->lname,
-			'avatar' => (Auth::user()->image) ? Utils::makeThumbnail(Auth::user()->image->path, 200) : null,
+			'avatar' => Utils::makeThumbnail((Auth::user()->image) ? Auth::user()->image->path : null, 200),
 			'avatar_url' => (Auth::user()->image) ? url(Auth::user()->image->path) : null,
 			'specialty' => Auth::user()->specialties[0]->title,
 			'specialty_title' => Auth::user()->specialties[0]->desc,
@@ -336,7 +336,7 @@ class DoctorsController extends Controller
 			'doctor_id' => $doctor->id,
 			'viewerIsOwner' => true,
 			'name' => $doctor->name . ' ' . $doctor->lname,
-			'avatar' => ($doctor->image) ? Utils::makeThumbnail($doctor->image->path, 200) : null,
+			'avatar' => Utils::makeThumbnail(($doctor->image) ? $doctor->image->path : null, 200),
 			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
 			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
@@ -404,7 +404,7 @@ class DoctorsController extends Controller
 			'doctor_id' => $doctor->id,
 			'viewerIsOwner' => true,
 			'name' => $doctor->name . ' ' . $doctor->lname,
-			'avatar' => ($doctor->image) ? Utils::makeThumbnail($doctor->image->path, 200) : null,
+			'avatar' => Utils::makeThumbnail(($doctor->image) ? $doctor->image->path : null, 200),
 			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
 			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
@@ -442,7 +442,7 @@ class DoctorsController extends Controller
 			'doctor_id' => $doctor->id,
 			'viewerIsOwner' => true,
 			'name' => $doctor->name . ' ' . $doctor->lname,
-			'avatar' => ($doctor->image) ? Utils::makeThumbnail($doctor->image->path, 200) : null,
+			'avatar' => Utils::makeThumbnail(($doctor->image) ? $doctor->image->path : null, 200),
 			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
 			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
@@ -470,13 +470,35 @@ class DoctorsController extends Controller
 			'doctor_id' => $doctor->id,
 			'viewerIsOwner' => false,
 			'name' => $doctor->name . ' ' . $doctor->lname,
-			'avatar' => ($doctor->image) ? Utils::makeThumbnail($doctor->image->path, 200) : null,
+			'avatar' => Utils::makeThumbnail(($doctor->image) ? $doctor->image->path : null, 200),
 			'avatar_url' => ($doctor->image) ? url($doctor->image->path) : null,
 			'specialty' => count($doctor->specialties) ? $doctor->specialties[0]->title : "",
 			'specialty_title' => count($doctor->specialties) ? $doctor->specialties[0]->desc : "",
 			'specialty_image' => @url($doctor->specialties[0]->image->path),
 			'from' => $from,
 		]);
+	}
+
+	public function deleteMedNews(Request $request, $mednews_id)
+	{
+		if(!Auth::check()) {
+			abort(403, 'access denied');
+			return;
+		}
+
+		$mednews = MedicalNews::where('id', $mednews_id)->first();
+		if(!$mednews) {
+			return redirect()->route('doctors.articles', ['doctor_id' => $mednews->doctor_id]);
+		}
+
+		if($mednews->doctor_id != Auth::user()->id) {
+			abort(403, 'access denied');
+			return;
+		}
+
+		MedicalNews::where('id', $mednews_id)->delete();
+
+		return redirect()->route('doctors.articles', ['doctor_id' => $mednews->doctor_id]);
 	}
 
 	public function emailPatientForReservation (Request $request)
@@ -573,6 +595,13 @@ class DoctorsController extends Controller
 			));
 		}
 
+		if($request->session()->has('ratedfor' . $request->get('doctor_id', 0))) {
+			return response()->json(array(
+				'error' => true,
+				'description' => trans('main.already_rated'),
+			));
+		}
+
 		$rating = new Rating;
 		$rating->doctor_id = $request->get('doctor_id', 0);
 		$rating->rating = $ratingValue;
@@ -582,6 +611,8 @@ class DoctorsController extends Controller
 		$rating->lname = $lname;
 		$rating->ncode = '';
 		$rating->save();
+
+		$request->session()->set('ratedfor' . $request->get('doctor_id', 0), true);
 
 		return response()->json(array(
 			'error' => false,
@@ -622,6 +653,7 @@ class DoctorsController extends Controller
 
         if($halfWidth) {
             return view('doctors.mednews-pre-half', [
+				'mednews_id' => $mednews->id,
                 'url' => $url,
                 'title' => $title,
                 'doctor_id' => $doctor_id,
@@ -629,9 +661,11 @@ class DoctorsController extends Controller
                 'published_on' => $published_on,
                 'cover_image' => $cover_image,
                 'content' => $content,
+				'viewerIsOwner' => (Auth::check() && Auth::user()->id == $mednews->doctor_id),
             ]);
         }
         return view('doctors.mednews-pre', [
+			'mednews_id' => $mednews->id,
             'url' => $url,
             'title' => $title,
             'doctor_id' => $doctor_id,
@@ -639,6 +673,7 @@ class DoctorsController extends Controller
             'published_on' => $published_on,
             'cover_image' => $cover_image,
             'content' => $content,
+			'viewerIsOwner' => (Auth::check() && Auth::user()->id == $mednews->doctor_id),
         ]);
     }
 }

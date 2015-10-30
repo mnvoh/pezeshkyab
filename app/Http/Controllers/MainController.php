@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fee;
+use App\Models\Insurance;
 use App\Models\MedicalQuestion;
 use Illuminate\Http\Request;
 use App\Helpers\Utils;
@@ -81,13 +82,20 @@ class MainController extends Controller
 	}
 
 	public function insurances() {
-		return view('main.insurances');
+		return view('main.insurances', [
+			'insurances' => Insurance::all(),
+		]);
 	}
 
 	public function medQuestions()
 	{
 		$questions = MedicalQuestion::paginate(10);
 		return view('main.med-questions', ['questions' => $questions]);
+	}
+
+	public function tos()
+	{
+		return view('main.tos');
 	}
 
 	public static function renderMedicalNews(MedicalNews $mednews, $halfWidth = true )

@@ -1,7 +1,15 @@
 <div class="col-xs-12">
 	<div class="row">
 		<div class="col-xs-12">
-			<h4><a href="{{ $url }}">{{ $title }}</a></h4>
+			<h4>
+				<a href="{{ $url }}">{{ $title }}</a>
+				@if(isset($viewerIsOwner) && $viewerIsOwner)
+					<a href="{{ route('doctors.delete_mednews', ['mednews_id' => $mednews_id]) }}"
+					   class="btn btn-danger">
+						<span class="fa fa-trash"></span>
+					</a>
+				@endif
+			</h4>
 			<p>
 				{{ trans('main.published_by') }}:
 				<a href="{{ route('doctors.homepage', ['doctor_id' => $doctor_id]) }}">

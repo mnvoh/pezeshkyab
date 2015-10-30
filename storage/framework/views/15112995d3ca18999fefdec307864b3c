@@ -44,7 +44,7 @@
 
 					<div class="row">
 						<div class="col-sm-6">
-							<a href="<?php echo e(url('/password/email')); ?>" title="<?php echo e(trans('main.forgot_password')); ?>"
+							<a href="<?php echo e(route('auth.reset_password_email')); ?>" title="<?php echo e(trans('main.forgot_password')); ?>"
 									class="btn btn-block btn-link">
 								<?php echo e(trans('main.forgot_password')); ?>
 

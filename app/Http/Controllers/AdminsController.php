@@ -171,13 +171,13 @@ class AdminsController extends Controller
 				$action_message = trans('main.doctor_banned');
 			}
 		}
-		else if($request->has('delete') && $this->isMasterAdmin()) {
-			$delete_doctor = Doctor::where('id', $request->get('doctor_id', null))->first();
-		}
-		else if($request->has('confirm-deletion') && $this->isMasterAdmin()) {
-			Doctor::where('id', $request->get('doctor_id', null))->delete();
-			$action_message = trans('main.doctor_deleted');
-		}
+//		else if($request->has('delete') && $this->isMasterAdmin()) {
+//			$delete_doctor = Doctor::where('id', $request->get('doctor_id', null))->first();
+//		}
+//		else if($request->has('confirm-deletion') && $this->isMasterAdmin()) {
+//			Doctor::where('id', $request->get('doctor_id', null))->delete();
+//			$action_message = trans('main.doctor_deleted');
+//		}
 		else if($request->has('register-payment') && $this->isMasterAdmin()) {
 			if(strlen($request->get('tracking_number')) < 2
 				|| strlen($request->get('transaction_time')) < 2) {
@@ -807,6 +807,37 @@ class AdminsController extends Controller
 		return view('admin.links', [
 			'links' => $links,
 			'master_admin' => AdminAuth::admin()->type == 'master',
+		]);
+	}
+
+	public function chats(Request $request)
+	{
+		if(!AdminAuth::check()) {
+			abort(403, 'access denied');
+			return;
+		}
+
+		$action_message = null;
+
+		if($request->has('delete')) {
+			PublicChat::where('id', $request->get('msg_id', null))->delete();
+			$action_message = 'پیغام حذف شد';
+		}
+
+		$filter = $request->get('filter', '');
+		if(strlen($filter)) {
+			$msgs = PublicChat::where('msg', 'LIKE', '%' . $filter . '%')
+				->paginate(Config::get('constants.ITEMS_PER_PAGE'));
+		}
+		else {
+			$msgs = PublicChat::paginate(Config::get('constants.ITEMS_PER_PAGE'));
+		}
+
+
+		return view('admin.chats', [
+			'msgs' => $msgs,
+			'master_admin' => AdminAuth::admin()->type == 'master',
+			'action_message' => $action_message,
 		]);
 	}
 

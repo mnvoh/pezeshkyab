@@ -4,7 +4,15 @@
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-xs-12">
-						<h2><?php echo e($title); ?></h2>
+						<h2>
+							<?php echo e($title); ?>
+
+							<?php if(isset($viewerIsOwner) && $viewerIsOwner): ?>
+								<a href="<?php echo e(route('doctors.delete_mednews')); ?>">
+									<span class="fa fa-trash"></span>
+								</a>
+							<?php endif; ?>
+						</h2>
 						<p>
 							<?php echo e(trans('main.published_by')); ?>:
 							<a href="<?php echo e(route('doctors.homepage', ['doctor_id' => $doctor_id])); ?>">

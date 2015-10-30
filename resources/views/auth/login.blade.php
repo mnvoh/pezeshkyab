@@ -43,7 +43,7 @@
 
 					<div class="row">
 						<div class="col-sm-6">
-							<a href="{{ url('/password/email') }}" title="{{ trans('main.forgot_password') }}"
+							<a href="{{ route('auth.reset_password_email') }}" title="{{ trans('main.forgot_password') }}"
 									class="btn btn-block btn-link">
 								{{ trans('main.forgot_password') }}
 							</a>

@@ -45,6 +45,7 @@
 							<td>{{ $h->id }}</td>
 							<td>{{ $h->name }}</td>
 							<td>
+								@if($h->address)
 								<a href="https://www.google.com/maps/preview/{{ '@' . $h->address->lat }},{{ $h->address->lng }},17z"
 								   target="_blank" title="{{ trans('main.open_in_maps') }}">
 									{{ @$h->address->city->province->name }} -
@@ -52,6 +53,7 @@
 									{{ @$h->address->street_addr_1 . ' ' . @$h->address->street_addr_2 }} -
 									{{ @$h->address->zip }}
 								</a>
+								@endif
 							</td>
 							<td>
 								<a href="javascript:;" class="btn btn-default change-address">

@@ -36,7 +36,8 @@ trait ResetsPasswords
 
         switch ($response) {
             case Password::RESET_LINK_SENT:
-                return redirect()->back()->with('status', trans($response));
+				$request->session()->set('reset_email_sent', true);
+                return redirect()->route('auth.reset_password_email')->with('status', 'sent');
 
             case Password::INVALID_USER:
                 return redirect()->back()->withErrors(['email' => trans($response)]);
@@ -95,7 +96,7 @@ trait ResetsPasswords
                 return redirect($this->redirectPath())->with('status', trans($response));
 
             default:
-                return redirect()->back()
+                return redirect()->route('auth.reset_password_post')
                             ->withInput($request->only('email'))
                             ->withErrors(['email' => trans($response)]);
         }

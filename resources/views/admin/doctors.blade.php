@@ -148,17 +148,17 @@
 												</button>
 											</form>
 										</li>
-										<li>
-											<form action="" method="post">
-												<input type="hidden" name="doctor_id"
-													   value="{{ $d->id }}" />
-												{{ csrf_field() }}
-												<button type="submit" class="btn btn-block btn-default btn-menuitem"
-														name="delete" value="1">
-													{{ trans('main.delete') }}
-												</button>
-											</form>
-										</li>
+										{{--<li>--}}
+											{{--<form action="" method="post">--}}
+												{{--<input type="hidden" name="doctor_id"--}}
+													   {{--value="{{ $d->id }}" />--}}
+												{{--{{ csrf_field() }}--}}
+												{{--<button type="submit" class="btn btn-block btn-default btn-menuitem"--}}
+														{{--name="delete" value="1">--}}
+													{{--{{ trans('main.delete') }}--}}
+												{{--</button>--}}
+											{{--</form>--}}
+										{{--</li>--}}
 										<li>
 											<a href="javascript:;" class="reg-payment">
 												<input type="hidden" name="doctor_id" value="{{ $d->id }}" />

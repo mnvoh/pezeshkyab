@@ -486,7 +486,7 @@
                     }
                 },
                 error: function(data) {
-                    alert('error');
+
                 }
             });
 
@@ -694,7 +694,7 @@ function refreshMessages()
             setTimeout(refreshMessages, 1000);
         },
         error: function(data) {
-            alert('error');
+
         }
     });
 }

@@ -91,8 +91,8 @@
 							</a>
 						</li>
 						<li>
-							<a href="{{ route('admins.medical_question') }}">
-								{{ trans('main.chat_msgs') }}
+							<a href="{{ route('admins.chats') }}">
+								{{ trans('main.chats') }}
 							</a>
 						</li>
 						<li>

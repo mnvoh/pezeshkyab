@@ -67,7 +67,8 @@ return [
 	
 	/*************************************** MAIN2 *******************************************/
 	
-	'accept_terms' => 'I have read and accept the --tos-- and --privacy--.',
+	/* 'accept_terms' => 'I have read and accept the --tos-- and --privacy--.', */
+	'accept_terms' => 'I have read and accept the --tos--.',
 	'articles' => 'Articles',
 	'ask_question' => 'Ask a Question',
 	'carousel_desc_1' => 'Use our extensive search system to find a doctor that suits your needs and is nearest to you.',
@@ -364,4 +365,14 @@ return [
 	'public_chat' => 'Public Chat',
 	'enter_name_to_chat' => 'Enter your name to start chatting',
 	'print' => 'Print',
+	'enter_email_to_reset' => 'Enter your email address to reset your password',
+	'click_link_to_reset' => 'Please click the following link to reset your password',
+	'reset_password' => 'Reset Password',
+	'password_reset_mail_sent' => 'An email has been sent to you containing an email to reset your password.',
+	'insurance_name' => 'Insurance Name',
+	'already_rated' => 'You have already cast your vote for this doctor!',
+	'message' => 'Message',
+	'sent_at' => 'Sent at',
+	'ip' => 'IP Address',
+	'chats' => 'Chats',
 ];

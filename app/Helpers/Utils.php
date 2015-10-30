@@ -173,6 +173,10 @@ class Utils {
 
 	public static function makeThumbnail($filename, $size)
 	{
+		if($filename == null) {
+			$filename = 'img/avatar.png';
+		}
+
 		$ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
 
 		$path = Config::get('constants.UPLOAD_PATH') . 'thumbs/' . $size . '/';

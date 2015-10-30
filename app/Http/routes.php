@@ -97,19 +97,32 @@ Route::get('docfinder/register-complete', [
     'uses' => 'Auth\AuthController@getRegisterComplete'
 ]);
 
+// Password reset link request routes...
+Route::get('password/email', [
+	'as' => 'auth.reset_password_email',
+	'uses' => 'Auth\PasswordController@getEmail',
+]);
+Route::post('password/email', [
+	'as' => 'auth.reset_password_email',
+	'uses' => 'Auth\PasswordController@postEmail'
+]);
+
+// Password reset routes...
+Route::any('password/reset/{token}', [
+	'as' => 'auth.reset_password',
+	'uses' => 'Auth\PasswordController@getReset'
+]);
+Route::any('password/reset', [
+	'as' => 'auth.reset_password_post',
+	'uses' => 'Auth\PasswordController@postReset',
+]);
+
 ////////////
 
 Route::post('docfinder/alogin', [
 	'as' => 'user.admin_login',
 	'uses' => 'Auth\AuthController@postAdminLogin',
 ]);
-
-////////////
-
-Route::controllers([
-    'password' => 'Auth\PasswordController',
-]);
-
 
 
 
@@ -186,7 +199,10 @@ Route::any('docfinder/doctors/chat/{doctor_id}', [
 	'as' => 'doctors.chat',
 	'uses' => 'DoctorsController@chat'
 ]);
-
+Route::any('docfinder/doctors/delete-mednews/{mednews_id}', [
+	'as' => 'doctors.delete_mednews',
+	'uses' => 'DoctorsController@deleteMedNews'
+]);
 /*          AdminsController
   ======================================*/
 Route::get('docfinder/admin/login', [

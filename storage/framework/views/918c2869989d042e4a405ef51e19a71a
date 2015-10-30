@@ -1,7 +1,26 @@
 <?php $__env->startSection('content'); ?>
     <div class="row">
         <div class="col-sm-12">
-			<img src="http://cdn.asriran.com/files/fa/news/1393/11/9/431159_349.jpg" />
+			<h3 class="text-center"><?php echo e(trans('main.insurances')); ?></h3>
+			<br />
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th><?php echo e(trans('main.insurance_name')); ?></th>
+						<th><?php echo e(trans('main.description')); ?></th>
+						<th><?php echo e(trans('main.rate')); ?></th>
+					</tr>
+				</thead>
+				<tbody>
+				<?php foreach($insurances as $i): ?>
+					<tr>
+						<td><?php echo e($i->title); ?></td>
+						<td><?php echo e($i->description); ?></td>
+						<td><?php echo e($i->rate * 100); ?>%</td>
+					</tr>
+				<?php endforeach; ?>
+				</tbody>
+			</table>
         </div>
     </div>
 <?php $__env->stopSection(); ?>
