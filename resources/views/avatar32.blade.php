@@ -1,4 +1,4 @@
-@if(isset($avatar) && $avatar)
+@if(isset($avatar) && $avatar && file_exists($avatar))
 	<?php
 		list($width, $height) = getimagesize($avatar);
 		if($width > $height) {
