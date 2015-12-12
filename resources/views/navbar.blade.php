@@ -65,61 +65,16 @@
     </div>
 
     <?php if(isset($includeMainCarousel) && $includeMainCarousel): ?>
-        <div id="main-carousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#main-carousel" data-slide-to="1"></li>
-                <li data-target="#main-carousel" data-slide-to="2"></li>
-            </ol>
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="{{ url('/img/carousel/1.jpg') }}" alt="{{ trans('main.carousel_title_1') }}" />
-                    <div class="carousel-caption">
-                        <h1 class="hidden-xs">{{ trans('main.carousel_title_1') }}</h1>
-                        <p class="hidden-xs">{{ trans('main.carousel_desc_1') }}</p>
-                        <a href="{{ route('search.find') }}" title="{{ trans('main.carousel_title_1') }}"
-                                class="btn btn-default btn-lg">
-                            {{ trans('main.carousel_title_1') }}
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{{ url('/img/carousel/2.jpg') }}" alt="{{ trans('main.carousel_title_2') }}" />
-                    <div class="carousel-caption">
-                        <h1 class="hidden-xs">{{ trans('main.carousel_title_2') }}</h1>
-                        <p class="hidden-xs">{{ trans('main.carousel_desc_2') }}</p>
-                        <a href="{{ route('appointment.book', ['step' => 1]) }}" title="{{ trans('main.carousel_title_2') }}"
-                           class="btn btn-default btn-lg">
-                            {{ trans('main.carousel_title_2') }}
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{{ url('/img/carousel/3.jpg') }}" alt="{{ trans('main.carousel_title_3') }}" />
-                    <div class="carousel-caption">
-                        <h1 class="hidden-xs">{{ trans('main.carousel_title_3') }}</h1>
-                        <p class="hidden-xs">{{ trans('main.carousel_desc_3') }}</p>
-                        <a href="{{ route('main.docfinder_home') }}#medical-question" title="{{ trans('main.carousel_title_3') }}"
-                           class="btn btn-default btn-lg">
-                            {{ trans('main.carousel_title_3.1') }}
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Controls -->
-            <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-
+		<div class="container">
+			<div id="home-page-banner" class="row">
+				<div class="col-xs-12">
+					<br />
+					<h1 class="text-center help-block">{{ trans('main.find_and_book') }}</h1>
+					<br />
+					@include('search.simple-search')
+				</div>
+			</div>
+		</div>
 
         <div id="quick-links" class="row">
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">

@@ -1,9 +1,12 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Fee;
 use App\Models\Insurance;
 use App\Models\MedicalQuestion;
+use App\Models\Province;
+use App\Models\Specialty;
 use Illuminate\Http\Request;
 use App\Helpers\Utils;
 use App\Models\MedicalNews;
@@ -33,11 +36,18 @@ class MainController extends Controller
 			->take(3)
 			->get();
 
+		$specialties = Specialty::all();
+		$provinces = Province::all();
+		$cities = City::all();
+
 		return view('main.home', array(
 			'includeMainCarousel' => true,
 			'includeMedicalQuestionForm' => true,
 			'feed' => $med_news_rendered,
 			'medical_questions' => $med_questions,
+			'specialties' => $specialties,
+			'provinces' => $provinces,
+			'cities' => $cities,
 		));
 	}
 

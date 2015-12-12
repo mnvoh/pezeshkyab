@@ -3,18 +3,6 @@
 @section('content')
 	<div class="row">
 		<div class="col-lg-12">
-			<h2>{{ trans('main.find_a_doctor') }}</h2>
-			<hr />
-			<div class="row">
-				@include('search.simple-search')
-			</div>
-		</div>
-	</div>
-
-	<br /><br />
-
-	<div class="row">
-		<div class="col-lg-12">
 			<hr />
 			<div class="row">
 				@if(count($feed))

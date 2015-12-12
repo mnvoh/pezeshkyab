@@ -1,18 +1,6 @@
 <?php $__env->startSection('content'); ?>
 	<div class="row">
 		<div class="col-lg-12">
-			<h2><?php echo e(trans('main.find_a_doctor')); ?></h2>
-			<hr />
-			<div class="row">
-				<?php echo $__env->make('search.simple-search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-			</div>
-		</div>
-	</div>
-
-	<br /><br />
-
-	<div class="row">
-		<div class="col-lg-12">
 			<hr />
 			<div class="row">
 				<?php if(count($feed)): ?>

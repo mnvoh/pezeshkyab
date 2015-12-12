@@ -375,4 +375,7 @@ return [
 	'sent_at' => 'Sent at',
 	'ip' => 'IP Address',
 	'chats' => 'Chats',
+	'find_and_book' => 'Find and Book',
+	'cities' => 'Cities',
+	'provinces' => 'Provinces',
 ];
