@@ -12,7 +12,7 @@
 */
 
 Route::any('/', ['as' => 'root', function () {
-    return view('selector_page');
+    return redirect()->route('main.docfinder_home');
 }]);
 
 Route::any('/index_doctors', ['as' => 'index_doctors', function () {
