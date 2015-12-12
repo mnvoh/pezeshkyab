@@ -2,40 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42a41d7d-bca1-4eeb-a472-3cb96465f380" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/avatar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/chats.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc-tos.en.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc-tos.fa.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/auth/password.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/emails/password.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/auth/reset.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/main/tos.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/15112995d3ca18999fefdec307864b3c" afterPath="$PROJECT_DIR$/storage/framework/views/15112995d3ca18999fefdec307864b3c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/31afe60a990b378f12a0133304db186b" afterPath="$PROJECT_DIR$/storage/framework/views/31afe60a990b378f12a0133304db186b" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/4e2920a05c02f45c1d56c181a2015e80" afterPath="$PROJECT_DIR$/storage/framework/views/4e2920a05c02f45c1d56c181a2015e80" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/918c2869989d042e4a405ef51e19a71a" afterPath="$PROJECT_DIR$/storage/framework/views/918c2869989d042e4a405ef51e19a71a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DoctorsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DoctorsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ResetsPasswords.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ResetsPasswords.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Helpers/Utils.php" afterPath="$PROJECT_DIR$/app/Helpers/Utils.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/blade.xml" afterPath="$PROJECT_DIR$/.idea/blade.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/doctors.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/doctors.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/e42cc0fe2ac9e173a3d5d88c57286f94" afterPath="$PROJECT_DIR$/storage/framework/views/e42cc0fe2ac9e173a3d5d88c57286f94" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/hospitals.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/hospitals.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/main/insurances.blade.php" afterPath="$PROJECT_DIR$/resources/views/main/insurances.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/03f9b7056037caa1af30e7741b63dd53d98e995a.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/0b99a38972cb22f4e51a8f7f38b15c84241ee898.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/0cc30093d94c2cfd240c9cc4c2764c7c53c7ef67.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/18066f69ffed03beada83de15e9a0396c94ebd0e.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/1f5baeb536565e76141b9ea26a35e9e60dd310c8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/27c4843fe8bcc2bce1f8077285c61c5548380645.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/2bc689ac43633624845d139dda4f3a865391e10a.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/2da6c3ce36ab3cfe1eacc3dc9b2d2022c2ee1abe.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/331f449b16b15c50f603534198b7f543ccfcb06b.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/3b2942bffac2a2661553d298b0c5e77d1ebaf8d8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/4b9e071770fa37afaf22f66e2912fc49a0e24fde.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/5c59d16a443d3ccdc34285fd89df206984752bd4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/601f0df1e2f7a35c7621ae7c76707b34752a3694.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/66e7dc4f3b08499f2ca37332ecfb4bf531f0d6a0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/83cf09518691a313480af34c50e11a557a83478f.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/85b21891256d70fc4878d53837c54f3b5f6749b7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/9ea6ba917061d550e486bc46ad12b5c421c0ad4b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/a2883b592c06bade5555333810300b0dc80edfc7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/aaaaaaaaaaaaaaaaaaaaaa.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/aaaaaaaaaaaaaaaaaaaaaaa.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/aaaaaaaaaaaaaaaaaaaaaaaaa.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/abdb8501470437f62f972a4fe691c827dff88140.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/b5c022de2ea9941b86297835151050c84e13b282.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/b83d58e931e2d64036114e795376dccfc5097559.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/c13746559c4ede70b19efbdb849ec8959d48aca8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/c3f90287d8af7436b63efd0180cf591dc714258c.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/c529b1f8c9b74866a01f2e1dae76f1c4a6ce8745.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/c5a12c3f99b506119f36aef298c35525b3933ed9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/c77e3cb270904ab74113acac025cacf393f46933.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/c90ccf29308ff8d8496fe21aa5f747d0a1d9ee8f.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/cebc8515636df02053b715376f52243f462e1973.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/d379b2d46eb57544ce025c828f4de92f61ac7d67.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/e43ab8f6f824e07627880d052cbd514dc22f7cb6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/e5a80fd6d02f28bd017d5025ca1a90516e78dbf1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/e68e370d49fce88113a4355bc96afa1d4aefcbd1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/201510/f1e7a32c265285cec70894f9d595b42fbb783038.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/thumbs/200/85b21891256d70fc4878d53837c54f3b5f6749b7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/thumbs/200/aaaaaaaaaaaaaaaaaaaaaaaaa.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/thumbs/200/b5c022de2ea9941b86297835151050c84e13b282.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/thumbs/200/b83d58e931e2d64036114e795376dccfc5097559.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/u/i/thumbs/200/c90ccf29308ff8d8496fe21aa5f747d0a1d9ee8f.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel.log" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/main.php" afterPath="$PROJECT_DIR$/resources/lang/en/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/fa/main.php" afterPath="$PROJECT_DIR$/resources/lang/fa/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/doctors/med-news.blade.php" afterPath="$PROJECT_DIR$/resources/views/doctors/med-news.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/doctors/mednews-pre-half.blade.php" afterPath="$PROJECT_DIR$/resources/views/doctors/mednews-pre-half.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/doctors/mednews-pre.blade.php" afterPath="$PROJECT_DIR$/resources/views/doctors/mednews-pre.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/mnvoh.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/mnvoh.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/navbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/navbar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/script.js" afterPath="$PROJECT_DIR$/public/js/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pezeshkyab.iws" />
@@ -72,11 +80,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <file leaf-file-name="AdminsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminsController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="844" column="19" selection-start-line="844" selection-start-column="19" selection-end-line="844" selection-end-column="19" />
+              <caret line="173" column="0" selection-start-line="173" selection-start-column="2" selection-end-line="179" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chats.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/chats.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -98,21 +116,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminsController.php">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6296296">
-              <caret line="173" column="0" selection-start-line="173" selection-start-column="2" selection-end-line="179" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chats.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/chats.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3560732">
-              <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="844" column="19" selection-start-line="844" selection-start-column="19" selection-end-line="844" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -220,10 +228,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1415" />
-    <option name="y" value="24" />
-    <option name="width" value="1317" />
-    <option name="height" value="744" />
+    <option name="width" value="1366" />
+    <option name="height" value="749" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -264,6 +270,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -414,7 +421,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -494,16 +500,16 @@
     <option name="totallyTimeSpent" value="12137000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1415" y="24" width="1317" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1366" height="749" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24824356" sideWeight="0.41960183" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46717557" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46707505" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955405" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23450981" sideWeight="0.5236641" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24090908" sideWeight="0.5236641" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23137255" sideWeight="0.47633588" order="5" side_tool="true" content_ui="tabs" x="457" y="224" width="305" height="263" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.64427483" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -513,14 +519,14 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42442748" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42442748" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24867725" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -678,7 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1433121">
           <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -694,7 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3294509">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -730,7 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.3773913">
           <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.3477538">
           <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,7 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.281198">
           <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.6666665">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -762,7 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.666667">
           <caret line="38" column="53" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.6666665">
           <caret line="10" column="89" selection-start-line="10" selection-start-column="89" selection-end-line="10" selection-end-column="89" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -778,7 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.58069885">
           <caret line="212" column="74" selection-start-line="212" selection-start-column="62" selection-end-line="212" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -786,7 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.74875206">
           <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -794,7 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -802,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
@@ -821,7 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
@@ -832,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14975041">
           <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,7 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6888519">
           <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,7 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38743454">
           <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39616057">
           <caret line="64" column="33" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,7 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-80.666664">
           <caret line="157" column="54" selection-start-line="157" selection-start-column="54" selection-end-line="157" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,7 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34775373">
           <caret line="176" column="25" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -894,7 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5207987">
           <caret line="600" column="58" selection-start-line="600" selection-start-column="45" selection-end-line="600" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,7 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -910,7 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49084857">
           <caret line="93" column="59" selection-start-line="93" selection-start-column="59" selection-end-line="93" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -918,13 +901,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.359401">
           <caret line="154" column="51" selection-start-line="154" selection-start-column="51" selection-end-line="154" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6296296">
+        <state vertical-scroll-proportion="0.0">
           <caret line="173" column="0" selection-start-line="173" selection-start-column="2" selection-end-line="179" selection-end-column="9" />
           <folding />
         </state>
@@ -932,7 +914,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/chats.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3560732">
+        <state vertical-scroll-proportion="0.0">
           <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
           <folding />
         </state>
