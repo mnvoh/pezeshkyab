@@ -11,7 +11,7 @@ header, footer, a {
 }
 
 html {
-    background-color: #152952;
+    background-color: #f9f9f9;
 }
 
 .nopadding {
@@ -34,7 +34,6 @@ html {
 }
 .nav.navbar-nav li a {
     color: #222;
-    border-bottom: 6px solid #fff;
     cursor: pointer !important;
 }
 .nav.navbar-nav li .dropdown-menu a {
@@ -44,13 +43,24 @@ html {
 }
 
 .nav.navbar-nav li a:hover, .nav.navbar-nav li a:focus {
+    background: #098ddf;
+}
+#bs-navbar .nav.navbar-nav li a {
+    border-bottom: 6px solid #fff;
+}
+#bs-navbar .nav.navbar-nav li a:hover, .nav.navbar-nav li a:focus {
     background: transparent;
     border-bottom: 6px solid #2775C8;
     color: #2775C8;
 }
-.nav.navbar-nav li .dropdown-menu a:hover {
-    border: 0 none;
+.nav.navbar-nav li .dropdown-menu a {
+    border: 0 none !important;
 }
+.nav.navbar-nav li .dropdown-menu a:hover {
+    border: 0 none !important;
+}
+
+
 .navbar-brand {
     color: #9f7900;
     padding: 20px 15px;
@@ -718,7 +728,7 @@ div.main-search-container form div.main-searchbox-wrapper input:focus {
     background: #D60DEA;
     background-image: linear-gradient(to bottom, #D60DEA, #9D04B7);
 }
-.admin-navbar { background: #182f5d; }
+.admin-navbar { background: #fff; }
 .admin-navbar .navbar-nav>li.shade1,
 .admin-navbar .dropdown {
     position: relative;
@@ -774,7 +784,7 @@ div.main-search-container form div.main-searchbox-wrapper input:focus {
 .admin-navbar div.dropdown>button {
     background: transparent;
     border: 0 none;
-    color: #fff;
+    color: #222;
     padding: 22px;
     z-index: 1;
     position: relative;
@@ -890,4 +900,11 @@ p.message.message-to>span.sender {
 #home-page-banner {
     background: #fff;
     padding: 20px;
+}
+.mobile-nav-item {
+    background: url(../img/mobile_icon.png) no-repeat right center;
+    padding: 22px 30px 22px 0!important;
+}
+.mobile-nav-item:hover {
+    background: url(../img/mobile_icon.png) no-repeat right center !important;
 }

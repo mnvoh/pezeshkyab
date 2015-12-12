@@ -44,8 +44,7 @@
                     <a href="{{ route('search.find') }}" id="show-find-doctor"> {{ trans('main.find_a_doctor') }} </a>
                 </li>
 				<li>
-					<a href="#">
-						<span class="fa fa-2x fa-mobile"></span>
+					<a class="mobile-nav-item" href="#">
 						{{ trans('main.download_app') }}
 					</a>
 				</li>

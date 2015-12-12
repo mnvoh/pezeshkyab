@@ -2,12 +2,7 @@
  ====================================== -->
 <footer class="main-footer">
     <div class="container">
-        <p class="text-muted">
-            &copy; 2015 <a href="<?php echo url('/'); ?>">Pezeshkyab.com</a> all rights reserved.
-        </p>
         <ul class="text-muted list-inline">
-            <li>v0.1</li>
-            <li>&middot;</li>
             <li><a href="<?php echo e(route('main.about')); ?>"> <?php echo e(trans('main.about')); ?> </a></li>
             <li>&middot;</li>
             <li class="active"><a href="<?php echo e(route('main.contact')); ?>"> <?php echo e(trans('main.contact')); ?> </a></li>
@@ -20,5 +15,8 @@
 			<li>&middot;</li>
 			<li><a href="<?php echo e(route('admins.login')); ?>"> <?php echo e(trans('main.admin_login')); ?> </a></li>
         </ul>
+		<p class="text-muted" style="font-size: 11px;">
+			&copy; 2015 تمامی حقوق محفوظ می باشد
+		</p>
     </div>
 </footer>

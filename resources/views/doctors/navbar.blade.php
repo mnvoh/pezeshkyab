@@ -43,6 +43,11 @@
                 <li>
                     <a href="{{ route('search.find') }}" id="show-find-doctor"> {{ trans('main.find_a_doctor') }} </a>
                 </li>
+				<li>
+					<a class="mobile-nav-item" href="#">
+						{{ trans('main.download_app') }}
+					</a>
+				</li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
