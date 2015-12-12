@@ -33,16 +33,22 @@
 					<ul class="nav nav-tabs" role="tablist" style="display: inline-block; margin-bottom: -6px;">
 						<li role="presentation" class="active">
 							<a href="#tab-specialties" aria-controls="tab-specialties" role="tab" data-toggle="tab">
+								<span class="fa fa-3x fa-medkit"></span>
+								<br />
 								{{ trans('main.specialties') }}
 							</a>
 						</li>
 						<li role="presentation">
 							<a href="#tab-provinces" aria-controls="tab-provinces" role="tab" data-toggle="tab">
+								<span class="fa fa-3x fa-map"></span>
+								<br />
 								{{ trans('main.provinces') }}
 							</a>
 						</li>
 						<li role="presentation">
 							<a href="#tab-cities" aria-controls="tab-cities" role="tab" data-toggle="tab">
+								<span class="fa fa-3x fa-map-marker"></span>
+								<br />
 								{{ trans('main.cities') }}
 							</a>
 						</li>

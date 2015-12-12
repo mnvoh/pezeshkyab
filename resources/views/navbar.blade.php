@@ -43,6 +43,12 @@
                 <li>
                     <a href="{{ route('search.find') }}" id="show-find-doctor"> {{ trans('main.find_a_doctor') }} </a>
                 </li>
+				<li>
+					<a href="#">
+						<span class="fa fa-2x fa-mobile"></span>
+						{{ trans('main.download_app') }}
+					</a>
+				</li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if(\Illuminate\Support\Facades\Auth::check())
@@ -75,40 +81,6 @@
 				</div>
 			</div>
 		</div>
-
-        <div id="quick-links" class="row">
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-                <a href="{{ route('search.find') }}" title="{{ trans('main.systems_doctors') }}">
-                    <img src="{{ url('img/quicklinks/doctors.svg') }}" alt="{{ trans('main.systems_doctors') }}"
-                            width="96" height="96"/>
-                    <h3>{{ trans('main.systems_doctors') }}</h3>
-                    <p>{{ trans('main.systems_doctors_desc') }}</p>
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-                <a href="{{ route('appointment.book', ['step' => 1]) }}" title="{{ trans('main.online_appointment_booking') }}">
-                    <img src="{{ url('img/quicklinks/schedule.svg') }}" alt="{{ trans('main.online_appointment_booking') }}"
-                         width="96" height="96"/>
-                    <h3>{{ trans('main.online_appointment_booking') }}</h3>
-                    <p>{{ trans('main.online_appointment_booking_desc') }}</p>
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-                <a href="{{ route('main.insurances') }}" title="{{ trans('main.insurance') }}">
-                    <img src="{{ url('img/quicklinks/insurances.svg') }}" alt="{{ trans('main.insurance') }}"
-                         width="96" height="96"/>
-                    <h3>{{ trans('main.insurance') }}</h3>
-                    <p>{{ trans('main.insurance_desc') }}</p>
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 quick-link nopadding">
-                <a href="{{ route('main.fees') }}" title="{{ trans('main.fees') }}">
-                    <img src="{{ url('img/quicklinks/fees.svg') }}" alt="{{ trans('main.fees') }}"
-                         width="96" height="96"/>
-                    <h3>{{ trans('main.fees') }}</h3>
-                    <p>{{ trans('main.fees_desc') }}</p>
-                </a>
-            </div>
-        </div>
+		<hr />
     <?php endif; ?>
 </header>

@@ -59,10 +59,12 @@
     		<?php echo $__env->make('navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 		<?php endif; ?>
 
-        <div class="container content-container">
-            <?php $__env->startSection('content'); ?>
-            <?php echo $__env->yieldSection(); ?>
-        </div>
+		<?php if(!isset($hide_content)): ?>
+			<div class="container content-container">
+				<?php $__env->startSection('content'); ?>
+				<?php echo $__env->yieldSection(); ?>
+			</div>
+		<?php endif; ?>
 
         <?php if(isset($includeMedicalQuestionForm) && $includeMedicalQuestionForm): ?>
             <?php echo $__env->make('medical_question', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

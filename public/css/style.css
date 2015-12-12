@@ -133,19 +133,13 @@ a {
     margin: 15px 0;
 }
 .main-footer {
-    background: #152952;
+    background: #f9f9f9;
+    border-top: 1px solid #f0f0f0;
     padding: 60px 0 60px;
-}
-.main-footer .text-muted,
-.medical-question .text-muted {
-    color: #aaa;
 }
 .main-footer p,
 .main-footer ul {
     text-align: center;
-}
-.main-footer a {
-    color: #fff;
 }
 .login-form {
     background: #eee;
@@ -156,12 +150,12 @@ a {
     padding: 15px;
 }
 .medical-question {
-    background: #234487;
     padding: 30px 0;
-    margin: 30px 0 0;
-    color: #eee;
+    margin: 0;
 }
-
+.medical-question textarea {
+    height: 133px;
+}
 .step-viewer .sv-li {
     width: 90px;
     height: 120px;
@@ -475,22 +469,33 @@ div.main-search-container form div.main-searchbox-wrapper input:focus {
     color: #900;
 }
 
+#doctor-picker {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    overflow: hidden;
+}
 #doctor-picker>input[type="text"] {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border: 0 none;
+    width: 50%;
+    float: right;
+}
+#doctor-picker>input[type="text"]:focus {
+    box-shadow: none;
 }
 #doctor-picker>label {
     color: #2b669a;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    border: 0 none;
     text-align: center;
+    width: 50%;
+    float: right;
+    margin: 0;
 }
 #doctor-picker>div {
     background: #fff;
     border: 1px solid #aaa;
     border-radius: 3px;
     padding: 10px 0;
-    margin-top: -40px;
+    margin-top: 30px;
     position: relative;
     z-index: 1;
     display: none;

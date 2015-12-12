@@ -19,7 +19,7 @@
 
 			<form action="<?php echo e(route('doctors.ask')); ?>" method="post">
 				<div class="row">
-					<div class="col-sm-12 col-md-6 col-md-offset-3">
+					<div class="col-sm-12 col-md-6">
 						<?php if(isset($form_error) && $form_error): ?>
 							<ul>
 								<?php foreach($status_message as $sm): ?>
@@ -46,7 +46,8 @@
 								<option value="private"><?php echo e(trans('main.private')); ?></option>
 							</select>
 						</div>
-
+					</div>
+					<div class="col-sm-12 col-md-6">
 						<div class="form-group">
 							<input type="text" class="form-control" id="q_title" name="q_title"
 								   placeholder="<?php echo e(trans('main.title')); ?> *" value="<?php echo e(old('q_title')); ?>"/>
@@ -59,7 +60,9 @@
 						<br />
 						<?php echo e(csrf_field()); ?>
 
-						<button type="submit" class="btn btn-success btn-block" name="question_submitted" value="1">
+					</div>
+					<div class="col-xs-12">
+						<button type="submit" class="btn btn-success" name="question_submitted" value="1">
 							<?php echo e(trans('main.ask')); ?>
 
 						</button>

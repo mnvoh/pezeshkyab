@@ -18,7 +18,7 @@
 
 			<form action="{{ route('doctors.ask') }}" method="post">
 				<div class="row">
-					<div class="col-sm-12 col-md-6 col-md-offset-3">
+					<div class="col-sm-12 col-md-6">
 						@if(isset($form_error) && $form_error)
 							<ul>
 								@foreach($status_message as $sm)
@@ -45,7 +45,8 @@
 								<option value="private">{{ trans('main.private') }}</option>
 							</select>
 						</div>
-
+					</div>
+					<div class="col-sm-12 col-md-6">
 						<div class="form-group">
 							<input type="text" class="form-control" id="q_title" name="q_title"
 								   placeholder="{{ trans('main.title') }} *" value="{{ old('q_title') }}"/>
@@ -57,7 +58,9 @@
 
 						<br />
 						{{ csrf_field() }}
-						<button type="submit" class="btn btn-success btn-block" name="question_submitted" value="1">
+					</div>
+					<div class="col-xs-12">
+						<button type="submit" class="btn btn-success" name="question_submitted" value="1">
 							{{ trans('main.ask') }}
 						</button>
 					</div>

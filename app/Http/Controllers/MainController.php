@@ -48,6 +48,7 @@ class MainController extends Controller
 			'specialties' => $specialties,
 			'provinces' => $provinces,
 			'cities' => $cities,
+			'hide_content' => true,
 		));
 	}
 

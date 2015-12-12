@@ -377,4 +377,6 @@ return [
 	'find_and_book' => 'بیابید و رزرو کنید',
 	'cities' => 'شهر ها',
 	'provinces' => 'استان ها',
+	'no_doctor_selected' => 'پزشکی انتخاب نشده',
+	'download_app' => 'دانلود اپلیکیشن پزشکیاب',
 ];

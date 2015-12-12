@@ -13,7 +13,7 @@
 		@if(isset($old_doctor_description))
 			{{ $old_doctor_description }}
 		@else
-			{{ trans('main.type_to_find_doctor') }}
+			{{ trans('main.no_doctor_selected') }}
 		@endif
 	</label>
     <div id="dp-items">

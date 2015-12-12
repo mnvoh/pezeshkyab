@@ -14,7 +14,7 @@
 			<?php echo e($old_doctor_description); ?>
 
 		<?php else: ?>
-			<?php echo e(trans('main.type_to_find_doctor')); ?>
+			<?php echo e(trans('main.no_doctor_selected')); ?>
 
 		<?php endif; ?>
 	</label>

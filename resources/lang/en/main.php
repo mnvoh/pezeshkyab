@@ -378,4 +378,6 @@ return [
 	'find_and_book' => 'Find and Book',
 	'cities' => 'Cities',
 	'provinces' => 'Provinces',
+	'no_doctor_selected' => 'No Doctor Selected',
+	'download_app' => 'Download App',
 ];

@@ -56,10 +56,12 @@
     		@include('navbar')
 		@endif
 
-        <div class="container content-container">
-            @section('content')
-            @show
-        </div>
+		@if(!isset($hide_content))
+			<div class="container content-container">
+				@section('content')
+				@show
+			</div>
+		@endif
 
         <?php if(isset($includeMedicalQuestionForm) && $includeMedicalQuestionForm): ?>
             @include('medical_question')
