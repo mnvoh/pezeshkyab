@@ -88,6 +88,19 @@
 		@if(\Illuminate\Support\Facades\Auth::check())
 			@include('doctors.floating-chat')
 		@endif
+
+		<div class="modal fade" id="cities-list-modal" tabindex="-1" role="modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					<div class="modal-body">
+						<p></p>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
     </body>
 </html>
 <!-- end of master -->

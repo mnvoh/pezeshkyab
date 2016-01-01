@@ -374,9 +374,12 @@ return [
 	'sent_at' => 'ارسال شده در',
 	'ip' => 'آدرس آی پی',
 	'chats'=> 'گفت و گو ها',
-	'find_and_book' => 'بیابید و رزرو کنید',
+	'find_and_book' => 'پزشک خود را بیابید',
 	'cities' => 'شهر ها',
 	'provinces' => 'استان ها',
 	'no_doctor_selected' => 'پزشکی انتخاب نشده',
 	'download_app' => 'دانلود اپلیکیشن پزشکیاب',
+	'labs' => 'آزمایشگاه های تشخیصی',
+	'clinics' => 'کلینیک ها',
+	'under_construction' => 'در دست ساخت'
 ];

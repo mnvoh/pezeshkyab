@@ -2,18 +2,20 @@
 	Theme Colors
 	Main Color: #265CAB;
 */
-@import "../fonts/Ubuntu/styles.css";
+@import "../fonts/nazanin/stylesheet.css";
 
 html, body, h1, h2, h3, h4, h5, h6,
 p, div, span, button, input, article,
 header, footer, a {
-    font-family: Ubuntu, Tahoma, Verdana, sans-serif;
+    font-family: Nazanin, Tahoma, sans-serif;
 }
 
 html {
     background-color: #f9f9f9;
 }
-
+body {
+    font-size: 18px;
+}
 .nopadding {
     padding: 0 !important;
     margin: 0 !important;
@@ -28,9 +30,14 @@ html {
 #bs-navbar {
     background: transparent;
 }
+
 .navbar {
     background: transparent;
     margin: 0;
+}
+#main-navbar-wrapper {
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
 }
 .nav.navbar-nav li a {
     color: #222;
@@ -46,7 +53,7 @@ html {
     background: #098ddf;
 }
 #bs-navbar .nav.navbar-nav li a {
-    border-bottom: 6px solid #fff;
+    border-bottom: 6px solid rgba(1, 1, 1, 0.001);
 }
 #bs-navbar .nav.navbar-nav li a:hover, .nav.navbar-nav li a:focus {
     background: transparent;
@@ -415,8 +422,9 @@ div.main-search-container form div.main-searchbox-wrapper {
     height: 60px;
     overflow: hidden;
     padding: 0;
+    box-shadow: 0 0 1px 7px rgba(0,0,0,0.075);
+    border-radius: 0 !important;
 }
-
 div.main-search-container form>div.main-searchbox-wrapper>a#btn-adv-search span {
     font-size: 34px;
     line-height: 38px;
@@ -454,7 +462,7 @@ div.main-search-container form div.main-searchbox-wrapper input:focus {
 .form-control-focus {
     border-color: #2775C8;
     outline: 0;
-    box-shadow: 0 0 12px 3px rgba(0,0,0,0.4);
+    box-shadow: 0 0 12px 3px rgba(0,0,0,0.4) !important;
 }
 .main-search-container h1 {
     text-align: center;
@@ -495,6 +503,7 @@ div.main-search-container form div.main-searchbox-wrapper input:focus {
 #doctor-picker>label {
     color: #2b669a;
     border: 0 none;
+    border-right: 1px solid #ddd;
     text-align: center;
     width: 50%;
     float: right;
@@ -907,4 +916,8 @@ p.message.message-to>span.sender {
 }
 .mobile-nav-item:hover {
     background: url(../img/mobile_icon.png) no-repeat right center !important;
+}
+
+.search-province-link {
+    white-space: nowrap;
 }

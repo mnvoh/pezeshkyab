@@ -10,6 +10,12 @@
         });
 
         /**
+         *
+         *
+         */
+        $('.search-province-link').click(searchProvinceLink);
+
+        /**
          * Handle the nationality change which toggles between national code and passport number
          */
         $('select#nationality').change(function() {
@@ -697,4 +703,11 @@ function refreshMessages()
 
         }
     });
+}
+
+function searchProvinceLink()
+{
+    var links = $(this).siblings('span.cities-list').html();
+    $('#cities-list-modal .modal-body p').html(links);
+    $('#cities-list-modal').modal('show');
 }

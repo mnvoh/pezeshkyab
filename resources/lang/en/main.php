@@ -380,4 +380,7 @@ return [
 	'provinces' => 'Provinces',
 	'no_doctor_selected' => 'No Doctor Selected',
 	'download_app' => 'Download App',
+	'labs' => 'Labs',
+	'clinics' => 'Clinics',
+	'under_construction' => 'Under Construction',
 ];

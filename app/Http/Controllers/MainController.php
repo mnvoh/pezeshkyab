@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use App\Models\Fee;
+use App\Models\Hospital;
 use App\Models\Insurance;
 use App\Models\MedicalQuestion;
 use App\Models\Province;
@@ -39,6 +40,7 @@ class MainController extends Controller
 		$specialties = Specialty::all();
 		$provinces = Province::all();
 		$cities = City::all();
+		$hospitals = Hospital::all();
 
 		return view('main.home', array(
 			'includeMainCarousel' => true,
@@ -48,6 +50,7 @@ class MainController extends Controller
 			'specialties' => $specialties,
 			'provinces' => $provinces,
 			'cities' => $cities,
+			'hospitals' => $hospitals,
 			'hide_content' => true,
 		));
 	}

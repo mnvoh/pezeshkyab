@@ -1,82 +1,90 @@
 <!-- master nav
 ====================================-->
 <header class="navbar navbar-static-top" id="top" role="banner">
-    <div class="container navbar-container">
-        <div class="navbar-header">
-            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
-                    data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="<?php echo e(url('/')); ?>" class="navbar-brand">
-                <img src="<?php echo e(url('/img/logo.png')); ?>" alt="<?php echo e(trans('main.selector_page_title')); ?>"
-                     class="navbar-logo"/>
-            </a>
-        </div>
-        <nav id="bs-navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="<?php echo e(route('main.docfinder_home')); ?>"> <?php echo e(trans('main.site_name')); ?> </a>
-                </li>
-                <li>
-                    <a href="<?php echo e(route('main.about')); ?>"> <?php echo e(trans('main.about')); ?> </a>
-                </li>
-                <li class="active">
-                    <a href="<?php echo e(route('main.contact')); ?>"> <?php echo e(trans('main.contact')); ?> </a>
-                </li>
-                <li>
-					<a class="dropdown-toggle" id="linksDropDown" data-toggle="dropdown"
-					   aria-haspopup="true" aria-expanded="true">
-						<?php echo e(trans('main.links')); ?>
+	<div class="container-fluid" id='main-navbar-wrapper'>
+		<div class="container navbar-container">
+			<div class="navbar-header">
+				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
+						data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="<?php echo e(url('/')); ?>" class="navbar-brand">
+					<img src="<?php echo e(url('/img/logo.png')); ?>" alt="<?php echo e(trans('main.selector_page_title')); ?>"
+						 class="navbar-logo"/>
+				</a>
+			</div>
+			<nav id="bs-navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="<?php echo e(route('main.docfinder_home')); ?>"> <?php echo e(trans('main.site_name')); ?> </a>
+					</li>
+					<li>
+						<a href="<?php echo e(route('main.about')); ?>"> <?php echo e(trans('main.about')); ?> </a>
+					</li>
+					<li class="active">
+						<a href="<?php echo e(route('main.contact')); ?>"> <?php echo e(trans('main.contact')); ?> </a>
+					</li>
+					<li>
+						<a class="dropdown-toggle" id="linksDropDown" data-toggle="dropdown"
+						   aria-haspopup="true" aria-expanded="true">
+							<?php echo e(trans('main.links')); ?>
 
-						<span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu" aria-labelledby="linksDropDown">
-						<?php foreach(\App\Models\Link::all() as $link): ?>
-							<li>
-								<a href="<?php echo e($link->url); ?>"><?php echo e($link->title); ?></a>
-							</li>
-						<?php endforeach; ?>
-					</ul>
-                </li>
-                <li>
-                    <a href="<?php echo e(route('search.find')); ?>" id="show-find-doctor"> <?php echo e(trans('main.find_a_doctor')); ?> </a>
-                </li>
-				<li>
-					<a class="mobile-nav-item" href="#">
-						<?php echo e(trans('main.download_app')); ?>
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="linksDropDown">
+							<?php foreach(\App\Models\Link::all() as $link): ?>
+								<li>
+									<a href="<?php echo e($link->url); ?>"><?php echo e($link->title); ?></a>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					</li>
+					<li>
+						<a href="<?php echo e(route('search.find')); ?>" id="show-find-doctor"> <?php echo e(trans('main.find_a_doctor')); ?> </a>
+					</li>
+					<li>
+						<a class="mobile-nav-item" href="#">
+							<?php echo e(trans('main.download_app')); ?>
 
-					</a>
-				</li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
-                    <li><a href="<?php echo e(route('user.logout')); ?>"> <?php echo e(trans('main.logout')); ?> </a></li>
-				<?php elseif(\App\Auth\AdminAuth::check()): ?>
-					<li><a href="<?php echo e(route('admins.home')); ?>"> <?php echo e(trans('main.administration')); ?> </a></li>
-					<li><a href="<?php echo e(route('admins.logout')); ?>"> <?php echo e(trans('main.logout')); ?> </a></li>
-                <?php else: ?>
-                    <li><a href="<?php echo e(route('user.login')); ?>"> <?php echo e(trans('main.login')); ?> </a></li>
-                    <li><a href="<?php echo e(route('user.register')); ?>"> <?php echo e(trans('main.register')); ?> </a></li>
-                <?php endif; ?>
+						</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<?php if(\Illuminate\Support\Facades\Auth::check()): ?>
+						<li><a href="<?php echo e(route('user.logout')); ?>"> <?php echo e(trans('main.logout')); ?> </a></li>
+					<?php elseif(\App\Auth\AdminAuth::check()): ?>
+						<li><a href="<?php echo e(route('admins.home')); ?>"> <?php echo e(trans('main.administration')); ?> </a></li>
+						<li><a href="<?php echo e(route('admins.logout')); ?>"> <?php echo e(trans('main.logout')); ?> </a></li>
+					<?php else: ?>
+						<li><a href="<?php echo e(route('user.login')); ?>"> <?php echo e(trans('main.login')); ?> </a></li>
+						<li><a href="<?php echo e(route('user.register')); ?>"> <?php echo e(trans('main.register')); ?> </a></li>
+					<?php endif; ?>
 
-                <?php foreach($langs as $l => $ll): ?>
-                    <?php if($l != $lang): ?>
-                        <li><a href="<?php echo LangChanger::change($l); ?>"> <?php echo $ll; ?> </a></li>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </ul>
-        </nav>
-    </div>
+					<?php foreach($langs as $l => $ll): ?>
+						<?php if($l != $lang): ?>
+							<li><a href="<?php echo LangChanger::change($l); ?>"> <?php echo $ll; ?> </a></li>
+						<?php endif; ?>
+					<?php endforeach; ?>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
 
     <?php if(isset($includeMainCarousel) && $includeMainCarousel): ?>
 		<div class="container">
 			<div id="home-page-banner" class="row">
 				<div class="col-xs-12">
 					<br />
-					<h1 class="text-center help-block"><?php echo e(trans('main.find_and_book')); ?></h1>
+					<br />
+					<h2 class="text-center help-block">
+						<?php echo e(trans('main.find_and_book')); ?>
+
+					</h2>
+					<br />
 					<br />
 					<?php echo $__env->make('search.simple-search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 				</div>
