@@ -76,7 +76,7 @@
 						<br />
 						<div class="row">
 							@foreach($specialties as $s)
-								<div class="col-xs-6 col-sm-4 col-md-3">
+								<div class="col-xs-6 col-sm-4 col-md-2">
 									<a href="{{route('search.find')}}?s_q={{$s->title}}">
 										<span class="fa-3x fa fa-user-md"></span><br />
 										{{ $s->title }}
@@ -89,7 +89,7 @@
 						<br />
 						<div class="row">
 							@foreach($provinces as $p)
-								<div class="col-xs-6 col-sm-4 col-md-3">
+								<div class="col-xs-6 col-sm-4 col-md-2">
 									<a href="javascript:;" class="search-province-link">
 										{{ $p->name }}
 									</a>
@@ -111,7 +111,7 @@
 						<br />
 						<div class="row">
 							@foreach($hospitals as $h)
-								<div class="col-xs-6 col-sm-4 col-md-3">
+								<div class="col-xs-6 col-sm-4 col-md-2">
 									<a href="{{route('search.find')}}?s_q={{$h->name}}">
 										{{ $h->name }}
 									</a>
