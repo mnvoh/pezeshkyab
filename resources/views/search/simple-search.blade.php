@@ -41,7 +41,7 @@
 						</li>
 						<li role="presentation">
 							<a href="#tab-provinces" aria-controls="tab-provinces" role="tab" data-toggle="tab">
-								<span class="fa fa-2x fa-map"></span>
+								<span class="fa fa-2x fa-map-marker"></span>
 								<br />
 								{{ trans('main.provinces') }}
 							</a>

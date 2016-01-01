@@ -934,5 +934,11 @@ p.message.message-to>span.sender {
 }
 .homeicon-link:hover { text-decoration: none; }
 #homeicon-tabs a {
+    color: #555;
+}
+#homeicon-tabs li.active a {
+    color: #55b7e5;
+}
+#homeicon-tabs a span {
     color: #55b7e5;
 }
