@@ -30,7 +30,8 @@
 			<div class="col-xs-12 text-center">
 				<!-- Nav tabs -->
 				<div style="border-bottom: 1px solid #ddd;">
-					<ul class="nav nav-tabs" role="tablist" style="display: inline-block; margin-bottom: -11px;">
+					<ul id="homeicon-tabs" class="nav nav-tabs" role="tablist" style="display: inline-block;
+					margin-bottom: -11px;">
 						<li role="presentation" class="active">
 							<a href="#tab-specialties" aria-controls="tab-specialties" role="tab" data-toggle="tab">
 								<span class="fa fa-2x fa-medkit"></span>
@@ -73,16 +74,82 @@
 				<!-- Tab panes -->
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane active" id="tab-specialties">
-						<br />
-						<div class="row">
-							@foreach($specialties as $s)
+						<div class="col-sm-12 col-md-8 col-md-offset-2">
+							<br />
+							<div class="row">
 								<div class="col-xs-6 col-sm-4 col-md-2">
-									<a href="{{route('search.find')}}?s_q={{$s->title}}">
-										<span class="fa-3x fa fa-user-md"></span><br />
-										{{ $s->title }}
+									<a href="{{route('search.find')}}?s_q=دندانپزشک" class="homeicon-link">
+										<span class="homeicon" style="background-position: -150px -379px;"></span>
+										<p class="homeicon-text">دندانپزشک</p>
 									</a>
 								</div>
-							@endforeach
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<a href="{{route('search.find')}}?s_q=چشم پزشک" class="homeicon-link">
+										<span class="homeicon" style="background-position: -248px -6px;"></span>
+										<p class="homeicon-text">چشم پزشک</p>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<a href="{{route('search.find')}}?s_q=متخصص زیبایی" class="homeicon-link">
+										<span class="homeicon" style="background-position: -297px -6px;"></span>
+										<p class="homeicon-text">متخصص زیبایی</p>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<a href="{{route('search.find')}}?s_q=هومیوپات" class="homeicon-link">
+										<span class="homeicon" style="background-position: -3px -59px;"></span>
+										<p class="homeicon-text">هومیوپات</p>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<a href="{{route('search.find')}}?s_q=آیورودا" class="homeicon-link">
+										<span class="homeicon" style="background-position: -52px -59px;"></span>
+										<p class="homeicon-text">آیورودا</p>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<a href="{{route('search.find')}}?s_q=متخصص قلب" class="homeicon-link">
+										<span class="homeicon" style="background-position: -101px -59px;"></span>
+										<p class="homeicon-text">متخصص قلب</p>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<a href="{{route('search.find')}}?s_q=معده و روده" class="homeicon-link">
+										<span class="homeicon" style="background-position: -150px -59px;"></span>
+										<p class="homeicon-text">معده و روده</p>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<a href="{{route('search.find')}}?s_q=روانپزشک" class="homeicon-link">
+										<span class="homeicon" style="background-position: -199px -59px;"></span>
+										<p class="homeicon-text">روانپزشک</p>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<a href="{{route('search.find')}}?s_q=گوش و حلق و بینی" class="homeicon-link">
+										<span class="homeicon" style="background-position: -248px -59px;"></span>
+										<p class="homeicon-text">گوش و حلق و بینی</p>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<a href="{{route('search.find')}}?s_q=متخصص زنان" class="homeicon-link">
+										<span class="homeicon" style="background-position: -150px -271px;"></span>
+										<p class="homeicon-text">متخصص زنان</p>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<a href="{{route('search.find')}}?s_q=مغز و اعصاب" class="homeicon-link">
+										<span class="homeicon" style="background-position: -52px -112px;"></span>
+										<p class="homeicon-text">مغز و اعصاب</p>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<a href="{{route('search.find')}}?s_q=دستگاه ادرار" class="homeicon-link">
+										<span class="homeicon" style="background-position: -150px -112px;"></span>
+										<p class="homeicon-text">دستگاه ادرار</p>
+									</a>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="tab-provinces">

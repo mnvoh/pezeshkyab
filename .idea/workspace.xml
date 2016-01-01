@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="42a41d7d-bca1-4eeb-a472-3cb96465f380" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/search/simple-search.blade.php" afterPath="$PROJECT_DIR$/resources/views/search/simple-search.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pezeshkyab.iws" />
@@ -147,13 +148,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="simple-search.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="simple-search.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/search/simple-search.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67536706">
-              <caret line="113" column="70" selection-start-line="113" selection-start-column="70" selection-end-line="113" selection-end-column="70" />
+            <state vertical-scroll-proportion="-8.037037">
+              <caret line="32" column="41" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#6;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#7;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#8;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#9;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#10;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#11;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -169,11 +182,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="921" column="24" selection-start-line="921" selection-start-column="24" selection-end-line="921" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.8875">
+              <caret line="936" column="18" selection-start-line="936" selection-start-column="18" selection-end-line="936" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -255,12 +268,12 @@
         <option value="$PROJECT_DIR$/public/fonts/nazanin/stylesheet.css" />
         <option value="$PROJECT_DIR$/public/js/script.js" />
         <option value="$PROJECT_DIR$/resources/views/master.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MainController.php" />
         <option value="$PROJECT_DIR$/resources/lang/en/main.php" />
         <option value="$PROJECT_DIR$/resources/lang/fa/main.php" />
         <option value="$PROJECT_DIR$/resources/views/navbar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/search/simple-search.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
       </list>
     </option>
   </component>
@@ -846,20 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="711" column="42" selection-start-line="711" selection-start-column="42" selection-end-line="711" selection-end-column="42" />
-          <folding>
-            <element signature="n#!!block;n#pickDoctor#0" expanded="false" />
-            <element signature="n#!!block;n#prepareSummernoteSubmission#0" expanded="false" />
-            <element signature="n#!!block;n#setFiveStarToMouseClickPosition#0" expanded="false" />
-            <element signature="n#!!block;n#setFiveStarToMousePositionTemp#0" expanded="false" />
-            <element signature="n#!!block;n#refreshMessages#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.37037">
@@ -872,14 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="8.037037">
           <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="921" column="24" selection-start-line="921" selection-start-column="24" selection-end-line="921" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -934,13 +925,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="711" column="42" selection-start-line="711" selection-start-column="42" selection-end-line="711" selection-end-column="42" />
+          <folding>
+            <element signature="n#!!block;n#pickDoctor#0" expanded="false" />
+            <element signature="n#!!block;n#prepareSummernoteSubmission#0" expanded="false" />
+            <element signature="n#!!block;n#setFiveStarToMouseClickPosition#0" expanded="false" />
+            <element signature="n#!!block;n#setFiveStarToMousePositionTemp#0" expanded="false" />
+            <element signature="n#!!block;n#refreshMessages#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/search/simple-search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67536706">
-          <caret line="113" column="70" selection-start-line="113" selection-start-column="70" selection-end-line="113" selection-end-column="70" />
+        <state vertical-scroll-proportion="-8.037037">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#6;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#7;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#8;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#9;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#10;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#11;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8875">
+          <caret line="936" column="18" selection-start-line="936" selection-start-column="18" selection-end-line="936" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

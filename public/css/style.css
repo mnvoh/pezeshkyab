@@ -921,3 +921,18 @@ p.message.message-to>span.sender {
 .search-province-link {
     white-space: nowrap;
 }
+.homeicon {
+    background: url(../img/homepage_icons.svg);
+    display: block;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+}
+.homeicon-link {
+    color: #999;
+    line-height: 12px;
+}
+.homeicon-link:hover { text-decoration: none; }
+#homeicon-tabs a {
+    color: #55b7e5;
+}
